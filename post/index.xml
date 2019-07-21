@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 飞雪无情的博客</title>
+    <link>http://www.flysnow.org/post/</link>
+    <description>Recent content in Posts on 飞雪无情的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Jul 2019 11:17:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.flysnow.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Second</title>
+      <link>http://www.flysnow.org/post/second/</link>
+      <pubDate>Sun, 21 Jul 2019 11:17:52 +0800</pubDate>
+      
+      <guid>http://www.flysnow.org/post/second/</guid>
+      <description>2</description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>http://www.flysnow.org/post/first/</link>
+      <pubDate>Sun, 21 Jul 2019 11:17:45 +0800</pubDate>
+      
+      <guid>http://www.flysnow.org/post/first/</guid>
+      <description>1:wq</description>
+    </item>
+    
+  </channel>
+</rss>
