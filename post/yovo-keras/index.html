@@ -97,7 +97,8 @@
 <li><a href="#一步到位的ssd-yolo系列">一步到位的SSD，YOLO系列</a></li>
 <li><a href="#基于yolo-v3的小目标检测">基于YOLO_v3的小目标检测</a>
 <ul>
-<li><a href="#结果展示">结果展示</a></li>
+<li><a href="#结果">结果</a></li>
+<li><a href="#展望">展望</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -134,13 +135,19 @@
 模型有了，剩下就是数据和调参数了。
 在经过大量调参后，最终模型<a href="https://github.com/yl305237731/yolov3_watermark">yolo_v3水印检测模型</a></p>
 
-<h3 id="结果展示">结果展示</h3>
+<h3 id="结果">结果</h3>
 
 <p><img src="/img/yolo_v3/1.png" alt="" />
 <img src="/img/yolo_v3/2.png" alt="" />
 <img src="/img/yolo_v3/3.jpg" alt="" />
 <img src="/img/yolo_v3/4.jpg" alt="" />
-<img src="/img/yolo_v3/5.jpg" alt="" /></p>
+<img src="/img/yolo_v3/5.jpg" alt="" />
+最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。</p>
+
+<h3 id="展望">展望</h3>
+
+<p>以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定，
+个人觉得加入attention机制效果应该还会提升。</p>
 
                         </div>
 
