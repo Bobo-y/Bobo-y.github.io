@@ -6,9 +6,28 @@
     <description>Recent content in Categories on 飞雪无情的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Jul 2019 11:59:58 +0800</lastBuildDate>
     
 	<atom:link href="http://www.flysnow.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Development</title>
+      <link>http://www.flysnow.org/categories/development/</link>
+      <pubDate>Sun, 21 Jul 2019 11:59:58 +0800</pubDate>
+      
+      <guid>http://www.flysnow.org/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GoLang</title>
+      <link>http://www.flysnow.org/categories/golang/</link>
+      <pubDate>Sun, 21 Jul 2019 11:59:58 +0800</pubDate>
+      
+      <guid>http://www.flysnow.org/categories/golang/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

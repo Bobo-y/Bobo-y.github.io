@@ -3,25 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.flysnow.org/categories/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.flysnow.org/categories/development/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.flysnow.org/categories/golang/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.flysnow.org/post/</loc>
-    <lastmod>2019-07-21T11:17:52+08:00</lastmod>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.flysnow.org/post/second/</loc>
-    <lastmod>2019-07-21T11:17:52+08:00</lastmod>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.flysnow.org/tags/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.flysnow.org/tags/taga/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.flysnow.org/tags/tagb/</loc>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.flysnow.org/</loc>
-    <lastmod>2019-07-21T11:17:52+08:00</lastmod>
+    <lastmod>2019-07-21T11:59:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.flysnow.org/post/first/</loc>
-    <lastmod>2019-07-21T11:17:45+08:00</lastmod>
+    <lastmod>2019-07-21T11:59:53+08:00</lastmod>
   </url>
   
   <url>
@@ -31,16 +67,6 @@
   
   <url>
     <loc>http://www.flysnow.org/archives/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.flysnow.org/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.flysnow.org/tags/</loc>
     <priority>0</priority>
   </url>
   
