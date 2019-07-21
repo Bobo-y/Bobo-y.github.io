@@ -321,12 +321,12 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
     </item>
     
     <item>
-      <title>About</title>
+      <title>关于我</title>
       <link>https://yl305237731.github.io/about/</link>
       <pubDate>Sat, 21 Jul 2018 11:17:35 +0800</pubDate>
       
       <guid>https://yl305237731.github.io/about/</guid>
-      <description>我叫杨林</description>
+      <description> 联系方式  手机：15382022125 Email：yanglinself@gmail.com QQ/微信号：305237731/yl305237731  个人信息  杨林/男/1993 硕士/北京交通大学计算机系 工作年限：刚刚走出学校的小窝 技术博客：http://note4lin.top Github：http://github.com/yl305237731 职位：算法工程师 方向：机器学习，图像处理  </description>
     </item>
     
   </channel>
