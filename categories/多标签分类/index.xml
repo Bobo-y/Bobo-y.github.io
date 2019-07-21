@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“多标签分类” on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/</link>
+    <description>Recent content in “多标签分类” on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 29 Mar 2019 15:07:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keras多标签分类网络实现</title>
+      <link>https://yl305237731.github.io/post/keras_duofenlei/</link>
+      <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/keras_duofenlei/</guid>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为softmax函数。 * 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。
+数据准备 我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体
+数据目录如下： 按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的 数据生成 我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]
+data_gen.py
+import os import numpy as np from PIL import Image def to_multi_label(num_list, num_class): lab = np.zeros(shape=(1,num_class)) for i in num_list: lab[0,int(i)-1] = 1 return lab def generate_arrays_from_txt(path, batch_size, num_class): with open(path) as f: while True: imgs = [] labs = np.zeros(shape=(batch_size,num_class)) i= 0 while len(imgs) &amp;lt; batch_size: line = f.readline() if not line: f.seek(0) line = f.</description>
+    </item>
+    
+  </channel>
+</rss>

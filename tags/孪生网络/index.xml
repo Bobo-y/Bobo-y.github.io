@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>孪生网络 on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 孪生网络 on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 12 Nov 2018 16:32:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于Keras图像相似度计算孪生网络</title>
+      <link>https://yl305237731.github.io/post/keras_simi/</link>
+      <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/keras_simi/</guid>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number: count = count + 1 pos_neg = np.</description>
+    </item>
+    
+  </channel>
+</rss>

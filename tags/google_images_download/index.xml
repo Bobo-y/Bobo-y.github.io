@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google_images_download on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/google_images_download/</link>
+    <description>Recent content in google_images_download on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Oct 2018 16:43:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/google_images_download/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
+      <link>https://yl305237731.github.io/post/googleid/</link>
+      <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/googleid/</guid>
+      <description>google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些脚本，但是还是喜欢用这个，所以做个记录。重点：翻墙 项目地址：https://github.com/hardikvasa/google-images-download
+mac，Linux，windows下均可。以下主要针对于Windows下使用记录。
+1.安装 最简单的方式：
+pip install google_images_download  2.使用 例如下载20张猫的图片,命令行进入文件存放目录
+执行
+googleimagesdownload -k &amp;quot;cat&amp;quot; -l 20  -k（keyword） 指定关键字，-l（limit） 限制图片数
+当下载图片数量超过100张时，提示缺少Chromedriver chromedriver 链接
+下载，解压得到一个exe文件，放到文件下载目录
+执行，例：googleimagesdownload -k &amp;ldquo;cat&amp;rdquo; -l 1000 &amp;ndash;chromedriver=&amp;ldquo;./chromedriver&amp;rdquo; 这个命令还有很多参数，具体看GitHub项目中的说明。 </description>
+    </item>
+    
+  </channel>
+</rss>

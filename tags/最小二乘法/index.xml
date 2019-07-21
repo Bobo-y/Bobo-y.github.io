@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最小二乘法 on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/</link>
+    <description>Recent content in 最小二乘法 on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 18 Dec 2018 15:57:45 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>线性拟合笔记之：最小二乘法</title>
+      <link>https://yl305237731.github.io/post/linersqur/</link>
+      <pubDate>Tue, 18 Dec 2018 15:57:45 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/linersqur/</guid>
+      <description>关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。最小二乘法还可用于曲线拟合。其他一些优化问题也可通过最小化能量或最大化熵用最小二乘法来表达。 对于线性拟合，给定的具有线性关系的观测样本，可以通过最小二乘法求解得到线性模型。
+一元线性回归模型求解 给定的观测数据 ：(x1,y1),(x2,y1),(x3,y3)&amp;hellip;&amp;hellip;(xn,yn)，假设其存在着线性关系，线性模型为：$$ \bar{y} = wx +b $$ 优化目标函数为： 即标签值和预测值之间的均方误差，所选择的回归模型应该使所有观察值的残差平方和达到最小， 也就是 Least square。 将目标函数展开： 此时，L是关于w 和 b 的函数，要使 L的值最小，由数学知识可知，可以通过求偏导令为0可解得，即： 记: 则 同理可得： 即可求得w,b。
+最小二乘实现 一元最小二乘法 由上面的 w 可以看出，整个计算结果依赖于$\bar{x}$,$\bar{y}$,$x{i}y{i}$,$x_{i}^{2}$
+python测试代码如下：
+import matplotlib.pyplot as plt import numpy as np class Least_square: weight = 0 bias = 0 def get_weight(self): return self.weight def get_bias(self): return self.bias def least_square(self,x,y): if len(x)!= len(y): print(&#39;data error&#39;) return x_ = 0 y_ = 0 x_mul_y = 0 x_2 = 0 n = len(x) for i in range(n): x_ = x[i] + x_ y_ = y[i] + y_ x_mul_y = x[i]*y[i] + x_mul_y x_2 = x[i]*x[i] + x_2 x_ = x_ / n y_ = y_ / n self.</description>
+    </item>
+    
+  </channel>
+</rss>

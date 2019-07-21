@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numpy GPU加速 on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/</link>
+    <description>Recent content in Numpy GPU加速 on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 21 Dec 2018 15:32:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Numpy使用GPU加速</title>
+      <link>https://yl305237731.github.io/post/numpyjiasu/</link>
+      <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/numpyjiasu/</guid>
+      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），结构查到了minpy，花了10分钟左右配好了环境，写个日志记录一下。
+安装minpy:
+我的机器是Ubuntu 16.04的，minpy需要cuda,cudnn,由于这俩我早就装好了，就不说了。 minpy是基于mxnet进行运算的，所以需要安装mxnet,官方链接添加链接描述 反正我用的最简单的方式，没从git源码安装
+sudo pip install mxnet-cu80 // 我cuda8.0的  （必须和cuda对应，第一次装了9.0的了，就报错了） 然后再
+sudo pip install minpy  就OK了，是不是很easy（当然我们的easy是建立在大牛的肩膀上，感觉开发者们）.
+使用：
+import minpy.numpy as np  我使用我KNN中的代码测试，平均CPU:0.8s,GPU:0.4s，只提速了0.4s左右（因为涉及的矩阵运算少）。
+如下，使用高维矩阵点乘连乘做测试
+import numpy as np import numpy.random as random #import minpy.numpy as np #import minpy.numpy.random as random import time a = random.rand(3000,2000) b = random.rand(2000,4000) c = random.rand(4000,3000) begin = time.time() for i in range(100): np.dot(np.dot(a,b),c) end = time.time() print(end-begin)  提升4倍左右，一个200s,一个50s左右。 （同时发现一个问题打印时间和GPU调用应该不是同线程的，因为没得到结果时间就打印出来了，手动计的时） 参考：minpy安装手册</description>
+    </item>
+    
+  </channel>
+</rss>

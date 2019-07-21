@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据增强 on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/</link>
+    <description>Recent content in 数据增强 on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 29 Mar 2019 15:16:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keras数据增强并保存到本地</title>
+      <link>https://yl305237731.github.io/post/keras_data_aug/</link>
+      <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/keras_data_aug/</guid>
+      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）方法可快速的实现 1.首先实例化ImageDataGenerator对象以自己想要的属性 img_datagen = keras.preprocessing.image.ImageDataGenerator(featurewise_center=False, samplewise_center=False, featurewise_std_normalization=False, samplewise_std_normalization=False, zca_whitening=False, zca_epsilon=1e-06, rotation_range=0, width_shift_range=0.0, height_shift_range=0.0, shear_range=0.0, zoom_range=0.0, horizontal_flip=False, vertical_flip=False, rescale=None, ) #### 对于数据增强主要可能用到的属性如下，按自己的需求设置即可： ##### featurewise_center: 布尔值。将输入数据的均值设置为 0，逐特征进行。 ##### samplewise_center: 布尔值。将每个样本的均值设置为 0。 ##### featurewise_std_normalization: Boolean. 布尔值。将输入除以数据标准差，逐特征进行。 ##### zca_epsilon: ZCA 白化的 epsilon 值，默认为 1e-6。 ##### zca_whitening: 布尔值。是否应用 ZCA 白化。 ##### rotation_range: 整数。随机旋转的度数范围。 ##### width_shift_range: 浮点数、一维数组或整数 ##### height_shift_range: 浮点数、一维数组或整数 ##### shear_range: 浮点数。剪切强度（以弧度逆时针方向剪切角度）。 ##### zoom_range: 浮点数 或 [lower, upper]。随机缩放范围。 ##### channel_shift_range: 浮点数。随机通道转换的范围。 ##### horizontal_flip: 布尔值。随机水平翻转。 ##### vertical_flip: 布尔值。随机垂直翻转。  2.</description>
+    </item>
+    
+  </channel>
+</rss>

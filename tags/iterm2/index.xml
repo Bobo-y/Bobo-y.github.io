@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iterm2 on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/iterm2/</link>
+    <description>Recent content in iterm2 on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Jul 2019 13:27:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mac通过跳板机对服务器上传下载文件</title>
+      <link>https://yl305237731.github.io/post/tiaobanji/</link>
+      <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/tiaobanji/</guid>
+      <description> 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用iterm2可方便使用rz、sz命令。 1.下载安装iterm2.iterm2链接，下载解压后打开，添加到应用程序即可。 2. 安装lrzsz brew install lrzsz  3. 下载iterm2-zmodem 直接进入GitHub下载iterm2-zmodem,解压后将iterm2-send-zmodem.sh和iterm2-recv-zmodem.sh复制到 /usr/local/bin
+# 解压后，进入iterm2-zmode-master cp iterm2-send-zmodem.sh /usr/local/bin/ cp iterm2-recv-zmodem.sh /usr/local/bin/ ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/sz ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/rz  4. 配置iterm2 点击 iterm2-&amp;gt;preferences-&amp;gt;profiles-&amp;gt;Advanced,然后点击Triggers下面的edit,点击➕号，添加如下： 分别是：**B0100，**B00000000000000
+4.然后就可以通过iterm2使用sz,rz命令 </description>
+    </item>
+    
+  </channel>
+</rss>

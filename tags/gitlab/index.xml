@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitLab on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/gitlab/</link>
+    <description>Recent content in gitLab on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 30 Mar 2019 14:59:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gitLab项目拉取及提交使用记录</title>
+      <link>https://yl305237731.github.io/post/gitlab_1/</link>
+      <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/gitlab_1/</guid>
+      <description>实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。
+一.创建分支  首先登陆gitlab，进入你要拉取的项目.  点击Branches  输入分支名，创建分支 二.项目拉到本机 新建一个文件夹，在文件夹里鼠标右键选git bash here。
+ git init 本地初始化  添加项目地址，此处的地址就是主分支（master）的地址  然后将刚刚创建的分支拉下来
+ git fetch origin watermark_generator(刚刚在gitlab创建的分支名) 2.git checkout -b watermark_gen(本地要创建的分支名) origin/watermark_generator(gitlab上创建的分支) 3.git pull origin watermark_generator(gitlab上刚刚创建的分支名) 到此，分支就拉下来了。
+  三.本地代码上传 然后就开始写代码，写啊写啊，写好了。开始上传
+1.git status 查看当前有哪些修改为提交，红色的的都是 2. 然后指定添加哪些，.代表能加的全加 3. 提交到本地仓库 4.提交到服务器gitlab 刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。 四.将本地已有的代码直接上传到新的分支上 上面是从gitlab上拉取分支，再传代码。以下是本地代码已经有了，将代码上传到gitlab分支上，在本地增加远程分支。 1. 将本地写好的项目上传到远程master 进入项目工程
+git init git add . git commit -m &amp;quot;submit&amp;quot; git push -u origin master   将本地代码上传到master下的分支 进入项目工程  git init git remote add origin git@github.</description>
+    </item>
+    
+  </channel>
+</rss>

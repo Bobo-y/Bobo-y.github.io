@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lin Yang&#39;s Blog | 专注于机器学习、深度学习、图像处理</title>
+    <meta property="og:title" content="Lin Yang&#39;s Blog | 专注于机器学习、深度学习、图像处理">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
+    <meta name="description" content="">
+    <meta property="og:url" content="https://yl305237731.github.io/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://yl305237731.github.io/index.xml" title="Lin Yang's Blog" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="https://yl305237731.github.io/">
+                            Lin Yang&#39;s Blog
+                        </a>
+                    </h1>
+                
+                <p class="description">专注于机器学习、深度学习、图像处理</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://yl305237731.github.io/">首页</a>
+                    
+                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/knn/" title="监督分类之：KNN算法" >监督分类之：KNN算法</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月22日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB">分类</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出训练集中与其最靠近的K个样本，根据这K个样本的类别来决定测试样本的类别，一般采用投票法，即判别为K个中出现次数最多的类别。（这种思路很早就知道了，完全不觉得这也属于高大上的机器学习啊，明明没有‘’学习‘’啊）。 所以，KNN是‘懒惰学习’的代表：无训练时间开销。相对的，训练阶段进行学习处理的为‘急切学习’，显然，大部分的机器学习方法都属于后者，比如：SVM,DNN,LR等。
+KNN示例 假设训练样本为两类二维样本，红色的 +，和绿色的-。蓝色的点为测试样本 KNN分类需要定义相似性度量函数，对于本例二维点可以采用欧氏距离函数作为判别，计算测试点到所有样本点的距离，选取前K个判断类别。
+对于KNN，找到合适的距离度量函数很重要，同时，K值的选取对结果也起着很大的作用。
+当K小时，只有最靠近输入实例的训练实例对预测结果起作用，也容易过拟合，导致高方差； 当K很大时，与输入实例不相似的训练实例对训练结果也起作用，会导致高的偏差
+总体流程如下： 1. 计算训练集中的每个样本与测试样本的距离 2. 将距离按地址排序 3. 选取与当前测试样本距离最小的K个样本 4. 计算K个样本所属类别出现的频率 5. 选取频率最高点的所属类别为预测分类
+基于KNN的mnist数据集分类 mnist手写数字数据集包含（0-9）10个类别的手写数字 ，训练集有55000张图片，测试集有1万张图片，可视化部分结果如下： 使用的图片数据是将图片转换为行向量之后的数据（数据来源TensorFlow里tutorials.mnist里的数据），数据已进行归一化(即像素值/255)。
+TensorFlow环境下代码
+from tensorflow.examples.tutorials.mnist import input_data import numpy as np import time class Knn(): def classMnist(self,sample,train_data,train_label,k = 10): dataRows = np.shape(train_data)[0] sampleRep = np.tile(sample,(dataRows,1)) # 将测试样本变为和训练集一样大小的数组，不用循环计算 distance = np.sqrt(np.sum(np.power(sampleRep - train_data,2),axis=1)) # 采用欧式距离 sortIndex = np.argsort(distance) countClass = {} for i in range(k): label = train_label[sortIndex[i]][0] if str(label) in countClass: countClass[str(label)] = countClass.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/knn/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/doctran1/" title="Pyplot tutorial翻译文档" >Pyplot tutorial翻译文档</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月21日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Figure上进行操作，比如在Figure上画点，画线等等。 在pyplot中，各种状态在函数调用之间被保留，以便它跟踪诸如当前图形和绘图区域之类的内容，并且绘图函数指向当前轴。（意思就是在默认情况下，一连串的pyplot的操作结果都在一个Figure中）。
+使用pyplot快速生成可视化：
+import matplotlib.pyplot as plt plt.plot([1,2,3,4]) plt.ylabel('some numbers') plt.show()  在这个例子中只提供了一个轴的数据，结果显示在Y轴。 当只有一组数据时，matplotlib默认认为是Y轴数据，并根据其自动生成X轴的数据。其中生成的数据和给定的数据具有相同的长度，而且由于python的下标由0开始，故生成数据是[0,1,2,3]。
+plot() 是一个多功能的命令，它将接受任意数量的参数。例如，为了绘制x与y的对比，可以发出以下命令：
+plt.plot([1,2,3,4],[1,4,9,6])  定制plot风格 对于每一对给定的数据，都有一个可选的第三个参数，用来指定线条的类型和颜色。格式字符串的字母和符号来自MATLAB，将颜色字符串与行样式字符串连接起来。默认格式的字符串是&rsquo;b-&lsquo;，它是一条实心的蓝色线。例如，要用红色圆圈绘制上面的图，需要发出以下命令
+plt.plot([1,2,3,4],[1,4,9,6],'ro') plt.axis([0,6,0,20]) plt.show()  axis()函数指定了坐标轴视窗的范围，分别代表 [xmin,xmax,ymin,ymax]。
+如果matplotlib仅限于处理列表，那么它对于数值处理是相当无用的。通常，我们都使用numpy数组。实际上，所有序列在内部都被转换为numpy数组。下面的示例演示了在一个命令中使用数组绘制具有不同格式样式的几行图。
+import matplotlib.pyplot as plt import numpy as np data = np.arange(0.,5.,0.2) plt.plot(data,data,'r--',data,data**2,'gs',data,data**3,'b^') plt.show()  使用关键字字符串绘图 在某些情况下，数据具有允许使用字符串访问特定变量的格式。例如，使用numpy.recarray或pandas.DataFrame。 Matplotlib允许为这样的对象提供数据关键字参数。如果提供，则可以生成带有与这些变量相对应的字符串的图表。
+import matplotlib.pyplot as plt import numpy as np data = {'a': np.arange(50), 'c': np.random.randint(0, 50, 50), 'd': np.random.randn(50)} data['b'] = data['a'] + 10 * np.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/doctran1/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/numpyjiasu/" title="Numpy使用GPU加速" >Numpy使用GPU加速</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月21日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），结构查到了minpy，花了10分钟左右配好了环境，写个日志记录一下。
+安装minpy:
+我的机器是Ubuntu 16.04的，minpy需要cuda,cudnn,由于这俩我早就装好了，就不说了。 minpy是基于mxnet进行运算的，所以需要安装mxnet,官方链接添加链接描述 反正我用的最简单的方式，没从git源码安装
+sudo pip install mxnet-cu80 // 我cuda8.0的  （必须和cuda对应，第一次装了9.0的了，就报错了） 然后再
+sudo pip install minpy  就OK了，是不是很easy（当然我们的easy是建立在大牛的肩膀上，感觉开发者们）.
+使用：
+import minpy.numpy as np  我使用我KNN中的代码测试，平均CPU:0.8s,GPU:0.4s，只提速了0.4s左右（因为涉及的矩阵运算少）。
+如下，使用高维矩阵点乘连乘做测试
+import numpy as np import numpy.random as random #import minpy.numpy as np #import minpy.numpy.random as random import time a = random.rand(3000,2000) b = random.rand(2000,4000) c = random.rand(4000,3000) begin = time.time() for i in range(100): np.dot(np.dot(a,b),c) end = time.time() print(end-begin)  提升4倍左右，一个200s,一个50s左右。 （同时发现一个问题打印时间和GPU调用应该不是同线程的，因为没得到结果时间就打印出来了，手动计的时） 参考：minpy安装手册……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/numpyjiasu/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/pipei1/" title="模版匹配之相关匹配" >模版匹配之相关匹配</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月20日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">“图像处理”</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图像的什么地方，进而识别对象物，这就是一个匹配问题。它是图像处理中最基本、最常用的匹配方法。模板匹配具有自身的局限性，主要表现在它只能进行平行移动，若原图像中的匹配目标发生旋转或大小变化，该算法无效。
+普通的模板匹配方法属于暴力搜索法，通过将模板图像不断在搜索图上移动，计算模板与模板覆盖区域子图像的相似度，显而易见，时间复杂度特别大。 相关法 相关法即计算模板与图像子区域的相关系数，相关系数也能反映出两张图片的相似度 计算公式： 对于模板 T(m,n),搜索图像 S(W,H),模板覆盖被搜索图的那块区域叫子图 $S_{ij}$, i,j 为子图在被搜索图中左上角的坐标, 模板高h,宽w, 1 =&lt; i =&lt; H-h, 1 =&lt; j =&lt; W-w, $$ R(i,j) = \frac{\sum {m=1}^{M}\sum{n=1}^{N}S_{ij}(m,n)* T(m,n)}{\sqrt{\sum {m=1}^{M}\sum{n=1}^{N}[S_{ij}(m,n)]^{2} \sum {m=1}^{M}\sum{n=1}^{N}[T(m,n)]^{2}}} $$
+实验结果 1. 这是当时的一个作业 搜索图：
+模板一： 模板2： 匹配结果如下： 两个模板都定位到同一目标，人眼可看出模板2和场景中定位出的目标匹配，模板1和定位出的并不是同一个，但是是最大的相似度，故匹配出
+2 模板lena: very good.
+代码 from PIL import Image import matplotlib.image as mpimg import matplotlib.pyplot as plt import numpy as np class templateMatch: x = 0 y = 0 flag = False def rgb2gray(self,src): if 3 == len(src.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/pipei1/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/ransac/" title="线性拟合笔记之：Ransac算法" >线性拟合笔记之：Ransac算法</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月19日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数学模型参数，得到有效样本数据的算法。在计算机视觉中用的比较多，如特征点匹配。本文主要从线性拟合角度分析。
+Ransac算法 有样本数据集如上图所示，其中蓝色为正确样本，绿色和红色为噪声样本，我们想要拟合一个线性模型，如果使用最小二乘法的话，结果如下图： 对于这个数据样本而言，由于噪声偏离正确数据不是太远且噪声少，拟合结果偏差不是太大。但是当噪声比例或偏离很大时，基于全局的最小二乘法几乎无法得到好的结果。
+RANSAC算法的基本假设是样本中包含正确数据(inliers，可以被模型描述的数据)，也包含异常数据(outliers，偏离正常范围很远、无法适应数学模型的数据)，即数据集中含有噪声。 主要思想是通过不断的从样本中随机选择一定的样本来拟合模型，然后用未被选中的样本测试模型，根据一定的规则保留最优模型。
+算法流程如下 一：随机选择n个样本，作为inliers； 二：用inliers拟合一个模型（本文做线性拟合，采用最小二乘），然后用模型测试outliers，如果某个outliers与模型的误差小于给定的阈值，将其加入inliers； 三：如果inliers中样本个数大于设定的值，得到认为正确的模型。然后用新的inliers重新估计模型； 四：执行以上过程指定的轮数，每次产生的模型要么因为inliers太少而被舍弃，要么比现有的模型更好而被选中。
+Ransac线性拟合实验 部分中间迭代结果：
+最佳拟合： Python代码 import matplotlib.pyplot as plt from numpy import * import numpy as np import operator as op class Ransac: weight = 0. bias = 0. def least_square(self,samples): ##最小二乘法 x = samples[:,0] y = samples[:,1] x_ = 0 y_ = 0 x_mul_y = 0 x_2 = 0 n = len(x) for i in range(n): x_ = x[i] + x_ y_ = y[i] + y_ x_mul_y = x[i] * y[i] + x_mul_y x_2 = x[i] * x[i] + x_2 x_ = x_ / n y_ = y_ / n weight = (x_mul_y - n * x_ * y_) / (x_2 - n * x_ * x_) bias = y_ - weight * x_ return weight,bias def isRepeat(self,sour,tar): #判断是否含有重复样本 for i in range(len(sour)): if (op.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/ransac/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/linersqur/" title="线性拟合笔记之：最小二乘法" >线性拟合笔记之：最小二乘法</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月18日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。最小二乘法还可用于曲线拟合。其他一些优化问题也可通过最小化能量或最大化熵用最小二乘法来表达。 对于线性拟合，给定的具有线性关系的观测样本，可以通过最小二乘法求解得到线性模型。
+一元线性回归模型求解 给定的观测数据 ：(x1,y1),(x2,y1),(x3,y3)&hellip;&hellip;(xn,yn)，假设其存在着线性关系，线性模型为：$$ \bar{y} = wx +b $$ 优化目标函数为： 即标签值和预测值之间的均方误差，所选择的回归模型应该使所有观察值的残差平方和达到最小， 也就是 Least square。 将目标函数展开： 此时，L是关于w 和 b 的函数，要使 L的值最小，由数学知识可知，可以通过求偏导令为0可解得，即： 记: 则 同理可得： 即可求得w,b。
+最小二乘实现 一元最小二乘法 由上面的 w 可以看出，整个计算结果依赖于$\bar{x}$,$\bar{y}$,$x{i}y{i}$,$x_{i}^{2}$
+python测试代码如下：
+import matplotlib.pyplot as plt import numpy as np class Least_square: weight = 0 bias = 0 def get_weight(self): return self.weight def get_bias(self): return self.bias def least_square(self,x,y): if len(x)!= len(y): print('data error') return x_ = 0 y_ = 0 x_mul_y = 0 x_2 = 0 n = len(x) for i in range(n): x_ = x[i] + x_ y_ = y[i] + y_ x_mul_y = x[i]*y[i] + x_mul_y x_2 = x[i]*x[i] + x_2 x_ = x_ / n y_ = y_ / n self.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/linersqur/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/libsvm/" title="Ubuntu &#43; Python下libsvm使用小结" >Ubuntu &#43; Python下libsvm使用小结</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月28日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载网站是链接，目前更新到3.23版本。
+安装测试 我是在Ubuntu16.04环境下使用的 解压后目录如下： 针对Python，进入Python包，内容如下： 测试： 命令行输入：
+import sys sys.path.append('/home/thinkstation/liny/libsvm/python') import svm  如果系统里是第一次使用libsvm,此时会报错 LIBSVM library not found 进入linsvm目录，命令行输入
+make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系统路径： 加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中
+使用 1.使用 a1a二分类数据集 链接 特征已经进行了处理，libsvm 数据格式如下： 可以看出，格式为： 类别 index：特征 index：特征 &hellip;&hellip;.
+2.mnist数据集 libsvm官网数据集中的mnist数据 其中前两项数据没有经过scale，后两项没有经过scale 用未scale的数据训练测试： 训练了接近5个小时，-_-||
+精度竟然这么低。。。。。 换上scale后的数据： 训练时间10分钟左右，精度0.94
+3.猫狗二分类 数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1 准确率0.62，可能数据有点少吧。。。。 总之，作者写的很完善了，还在不断优化中。 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行
+主要使用函数 svmutil.py中 1. svm_load_model(model_file_name)
+2. svm_save_model(model_file_name, model)
+3. svm_train(arg1, arg2=None, arg3=None)
+4. svm_predict(y, x, m, options=&ldquo;&rdquo;)……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/libsvm/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/keras_simi/" title="基于Keras图像相似度计算孪生网络" >基于Keras图像相似度计算孪生网络</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月12日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">图像处理</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = ['bear','blackswan','bus','camel','car','cows','dance','dog','hike','hoc','kite','lucia','mallerd','pigs','soapbox','stro','surf','swing','train','walking'] test_names = ['boat','dance-jump','drift-turn','elephant','libby'] def load_data(seq_names,data_number,seq_len): #生成图片对 print('loading data.....') frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &lt; data_number: count = count + 1 pos_neg = np.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_simi/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/kdog_cat/" title="Keras 猫狗二分类" >Keras 猫狗二分类</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月11日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name=='cat': labels.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/kdog_cat/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/googleid/" title="深度学习数据利器，批量图片下载,github项目google_images_download" >深度学习数据利器，批量图片下载,github项目google_images_download</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月10日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些脚本，但是还是喜欢用这个，所以做个记录。重点：翻墙 项目地址：https://github.com/hardikvasa/google-images-download
+mac，Linux，windows下均可。以下主要针对于Windows下使用记录。
+1.安装 最简单的方式：
+pip install google_images_download  2.使用 例如下载20张猫的图片,命令行进入文件存放目录
+执行
+googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字，-l（limit） 限制图片数
+当下载图片数量超过100张时，提示缺少Chromedriver chromedriver 链接
+下载，解压得到一个exe文件，放到文件下载目录
+执行，例：googleimagesdownload -k &ldquo;cat&rdquo; -l 1000 &ndash;chromedriver=&ldquo;./chromedriver&rdquo; 这个命令还有很多参数，具体看GitHub项目中的说明。 ……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/googleid/">阅读全文</a></p>
+                        </article>
+                    
+                    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://yl305237731.github.io/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://yl305237731.github.io/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://yl305237731.github.io/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://yl305237731.github.io/page/3/">3</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://yl305237731.github.io/page/3/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现">Keras多标签分类网络实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结">Keras数据集加载小结</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片">python下mnist数据集转化为图片</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
+    
+    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
+    
+    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
+    
+    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
+    
+    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
+    
+    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
+    
+    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
+    
+    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
+    
+    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
+    
+    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
+    
+    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
+    
+    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
+    
+    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
+    
+    <a href="https://yl305237731.github.io/tags/python/">python</a>
+    
+    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
+    
+    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

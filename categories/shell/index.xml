@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/categories/shell/</link>
+    <description>Recent content in shell on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 13 Apr 2019 15:12:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux命令随记</title>
+      <link>https://yl305237731.github.io/post/linux_cmd/</link>
+      <pubDate>Sat, 13 Apr 2019 15:12:08 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/linux_cmd/</guid>
+      <description> 记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &amp;quot;*xxx*&amp;quot; | xargs -i cp {} /home/XXX/XXX/  2. 在使用xshell登录服务器时跑代码时，xshell断开，程序停止 解决方法：nohup将程序后台运行，并返回进程号
+nohup python XXXX &amp;amp;  使用setsid命令,例
+setsid python run.py -c config.json  退出xshell时，输入exit退出
+3.删除文件夹下的文件，保留文件夹 进入文件夹，比如删除文件夹下所有jpg图片
+find ./ -name &amp;quot;*jpg&amp;quot; | xargs rm  </description>
+    </item>
+    
+  </channel>
+</rss>

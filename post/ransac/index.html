@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>线性拟合笔记之：Ransac算法 | Lin Yang&#39;s Blog</title>
+    <meta property="og:title" content="线性拟合笔记之：Ransac算法 - Lin Yang&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-12-19T15:52:22&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-12-19T15:52:22&#43;08:00">
+        
+    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
+    <meta name="description" content="线性拟合笔记之：Ransac算法">
+        <meta name="author" content="Lin Yang">
+        
+    <meta property="og:url" content="https://yl305237731.github.io/post/ransac/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://yl305237731.github.io/">
+                        Lin Yang&#39;s Blog
+                    </a>
+                
+                <p class="description">专注于机器学习、深度学习、图像处理</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://yl305237731.github.io/">首页</a>
+                    
+                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">线性拟合笔记之：Ransac算法</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年12月19日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="关于ransac算法">关于Ransac算法</h2>
+
+<p>RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数学模型参数，得到有效样本数据的算法。在计算机视觉中用的比较多，如特征点匹配。本文主要从线性拟合角度分析。</p>
+
+<h2 id="ransac算法">Ransac算法</h2>
+
+<p><img src="/img/ransac/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+有样本数据集如上图所示，其中蓝色为正确样本，绿色和红色为噪声样本，我们想要拟合一个线性模型，如果使用最小二乘法的话，结果如下图：
+<img src="/img/ransac/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+对于这个数据样本而言，由于噪声偏离正确数据不是太远且噪声少，拟合结果偏差不是太大。但是当噪声比例或偏离很大时，基于全局的最小二乘法几乎无法得到好的结果。</p>
+
+<p>RANSAC算法的基本假设是样本中包含正确数据(inliers，可以被模型描述的数据)，也包含异常数据(outliers，偏离正常范围很远、无法适应数学模型的数据)，即数据集中含有噪声。 主要思想是通过不断的从样本中随机选择一定的样本来拟合模型，然后用未被选中的样本测试模型，根据一定的规则保留最优模型。</p>
+
+<h3 id="算法流程如下">算法流程如下</h3>
+
+<p>一：随机选择n个样本，作为inliers；
+二：用inliers拟合一个模型（本文做线性拟合，采用最小二乘），然后用模型测试outliers，如果某个outliers与模型的误差小于给定的阈值，将其加入inliers；
+三：如果inliers中样本个数大于设定的值，得到认为正确的模型。然后用新的inliers重新估计模型；
+四：执行以上过程指定的轮数，每次产生的模型要么因为inliers太少而被舍弃，要么比现有的模型更好而被选中。</p>
+
+<h2 id="ransac线性拟合实验">Ransac线性拟合实验</h2>
+
+<p>部分中间迭代结果：</p>
+
+<p><img src="/img/ransac/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+<img src="/img/ransac/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+<img src="/img/ransac/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+<img src="/img/ransac/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+最佳拟合：
+<img src="/img/ransac/7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h2 id="python代码">Python代码</h2>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+from numpy import *
+import numpy as np
+import operator as op
+
+class Ransac:
+    weight = 0.
+    bias = 0.
+
+    def least_square(self,samples):
+        ##最小二乘法
+        x = samples[:,0]
+        y = samples[:,1]
+        x_ = 0
+        y_ = 0
+        x_mul_y = 0
+        x_2 = 0
+        n = len(x)
+        for i in range(n):
+            x_ = x[i] + x_
+            y_ = y[i] + y_
+            x_mul_y = x[i] * y[i] + x_mul_y
+            x_2 = x[i] * x[i] + x_2
+        x_ = x_ / n
+        y_ = y_ / n
+        weight = (x_mul_y - n * x_ * y_) / (x_2 - n * x_ * x_)
+        bias = y_ - weight * x_
+        return weight,bias
+
+    def isRepeat(self,sour,tar):
+        #判断是否含有重复样本
+        for i in range(len(sour)):
+            if (op.eq(list(sour[i]), list(tar))):
+                    return True
+        return False
+
+    def random_samples(self,samples,points_ratio):
+        ## 随机采样（无重复样本）
+        number = len(samples)
+        inliers_num = int(number * points_ratio)
+        inliers = []
+        outliers = []
+        cur_num = 0
+        while cur_num != inliers_num:
+            seed = np.random.randint(0,number)
+            sap_cur = samples[seed]
+            if not self.isRepeat(inliers,sap_cur):
+                cur_num = cur_num +1
+                inliers.append(list(sap_cur))
+        for i in range(number):
+            if not self.isRepeat(inliers,samples[i]):
+                outliers.append(list(samples[i]))
+        return np.array(inliers),np.array(outliers)
+
+    def fun_plot(self,sample,w,b):
+        data_x = np.linspace(0, 50, 50)
+        data_y = [w * x + b for x in data_x]
+        plt.ion()
+        plt.plot(data_x,data_y,'r')
+        plt.plot(sample[:,0],sample[:,1],'bo')
+        plt.show()
+        plt.pause(0.05)
+        plt.clf()
+
+    def ransac(self,samples, points_ratio = 0.05, epoch = 50, reject_dis = 5 ,inliers_ratio = 0.4):
+        # samples 输入样本，形如 [[x1 ,yi],[x2, y2]]
+        # point_ratio  随机选择样本点的比例
+        # epoch    迭代轮数
+        # reject_dis  小于此阈值将outliers加入inliers
+        # inliers_ratio  有效inliers最低比例
+
+        inliers_num_cur = 0
+        for i in range(epoch):
+            inliers,outliers = self.random_samples(samples,points_ratio)
+            weight_cur,bias_cur = self.least_square(inliers)
+            # self.fun_plot(samples,weight_cur,bias_cur)
+            for j in range(len(outliers)):
+                distance = np.abs((weight_cur* outliers[j,0]+ bias_cur) - outliers[j,1]) / np.sqrt(np.power(weight_cur,2)+1)
+                if distance &lt;=  reject_dis:
+                    inliers = np.vstack((inliers,outliers[j]))
+            weight_cur,bias_cur = self.least_square(inliers)
+            self.fun_plot(samples,weight_cur,bias_cur)
+            if len(inliers) &gt;= len(samples)* inliers_ratio:
+               if len(inliers) &gt; inliers_num_cur:
+                    self.weight = weight_cur
+                    self.bias = bias_cur
+                    inliers_num_cur = len(inliers)
+
+
+test = Ransac()
+sample = np.loadtxt('sample.txt')
+test.ransac(sample)
+data_x = np.linspace(0,50,50)
+data_y = [test.weight * x +test.bias for x in data_x]
+plt.plot(sample[:, 0], sample[:, 1], 'bo')
+plt.plot(data_x,data_y,'r')
+plt.show()
+plt.pause(3)
+</code></pre>
+
+<p>参考：百度百科</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/linersqur/">线性拟合笔记之：最小二乘法</a></li>
+        
+        <li><a href="/post/libsvm/">Ubuntu &#43; Python下libsvm使用小结</a></li>
+        
+        <li><a href="/post/keras_simi/">基于Keras图像相似度计算孪生网络</a></li>
+        
+        <li><a href="/post/kdog_cat/">Keras 猫狗二分类</a></li>
+        
+        <li><a href="/post/googleid/">深度学习数据利器，批量图片下载,github项目google_images_download</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://yl305237731.github.io/tags/ransac">Ransac</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= ""
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现">Keras多标签分类网络实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结">Keras数据集加载小结</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片">python下mnist数据集转化为图片</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
+    
+    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
+    
+    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
+    
+    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
+    
+    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
+    
+    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
+    
+    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
+    
+    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
+    
+    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
+    
+    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
+    
+    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
+    
+    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
+    
+    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
+    
+    <a href="https://yl305237731.github.io/tags/python/">python</a>
+    
+    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
+    
+    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

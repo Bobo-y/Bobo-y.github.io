@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HRNet on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/hrnet/</link>
+    <description>Recent content in HRNet on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 13 Apr 2019 14:52:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/hrnet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hr_net阅读笔记</title>
+      <link>https://yl305237731.github.io/post/hr_net/</link>
+      <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/hr_net/</guid>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以及上采样的研究提供了一个新的参考，如图像语义分割、超分辨率重建等类似研究。 HRNet的网络结构 HRNet网络结构图如下（图片来自原论文）： HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。
+以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架： HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。
+信息交换单元： 下图说明了HRNet如何在各层之间进行特征的融合。 个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。 论文链接</description>
+    </item>
+    
+  </channel>
+</rss>

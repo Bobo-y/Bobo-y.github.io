@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pyplot tutorial翻译文档 | Lin Yang&#39;s Blog</title>
+    <meta property="og:title" content="Pyplot tutorial翻译文档 - Lin Yang&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-12-21T15:39:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-12-21T15:39:00&#43;08:00">
+        
+    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
+    <meta name="description" content="Pyplot tutorial翻译文档">
+        <meta name="author" content="Lin Yang">
+        
+    <meta property="og:url" content="https://yl305237731.github.io/post/doctran1/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://yl305237731.github.io/">
+                        Lin Yang&#39;s Blog
+                    </a>
+                
+                <p class="description">专注于机器学习、深度学习、图像处理</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://yl305237731.github.io/">首页</a>
+                    
+                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Pyplot tutorial翻译文档</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年12月21日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="pyplot简介">pyplot简介</h1>
+
+<p>matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Figure上进行操作，比如在Figure上画点，画线等等。
+在pyplot中，各种状态在函数调用之间被保留，以便它跟踪诸如当前图形和绘图区域之类的内容，并且绘图函数指向当前轴。（意思就是在默认情况下，一连串的pyplot的操作结果都在一个Figure中）。</p>
+
+<p>使用pyplot快速生成可视化：</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+plt.plot([1,2,3,4])
+plt.ylabel('some numbers')
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+在这个例子中只提供了一个轴的数据，结果显示在Y轴。 当只有一组数据时，matplotlib默认认为是Y轴数据，并根据其自动生成X轴的数据。其中生成的数据和给定的数据具有相同的长度，而且由于python的下标由0开始，故生成数据是[0,1,2,3]。</p>
+
+<p>plot() 是一个多功能的命令，它将接受任意数量的参数。例如，为了绘制x与y的对比，可以发出以下命令：</p>
+
+<pre><code class="language-python">plt.plot([1,2,3,4],[1,4,9,6])
+</code></pre>
+
+<p><img src="/img/pyplot1/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h2 id="定制plot风格">定制plot风格</h2>
+
+<p>对于每一对给定的数据，都有一个可选的第三个参数，用来指定线条的类型和颜色。格式字符串的字母和符号来自MATLAB，将颜色字符串与行样式字符串连接起来。默认格式的字符串是&rsquo;b-&lsquo;，它是一条实心的蓝色线。例如，要用红色圆圈绘制上面的图，需要发出以下命令</p>
+
+<pre><code class="language-python">plt.plot([1,2,3,4],[1,4,9,6],'ro')
+plt.axis([0,6,0,20])
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+axis()函数指定了坐标轴视窗的范围，分别代表 [xmin,xmax,ymin,ymax]。</p>
+
+<p>如果matplotlib仅限于处理列表，那么它对于数值处理是相当无用的。通常，我们都使用numpy数组。实际上，所有序列在内部都被转换为numpy数组。下面的示例演示了在一个命令中使用数组绘制具有不同格式样式的几行图。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.arange(0.,5.,0.2)
+plt.plot(data,data,'r--',data,data**2,'gs',data,data**3,'b^')
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h1 id="使用关键字字符串绘图">使用关键字字符串绘图</h1>
+
+<p>在某些情况下，数据具有允许使用字符串访问特定变量的格式。例如，使用numpy.recarray或pandas.DataFrame。
+Matplotlib允许为这样的对象提供数据关键字参数。如果提供，则可以生成带有与这些变量相对应的字符串的图表。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+data = {'a': np.arange(50),
+        'c': np.random.randint(0, 50, 50),
+        'd': np.random.randn(50)}
+data['b'] = data['a'] + 10 * np.random.randn(50)
+data['d'] = np.abs(data['d']) * 100
+plt.scatter('a', 'b', c='c', s='d', data=data)
+plt.xlabel('entry a')
+plt.ylabel('entry b')
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h1 id="使用分类变量进行绘图">使用分类变量进行绘图</h1>
+
+<p>还可以使用分类变量创建绘图。Matplotlib允许将分类变量直接传递给许多绘图函数。例如：</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+names = ['group_a', 'group_b', 'group_c']
+values = [5, 1, 30]
+
+plt.figure(1, figsize=(9, 3))
+
+plt.subplot(131)
+plt.bar(names, values)
+plt.subplot(132)
+plt.scatter(names, values)
+plt.subplot(133)
+plt.plot(names, values)
+plt.suptitle('Categorical Plotting')
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h1 id="控制线条属性">控制线条属性</h1>
+
+<p>线条有许多可以设置的属性：线宽、虚线样式、反锯齿等；参见matplotlib.lines.Line2D。</p>
+
+<p>1.使用关键字参数：</p>
+
+<pre><code class="language-python">plt.plot(x,y,linewidth = 3.0)  #设置线宽3.0
+</code></pre>
+
+<p>2.使用Line2D实例的setter方法。 plot函数返回的Line2D对象的列表。比如 line1，line2 = plt.plot(x1,y1,x2,y2).</p>
+
+<pre><code class="language-python">line = plt.plot(x,y,'ro')
+line.set_linewidth(4)
+</code></pre>
+
+<p>(用IDE，调用line的内置方法竟然没有自动补全，全靠背？？)
+3.使用setp()命令。</p>
+
+<pre><code class="language-python">lines = plt.plot(x1,y1,x2,y2)
+plt.setp(lines,color='r',linewidth = 2.0)  #使用关键字
+plt.setp(lines,'color','r','linewidth',2.0)  # MATLAB风格，不建议
+</code></pre>
+
+<p>使用setp()函数可以得到线的可设置属性列表</p>
+
+<pre><code class="language-python">data = np.arange(0.,5.,0.2)
+line, = plt.plot(data,data,'r--')
+plt.setp(line)
+plt.show()
+</code></pre>
+
+<p>output:</p>
+
+<pre><code class="language-python">  alpha: float (0.0 transparent through 1.0 opaque)
+  animated: bool
+  antialiased or aa: bool
+  ......
+  visible: bool
+  xdata: 1D array
+  ydata: 1D array
+  zorder: float
+</code></pre>
+
+<h1 id="使用多个图形和轴">使用多个图形和轴</h1>
+
+<p>MATLAB和pyplot具有当前图和当前轴的概念。所有绘图命令都应用于当前轴。函数gca()返回当前轴（matplotlib.axes.Axes实例），gcf()返回当前图（matplotlib&hellip;Figure实例）。通常情况下，你不必担心这个，因为它都是在幕后处理的。下面是创建两个子绘图的脚本</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+def f(t):
+    return np.exp(-t) * np.cos(2*np.pi*t)
+
+t1 = np.arange(0.0, 5.0, 0.1)
+t2 = np.arange(0.0, 5.0, 0.02)
+
+plt.figure(1)
+plt.subplot(211)
+plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
+
+plt.subplot(212)
+plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>subplot()命令指定了Figure中子区域的排列情况，以及当前是第几个。如subplot(243)表示将figure分为2行4列（一个8个），当前在第三个子区域上绘图</p>
+
+<pre><code class="language-python">plt.subplot(241)
+plt.subplot(243)
+plt.plot([5,6,7,8],[1,2,3,4],'ro')
+plt.subplot(248)
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/8.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>可以使用多个Figure()生成多个figure，每个figure又可以具有各自的行为</p>
+
+<pre><code class="language-python">plt.figure(1)                # 第一个figure
+plt.subplot(211)             #
+plt.plot([1, 2, 3])
+plt.subplot(212)             #
+plt.plot([4, 5, 6])
+
+
+plt.figure(2)                # 第二个figure
+plt.plot([4, 5, 6])          # 默认创建subplot(111)
+
+plt.figure(1)                # 此时和前面的figure1是同一个figure
+plt.subplot(211)             #
+plt.title('Easy as 1, 2, 3') #
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/9.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>可以使用clf()或cla()清空当前Figure或axes.</p>
+
+<h1 id="文本处理">文本处理</h1>
+
+<p>text()命令可以用来给任意位置添加文本xlabel(),ylabel(),title()被用来给对应位置添加文本。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+
+# 直方图统计
+n, bins, patches = plt.hist(x, 50, density=1, facecolor='g', alpha=0.75)
+
+
+plt.xlabel('Smarts')
+plt.ylabel('Probability')
+plt.title('Histogram of IQ')
+plt.text(60, .025, r'$\mu=100,\ \sigma=15$') # 文本坐标，以及显示的文本（tex格式）
+plt.axis([40, 160, 0, 0.03]) # 视窗范围
+plt.grid(True) # 网格显示
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/10.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h2 id="注释文本">注释文本</h2>
+
+<p>上面的基本text()命令的使用将文本放在Axes上的任意位置。文本的一个常见用途是注释绘图的某些特性，而annotate()方法提供了有用的功能，使注释变得容易。在注释中，需要考虑两点：由参数xy表示的注释位置和文本xy text的位置。这两个参数都是(x,y)元组。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+ax = plt.subplot(111)
+
+t = np.arange(0.0, 5.0, 0.01)
+s = np.cos(2*np.pi*t)
+line, = plt.plot(t, s, lw=2)
+
+plt.annotate('local max', xy=(2, 1), xytext=(3, 1.5),
+             arrowprops=dict(facecolor='black', shrink=0.05),
+             )
+
+plt.ylim(-2, 2)
+plt.show()
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/11.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h1 id="对数轴与非线性轴">对数轴与非线性轴</h1>
+
+<p>使用plt.xscale()火plt.yscale()即可改变轴的刻度</p>
+
+<pre><code class="language-python">from matplotlib.ticker import NullFormatter  # useful for `logit` scale
+import matplotlib.pyplot as plt
+import numpy as np
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+# make up some data in the interval ]0, 1[
+y = np.random.normal(loc=0.5, scale=0.4, size=1000)
+y = y[(y &gt; 0) &amp; (y &lt; 1)]
+y.sort()
+x = np.arange(len(y))
+
+# plot with various axes scales
+plt.figure(1)
+
+# linear
+plt.subplot(221)
+plt.plot(x, y)
+plt.yscale('linear')
+plt.title('linear')
+plt.grid(True)
+
+
+# log
+plt.subplot(222)
+plt.plot(x, y)
+plt.yscale('log')
+plt.title('log')
+plt.grid(True)
+
+
+# symmetric log
+plt.subplot(223)
+plt.plot(x, y - y.mean())
+plt.yscale('symlog', linthreshy=0.01)
+plt.title('symlog')
+plt.grid(True)
+
+# logit
+plt.subplot(224)
+plt.plot(x, y)
+plt.yscale('logit')
+plt.title('logit')
+plt.grid(True)
+# Format the minor tick labels of the y-axis into empty strings with
+# `NullFormatter`, to avoid cumbering the axis with too many labels.
+plt.gca().yaxis.set_minor_formatter(NullFormatter())
+# Adjust the subplot layout, because the logit one may take more space
+# than usual, due to y-tick labels like &quot;1 - 10^{-3}&quot;
+plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,
+                    wspace=0.35)
+
+plt.show()
+</code></pre>
+
+<p><img src="/img/pyplot1/12.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>写这篇出于加深pyplot的印象，自己以后再用也不用去翻别人的博客。</p>
+
+<p>官方链接：<a href="https://matplotlib.org/tutorials/introductory/pyplot.html#pyplot-tutorial">matplotlib/tutorials</a></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/numpyjiasu/">Numpy使用GPU加速</a></li>
+        
+        <li><a href="/post/pipei1/">模版匹配之相关匹配</a></li>
+        
+        <li><a href="/post/ransac/">线性拟合笔记之：Ransac算法</a></li>
+        
+        <li><a href="/post/linersqur/">线性拟合笔记之：最小二乘法</a></li>
+        
+        <li><a href="/post/libsvm/">Ubuntu &#43; Python下libsvm使用小结</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3">Pyplot文档</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= ""
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现">Keras多标签分类网络实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结">Keras数据集加载小结</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片">python下mnist数据集转化为图片</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
+    
+    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
+    
+    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
+    
+    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
+    
+    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
+    
+    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
+    
+    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
+    
+    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
+    
+    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
+    
+    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
+    
+    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
+    
+    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
+    
+    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
+    
+    <a href="https://yl305237731.github.io/tags/python/">python</a>
+    
+    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
+    
+    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>
