@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Development on 飞雪无情的博客</title>
-    <link>http://www.flysnow.org/categories/development/</link>
-    <description>Recent content in Development on 飞雪无情的博客</description>
+    <title>Development on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/categories/development/</link>
+    <description>Recent content in Development on Lin Yang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 21 Jul 2019 11:59:58 +0800</lastBuildDate>
     
-	<atom:link href="http://www.flysnow.org/categories/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yl305237731.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Second</title>
-      <link>http://www.flysnow.org/post/second/</link>
+      <link>https://yl305237731.github.io/post/second/</link>
       <pubDate>Sun, 21 Jul 2019 11:59:58 +0800</pubDate>
       
-      <guid>http://www.flysnow.org/post/second/</guid>
+      <guid>https://yl305237731.github.io/post/second/</guid>
       <description>hello2:wq</description>
     </item>
     
     <item>
       <title>First</title>
-      <link>http://www.flysnow.org/post/first/</link>
+      <link>https://yl305237731.github.io/post/first/</link>
       <pubDate>Sun, 21 Jul 2019 11:59:53 +0800</pubDate>
       
-      <guid>http://www.flysnow.org/post/first/</guid>
+      <guid>https://yl305237731.github.io/post/first/</guid>
       <description>hello1</description>
     </item>
     
