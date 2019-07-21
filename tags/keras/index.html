@@ -76,6 +76,33 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/yovo-keras/">基于yolo_v3的水印检测</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年7月21日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
+基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
+一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
+基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
+结果展示 ……
+                                <p class="readmore"><a href="https://yl305237731.github.io/post/yovo-keras/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://yl305237731.github.io/post/keras_data_aug/">Keras数据增强并保存到本地</a>
                                 </h1>
                             </header>
@@ -231,6 +258,10 @@ def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_n
 <ul class="widget-list">
     
     <li>
+        <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
+    </li>
+    
+    <li>
         <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
     </li>
     
@@ -264,10 +295,6 @@ def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_n
     
     <li>
         <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片">python下mnist数据集转化为图片</a>
     </li>
     
 </ul>
@@ -320,7 +347,7 @@ def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_n
     </li>
     
     <li>
-        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(5)</a>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(6)</a>
     </li>
     
     <li>
@@ -374,6 +401,8 @@ def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_n
     
     <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
     
+    <a href="https://yl305237731.github.io/tags/yolo_v3/">yolo_v3</a>
+    
     <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
     
     <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
@@ -389,6 +418,8 @@ def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_n
     <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
     
     <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
     
     <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
     

@@ -66,6 +66,31 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片" >python下mnist数据集转化为图片</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年12月22日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr)  以上代码以训练集为例，将图片的vector转化为28*28的png图片，同时保存每一张图片对应的label（label由onehot转成数字）到TXT文本中。 以下是我的网盘链接：https://pan.baidu.com/s/1pV8KuKbDy9yktpREk5ZDvw 提取码：wac5……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/mnist2img/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://yl305237731.github.io/post/knn/" title="监督分类之：KNN算法" >监督分类之：KNN算法</a>
                                 </h1>
                             </header>
@@ -326,37 +351,6 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
                             <p class="readmore"><a href="https://yl305237731.github.io/post/kdog_cat/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/googleid/" title="深度学习数据利器，批量图片下载,github项目google_images_download" >深度学习数据利器，批量图片下载,github项目google_images_download</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年10月10日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些脚本，但是还是喜欢用这个，所以做个记录。重点：翻墙 项目地址：https://github.com/hardikvasa/google-images-download
-mac，Linux，windows下均可。以下主要针对于Windows下使用记录。
-1.安装 最简单的方式：
-pip install google_images_download  2.使用 例如下载20张猫的图片,命令行进入文件存放目录
-执行
-googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字，-l（limit） 限制图片数
-当下载图片数量超过100张时，提示缺少Chromedriver chromedriver 链接
-下载，解压得到一个exe文件，放到文件下载目录
-执行，例：googleimagesdownload -k &ldquo;cat&rdquo; -l 1000 &ndash;chromedriver=&ldquo;./chromedriver&rdquo; 这个命令还有很多参数，具体看GitHub项目中的说明。 ……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/googleid/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -409,6 +403,10 @@ googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字
 <ul class="widget-list">
     
     <li>
+        <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
+    </li>
+    
+    <li>
         <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
     </li>
     
@@ -442,10 +440,6 @@ googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字
     
     <li>
         <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片">python下mnist数据集转化为图片</a>
     </li>
     
 </ul>
@@ -498,7 +492,7 @@ googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字
     </li>
     
     <li>
-        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(5)</a>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(6)</a>
     </li>
     
     <li>
@@ -552,6 +546,8 @@ googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字
     
     <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
     
+    <a href="https://yl305237731.github.io/tags/yolo_v3/">yolo_v3</a>
+    
     <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
     
     <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
@@ -567,6 +563,8 @@ googleimagesdownload -k &quot;cat&quot; -l 20  -k（keyword） 指定关键字
     <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
     
     <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
     
     <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
     
