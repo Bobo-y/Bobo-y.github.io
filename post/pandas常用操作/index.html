@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pandas常用操作 | Lin Yang&#39;s Blog</title>
+    <meta property="og:title" content="Pandas常用操作 - Lin Yang&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-07-28T21:58:03&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-07-28T21:58:03&#43;08:00">
+        
+    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
+    <meta name="description" content="Pandas常用操作">
+        <meta name="author" content="Lin Yang">
+        
+    <meta property="og:url" content="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://yl305237731.github.io/">
+                        Lin Yang&#39;s Blog
+                    </a>
+                
+                <p class="description">专注于机器学习、深度学习、图像处理</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://yl305237731.github.io/">首页</a>
+                    
+                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Pandas常用操作</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年7月28日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h3 id="读数据">读数据</h3>
+
+<p>1.读csv</p>
+
+<pre><code class="language-python">df = pd.read_csv(&quot;data.csv&quot;)
+</code></pre>
+
+<p>2.读数据库</p>
+
+<pre><code class="language-python">import MySQLdb
+from pandas import DataFrame
+from pandas.io.sql import read_sql
+db = MySQLdb.connect(host=&quot;localhost&quot;,    # your host, usually localhost
+                     user=&quot;root&quot;,         # your username
+                     passwd=&quot;password&quot;,   # your password
+                     db=&quot;dbname&quot;)         # name of the data base
+query = &quot;SELECT * FROM tablename&quot;
+df = read_sql(query, db)
+</code></pre>
+
+<h3 id="数据快照">数据快照</h3>
+
+<p>1.使用head和tail命令查看指定行数据</p>
+
+<pre><code class="language-python">import pandas as pd
+df = pd.read_csv(&quot;data.csv&quot;)
+# 返回数据帧的信息，包括行列数，列名，类型，大小等
+df.info()
+
+# top 5 rows
+df.head()
+# top 50 rows
+df.head(50)
+# last 5 rows
+df.tail()
+# last 50 rows
+df.tail(50)
+</code></pre>
+
+<p><img src="/img/pandas常用数据操作/0.png" alt="" />
+2.获取数值列的统计信息</p>
+
+<pre><code class="language-python">df.describe()
+</code></pre>
+
+<p><img src="/img/pandas常用数据操作/1.png" alt="" /></p>
+
+<pre><code class="language-python"># 取列名为num1的列
+col = df['num1']
+# 打印此列最大值
+print(max(col))
+# 打印dataframe的行数
+print(len(df))
+#打印dataframe的Shape
+print(df.shape)
+</code></pre>
+
+<h3 id="处理dataframe中的列">处理dataframe中的列</h3>
+
+<p>1.选择列. pandas选择列数据的方式有两种，一种是点运算符（比如：df.A），一种是方括号(比如： df[&ldquo;A&rdquo;]).
+由于列名可能包含空格或者和pandas数据帧内置函数相同或需要列名作为变量时，点运算符的方式失效。故推荐
+方括号形式。</p>
+
+<pre><code class="language-python"># 点运算方式，不能给num1加引号
+df.num1
+# 方括号方式
+col_name  =&quot;num1&quot;
+df[col_name]
+</code></pre>
+
+<p>2.获取列名</p>
+
+<pre><code class="language-python">columnnames = df.columns
+</code></pre>
+
+<p>3.指定列名</p>
+
+<pre><code class="language-python"># 必须保证新列名数和旧列名数量一样
+df.columns = ['c1', 'c2', 'c3', 'c4','c5']
+# 修改指定的列名
+df.rename(columns = {'c1':'R1','c5':'R2'},inplace=True)
+</code></pre>
+
+<p>4.获取指定列的字集</p>
+
+<pre><code class="language-python">df = df[['R1', 'R2']]
+</code></pre>
+
+<p>5.查看列的数据类型</p>
+
+<pre><code class="language-python">df.dtypes
+</code></pre>
+
+<h3 id="在数据帧上应用函数-apply和lambda">在数据帧上应用函数：apply和Lambda</h3>
+
+<p>1.创建列</p>
+
+<pre><code class="language-python"># 通过基本算术操作增加列
+df['new'] = (df['R1'] + df['R2']/10)/2
+
+# 需要对列数据进行复杂的操作
+def custom_fun(date, R1):
+    if '2018-01-01' in date:
+        return min(10,R1+1)
+    elif '2019-01-01' in date:
+        return max(0,rating-1)
+    else:
+        return rating
+
+df['rate'] = df.apply(lambda x: custom_fun(x['date'],x['R1']),axis=1)
+
+# 一般结构如下：
+df.apply(lambda x: func(x['col1'],x['col2']),axis=1)
+</code></pre>
+
+<p>2.过滤数据帧
+Pandas可以非常轻松地对数据帧进行过滤和子集化。可以使用常规运算符和＆，|，〜运算符对数据帧进行过滤和子集化</p>
+
+<pre><code class="language-python"># 过滤出R1列大于8的所有数据
+df_gt_8 = df[df['R1']&gt;8]
+# 过滤出R1列大于8同时date列大于2018-01-01的所有数据
+And_df = df[(df['R1']&gt;8) &amp; (df['date']&gt;'2018-01-01')]
+# 过滤出R1大于8或者R2大于80的所有数据
+Or_df = df[(df['R1']&gt;8) | (df['R2']&gt;80)]
+# R1大于8或者R2大于80的所有数据都将被排除
+Not_df = df[~((df['R1']&gt;8) | (df['R2']&gt;80))]
+
+# 过滤出c2列以-化为后长度大于3数据
+new_df = df[df.apply(lambda x : len(x['c2'].split(&quot;-&quot;))&gt;=3,axis=1)]
+</code></pre>
+
+<p>3.改变列类型</p>
+
+<pre><code class="language-python"># 在进行数据转换的时候，如果c2中包含不能转换的字符则会报错，如下，希望将日期字符串转化为数字，第一种方式会报错，
+# 因为包含‘-’符号，无法转换
+df['c2_new'] = newDf['c2'].astype('int')
+# 使用apply lambda进行转换
+df['Price'] = df.apply(lambda x: int(x['c2'].replace('-', '')),axis=1)
+
+</code></pre>
+
+<h3 id="数据帧的聚合">数据帧的聚合</h3>
+
+<p>对于groupBy函数，使用格式参考如下。
+只需要提供两个主要信息：
+（1）要分组的列
+（2）指定要应用列和对应列的函数字典</p>
+
+<pre><code class="language-python">df.groupby(list of columns to groupby on).aggregate({'colname':func1, 'colname2':func2}).reset_index()
+# 如数据有三个列，分别为date（日期），和数值列，以date分组，计算数值列的和，即计算date为同一天下c1和c2各自的总和
+df.groupby(['date']).aggregate({'c1':np.sum, 'c2':np.sum}).reset_index()
+</code></pre>
+
+<h3 id="多数据帧处理-concat与merge">多数据帧处理，concat与merge</h3>
+
+<p>1.concat. 使用concat对数据帧进行拼接，可通过指定axis设置拼接方式，默认行拼接axis=0（行数增加），axis=1-列拼接(列数增加)</p>
+
+<pre><code class="language-python">m1 = df[df['c2']=='2018-01']
+m2 = df[df['c2']=='2019-01']
+# 行数为两者和，列数不变
+m3 = pd.concat([m1,m2],axis =0)
+# 列数为两者和，行数不变
+m4 = pd.concat([m1,m2],axis =1)
+</code></pre>
+
+<p>2.merge 当信息分布在多个数据帧中时，需要将多个数据帧进行融合（类似数据库中的表连接）</p>
+
+<pre><code class="language-python"># 对两个数据帧在列名为same_col列进行左连接
+df_merge = pd.merge(dataframe1,dataframe2,on='same_col',how='left')
+
+</code></pre>
+
+<p>连接方式有：[&lsquo;left&rsquo;,&lsquo;right&rsquo;,&lsquo;inner&rsquo;,&lsquo;outer&rsquo;]，大部分时候需要的是左连接</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">使用SimpleHttpServer传输文件</a></li>
+        
+        <li><a href="/post/maccmd/">Mac命令行命令记录</a></li>
+        
+        <li><a href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
+        
+        <li><a href="/post/tiaobanji/">mac通过跳板机对服务器上传下载文件</a></li>
+        
+        <li><a href="/post/videoseg_summary/">视频对象分割小记</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://yl305237731.github.io/tags/pandas">Pandas</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= ""
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作">Pandas常用操作</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件">使用SimpleHttpServer传输文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录">Mac命令行命令记录</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
+    
+    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
+    
+    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
+    
+    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
+    
+    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
+    
+    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
+    
+    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
+    
+    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
+    
+    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
+    
+    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
+    
+    <a href="https://yl305237731.github.io/tags/maccmd/">maccmd</a>
+    
+    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
+    
+    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/pandas/">pandas</a>
+    
+    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
+    
+    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
+    
+    <a href="https://yl305237731.github.io/tags/python/">python</a>
+    
+    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/simplehttpserver/">simplehttpserver</a>
+    
+    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
+    
+    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
+    
+    <a href="https://yl305237731.github.io/tags/yolo_v3/">yolo_v3</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
+    
+    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

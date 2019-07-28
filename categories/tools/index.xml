@@ -6,10 +6,43 @@
     <description>Recent content in tools on Lin Yang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Jul 2019 13:27:58 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jul 2019 21:58:03 +0800</lastBuildDate>
     
 	<atom:link href="https://yl305237731.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pandas常用操作</title>
+      <link>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>读数据 1.读csv
+df = pd.read_csv(&amp;quot;data.csv&amp;quot;)  2.读数据库
+import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)  数据快照 1.使用head和tail命令查看指定行数据
+import pandas as pd df = pd.read_csv(&amp;quot;data.csv&amp;quot;) # 返回数据帧的信息，包括行列数，列名，类型，大小等 df.info() # top 5 rows df.head() # top 50 rows df.</description>
+    </item>
+    
+    <item>
+      <title>使用SimpleHttpServer传输文件</title>
+      <link>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python
+命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认8000）  查看本机IP Mac， Linux
+ifconfig  en0 inet为本机IP：10.2.56.109 也可直接查看
+ifconfig en0  用其它电脑，登陆访问 使用别的电脑，打开浏览器，输入IP：端口 点击文件即可下载</description>
+    </item>
+    
+    <item>
+      <title>Mac命令行命令记录</title>
+      <link>https://yl305237731.github.io/post/maccmd/</link>
+      <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/maccmd/</guid>
+      <description> mac 下查看端口占用 sudo lsod -i:端口号  </description>
+    </item>
     
     <item>
       <title>mac通过跳板机对服务器上传下载文件</title>

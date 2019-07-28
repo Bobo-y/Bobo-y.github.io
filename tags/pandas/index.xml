@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pandas on Lin Yang&#39;s Blog</title>
+    <link>https://yl305237731.github.io/tags/pandas/</link>
+    <description>Recent content in Pandas on Lin Yang&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 28 Jul 2019 21:58:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://yl305237731.github.io/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pandas常用操作</title>
+      <link>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
+      
+      <guid>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>读数据 1.读csv
+df = pd.read_csv(&amp;quot;data.csv&amp;quot;)  2.读数据库
+import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)  数据快照 1.使用head和tail命令查看指定行数据
+import pandas as pd df = pd.read_csv(&amp;quot;data.csv&amp;quot;) # 返回数据帧的信息，包括行列数，列名，类型，大小等 df.info() # top 5 rows df.head() # top 50 rows df.</description>
+    </item>
+    
+  </channel>
+</rss>

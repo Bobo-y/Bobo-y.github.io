@@ -66,6 +66,90 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/libsvm/" title="Ubuntu &#43; Python下libsvm使用小结" >Ubuntu &#43; Python下libsvm使用小结</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月28日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载网站是链接，目前更新到3.23版本。
+安装测试 我是在Ubuntu16.04环境下使用的 解压后目录如下： 针对Python，进入Python包，内容如下： 测试： 命令行输入：
+import sys sys.path.append('/home/thinkstation/liny/libsvm/python') import svm  如果系统里是第一次使用libsvm,此时会报错 LIBSVM library not found 进入linsvm目录，命令行输入
+make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系统路径： 加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中
+使用 1.使用 a1a二分类数据集 链接 特征已经进行了处理，libsvm 数据格式如下： 可以看出，格式为： 类别 index：特征 index：特征 &hellip;&hellip;.
+2.mnist数据集 libsvm官网数据集中的mnist数据 其中前两项数据没有经过scale，后两项没有经过scale 用未scale的数据训练测试： 训练了接近5个小时，-_-||
+精度竟然这么低。。。。。 换上scale后的数据： 训练时间10分钟左右，精度0.94
+3.猫狗二分类 数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1 准确率0.62，可能数据有点少吧。。。。 总之，作者写的很完善了，还在不断优化中。 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行
+主要使用函数 svmutil.py中 1. svm_load_model(model_file_name)
+2. svm_save_model(model_file_name, model)
+3. svm_train(arg1, arg2=None, arg3=None)
+4. svm_predict(y, x, m, options=&ldquo;&rdquo;)……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/libsvm/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/keras_simi/" title="基于Keras图像相似度计算孪生网络" >基于Keras图像相似度计算孪生网络</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月12日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">图像处理</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = ['bear','blackswan','bus','camel','car','cows','dance','dog','hike','hoc','kite','lucia','mallerd','pigs','soapbox','stro','surf','swing','train','walking'] test_names = ['boat','dance-jump','drift-turn','elephant','libby'] def load_data(seq_names,data_number,seq_len): #生成图片对 print('loading data.....') frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &lt; data_number: count = count + 1 pos_neg = np.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_simi/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/kdog_cat/" title="Keras 猫狗二分类" >Keras 猫狗二分类</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月11日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name=='cat': labels.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/kdog_cat/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://yl305237731.github.io/post/googleid/" title="深度学习数据利器，批量图片下载,github项目google_images_download" >深度学习数据利器，批量图片下载,github项目google_images_download</a>
                                 </h1>
                             </header>
@@ -235,6 +319,18 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
 <ul class="widget-list">
     
     <li>
+        <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作">Pandas常用操作</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件">使用SimpleHttpServer传输文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录">Mac命令行命令记录</a>
+    </li>
+    
+    <li>
         <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
     </li>
     
@@ -260,18 +356,6 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
     
     <li>
         <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现">Keras多标签分类网络实现</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结">Keras数据集加载小结</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
     </li>
     
 </ul>
@@ -304,7 +388,7 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
     </li>
     
     <li>
-        <a href="https://yl305237731.github.io/categories/tools/">tools(8)</a>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(11)</a>
     </li>
     
     <li>
@@ -362,9 +446,13 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
     
     <a href="https://yl305237731.github.io/tags/linux/">linux</a>
     
+    <a href="https://yl305237731.github.io/tags/maccmd/">maccmd</a>
+    
     <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
     
     <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/pandas/">pandas</a>
     
     <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
     
@@ -373,6 +461,8 @@ def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mar
     <a href="https://yl305237731.github.io/tags/python/">python</a>
     
     <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/simplehttpserver/">simplehttpserver</a>
     
     <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
     

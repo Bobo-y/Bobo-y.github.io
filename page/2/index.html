@@ -66,6 +66,91 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现" >Keras多标签分类网络实现</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月29日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/keras">Keras</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB">“多标签分类”</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为softmax函数。 * 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。
+数据准备 我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体
+数据目录如下： 按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的 数据生成 我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]
+data_gen.py
+import os import numpy as np from PIL import Image def to_multi_label(num_list, num_class): lab = np.zeros(shape=(1,num_class)) for i in num_list: lab[0,int(i)-1] = 1 return lab def generate_arrays_from_txt(path, batch_size, num_class): with open(path) as f: while True: imgs = [] labs = np.zeros(shape=(batch_size,num_class)) i= 0 while len(imgs) &lt; batch_size: line = f.readline() if not line: f.seek(0) line = f.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_duofenlei/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结" >Keras数据集加载小结</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月26日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/keras">Keras</a></span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。
+总的来说keras模型加载数据主要有三种方式：.fit(), .fit_generator()和.train_on_batch()。 1.fit(): 上函数，各个参数的意义就不解释了
+fit(x=None, y=None, batch_size=None, epochs=1, verbose=1, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None)  从官方文档中可以看出，fit()是需要先把整个数据集加载进来，然后喂入网络，因为minist数据集比较小，这么做是可行的，但对于实际开发而言，这么做是不可行的，需要大量的内存资源，同时不能对数据进行在线提升。
+一次性加载整个数据集的示例代码： 任务为猫和狗的二分类，train_data下包含cat和dog两个文件夹，代码将两个文件夹下图片和标签存入numpy数组，返回为训练数据和训练标签。
+def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name=='cat': labels.append(0) else: labels.append(1) return np.array(tran_imags), np.array(labels) ## train_data,train_labs = load_data() model.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_dataload/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现" >LeetCode:开方函数sqrt实现</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月10日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/leetcode">LeetCode</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],故在[0,A/2+1]的范围内进行二分查找
+def sqrt(target): low = 0 high = target // 2 + 1 while low &lt;= high: mid = (low + high) // 2 sq = mid * mid if target == sq: return mid else: if target &gt; sq: low = mid + 1 else: high = mid - 1  二：牛顿迭代法 二分法，基本都能想到。面试官想要的都是牛顿迭代法的解答。 参照百度百科，此时求解方程$f(x)=x^2-a$,开方即求$f(x)=0$,一阶泰勒展开： $$f(x)=f(x_0) + f^{&lsquo;}(x_0)(x-x_0)$$ 令为0，可得更新公式： $$x = \frac{1}{2}(x_0+\frac{a}{x_0})$$
+def sqrt(target): if target == 0: return 0 last = 0 res = 1 while(abs(last-res)&gt;=0.……
+                            </div>
+                            <p class="readmore"><a href="https://yl305237731.github.io/post/alg1/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://yl305237731.github.io/post/mnist2img/" title="python下mnist数据集转化为图片" >python下mnist数据集转化为图片</a>
                                 </h1>
                             </header>
@@ -267,90 +352,6 @@ import matplotlib.pyplot as plt import numpy as np class Least_square: weight = 
                             <p class="readmore"><a href="https://yl305237731.github.io/post/linersqur/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/libsvm/" title="Ubuntu &#43; Python下libsvm使用小结" >Ubuntu &#43; Python下libsvm使用小结</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月28日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载网站是链接，目前更新到3.23版本。
-安装测试 我是在Ubuntu16.04环境下使用的 解压后目录如下： 针对Python，进入Python包，内容如下： 测试： 命令行输入：
-import sys sys.path.append('/home/thinkstation/liny/libsvm/python') import svm  如果系统里是第一次使用libsvm,此时会报错 LIBSVM library not found 进入linsvm目录，命令行输入
-make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系统路径： 加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中
-使用 1.使用 a1a二分类数据集 链接 特征已经进行了处理，libsvm 数据格式如下： 可以看出，格式为： 类别 index：特征 index：特征 &hellip;&hellip;.
-2.mnist数据集 libsvm官网数据集中的mnist数据 其中前两项数据没有经过scale，后两项没有经过scale 用未scale的数据训练测试： 训练了接近5个小时，-_-||
-精度竟然这么低。。。。。 换上scale后的数据： 训练时间10分钟左右，精度0.94
-3.猫狗二分类 数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1 准确率0.62，可能数据有点少吧。。。。 总之，作者写的很完善了，还在不断优化中。 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行
-主要使用函数 svmutil.py中 1. svm_load_model(model_file_name)
-2. svm_save_model(model_file_name, model)
-3. svm_train(arg1, arg2=None, arg3=None)
-4. svm_predict(y, x, m, options=&ldquo;&rdquo;)……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/libsvm/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/keras_simi/" title="基于Keras图像相似度计算孪生网络" >基于Keras图像相似度计算孪生网络</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月12日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">图像处理</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = ['bear','blackswan','bus','camel','car','cows','dance','dog','hike','hoc','kite','lucia','mallerd','pigs','soapbox','stro','surf','swing','train','walking'] test_names = ['boat','dance-jump','drift-turn','elephant','libby'] def load_data(seq_names,data_number,seq_len): #生成图片对 print('loading data.....') frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &lt; data_number: count = count + 1 pos_neg = np.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_simi/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/kdog_cat/" title="Keras 猫狗二分类" >Keras 猫狗二分类</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月11日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name=='cat': labels.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/kdog_cat/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -403,6 +404,18 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
 <ul class="widget-list">
     
     <li>
+        <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作">Pandas常用操作</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件">使用SimpleHttpServer传输文件</a>
+    </li>
+    
+    <li>
+        <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录">Mac命令行命令记录</a>
+    </li>
+    
+    <li>
         <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
     </li>
     
@@ -428,18 +441,6 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
     
     <li>
         <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_duofenlei/" title="Keras多标签分类网络实现">Keras多标签分类网络实现</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_dataload/" title="Keras数据集加载小结">Keras数据集加载小结</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/alg1/" title="LeetCode:开方函数sqrt实现">LeetCode:开方函数sqrt实现</a>
     </li>
     
 </ul>
@@ -472,7 +473,7 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
     </li>
     
     <li>
-        <a href="https://yl305237731.github.io/categories/tools/">tools(8)</a>
+        <a href="https://yl305237731.github.io/categories/tools/">tools(11)</a>
     </li>
     
     <li>
@@ -530,9 +531,13 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
     
     <a href="https://yl305237731.github.io/tags/linux/">linux</a>
     
+    <a href="https://yl305237731.github.io/tags/maccmd/">maccmd</a>
+    
     <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
     
     <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
+    
+    <a href="https://yl305237731.github.io/tags/pandas/">pandas</a>
     
     <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
     
@@ -541,6 +546,8 @@ make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系�
     <a href="https://yl305237731.github.io/tags/python/">python</a>
     
     <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
+    
+    <a href="https://yl305237731.github.io/tags/simplehttpserver/">simplehttpserver</a>
     
     <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
     
