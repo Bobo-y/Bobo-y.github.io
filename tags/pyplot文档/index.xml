@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pyplot文档 on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/</link>
-    <description>Recent content in Pyplot文档 on Lin Yang&#39;s Blog</description>
+    <title>Pyplot文档 on 扬帆起航</title>
+    <link>/tags/pyplot%E6%96%87%E6%A1%A3/</link>
+    <description>Recent content in Pyplot文档 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Fri, 21 Dec 2018 15:39:00 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/pyplot%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pyplot tutorial翻译文档</title>
-      <link>https://yl305237731.github.io/post/doctran1/</link>
+      <link>/post/doctran1/</link>
       <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/doctran1/</guid>
-      <description>pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Figure上进行操作，比如在Figure上画点，画线等等。 在pyplot中，各种状态在函数调用之间被保留，以便它跟踪诸如当前图形和绘图区域之类的内容，并且绘图函数指向当前轴。（意思就是在默认情况下，一连串的pyplot的操作结果都在一个Figure中）。
-使用pyplot快速生成可视化：
-import matplotlib.pyplot as plt plt.plot([1,2,3,4]) plt.ylabel(&#39;some numbers&#39;) plt.show()  在这个例子中只提供了一个轴的数据，结果显示在Y轴。 当只有一组数据时，matplotlib默认认为是Y轴数据，并根据其自动生成X轴的数据。其中生成的数据和给定的数据具有相同的长度，而且由于python的下标由0开始，故生成数据是[0,1,2,3]。
-plot() 是一个多功能的命令，它将接受任意数量的参数。例如，为了绘制x与y的对比，可以发出以下命令：
-plt.plot([1,2,3,4],[1,4,9,6])  定制plot风格 对于每一对给定的数据，都有一个可选的第三个参数，用来指定线条的类型和颜色。格式字符串的字母和符号来自MATLAB，将颜色字符串与行样式字符串连接起来。默认格式的字符串是&amp;rsquo;b-&amp;lsquo;，它是一条实心的蓝色线。例如，要用红色圆圈绘制上面的图，需要发出以下命令
-plt.plot([1,2,3,4],[1,4,9,6],&#39;ro&#39;) plt.axis([0,6,0,20]) plt.show()  axis()函数指定了坐标轴视窗的范围，分别代表 [xmin,xmax,ymin,ymax]。
-如果matplotlib仅限于处理列表，那么它对于数值处理是相当无用的。通常，我们都使用numpy数组。实际上，所有序列在内部都被转换为numpy数组。下面的示例演示了在一个命令中使用数组绘制具有不同格式样式的几行图。
-import matplotlib.pyplot as plt import numpy as np data = np.arange(0.,5.,0.2) plt.plot(data,data,&#39;r--&#39;,data,data**2,&#39;gs&#39;,data,data**3,&#39;b^&#39;) plt.show()  使用关键字字符串绘图 在某些情况下，数据具有允许使用字符串访问特定变量的格式。例如，使用numpy.recarray或pandas.DataFrame。 Matplotlib允许为这样的对象提供数据关键字参数。如果提供，则可以生成带有与这些变量相对应的字符串的图表。
-import matplotlib.pyplot as plt import numpy as np data = {&#39;a&#39;: np.arange(50), &#39;c&#39;: np.random.randint(0, 50, 50), &#39;d&#39;: np.random.randn(50)} data[&#39;b&#39;] = data[&#39;a&#39;] + 10 * np.</description>
+      <guid>/post/doctran1/</guid>
+      <description>pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Fig</description>
     </item>
     
   </channel>

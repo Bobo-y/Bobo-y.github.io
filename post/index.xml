@@ -1,370 +1,257 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/post/</link>
-    <description>Recent content in Posts on Lin Yang&#39;s Blog</description>
+    <title>Posts on 扬帆起航</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 28 Jul 2019 21:58:03 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pandas常用操作</title>
-      <link>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <link>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
-      <description>读数据 1.读csv
-df = pd.read_csv(&amp;quot;data.csv&amp;quot;)  2.读数据库
-import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)  数据快照 1.使用head和tail命令查看指定行数据
-import pandas as pd df = pd.read_csv(&amp;quot;data.csv&amp;quot;) # 返回数据帧的信息，包括行列数，列名，类型，大小等 df.info() # top 5 rows df.head() # top 50 rows df.</description>
+      <guid>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db) 数据快照 1.使用h</description>
     </item>
     
     <item>
       <title>使用SimpleHttpServer传输文件</title>
-      <link>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <link>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
-      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python
-命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认8000）  查看本机IP Mac， Linux
-ifconfig  en0 inet为本机IP：10.2.56.109 也可直接查看
-ifconfig en0  用其它电脑，登陆访问 使用别的电脑，打开浏览器，输入IP：端口 点击文件即可下载</description>
+      <guid>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认800</description>
     </item>
     
     <item>
       <title>Mac命令行命令记录</title>
-      <link>https://yl305237731.github.io/post/maccmd/</link>
+      <link>/post/maccmd/</link>
       <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/maccmd/</guid>
-      <description> mac 下查看端口占用 sudo lsod -i:端口号  </description>
+      <guid>/post/maccmd/</guid>
+      <description>mac 下查看端口占用 sudo lsod -i:端口号</description>
     </item>
     
     <item>
       <title>基于yolo_v3的水印检测</title>
-      <link>https://yl305237731.github.io/post/yovo-keras/</link>
+      <link>/post/yovo-keras/</link>
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/yovo-keras/</guid>
-      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
-基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
-一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
-基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
-结果 最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。
-展望 以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定， 个人觉得加入attention机制效果应该还会提升。</description>
+      <guid>/post/yovo-keras/</guid>
+      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
     </item>
     
     <item>
       <title>mac通过跳板机对服务器上传下载文件</title>
-      <link>https://yl305237731.github.io/post/tiaobanji/</link>
+      <link>/post/tiaobanji/</link>
       <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/tiaobanji/</guid>
-      <description> 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用iterm2可方便使用rz、sz命令。 1.下载安装iterm2.iterm2链接，下载解压后打开，添加到应用程序即可。 2. 安装lrzsz brew install lrzsz  3. 下载iterm2-zmodem 直接进入GitHub下载iterm2-zmodem,解压后将iterm2-send-zmodem.sh和iterm2-recv-zmodem.sh复制到 /usr/local/bin
-# 解压后，进入iterm2-zmode-master cp iterm2-send-zmodem.sh /usr/local/bin/ cp iterm2-recv-zmodem.sh /usr/local/bin/ ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/sz ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/rz  4. 配置iterm2 点击 iterm2-&amp;gt;preferences-&amp;gt;profiles-&amp;gt;Advanced,然后点击Triggers下面的edit,点击➕号，添加如下： 分别是：**B0100，**B00000000000000
-4.然后就可以通过iterm2使用sz,rz命令 </description>
+      <guid>/post/tiaobanji/</guid>
+      <description>使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用ite</description>
     </item>
     
     <item>
       <title>视频对象分割小记</title>
-      <link>https://yl305237731.github.io/post/videoseg_summary/</link>
+      <link>/post/videoseg_summary/</link>
       <pubDate>Thu, 06 Jun 2019 15:25:02 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/videoseg_summary/</guid>
-      <description>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少，嘿嘿，所以相对好发（水）论文，马上毕业了，简单写个小记吧，不针对某篇论文做具体的技术分析。以下任务的定义等主要参考DAVIS benchmark，这个数据集确实推动了这个研究方向。
-任务定义与数据集 任务定义 视频对象分割可以被定义为将前景对象与背景区域进行分离的二值标记问题，如下图（图片来源DAVIS数据集）。视频对象分割一般是分割整个视频序列中最显著的、最关键的物体。 数据集 视频对象分割至2016年以来，这几年吸引了众多研究者的目光，同时取得了很大的研究进展。我个人认为这与DAVIS视频对象分割数据集的发布是密不可分的，所以非常感谢这些花费时间、金钱为我们这些小研究者铺平道路的大佬、科研机构们。
-  DAVIS数据集： DAVIS数据集是2016年伴随论文发布CVPR上的，其论文为： A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation（论文链接）。DAVIS2016数据集为单对象分割数据集，包含30个训练集，20个验证集。2017年，DAVIS在单对象分割数据集的基础上发布了多对象分割数据集DAVIS2017，一共有150个视频序列。如下图，单对象与多对象对比。 同时，DAVIS Benchmark包含了丰富的对比方法的评估结果。目前，DAVIS数据集应该是视频对象分割领域最完善的数据集。 DAVIS官方网站：https://davischallenge.org/
-SegTrack-v2: 此数据集包含14个视频序列，标注的质量一般，比较老，但对比实验一般会在这上面跑 SegTrack-v2链接
-YouTuBe: 此数据集的视频较长。而且原始的数据集中没有像素级的分割标签，是别的研究者做的标签。本文没有找到，所以未在这个数据集上做过对比实验。最关键的是，这个数据集太大了，官网下载得80多个G，国内下载网络还贼不稳定、贼慢，劝退-_-|| YouTuBe链接
-Moseg: 视频运动分割数据集，视频对象分割基本近年来没人用这个数据集 Moseg链接
-VSB100: VSB100虽然也称为视频对象分割benchmark。但个人认为偏向于静态图像分割，因为它对每一帧都进行了过度分割（如下图），要求太高了，与DAVIS中的定义有所差别。反正也没见人在这上面跑视频对象分割，-_-|| VSB100链接 GYGO: 2017年发布的视频对象分割数据集，其视频内容大都针对于电子商务，视频都比较短（1-10秒）。个人认为这个数据集的缺陷在于视频内容中所面临的问题太少，几乎不存在遮挡、快速运动等比较严苛的条件。所以这个数据集上的精度都在0.93以上，用的人少。 GYGO链接
-目前广泛被使用的是前三个数据集，DAVIS是根本，SegTrack和YouTuBe一般做泛化能力对比。
-评价指标 虽然基本各个数据集都会有自己的评价方式。目前主要还是根据DAVIS提供的代码做评估。主要包括：区域相似度（分割结果的IOU），轮廓准确性以及时域稳定性。
-技术路线分类 虽然视频对象分割技术各异，但从监督的程度被划分了三类。无监督式，半监督式以及监督式分割。
-无监督： 无监督式分割即不需要被分割样本的先验。传统的方法主要是从显著性或者运动信息来做，这一类比较经典的主要是FST论文链接。 对于深度学习实现的无监督视频对象分割，普遍通过离线进行有监督的训练得到通用的模型，对于新视频进行无监督的分割，本质上讲仍是通过有监督的学习而获得分割能力，这一类典型的有FSEG论文链接,SFL论文链接。
-半监督： 半监督式视频对象分割，即给出要分割的对象的一帧或多帧人工标注。半监督式分割一般为针对于特定物体的分割。同时，DAVIS上收录的近年来的做半监督论文几乎都是采用的神经网络。这一类典型的有OSVOS论文链接
-监督式： 此类的研究成果主要以某某-CUT为一个系列，主要继承自图割吧。这一方向，研究比较少，自己了解的不深。
-基于神经网络的模型 由于卷积神经网络的盛行，可以说近年来DAVIS收录的以及我所读过的论文，几乎都没离开过神经网络。虽然神经网络是黑盒模型，但仍然可以对当前的基于神经网络的论文按所学的特征进行划分。从FCN引入跳跃连接以及通过插值手段实现从图像到图像的分类以来，于是研究者的目光由图像分割扩展到视频对象分割。首先，与静态图像分割类似，视频对象分割模型从物体的外观（颜色、纹理、形状）等静态信息中学习特征，根据这些信息对物体进行分割。之后，考虑到视频与静态图像的本质区别在于视频包含了丰富的运动信息，运动信息与表观特征信息无疑成为互补，于是结合运动信息的模型成为了众多研究者所关注的方向。目前，结合表观信息与运动信息（运动信息目前几乎是采用光流）是视频对象分割的主流研究方向。
-表观信息模型 在FCN的启发下，OSVOS应运而生。OSVOS本质上是静态图像分割，不考虑视频具有的时域信息。即在大的数据集上离线训练一个通用前景-背景分类网络，测试阶段，针对于给定的分割对象，重新微调网络，使其针对于指定的分割对象。 OSVOS的流程如上图所示： Base Network: OSVOS的主干网络是基于VGG16实现的二分类网络。使用在ImageNet上预训练得到的模型参数初始化。 Parent Network： 在DAVIS单对象训练集上训练，使网络学会分割通用的前景-背景。 Test Network: 使用给定的视频的第一帧微调Parent Network，使网络快速针对于给定的目标。
-OSVOS在DAVIS上取得了0.79的精度。但是OSVOS也存在一个明显的问题，当目标发生了较大的变化时，网络适应不了物体的变化，视频的时域信息不应该不考虑。（哈哈，发现问题，接下来就是研究点了）既然OSVOS不考虑时域信息，那么引入时域信息不就是新的论文了吗？对，没错，接下来就是OnAVOS（论文链接），通过引入在线自适应提升了分割精度。（哈哈，我的第一篇论文也是针对自适应来做的，基本和OnAVOS同时做，可惜自己做的慢）
-表观信息加光流信息 随着光流网络的成熟，将基于FCN的表观信息模型与光流模型结合，实现两者的互补。 1.</description>
+      <guid>/post/videoseg_summary/</guid>
+      <description>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少</description>
     </item>
     
     <item>
       <title>Linux命令随记</title>
-      <link>https://yl305237731.github.io/post/linux_cmd/</link>
+      <link>/post/linux_cmd/</link>
       <pubDate>Sat, 13 Apr 2019 15:12:08 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/linux_cmd/</guid>
-      <description> 记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &amp;quot;*xxx*&amp;quot; | xargs -i cp {} /home/XXX/XXX/  2. 在使用xshell登录服务器时跑代码时，xshell断开，程序停止 解决方法：nohup将程序后台运行，并返回进程号
-nohup python XXXX &amp;amp;  使用setsid命令,例
-setsid python run.py -c config.json  退出xshell时，输入exit退出
-3.删除文件夹下的文件，保留文件夹 进入文件夹，比如删除文件夹下所有jpg图片
-find ./ -name &amp;quot;*jpg&amp;quot; | xargs rm  </description>
+      <guid>/post/linux_cmd/</guid>
+      <description>记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &amp;quot;*xxx*&amp;quot; | xargs -i cp {} /home/XXX/XXX/ 2. 在使</description>
     </item>
     
     <item>
       <title>Hr_net阅读笔记</title>
-      <link>https://yl305237731.github.io/post/hr_net/</link>
+      <link>/post/hr_net/</link>
       <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/hr_net/</guid>
-      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以及上采样的研究提供了一个新的参考，如图像语义分割、超分辨率重建等类似研究。 HRNet的网络结构 HRNet网络结构图如下（图片来自原论文）： HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。
-以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架： HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。
-信息交换单元： 下图说明了HRNet如何在各层之间进行特征的融合。 个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。 论文链接</description>
+      <guid>/post/hr_net/</guid>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以</description>
     </item>
     
     <item>
       <title>gitLab项目拉取及提交使用记录</title>
-      <link>https://yl305237731.github.io/post/gitlab_1/</link>
+      <link>/post/gitlab_1/</link>
       <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/gitlab_1/</guid>
-      <description>实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。
-一.创建分支  首先登陆gitlab，进入你要拉取的项目.  点击Branches  输入分支名，创建分支 二.项目拉到本机 新建一个文件夹，在文件夹里鼠标右键选git bash here。
- git init 本地初始化  添加项目地址，此处的地址就是主分支（master）的地址  然后将刚刚创建的分支拉下来
- git fetch origin watermark_generator(刚刚在gitlab创建的分支名) 2.git checkout -b watermark_gen(本地要创建的分支名) origin/watermark_generator(gitlab上创建的分支) 3.git pull origin watermark_generator(gitlab上刚刚创建的分支名) 到此，分支就拉下来了。
-  三.本地代码上传 然后就开始写代码，写啊写啊，写好了。开始上传
-1.git status 查看当前有哪些修改为提交，红色的的都是 2. 然后指定添加哪些，.代表能加的全加 3. 提交到本地仓库 4.提交到服务器gitlab 刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。 四.将本地已有的代码直接上传到新的分支上 上面是从gitlab上拉取分支，再传代码。以下是本地代码已经有了，将代码上传到gitlab分支上，在本地增加远程分支。 1. 将本地写好的项目上传到远程master 进入项目工程
-git init git add . git commit -m &amp;quot;submit&amp;quot; git push -u origin master   将本地代码上传到master下的分支 进入项目工程  git init git remote add origin git@github.</description>
+      <guid>/post/gitlab_1/</guid>
+      <description>实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Branches</description>
     </item>
     
     <item>
       <title>Keras数据增强并保存到本地</title>
-      <link>https://yl305237731.github.io/post/keras_data_aug/</link>
+      <link>/post/keras_data_aug/</link>
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_data_aug/</guid>
-      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）方法可快速的实现 1.首先实例化ImageDataGenerator对象以自己想要的属性 img_datagen = keras.preprocessing.image.ImageDataGenerator(featurewise_center=False, samplewise_center=False, featurewise_std_normalization=False, samplewise_std_normalization=False, zca_whitening=False, zca_epsilon=1e-06, rotation_range=0, width_shift_range=0.0, height_shift_range=0.0, shear_range=0.0, zoom_range=0.0, horizontal_flip=False, vertical_flip=False, rescale=None, ) #### 对于数据增强主要可能用到的属性如下，按自己的需求设置即可： ##### featurewise_center: 布尔值。将输入数据的均值设置为 0，逐特征进行。 ##### samplewise_center: 布尔值。将每个样本的均值设置为 0。 ##### featurewise_std_normalization: Boolean. 布尔值。将输入除以数据标准差，逐特征进行。 ##### zca_epsilon: ZCA 白化的 epsilon 值，默认为 1e-6。 ##### zca_whitening: 布尔值。是否应用 ZCA 白化。 ##### rotation_range: 整数。随机旋转的度数范围。 ##### width_shift_range: 浮点数、一维数组或整数 ##### height_shift_range: 浮点数、一维数组或整数 ##### shear_range: 浮点数。剪切强度（以弧度逆时针方向剪切角度）。 ##### zoom_range: 浮点数 或 [lower, upper]。随机缩放范围。 ##### channel_shift_range: 浮点数。随机通道转换的范围。 ##### horizontal_flip: 布尔值。随机水平翻转。 ##### vertical_flip: 布尔值。随机垂直翻转。  2.</description>
+      <guid>/post/keras_data_aug/</guid>
+      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）</description>
     </item>
     
     <item>
       <title>Keras多标签分类网络实现</title>
-      <link>https://yl305237731.github.io/post/keras_duofenlei/</link>
+      <link>/post/keras_duofenlei/</link>
       <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_duofenlei/</guid>
-      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为softmax函数。 * 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。
-数据准备 我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体
-数据目录如下： 按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的 数据生成 我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]
-data_gen.py
-import os import numpy as np from PIL import Image def to_multi_label(num_list, num_class): lab = np.zeros(shape=(1,num_class)) for i in num_list: lab[0,int(i)-1] = 1 return lab def generate_arrays_from_txt(path, batch_size, num_class): with open(path) as f: while True: imgs = [] labs = np.zeros(shape=(batch_size,num_class)) i= 0 while len(imgs) &amp;lt; batch_size: line = f.readline() if not line: f.seek(0) line = f.</description>
+      <guid>/post/keras_duofenlei/</guid>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
     </item>
     
     <item>
       <title>Keras数据集加载小结</title>
-      <link>https://yl305237731.github.io/post/keras_dataload/</link>
+      <link>/post/keras_dataload/</link>
       <pubDate>Tue, 26 Mar 2019 15:20:23 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_dataload/</guid>
-      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。
-总的来说keras模型加载数据主要有三种方式：.fit(), .fit_generator()和.train_on_batch()。 1.fit(): 上函数，各个参数的意义就不解释了
-fit(x=None, y=None, batch_size=None, epochs=1, verbose=1, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None)  从官方文档中可以看出，fit()是需要先把整个数据集加载进来，然后喂入网络，因为minist数据集比较小，这么做是可行的，但对于实际开发而言，这么做是不可行的，需要大量的内存资源，同时不能对数据进行在线提升。
-一次性加载整个数据集的示例代码： 任务为猫和狗的二分类，train_data下包含cat和dog两个文件夹，代码将两个文件夹下图片和标签存入numpy数组，返回为训练数据和训练标签。
-def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name==&#39;cat&#39;: labels.append(0) else: labels.append(1) return np.array(tran_imags), np.array(labels) ## train_data,train_labs = load_data() model.</description>
+      <guid>/post/keras_dataload/</guid>
+      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera</description>
     </item>
     
     <item>
       <title>LeetCode:开方函数sqrt实现</title>
-      <link>https://yl305237731.github.io/post/alg1/</link>
+      <link>/post/alg1/</link>
       <pubDate>Sun, 10 Mar 2019 15:30:15 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/alg1/</guid>
-      <description>要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],故在[0,A/2+1]的范围内进行二分查找
-def sqrt(target): low = 0 high = target // 2 + 1 while low &amp;lt;= high: mid = (low + high) // 2 sq = mid * mid if target == sq: return mid else: if target &amp;gt; sq: low = mid + 1 else: high = mid - 1  二：牛顿迭代法 二分法，基本都能想到。面试官想要的都是牛顿迭代法的解答。 参照百度百科，此时求解方程$f(x)=x^2-a$,开方即求$f(x)=0$,一阶泰勒展开： $$f(x)=f(x_0) + f^{&amp;lsquo;}(x_0)(x-x_0)$$ 令为0，可得更新公式： $$x = \frac{1}{2}(x_0+\frac{a}{x_0})$$
-def sqrt(target): if target == 0: return 0 last = 0 res = 1 while(abs(last-res)&amp;gt;=0.</description>
+      <guid>/post/alg1/</guid>
+      <description>要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],故在[0,</description>
     </item>
     
     <item>
       <title>python下mnist数据集转化为图片</title>
-      <link>https://yl305237731.github.io/post/mnist2img/</link>
+      <link>/post/mnist2img/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/mnist2img/</guid>
-      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr)  以上代码以训练集为例，将图片的vector转化为28*28的png图片，同时保存每一张图片对应的label（label由onehot转成数字）到TXT文本中。 以下是我的网盘链接：https://pan.baidu.com/s/1pV8KuKbDy9yktpREk5ZDvw 提取码：wac5</description>
+      <guid>/post/mnist2img/</guid>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
     </item>
     
     <item>
       <title>监督分类之：KNN算法</title>
-      <link>https://yl305237731.github.io/post/knn/</link>
+      <link>/post/knn/</link>
       <pubDate>Sat, 22 Dec 2018 15:34:07 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/knn/</guid>
-      <description>KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出训练集中与其最靠近的K个样本，根据这K个样本的类别来决定测试样本的类别，一般采用投票法，即判别为K个中出现次数最多的类别。（这种思路很早就知道了，完全不觉得这也属于高大上的机器学习啊，明明没有‘’学习‘’啊）。 所以，KNN是‘懒惰学习’的代表：无训练时间开销。相对的，训练阶段进行学习处理的为‘急切学习’，显然，大部分的机器学习方法都属于后者，比如：SVM,DNN,LR等。
-KNN示例 假设训练样本为两类二维样本，红色的 +，和绿色的-。蓝色的点为测试样本 KNN分类需要定义相似性度量函数，对于本例二维点可以采用欧氏距离函数作为判别，计算测试点到所有样本点的距离，选取前K个判断类别。
-对于KNN，找到合适的距离度量函数很重要，同时，K值的选取对结果也起着很大的作用。
-当K小时，只有最靠近输入实例的训练实例对预测结果起作用，也容易过拟合，导致高方差； 当K很大时，与输入实例不相似的训练实例对训练结果也起作用，会导致高的偏差
-总体流程如下： 1. 计算训练集中的每个样本与测试样本的距离 2. 将距离按地址排序 3. 选取与当前测试样本距离最小的K个样本 4. 计算K个样本所属类别出现的频率 5. 选取频率最高点的所属类别为预测分类
-基于KNN的mnist数据集分类 mnist手写数字数据集包含（0-9）10个类别的手写数字 ，训练集有55000张图片，测试集有1万张图片，可视化部分结果如下： 使用的图片数据是将图片转换为行向量之后的数据（数据来源TensorFlow里tutorials.mnist里的数据），数据已进行归一化(即像素值/255)。
-TensorFlow环境下代码
-from tensorflow.examples.tutorials.mnist import input_data import numpy as np import time class Knn(): def classMnist(self,sample,train_data,train_label,k = 10): dataRows = np.shape(train_data)[0] sampleRep = np.tile(sample,(dataRows,1)) # 将测试样本变为和训练集一样大小的数组，不用循环计算 distance = np.sqrt(np.sum(np.power(sampleRep - train_data,2),axis=1)) # 采用欧式距离 sortIndex = np.argsort(distance) countClass = {} for i in range(k): label = train_label[sortIndex[i]][0] if str(label) in countClass: countClass[str(label)] = countClass.</description>
+      <guid>/post/knn/</guid>
+      <description>KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出</description>
     </item>
     
     <item>
       <title>Pyplot tutorial翻译文档</title>
-      <link>https://yl305237731.github.io/post/doctran1/</link>
+      <link>/post/doctran1/</link>
       <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/doctran1/</guid>
-      <description>pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Figure上进行操作，比如在Figure上画点，画线等等。 在pyplot中，各种状态在函数调用之间被保留，以便它跟踪诸如当前图形和绘图区域之类的内容，并且绘图函数指向当前轴。（意思就是在默认情况下，一连串的pyplot的操作结果都在一个Figure中）。
-使用pyplot快速生成可视化：
-import matplotlib.pyplot as plt plt.plot([1,2,3,4]) plt.ylabel(&#39;some numbers&#39;) plt.show()  在这个例子中只提供了一个轴的数据，结果显示在Y轴。 当只有一组数据时，matplotlib默认认为是Y轴数据，并根据其自动生成X轴的数据。其中生成的数据和给定的数据具有相同的长度，而且由于python的下标由0开始，故生成数据是[0,1,2,3]。
-plot() 是一个多功能的命令，它将接受任意数量的参数。例如，为了绘制x与y的对比，可以发出以下命令：
-plt.plot([1,2,3,4],[1,4,9,6])  定制plot风格 对于每一对给定的数据，都有一个可选的第三个参数，用来指定线条的类型和颜色。格式字符串的字母和符号来自MATLAB，将颜色字符串与行样式字符串连接起来。默认格式的字符串是&amp;rsquo;b-&amp;lsquo;，它是一条实心的蓝色线。例如，要用红色圆圈绘制上面的图，需要发出以下命令
-plt.plot([1,2,3,4],[1,4,9,6],&#39;ro&#39;) plt.axis([0,6,0,20]) plt.show()  axis()函数指定了坐标轴视窗的范围，分别代表 [xmin,xmax,ymin,ymax]。
-如果matplotlib仅限于处理列表，那么它对于数值处理是相当无用的。通常，我们都使用numpy数组。实际上，所有序列在内部都被转换为numpy数组。下面的示例演示了在一个命令中使用数组绘制具有不同格式样式的几行图。
-import matplotlib.pyplot as plt import numpy as np data = np.arange(0.,5.,0.2) plt.plot(data,data,&#39;r--&#39;,data,data**2,&#39;gs&#39;,data,data**3,&#39;b^&#39;) plt.show()  使用关键字字符串绘图 在某些情况下，数据具有允许使用字符串访问特定变量的格式。例如，使用numpy.recarray或pandas.DataFrame。 Matplotlib允许为这样的对象提供数据关键字参数。如果提供，则可以生成带有与这些变量相对应的字符串的图表。
-import matplotlib.pyplot as plt import numpy as np data = {&#39;a&#39;: np.arange(50), &#39;c&#39;: np.random.randint(0, 50, 50), &#39;d&#39;: np.random.randn(50)} data[&#39;b&#39;] = data[&#39;a&#39;] + 10 * np.</description>
+      <guid>/post/doctran1/</guid>
+      <description>pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Fig</description>
     </item>
     
     <item>
       <title>Numpy使用GPU加速</title>
-      <link>https://yl305237731.github.io/post/numpyjiasu/</link>
+      <link>/post/numpyjiasu/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/numpyjiasu/</guid>
-      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），结构查到了minpy，花了10分钟左右配好了环境，写个日志记录一下。
-安装minpy:
-我的机器是Ubuntu 16.04的，minpy需要cuda,cudnn,由于这俩我早就装好了，就不说了。 minpy是基于mxnet进行运算的，所以需要安装mxnet,官方链接添加链接描述 反正我用的最简单的方式，没从git源码安装
-sudo pip install mxnet-cu80 // 我cuda8.0的  （必须和cuda对应，第一次装了9.0的了，就报错了） 然后再
-sudo pip install minpy  就OK了，是不是很easy（当然我们的easy是建立在大牛的肩膀上，感觉开发者们）.
-使用：
-import minpy.numpy as np  我使用我KNN中的代码测试，平均CPU:0.8s,GPU:0.4s，只提速了0.4s左右（因为涉及的矩阵运算少）。
-如下，使用高维矩阵点乘连乘做测试
-import numpy as np import numpy.random as random #import minpy.numpy as np #import minpy.numpy.random as random import time a = random.rand(3000,2000) b = random.rand(2000,4000) c = random.rand(4000,3000) begin = time.time() for i in range(100): np.dot(np.dot(a,b),c) end = time.time() print(end-begin)  提升4倍左右，一个200s,一个50s左右。 （同时发现一个问题打印时间和GPU调用应该不是同线程的，因为没得到结果时间就打印出来了，手动计的时） 参考：minpy安装手册</description>
+      <guid>/post/numpyjiasu/</guid>
+      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），</description>
     </item>
     
     <item>
       <title>模版匹配之相关匹配</title>
-      <link>https://yl305237731.github.io/post/pipei1/</link>
+      <link>/post/pipei1/</link>
       <pubDate>Thu, 20 Dec 2018 15:44:06 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/pipei1/</guid>
-      <description>模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图像的什么地方，进而识别对象物，这就是一个匹配问题。它是图像处理中最基本、最常用的匹配方法。模板匹配具有自身的局限性，主要表现在它只能进行平行移动，若原图像中的匹配目标发生旋转或大小变化，该算法无效。
-普通的模板匹配方法属于暴力搜索法，通过将模板图像不断在搜索图上移动，计算模板与模板覆盖区域子图像的相似度，显而易见，时间复杂度特别大。 相关法 相关法即计算模板与图像子区域的相关系数，相关系数也能反映出两张图片的相似度 计算公式： 对于模板 T(m,n),搜索图像 S(W,H),模板覆盖被搜索图的那块区域叫子图 $S_{ij}$, i,j 为子图在被搜索图中左上角的坐标, 模板高h,宽w, 1 =&amp;lt; i =&amp;lt; H-h, 1 =&amp;lt; j =&amp;lt; W-w, $$ R(i,j) = \frac{\sum {m=1}^{M}\sum{n=1}^{N}S_{ij}(m,n)* T(m,n)}{\sqrt{\sum {m=1}^{M}\sum{n=1}^{N}[S_{ij}(m,n)]^{2} \sum {m=1}^{M}\sum{n=1}^{N}[T(m,n)]^{2}}} $$
-实验结果 1. 这是当时的一个作业 搜索图：
-模板一： 模板2： 匹配结果如下： 两个模板都定位到同一目标，人眼可看出模板2和场景中定位出的目标匹配，模板1和定位出的并不是同一个，但是是最大的相似度，故匹配出
-2 模板lena: very good.
-代码 from PIL import Image import matplotlib.image as mpimg import matplotlib.pyplot as plt import numpy as np class templateMatch: x = 0 y = 0 flag = False def rgb2gray(self,src): if 3 == len(src.</description>
+      <guid>/post/pipei1/</guid>
+      <description>模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图像的什么地</description>
     </item>
     
     <item>
       <title>线性拟合笔记之：Ransac算法</title>
-      <link>https://yl305237731.github.io/post/ransac/</link>
+      <link>/post/ransac/</link>
       <pubDate>Wed, 19 Dec 2018 15:52:22 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/ransac/</guid>
-      <description>关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数学模型参数，得到有效样本数据的算法。在计算机视觉中用的比较多，如特征点匹配。本文主要从线性拟合角度分析。
-Ransac算法 有样本数据集如上图所示，其中蓝色为正确样本，绿色和红色为噪声样本，我们想要拟合一个线性模型，如果使用最小二乘法的话，结果如下图： 对于这个数据样本而言，由于噪声偏离正确数据不是太远且噪声少，拟合结果偏差不是太大。但是当噪声比例或偏离很大时，基于全局的最小二乘法几乎无法得到好的结果。
-RANSAC算法的基本假设是样本中包含正确数据(inliers，可以被模型描述的数据)，也包含异常数据(outliers，偏离正常范围很远、无法适应数学模型的数据)，即数据集中含有噪声。 主要思想是通过不断的从样本中随机选择一定的样本来拟合模型，然后用未被选中的样本测试模型，根据一定的规则保留最优模型。
-算法流程如下 一：随机选择n个样本，作为inliers； 二：用inliers拟合一个模型（本文做线性拟合，采用最小二乘），然后用模型测试outliers，如果某个outliers与模型的误差小于给定的阈值，将其加入inliers； 三：如果inliers中样本个数大于设定的值，得到认为正确的模型。然后用新的inliers重新估计模型； 四：执行以上过程指定的轮数，每次产生的模型要么因为inliers太少而被舍弃，要么比现有的模型更好而被选中。
-Ransac线性拟合实验 部分中间迭代结果：
-最佳拟合： Python代码 import matplotlib.pyplot as plt from numpy import * import numpy as np import operator as op class Ransac: weight = 0. bias = 0. def least_square(self,samples): ##最小二乘法 x = samples[:,0] y = samples[:,1] x_ = 0 y_ = 0 x_mul_y = 0 x_2 = 0 n = len(x) for i in range(n): x_ = x[i] + x_ y_ = y[i] + y_ x_mul_y = x[i] * y[i] + x_mul_y x_2 = x[i] * x[i] + x_2 x_ = x_ / n y_ = y_ / n weight = (x_mul_y - n * x_ * y_) / (x_2 - n * x_ * x_) bias = y_ - weight * x_ return weight,bias def isRepeat(self,sour,tar): #判断是否含有重复样本 for i in range(len(sour)): if (op.</description>
+      <guid>/post/ransac/</guid>
+      <description>关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数</description>
     </item>
     
     <item>
       <title>线性拟合笔记之：最小二乘法</title>
-      <link>https://yl305237731.github.io/post/linersqur/</link>
+      <link>/post/linersqur/</link>
       <pubDate>Tue, 18 Dec 2018 15:57:45 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/linersqur/</guid>
-      <description>关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。最小二乘法还可用于曲线拟合。其他一些优化问题也可通过最小化能量或最大化熵用最小二乘法来表达。 对于线性拟合，给定的具有线性关系的观测样本，可以通过最小二乘法求解得到线性模型。
-一元线性回归模型求解 给定的观测数据 ：(x1,y1),(x2,y1),(x3,y3)&amp;hellip;&amp;hellip;(xn,yn)，假设其存在着线性关系，线性模型为：$$ \bar{y} = wx +b $$ 优化目标函数为： 即标签值和预测值之间的均方误差，所选择的回归模型应该使所有观察值的残差平方和达到最小， 也就是 Least square。 将目标函数展开： 此时，L是关于w 和 b 的函数，要使 L的值最小，由数学知识可知，可以通过求偏导令为0可解得，即： 记: 则 同理可得： 即可求得w,b。
-最小二乘实现 一元最小二乘法 由上面的 w 可以看出，整个计算结果依赖于$\bar{x}$,$\bar{y}$,$x{i}y{i}$,$x_{i}^{2}$
-python测试代码如下：
-import matplotlib.pyplot as plt import numpy as np class Least_square: weight = 0 bias = 0 def get_weight(self): return self.weight def get_bias(self): return self.bias def least_square(self,x,y): if len(x)!= len(y): print(&#39;data error&#39;) return x_ = 0 y_ = 0 x_mul_y = 0 x_2 = 0 n = len(x) for i in range(n): x_ = x[i] + x_ y_ = y[i] + y_ x_mul_y = x[i]*y[i] + x_mul_y x_2 = x[i]*x[i] + x_2 x_ = x_ / n y_ = y_ / n self.</description>
+      <guid>/post/linersqur/</guid>
+      <description>关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小</description>
     </item>
     
     <item>
       <title>Ubuntu &#43; Python下libsvm使用小结</title>
-      <link>https://yl305237731.github.io/post/libsvm/</link>
+      <link>/post/libsvm/</link>
       <pubDate>Wed, 28 Nov 2018 16:24:49 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/libsvm/</guid>
-      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载网站是链接，目前更新到3.23版本。
-安装测试 我是在Ubuntu16.04环境下使用的 解压后目录如下： 针对Python，进入Python包，内容如下： 测试： 命令行输入：
-import sys sys.path.append(&#39;/home/thinkstation/liny/libsvm/python&#39;) import svm  如果系统里是第一次使用libsvm,此时会报错 LIBSVM library not found 进入linsvm目录，命令行输入
-make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系统路径： 加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中
-使用 1.使用 a1a二分类数据集 链接 特征已经进行了处理，libsvm 数据格式如下： 可以看出，格式为： 类别 index：特征 index：特征 &amp;hellip;&amp;hellip;.
-2.mnist数据集 libsvm官网数据集中的mnist数据 其中前两项数据没有经过scale，后两项没有经过scale 用未scale的数据训练测试： 训练了接近5个小时，-_-||
-精度竟然这么低。。。。。 换上scale后的数据： 训练时间10分钟左右，精度0.94
-3.猫狗二分类 数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1 准确率0.62，可能数据有点少吧。。。。 总之，作者写的很完善了，还在不断优化中。 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行
-主要使用函数 svmutil.py中 1. svm_load_model(model_file_name)
-2. svm_save_model(model_file_name, model)
-3. svm_train(arg1, arg2=None, arg3=None)
-4. svm_predict(y, x, m, options=&amp;ldquo;&amp;rdquo;)</description>
+      <guid>/post/libsvm/</guid>
+      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载</description>
     </item>
     
     <item>
       <title>基于Keras图像相似度计算孪生网络</title>
-      <link>https://yl305237731.github.io/post/keras_simi/</link>
+      <link>/post/keras_simi/</link>
       <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_simi/</guid>
-      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number: count = count + 1 pos_neg = np.</description>
+      <guid>/post/keras_simi/</guid>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
     </item>
     
     <item>
       <title>Keras 猫狗二分类</title>
-      <link>https://yl305237731.github.io/post/kdog_cat/</link>
+      <link>/post/kdog_cat/</link>
       <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/kdog_cat/</guid>
-      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name==&#39;cat&#39;: labels.</description>
+      <guid>/post/kdog_cat/</guid>
+      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
     </item>
     
     <item>
       <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
-      <link>https://yl305237731.github.io/post/googleid/</link>
+      <link>/post/googleid/</link>
       <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/googleid/</guid>
-      <description>google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些脚本，但是还是喜欢用这个，所以做个记录。重点：翻墙 项目地址：https://github.com/hardikvasa/google-images-download
-mac，Linux，windows下均可。以下主要针对于Windows下使用记录。
-1.安装 最简单的方式：
-pip install google_images_download  2.使用 例如下载20张猫的图片,命令行进入文件存放目录
-执行
-googleimagesdownload -k &amp;quot;cat&amp;quot; -l 20  -k（keyword） 指定关键字，-l（limit） 限制图片数
-当下载图片数量超过100张时，提示缺少Chromedriver chromedriver 链接
-下载，解压得到一个exe文件，放到文件下载目录
-执行，例：googleimagesdownload -k &amp;ldquo;cat&amp;rdquo; -l 1000 &amp;ndash;chromedriver=&amp;ldquo;./chromedriver&amp;rdquo; 这个命令还有很多参数，具体看GitHub项目中的说明。 </description>
+      <guid>/post/googleid/</guid>
+      <description>google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些</description>
     </item>
     
     <item>
       <title>Imagenet数据集类别标签和对应的英文中文对照表</title>
-      <link>https://yl305237731.github.io/post/imagenetlabel/</link>
+      <link>/post/imagenetlabel/</link>
       <pubDate>Mon, 08 Oct 2018 16:50:36 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/imagenetlabel/</guid>
-      <description>预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark, Galeocerdo cuvieri&#39;, 虎鲨 4: &#39;hammerhead, hammerhead shark&#39;, 锤头鲨 5: &#39;electric ray, crampfish, numbfish, torpedo&#39;, 电鳐 6: &#39;stingray&#39;, 黄貂鱼 7: &#39;cock&#39;, 公鸡 8: &#39;hen&#39;, 母鸡 9: &#39;ostrich, Struthio camelus&#39;, 鸵鸟 10: &#39;brambling, Fringilla montifringilla&#39;, 荆棘 11: &#39;goldfinch, Carduelis carduelis&#39;, 金翅雀 12: &#39;house finch, linnet, Carpodacus mexicanus&#39;, 红雀 13: &#39;junco, snowbird&#39;, 灯芯草雀 14: &#39;indigo bunting, indigo finch, indigo bird, Passerina cyanea&#39;, 蓝鹀 15: &#39;robin, American robin, Turdus migratorius&#39;, 知更鸟 16: &#39;bulbul&#39;, 夜莺 17: &#39;jay&#39;, 松鸦 (ps:吓我一跳，以为周杰伦。。。。) 18: &#39;magpie&#39;, 喜鹊 19: &#39;chickadee&#39;, 山雀 20: &#39;water ouzel, dipper&#39;, 河鸟 21: &#39;kite&#39;, 风筝 22: &#39;bald eagle, American eagle, Haliaeetus leucocephalus&#39;, 秃头鹰 23: &#39;vulture&#39;, 秃鹫 24: &#39;great grey owl, great gray owl, Strix nebulosa&#39;, 大灰猫头鹰 25: &#39;European fire salamander, Salamandra salamandra&#39;, 欧洲火蝾螈，蝾螈 26: &#39;common newt, Triturus vulgaris&#39;, 普通的蝾螈 what？ 27: &#39;eft&#39;, 小蜥蜴 28: &#39;spotted salamander, Ambystoma maculatum&#39;, 斑点钝口螈 29: &#39;axolotl, mud puppy, Ambystoma mexicanum&#39;, 墨西哥蝾螈 30: &#39;bullfrog, Rana catesbeiana&#39;, 牛蛙 31: &#39;tree frog, tree-frog&#39;, 树蛙 32: &#39;tailed frog, bell toad, ribbed toad, tailed toad, Ascaphus trui&#39;, 蟾蜍，癞疙宝 33: &#39;loggerhead, loggerhead turtle, Caretta caretta&#39;, 红海龟 34: &#39;leatherback turtle, leatherback, leathery turtle, Dermochelys coriacea&#39;, 革龟 35: &#39;mud turtle&#39;, 淡水龟(美国产) 36: &#39;terrapin&#39;, 淡水龟（北美的） （有必要分这么细吗) 37: &#39;box turtle, box tortoise&#39;, 箱龟 38: &#39;banded gecko&#39;, 条纹壁虎 39: &#39;common iguana, iguana, Iguana iguana&#39;, 普通鬣蜥 40: &#39;American chameleon, anole, Anolis carolinensis&#39;, 变色龙，变色蜥 41: &#39;whiptail, whiptail lizard&#39;, 鞭尾蜥蜴 42: &#39;agama&#39;, 飞龙科蜥蜴 43: &#39;frilled lizard, Chlamydosaurus kingi&#39;, 澳洲热带蜥蜴 44: &#39;alligator lizard&#39;, 短吻鳄 45: &#39;Gila monster, Heloderma suspectum&#39;, 毒蜥 46: &#39;green lizard, Lacerta viridis&#39;, 绿蜥蜴 47: &#39;African chameleon, Chamaeleo chamaeleon&#39;, 变色蜥蜴，变色龙 48: &#39;Komodo dragon, Komodo lizard, dragon lizard, giant lizard, Varanus komodoensis&#39;, 科莫多巨蜥 49: &#39;African crocodile, Nile crocodile, Crocodylus niloticus&#39;, 尼罗河鳄鱼 50: &#39;American alligator, Alligator mississipiensis&#39;, 美洲钝吻鳄 51: &#39;triceratops&#39;, 三角恐龙 52: &#39;thunder snake, worm snake, Carphophis amoenus&#39;, 蠕形壳蛇 53: &#39;ringneck snake, ring-necked snake, ring snake&#39;, 游蛇 54: &#39;hognose snake, puff adder, sand viper&#39;, 沙蝰 55: &#39;green snake, grass snake&#39;, 青蛇 56: &#39;king snake, kingsnake&#39;, 王蛇 57: &#39;garter snake, grass snake&#39;, 青草蛇 58: &#39;water snake&#39;, 水蛇 59: &#39;vine snake&#39;, 藤蛇 60: &#39;night snake, Hypsiglena torquata&#39;, 夜蛇 61: &#39;boa constrictor, Constrictor constrictor&#39;, 大蟒蛇 62: &#39;rock python, rock snake, Python sebae&#39;, 岩蟒 （Python：蟒蛇。。。） 63: &#39;Indian cobra, Naja naja&#39;, 眼镜蛇 64: &#39;green mamba&#39;, 绿曼巴 65: &#39;sea snake&#39;, 海蛇 66: &#39;horned viper, cerastes, sand viper, horned asp, Cerastes cornutus&#39;, 沙蝰 67: &#39;diamondback, diamondback rattlesnake, Crotalus adamanteus&#39;, 响尾蛇 68: &#39;sidewinder, horned rattlesnake, Crotalus cerastes&#39;, 角响尾蛇 69: &#39;trilobite&#39;, 三叶虫 70: &#39;harvestman, daddy longlegs, Phalangium opilio&#39;, 盲蜘蛛 71: &#39;scorpion&#39;, 蝎子 72: &#39;black and gold garden spider, Argiope aurantia&#39;, 园蛛 73: &#39;barn spider, Araneus cavaticus&#39;, 谷仓蜘蛛 74: &#39;garden spider, Aranea diademata&#39;, 园蛛 75: &#39;black widow, Latrodectus mactans&#39;, 黑寡妇 76: &#39;tarantula&#39;, 狼蛛 77: &#39;wolf spider, hunting spider&#39;, 狼蛛 78: &#39;tick&#39;, 壁虱 79: &#39;centipede&#39;, 蜈蚣 80: &#39;black grouse&#39;, 黑琴鸡 81: &#39;ptarmigan&#39;, 松鸡类 82: &#39;ruffed grouse, partridge, Bonasa umbellus&#39;, 流苏松鸡 83: &#39;prairie chicken, prairie grouse, prairie fowl&#39;, 草原松鸡 84: &#39;peacock&#39;, 孔雀 85: &#39;quail&#39;, 鹌鹑 86: &#39;partridge&#39;, 山鹑 87: &#39;African grey, African gray, Psittacus erithacus&#39;, 非洲灰鹦鹉 88: &#39;macaw&#39;, 金刚鹦鹉 89: &#39;sulphur-crested cockatoo, Kakatoe galerita, Cacatua galerita&#39;, 大葵花凤头鹦鹉 90: &#39;lorikeet&#39;, 短尾鹦鹉 91: &#39;coucal&#39;, 褐翅鸦鹃 92: &#39;bee eater&#39;, 食蜂鸟 93: &#39;hornbill&#39;, 犀鸟 94: &#39;hummingbird&#39;, 蜂鸟 95: &#39;jacamar&#39;, 嗡裂 96: &#39;toucan&#39;, 犀鸟 97: &#39;drake&#39;, 公鸭 98: &#39;red-breasted merganser, Mergus serrator&#39;, 秋沙鸭 99: &#39;goose&#39;, 鹅 100: &#39;black swan, Cygnus atratus&#39;, 黑天鹅 101: &#39;tusker&#39;, 102: &#39;echidna, spiny anteater, anteater&#39;, 食蚁兽 103: &#39;platypus, duckbill, duckbilled platypus, duck-billed platypus, Ornithorhynchus anatinus&#39;, 鸭嘴兽 104: &#39;wallaby, brush kangaroo&#39;, 沙袋鼠 105: &#39;koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus&#39;, 考拉 106: &#39;wombat&#39;, 袋熊 107: &#39;jellyfish&#39;, 水母，海蜇 108: &#39;sea anemone, anemone&#39;, 海葵 109: &#39;brain coral&#39;, 脑珊瑚 110: &#39;flatworm, platyhelminth&#39;, 扁虫 111: &#39;nematode, nematode worm, roundworm&#39;, 线虫 112: &#39;conch&#39;, 贝壳 113: &#39;snail&#39;, 蜗牛 114: &#39;slug&#39;, 鼻涕虫 115: &#39;sea slug, nudibranch&#39;, 海参，海牛 116: &#39;chiton, coat-of-mail shell, sea cradle, polyplacophore&#39;, 贝壳的一种 117: &#39;chambered nautilus, pearly nautilus, nautilus&#39;, 鹦鹉螺 118: &#39;Dungeness crab, Cancer magister&#39;, 太平洋大蟹 119: &#39;rock crab, Cancer irroratus&#39;, 岩蟹 120: &#39;fiddler crab&#39;, 招潮蟹 121: &#39;king crab, Alaska crab, Alaskan king crab, Alaska king crab, Paralithodes camtschatica&#39;, 帝王蟹 122: &#39;American lobster, Northern lobster, Maine lobster, Homarus americanus&#39;, 123: &#39;spiny lobster, langouste, rock lobster, crawfish, crayfish, sea crawfish&#39;, 124: &#39;crayfish, crawfish, crawdad, crawdaddy&#39;, 125: &#39;hermit crab&#39;, 126: &#39;isopod&#39;, 127: &#39;white stork, Ciconia ciconia&#39;, 128: &#39;black stork, Ciconia nigra&#39;, 129: &#39;spoonbill&#39;, 130: &#39;flamingo&#39;, 131: &#39;little blue heron, Egretta caerulea&#39;, 132: &#39;American egret, great white heron, Egretta albus&#39;, 133: &#39;bittern&#39;, 134: &#39;crane&#39;, 135: &#39;limpkin, Aramus pictus&#39;, 136: &#39;European gallinule, Porphyrio porphyrio&#39;, 137: &#39;American coot, marsh hen, mud hen, water hen, Fulica americana&#39;, 138: &#39;bustard&#39;, 139: &#39;ruddy turnstone, Arenaria interpres&#39;, 140: &#39;red-backed sandpiper, dunlin, Erolia alpina&#39;, 141: &#39;redshank, Tringa totanus&#39;, 142: &#39;dowitcher&#39;, 143: &#39;oystercatcher, oyster catcher&#39;, 144: &#39;pelican&#39;, 145: &#39;king penguin, Aptenodytes patagonica&#39;, 146: &#39;albatross, mollymawk&#39;, 147: &#39;grey whale, gray whale, devilfish, Eschrichtius gibbosus, Eschrichtius robustus&#39;, 148: &#39;killer whale, killer, orca, grampus, sea wolf, Orcinus orca&#39;, 149: &#39;dugong, Dugong dugon&#39;, 150: &#39;sea lion&#39;, 151: &#39;Chihuahua&#39;, 152: &#39;Japanese spaniel&#39;, 153: &#39;Maltese dog, Maltese terrier, Maltese&#39;, 154: &#39;Pekinese, Pekingese, Peke&#39;, 155: &#39;Shih-Tzu&#39;, 156: &#39;Blenheim spaniel&#39;, 157: &#39;papillon&#39;, 158: &#39;toy terrier&#39;, 159: &#39;Rhodesian ridgeback&#39;, 160: &#39;Afghan hound, Afghan&#39;, 161: &#39;basset, basset hound&#39;, 162: &#39;beagle&#39;, 163: &#39;bloodhound, sleuthhound&#39;, 164: &#39;bluetick&#39;, 165: &#39;black-and-tan coonhound&#39;, 166: &#39;Walker hound, Walker foxhound&#39;, 167: &#39;English foxhound&#39;, 168: &#39;redbone&#39;, 169: &#39;borzoi, Russian wolfhound&#39;, 170: &#39;Irish wolfhound&#39;, 171: &#39;Italian greyhound&#39;, 172: &#39;whippet&#39;, 173: &#39;Ibizan hound, Ibizan Podenco&#39;, 174: &#39;Norwegian elkhound, elkhound&#39;, 175: &#39;otterhound, otter hound&#39;, 176: &#39;Saluki, gazelle hound&#39;, 177: &#39;Scottish deerhound, deerhound&#39;, 178: &#39;Weimaraner&#39;, 179: &#39;Staffordshire bullterrier, Staffordshire bull terrier&#39;, 180: &#39;American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull terrier&#39;, 181: &#39;Bedlington terrier&#39;, 182: &#39;Border terrier&#39;, 183: &#39;Kerry blue terrier&#39;, 184: &#39;Irish terrier&#39;, 185: &#39;Norfolk terrier&#39;, 186: &#39;Norwich terrier&#39;, 187: &#39;Yorkshire terrier&#39;, 188: &#39;wire-haired fox terrier&#39;, 189: &#39;Lakeland terrier&#39;, 190: &#39;Sealyham terrier, Sealyham&#39;, 191: &#39;Airedale, Airedale terrier&#39;, 192: &#39;cairn, cairn terrier&#39;, 193: &#39;Australian terrier&#39;, 194: &#39;Dandie Dinmont, Dandie Dinmont terrier&#39;, 195: &#39;Boston bull, Boston terrier&#39;, 196: &#39;miniature schnauzer&#39;, 197: &#39;giant schnauzer&#39;, 198: &#39;standard schnauzer&#39;, 199: &#39;Scotch terrier, Scottish terrier, Scottie&#39;, 200: &#39;Tibetan terrier, chrysanthemum dog&#39;, 201: &#39;silky terrier, Sydney silky&#39;, 202: &#39;soft-coated wheaten terrier&#39;, 203: &#39;West Highland white terrier&#39;, 204: &#39;Lhasa, Lhasa apso&#39;, 205: &#39;flat-coated retriever&#39;, 206: &#39;curly-coated retriever&#39;, 207: &#39;golden retriever&#39;, 208: &#39;Labrador retriever&#39;, 209: &#39;Chesapeake Bay retriever&#39;, 210: &#39;German short-haired pointer&#39;, 211: &#39;vizsla, Hungarian pointer&#39;, 212: &#39;English setter&#39;, 213: &#39;Irish setter, red setter&#39;, 214: &#39;Gordon setter&#39;, 215: &#39;Brittany spaniel&#39;, 216: &#39;clumber, clumber spaniel&#39;, 217: &#39;English springer, English springer spaniel&#39;, 218: &#39;Welsh springer spaniel&#39;, 219: &#39;cocker spaniel, English cocker spaniel, cocker&#39;, 220: &#39;Sussex spaniel&#39;, 221: &#39;Irish water spaniel&#39;, 222: &#39;kuvasz&#39;, 223: &#39;schipperke&#39;, 224: &#39;groenendael&#39;, 225: &#39;malinois&#39;, 226: &#39;briard&#39;, 227: &#39;kelpie&#39;, 228: &#39;komondor&#39;, 229: &#39;Old English sheepdog, bobtail&#39;, 230: &#39;Shetland sheepdog, Shetland sheep dog, Shetland&#39;, 231: &#39;collie&#39;, 232: &#39;Border collie&#39;, 233: &#39;Bouvier des Flandres, Bouviers des Flandres&#39;, 234: &#39;Rottweiler&#39;, 235: &#39;German shepherd, German shepherd dog, German police dog, alsatian&#39;, 236: &#39;Doberman, Doberman pinscher&#39;, 237: &#39;miniature pinscher&#39;, 238: &#39;Greater Swiss Mountain dog&#39;, 239: &#39;Bernese mountain dog&#39;, 240: &#39;Appenzeller&#39;, 241: &#39;EntleBucher&#39;, 242: &#39;boxer&#39;, 243: &#39;bull mastiff&#39;, 244: &#39;Tibetan mastiff&#39;, 245: &#39;French bulldog&#39;, 246: &#39;Great Dane&#39;, 247: &#39;Saint Bernard, St Bernard&#39;, 248: &#39;Eskimo dog, husky&#39;, 249: &#39;malamute, malemute, Alaskan malamute&#39;, 250: &#39;Siberian husky&#39;, 251: &#39;dalmatian, coach dog, carriage dog&#39;, 252: &#39;affenpinscher, monkey pinscher, monkey dog&#39;, 253: &#39;basenji&#39;, 254: &#39;pug, pug-dog&#39;, 255: &#39;Leonberg&#39;, 256: &#39;Newfoundland, Newfoundland dog&#39;, 257: &#39;Great Pyrenees&#39;, 258: &#39;Samoyed, Samoyede&#39;, 259: &#39;Pomeranian&#39;, 260: &#39;chow, chow chow&#39;, 261: &#39;keeshond&#39;, 262: &#39;Brabancon griffon&#39;, 263: &#39;Pembroke, Pembroke Welsh corgi&#39;, 264: &#39;Cardigan, Cardigan Welsh corgi&#39;, 265: &#39;toy poodle&#39;, 266: &#39;miniature poodle&#39;, 267: &#39;standard poodle&#39;, 268: &#39;Mexican hairless&#39;, 269: &#39;timber wolf, grey wolf, gray wolf, Canis lupus&#39;, 270: &#39;white wolf, Arctic wolf, Canis lupus tundrarum&#39;, 271: &#39;red wolf, maned wolf, Canis rufus, Canis niger&#39;, 272: &#39;coyote, prairie wolf, brush wolf, Canis latrans&#39;, 273: &#39;dingo, warrigal, warragal, Canis dingo&#39;, 274: &#39;dhole, Cuon alpinus&#39;, 275: &#39;African hunting dog, hyena dog, Cape hunting dog, Lycaon pictus&#39;, 276: &#39;hyena, hyaena&#39;, 277: &#39;red fox, Vulpes vulpes&#39;, 278: &#39;kit fox, Vulpes macrotis&#39;, 279: &#39;Arctic fox, white fox, Alopex lagopus&#39;, 280: &#39;grey fox, gray fox, Urocyon cinereoargenteus&#39;, 281: &#39;tabby, tabby cat&#39;, 282: &#39;tiger cat&#39;, 283: &#39;Persian cat&#39;, 284: &#39;Siamese cat, Siamese&#39;, 285: &#39;Egyptian cat&#39;, 286: &#39;cougar, puma, catamount, mountain lion, painter, panther, Felis concolor&#39;, 287: &#39;lynx, catamount&#39;, 288: &#39;leopard, Panthera pardus&#39;, 289: &#39;snow leopard, ounce, Panthera uncia&#39;, 290: &#39;jaguar, panther, Panthera onca, Felis onca&#39;, 291: &#39;lion, king of beasts, Panthera leo&#39;, 292: &#39;tiger, Panthera tigris&#39;, 293: &#39;cheetah, chetah, Acinonyx jubatus&#39;, 294: &#39;brown bear, bruin, Ursus arctos&#39;, 295: &#39;American black bear, black bear, Ursus americanus, Euarctos americanus&#39;, 296: &#39;ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus&#39;, 297: &#39;sloth bear, Melursus ursinus, Ursus ursinus&#39;, 298: &#39;mongoose&#39;, 299: &#39;meerkat, mierkat&#39;, 300: &#39;tiger beetle&#39;, 301: &#39;ladybug, ladybeetle, lady beetle, ladybird, ladybird beetle&#39;, 302: &#39;ground beetle, carabid beetle&#39;, 303: &#39;long-horned beetle, longicorn, longicorn beetle&#39;, 304: &#39;leaf beetle, chrysomelid&#39;, 305: &#39;dung beetle&#39;, 306: &#39;rhinoceros beetle&#39;, 307: &#39;weevil&#39;, 308: &#39;fly&#39;, 309: &#39;bee&#39;, 310: &#39;ant, emmet, pismire&#39;, 311: &#39;grasshopper, hopper&#39;, 312: &#39;cricket&#39;, 313: &#39;walking stick, walkingstick, stick insect&#39;, 314: &#39;cockroach, roach&#39;, 315: &#39;mantis, mantid&#39;, 316: &#39;cicada, cicala&#39;, 317: &#39;leafhopper&#39;, 318: &#39;lacewing, lacewing fly&#39;, 319: &amp;quot;dragonfly, darning needle, devil&#39;s darning needle, sewing needle, snake feeder, snake doctor, mosquito hawk, skeeter hawk&amp;quot;, 320: &#39;damselfly&#39;, 321: &#39;admiral&#39;, 322: &#39;ringlet, ringlet butterfly&#39;, 323: &#39;monarch, monarch butterfly, milkweed butterfly, Danaus plexippus&#39;, 324: &#39;cabbage butterfly&#39;, 325: &#39;sulphur butterfly, sulfur butterfly&#39;, 326: &#39;lycaenid, lycaenid butterfly&#39;, 327: &#39;starfish, sea star&#39;, 328: &#39;sea urchin&#39;, 329: &#39;sea cucumber, holothurian&#39;, 330: &#39;wood rabbit, cottontail, cottontail rabbit&#39;, 331: &#39;hare&#39;, 332: &#39;Angora, Angora rabbit&#39;, 333: &#39;hamster&#39;, 334: &#39;porcupine, hedgehog&#39;, 335: &#39;fox squirrel, eastern fox squirrel, Sciurus niger&#39;, 336: &#39;marmot&#39;, 337: &#39;beaver&#39;, 338: &#39;guinea pig, Cavia cobaya&#39;, 339: &#39;sorrel&#39;, 340: &#39;zebra&#39;, 341: &#39;hog, pig, grunter, squealer, Sus scrofa&#39;, 342: &#39;wild boar, boar, Sus scrofa&#39;, 343: &#39;warthog&#39;, 344: &#39;hippopotamus, hippo, river horse, Hippopotamus amphibius&#39;, 345: &#39;ox&#39;, 346: &#39;water buffalo, water ox, Asiatic buffalo, Bubalus bubalis&#39;, 347: &#39;bison&#39;, 348: &#39;ram, tup&#39;, 349: &#39;bighorn, bighorn sheep, cimarron, Rocky Mountain bighorn, Rocky Mountain sheep, Ovis canadensis&#39;, 350: &#39;ibex, Capra ibex&#39;, 351: &#39;hartebeest&#39;, 352: &#39;impala, Aepyceros melampus&#39;, 353: &#39;gazelle&#39;, 354: &#39;Arabian camel, dromedary, Camelus dromedarius&#39;, 355: &#39;llama&#39;, 356: &#39;weasel&#39;, 357: &#39;mink&#39;, 358: &#39;polecat, fitch, foulmart, foumart, Mustela putorius&#39;, 359: &#39;black-footed ferret, ferret, Mustela nigripes&#39;, 360: &#39;otter&#39;, 361: &#39;skunk, polecat, wood pussy&#39;, 362: &#39;badger&#39;, 363: &#39;armadillo&#39;, 364: &#39;three-toed sloth, ai, Bradypus tridactylus&#39;, 365: &#39;orangutan, orang, orangutang, Pongo pygmaeus&#39;, 366: &#39;gorilla, Gorilla gorilla&#39;, 367: &#39;chimpanzee, chimp, Pan troglodytes&#39;, 368: &#39;gibbon, Hylobates lar&#39;, 369: &#39;siamang, Hylobates syndactylus, Symphalangus syndactylus&#39;, 370: &#39;guenon, guenon monkey&#39;, 371: &#39;patas, hussar monkey, Erythrocebus patas&#39;, 372: &#39;baboon&#39;, 373: &#39;macaque&#39;, 374: &#39;langur&#39;, 375: &#39;colobus, colobus monkey&#39;, 376: &#39;proboscis monkey, Nasalis larvatus&#39;, 377: &#39;marmoset&#39;, 378: &#39;capuchin, ringtail, Cebus capucinus&#39;, 379: &#39;howler monkey, howler&#39;, 380: &#39;titi, titi monkey&#39;, 381: &#39;spider monkey, Ateles geoffroyi&#39;, 382: &#39;squirrel monkey, Saimiri sciureus&#39;, 383: &#39;Madagascar cat, ring-tailed lemur, Lemur catta&#39;, 384: &#39;indri, indris, Indri indri, Indri brevicaudatus&#39;, 385: &#39;Indian elephant, Elephas maximus&#39;, 386: &#39;African elephant, Loxodonta africana&#39;, 387: &#39;lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens&#39;, 388: &#39;giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca&#39;, 389: &#39;barracouta, snoek&#39;, 390: &#39;eel&#39;, 391: &#39;coho, cohoe, coho salmon, blue jack, silver salmon, Oncorhynchus kisutch&#39;, 392: &#39;rock beauty, Holocanthus tricolor&#39;, 393: &#39;anemone fish&#39;, 394: &#39;sturgeon&#39;, 395: &#39;gar, garfish, garpike, billfish, Lepisosteus osseus&#39;, 396: &#39;lionfish&#39;, 397: &#39;puffer, pufferfish, blowfish, globefish&#39;, 398: &#39;abacus&#39;, 399: &#39;abaya&#39;, 400: &amp;quot;academic gown, academic robe, judge&#39;s robe&amp;quot;, 401: &#39;accordion, piano accordion, squeeze box&#39;, 402: &#39;acoustic guitar&#39;, 403: &#39;aircraft carrier, carrier, flattop, attack aircraft carrier&#39;, 404: &#39;airliner&#39;, 405: &#39;airship, dirigible&#39;, 406: &#39;altar&#39;, 407: &#39;ambulance&#39;, 408: &#39;amphibian, amphibious vehicle&#39;, 409: &#39;analog clock&#39;, 410: &#39;apiary, bee house&#39;, 411: &#39;apron&#39;, 412: &#39;ashcan, trash can, garbage can, wastebin, ash bin, ash-bin, ashbin, dustbin, trash barrel, trash bin&#39;, 413: &#39;assault rifle, assault gun&#39;, 414: &#39;backpack, back pack, knapsack, packsack, rucksack, haversack&#39;, 415: &#39;bakery, bakeshop, bakehouse&#39;, 416: &#39;balance beam, beam&#39;, 417: &#39;balloon&#39;, 418: &#39;ballpoint, ballpoint pen, ballpen, Biro&#39;, 419: &#39;Band Aid&#39;, 420: &#39;banjo&#39;, 421: &#39;bannister, banister, balustrade, balusters, handrail&#39;, 422: &#39;barbell&#39;, 423: &#39;barber chair&#39;, 424: &#39;barbershop&#39;, 425: &#39;barn&#39;, 426: &#39;barometer&#39;, 427: &#39;barrel, cask&#39;, 428: &#39;barrow, garden cart, lawn cart, wheelbarrow&#39;, 429: &#39;baseball&#39;, 430: &#39;basketball&#39;, 431: &#39;bassinet&#39;, 432: &#39;bassoon&#39;, 433: &#39;bathing cap, swimming cap&#39;, 434: &#39;bath towel&#39;, 435: &#39;bathtub, bathing tub, bath, tub&#39;, 436: &#39;beach wagon, station wagon, wagon, estate car, beach waggon, station waggon, waggon&#39;, 437: &#39;beacon, lighthouse, beacon light, pharos&#39;, 438: &#39;beaker&#39;, 439: &#39;bearskin, busby, shako&#39;, 440: &#39;beer bottle&#39;, 441: &#39;beer glass&#39;, 442: &#39;bell cote, bell cot&#39;, 443: &#39;bib&#39;, 444: &#39;bicycle-built-for-two, tandem bicycle, tandem&#39;, 445: &#39;bikini, two-piece&#39;, 446: &#39;binder, ring-binder&#39;, 447: &#39;binoculars, field glasses, opera glasses&#39;, 448: &#39;birdhouse&#39;, 449: &#39;boathouse&#39;, 450: &#39;bobsled, bobsleigh, bob&#39;, 451: &#39;bolo tie, bolo, bola tie, bola&#39;, 452: &#39;bonnet, poke bonnet&#39;, 453: &#39;bookcase&#39;, 454: &#39;bookshop, bookstore, bookstall&#39;, 455: &#39;bottlecap&#39;, 456: &#39;bow&#39;, 457: &#39;bow tie, bow-tie, bowtie&#39;, 458: &#39;brass, memorial tablet, plaque&#39;, 459: &#39;brassiere, bra, bandeau&#39;, 460: &#39;breakwater, groin, groyne, mole, bulwark, seawall, jetty&#39;, 461: &#39;breastplate, aegis, egis&#39;, 462: &#39;broom&#39;, 463: &#39;bucket, pail&#39;, 464: &#39;buckle&#39;, 465: &#39;bulletproof vest&#39;, 466: &#39;bullet train, bullet&#39;, 467: &#39;butcher shop, meat market&#39;, 468: &#39;cab, hack, taxi, taxicab&#39;, 469: &#39;caldron, cauldron&#39;, 470: &#39;candle, taper, wax light&#39;, 471: &#39;cannon&#39;, 472: &#39;canoe&#39;, 473: &#39;can opener, tin opener&#39;, 474: &#39;cardigan&#39;, 475: &#39;car mirror&#39;, 476: &#39;carousel, carrousel, merry-go-round, roundabout, whirligig&#39;, 477: &amp;quot;carpenter&#39;s kit, tool kit&amp;quot;, 478: &#39;carton&#39;, 479: &#39;car wheel&#39;, 480: &#39;cash machine, cash dispenser, automated teller machine, automatic teller machine, automated teller, automatic teller, ATM&#39;, 481: &#39;cassette&#39;, 482: &#39;cassette player&#39;, 483: &#39;castle&#39;, 484: &#39;catamaran&#39;, 485: &#39;CD player&#39;, 486: &#39;cello, violoncello&#39;, 487: &#39;cellular telephone, cellular phone, cellphone, cell, mobile phone&#39;, 488: &#39;chain&#39;, 489: &#39;chainlink fence&#39;, 490: &#39;chain mail, ring mail, mail, chain armor, chain armour, ring armor, ring armour&#39;, 491: &#39;chain saw, chainsaw&#39;, 492: &#39;chest&#39;, 493: &#39;chiffonier, commode&#39;, 494: &#39;chime, bell, gong&#39;, 495: &#39;china cabinet, china closet&#39;, 496: &#39;Christmas stocking&#39;, 497: &#39;church, church building&#39;, 498: &#39;cinema, movie theater, movie theatre, movie house, picture palace&#39;, 499: &#39;cleaver, meat cleaver, chopper&#39;, 500: &#39;cliff dwelling&#39;, 501: &#39;cloak&#39;, 502: &#39;clog, geta, patten, sabot&#39;, 503: &#39;cocktail shaker&#39;, 504: &#39;coffee mug&#39;, 505: &#39;coffeepot&#39;, 506: &#39;coil, spiral, volute, whorl, helix&#39;, 507: &#39;combination lock&#39;, 508: &#39;computer keyboard, keypad&#39;, 509: &#39;confectionery, confectionary, candy store&#39;, 510: &#39;container ship, containership, container vessel&#39;, 511: &#39;convertible&#39;, 512: &#39;corkscrew, bottle screw&#39;, 513: &#39;cornet, horn, trumpet, trump&#39;, 514: &#39;cowboy boot&#39;, 515: &#39;cowboy hat, ten-gallon hat&#39;, 516: &#39;cradle&#39;, 517: &#39;crane&#39;, 518: &#39;crash helmet&#39;, 519: &#39;crate&#39;, 520: &#39;crib, cot&#39;, 521: &#39;Crock Pot&#39;, 522: &#39;croquet ball&#39;, 523: &#39;crutch&#39;, 524: &#39;cuirass&#39;, 525: &#39;dam, dike, dyke&#39;, 526: &#39;desk&#39;, 527: &#39;desktop computer&#39;, 528: &#39;dial telephone, dial phone&#39;, 529: &#39;diaper, nappy, napkin&#39;, 530: &#39;digital clock&#39;, 531: &#39;digital watch&#39;, 532: &#39;dining table, board&#39;, 533: &#39;dishrag, dishcloth&#39;, 534: &#39;dishwasher, dish washer, dishwashing machine&#39;, 535: &#39;disk brake, disc brake&#39;, 536: &#39;dock, dockage, docking facility&#39;, 537: &#39;dogsled, dog sled, dog sleigh&#39;, 538: &#39;dome&#39;, 539: &#39;doormat, welcome mat&#39;, 540: &#39;drilling platform, offshore rig&#39;, 541: &#39;drum, membranophone, tympan&#39;, 542: &#39;drumstick&#39;, 543: &#39;dumbbell&#39;, 544: &#39;Dutch oven&#39;, 545: &#39;electric fan, blower&#39;, 546: &#39;electric guitar&#39;, 547: &#39;electric locomotive&#39;, 548: &#39;entertainment center&#39;, 549: &#39;envelope&#39;, 550: &#39;espresso maker&#39;, 551: &#39;face powder&#39;, 552: &#39;feather boa, boa&#39;, 553: &#39;file, file cabinet, filing cabinet&#39;, 554: &#39;fireboat&#39;, 555: &#39;fire engine, fire truck&#39;, 556: &#39;fire screen, fireguard&#39;, 557: &#39;flagpole, flagstaff&#39;, 558: &#39;flute, transverse flute&#39;, 559: &#39;folding chair&#39;, 560: &#39;football helmet&#39;, 561: &#39;forklift&#39;, 562: &#39;fountain&#39;, 563: &#39;fountain pen&#39;, 564: &#39;four-poster&#39;, 565: &#39;freight car&#39;, 566: &#39;French horn, horn&#39;, 567: &#39;frying pan, frypan, skillet&#39;, 568: &#39;fur coat&#39;, 569: &#39;garbage truck, dustcart&#39;, 570: &#39;gasmask, respirator, gas helmet&#39;, 571: &#39;gas pump, gasoline pump, petrol pump, island dispenser&#39;, 572: &#39;goblet&#39;, 573: &#39;go-kart&#39;, 574: &#39;golf ball&#39;, 575: &#39;golfcart, golf cart&#39;, 576: &#39;gondola&#39;, 577: &#39;gong, tam-tam&#39;, 578: &#39;gown&#39;, 579: &#39;grand piano, grand&#39;, 580: &#39;greenhouse, nursery, glasshouse&#39;, 581: &#39;grille, radiator grille&#39;, 582: &#39;grocery store, grocery, food market, market&#39;, 583: &#39;guillotine&#39;, 584: &#39;hair slide&#39;, 585: &#39;hair spray&#39;, 586: &#39;half track&#39;, 587: &#39;hammer&#39;, 588: &#39;hamper&#39;, 589: &#39;hand blower, blow dryer, blow drier, hair dryer, hair drier&#39;, 590: &#39;hand-held computer, hand-held microcomputer&#39;, 591: &#39;handkerchief, hankie, hanky, hankey&#39;, 592: &#39;hard disc, hard disk, fixed disk&#39;, 593: &#39;harmonica, mouth organ, harp, mouth harp&#39;, 594: &#39;harp&#39;, 595: &#39;harvester, reaper&#39;, 596: &#39;hatchet&#39;, 597: &#39;holster&#39;, 598: &#39;home theater, home theatre&#39;, 599: &#39;honeycomb&#39;, 600: &#39;hook, claw&#39;, 601: &#39;hoopskirt, crinoline&#39;, 602: &#39;horizontal bar, high bar&#39;, 603: &#39;horse cart, horse-cart&#39;, 604: &#39;hourglass&#39;, 605: &#39;iPod&#39;, 606: &#39;iron, smoothing iron&#39;, 607: &amp;quot;jack-o&#39;-lantern&amp;quot;, 608: &#39;jean, blue jean, denim&#39;, 609: &#39;jeep, landrover&#39;, 610: &#39;jersey, T-shirt, tee shirt&#39;, 611: &#39;jigsaw puzzle&#39;, 612: &#39;jinrikisha, ricksha, rickshaw&#39;, 613: &#39;joystick&#39;, 614: &#39;kimono&#39;, 615: &#39;knee pad&#39;, 616: &#39;knot&#39;, 617: &#39;lab coat, laboratory coat&#39;, 618: &#39;ladle&#39;, 619: &#39;lampshade, lamp shade&#39;, 620: &#39;laptop, laptop computer&#39;, 621: &#39;lawn mower, mower&#39;, 622: &#39;lens cap, lens cover&#39;, 623: &#39;letter opener, paper knife, paperknife&#39;, 624: &#39;library&#39;, 625: &#39;lifeboat&#39;, 626: &#39;lighter, light, igniter, ignitor&#39;, 627: &#39;limousine, limo&#39;, 628: &#39;liner, ocean liner&#39;, 629: &#39;lipstick, lip rouge&#39;, 630: &#39;Loafer&#39;, 631: &#39;lotion&#39;, 632: &#39;loudspeaker, speaker, speaker unit, loudspeaker system, speaker system&#39;, 633: &amp;quot;loupe, jeweler&#39;s loupe&amp;quot;, 634: &#39;lumbermill, sawmill&#39;, 635: &#39;magnetic compass&#39;, 636: &#39;mailbag, postbag&#39;, 637: &#39;mailbox, letter box&#39;, 638: &#39;maillot&#39;, 639: &#39;maillot, tank suit&#39;, 640: &#39;manhole cover&#39;, 641: &#39;maraca&#39;, 642: &#39;marimba, xylophone&#39;, 643: &#39;mask&#39;, 644: &#39;matchstick&#39;, 645: &#39;maypole&#39;, 646: &#39;maze, labyrinth&#39;, 647: &#39;measuring cup&#39;, 648: &#39;medicine chest, medicine cabinet&#39;, 649: &#39;megalith, megalithic structure&#39;, 650: &#39;microphone, mike&#39;, 651: &#39;microwave, microwave oven&#39;, 652: &#39;military uniform&#39;, 653: &#39;milk can&#39;, 654: &#39;minibus&#39;, 655: &#39;miniskirt, mini&#39;, 656: &#39;minivan&#39;, 657: &#39;missile&#39;, 658: &#39;mitten&#39;, 659: &#39;mixing bowl&#39;, 660: &#39;mobile home, manufactured home&#39;, 661: &#39;Model T&#39;, 662: &#39;modem&#39;, 663: &#39;monastery&#39;, 664: &#39;monitor&#39;, 665: &#39;moped&#39;, 666: &#39;mortar&#39;, 667: &#39;mortarboard&#39;, 668: &#39;mosque&#39;, 669: &#39;mosquito net&#39;, 670: &#39;motor scooter, scooter&#39;, 671: &#39;mountain bike, all-terrain bike, off-roader&#39;, 672: &#39;mountain tent&#39;, 673: &#39;mouse, computer mouse&#39;, 674: &#39;mousetrap&#39;, 675: &#39;moving van&#39;, 676: &#39;muzzle&#39;, 677: &#39;nail&#39;, 678: &#39;neck brace&#39;, 679: &#39;necklace&#39;, 680: &#39;nipple&#39;, 681: &#39;notebook, notebook computer&#39;, 682: &#39;obelisk&#39;, 683: &#39;oboe, hautboy, hautbois&#39;, 684: &#39;ocarina, sweet potato&#39;, 685: &#39;odometer, hodometer, mileometer, milometer&#39;, 686: &#39;oil filter&#39;, 687: &#39;organ, pipe organ&#39;, 688: &#39;oscilloscope, scope, cathode-ray oscilloscope, CRO&#39;, 689: &#39;overskirt&#39;, 690: &#39;oxcart&#39;, 691: &#39;oxygen mask&#39;, 692: &#39;packet&#39;, 693: &#39;paddle, boat paddle&#39;, 694: &#39;paddlewheel, paddle wheel&#39;, 695: &#39;padlock&#39;, 696: &#39;paintbrush&#39;, 697: &amp;quot;pajama, pyjama, pj&#39;s, jammies&amp;quot;, 698: &#39;palace&#39;, 699: &#39;panpipe, pandean pipe, syrinx&#39;, 700: &#39;paper towel&#39;, 701: &#39;parachute, chute&#39;, 702: &#39;parallel bars, bars&#39;, 703: &#39;park bench&#39;, 704: &#39;parking meter&#39;, 705: &#39;passenger car, coach, carriage&#39;, 706: &#39;patio, terrace&#39;, 707: &#39;pay-phone, pay-station&#39;, 708: &#39;pedestal, plinth, footstall&#39;, 709: &#39;pencil box, pencil case&#39;, 710: &#39;pencil sharpener&#39;, 711: &#39;perfume, essence&#39;, 712: &#39;Petri dish&#39;, 713: &#39;photocopier&#39;, 714: &#39;pick, plectrum, plectron&#39;, 715: &#39;pickelhaube&#39;, 716: &#39;picket fence, paling&#39;, 717: &#39;pickup, pickup truck&#39;, 718: &#39;pier&#39;, 719: &#39;piggy bank, penny bank&#39;, 720: &#39;pill bottle&#39;, 721: &#39;pillow&#39;, 722: &#39;ping-pong ball&#39;, 723: &#39;pinwheel&#39;, 724: &#39;pirate, pirate ship&#39;, 725: &#39;pitcher, ewer&#39;, 726: &amp;quot;plane, carpenter&#39;s plane, woodworking plane&amp;quot;, 727: &#39;planetarium&#39;, 728: &#39;plastic bag&#39;, 729: &#39;plate rack&#39;, 730: &#39;plow, plough&#39;, 731: &amp;quot;plunger, plumber&#39;s helper&amp;quot;, 732: &#39;Polaroid camera, Polaroid Land camera&#39;, 733: &#39;pole&#39;, 734: &#39;police van, police wagon, paddy wagon, patrol wagon, wagon, black Maria&#39;, 735: &#39;poncho&#39;, 736: &#39;pool table, billiard table, snooker table&#39;, 737: &#39;pop bottle, soda bottle&#39;, 738: &#39;pot, flowerpot&#39;, 739: &amp;quot;potter&#39;s wheel&amp;quot;, 740: &#39;power drill&#39;, 741: &#39;prayer rug, prayer mat&#39;, 742: &#39;printer&#39;, 743: &#39;prison, prison house&#39;, 744: &#39;projectile, missile&#39;, 745: &#39;projector&#39;, 746: &#39;puck, hockey puck&#39;, 747: &#39;punching bag, punch bag, punching ball, punchball&#39;, 748: &#39;purse&#39;, 749: &#39;quill, quill pen&#39;, 750: &#39;quilt, comforter, comfort, puff&#39;, 751: &#39;racer, race car, racing car&#39;, 752: &#39;racket, racquet&#39;, 753: &#39;radiator&#39;, 754: &#39;radio, wireless&#39;, 755: &#39;radio telescope, radio reflector&#39;, 756: &#39;rain barrel&#39;, 757: &#39;recreational vehicle, RV, R.</description>
+      <guid>/post/imagenetlabel/</guid>
+      <description>预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark, Galeocerdo cuvieri&#39;, 虎鲨 4:</description>
     </item>
     
     <item>
       <title>图像相似度之PSNR与SSIM小结</title>
-      <link>https://yl305237731.github.io/post/psnr/</link>
+      <link>/post/psnr/</link>
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/psnr/</guid>
-      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数，比如 0-255的灰度图，n为8. PSNR算法简单，检查的速度也很快。但是其呈现的差异值有时候和人的主观感受不成比例。
-####SSIM（structural similarity）：结构相似性 \mu_x , \mu_y 分别为x,y的均值，\sigma_x , \sigmay ,\sigma{xy}分别为x,y的方差以及协方差。c1与c2用来维持稳定的常数。
-参考：opencv 中文教程</description>
+      <guid>/post/psnr/</guid>
+      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数</description>
     </item>
     
     <item>
       <title>图像联通区域标记</title>
-      <link>https://yl305237731.github.io/post/coonectregion/</link>
+      <link>/post/coonectregion/</link>
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/coonectregion/</guid>
-      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查看了opencv和MATLAB的实现，做个记录。（为了简单说明，以下说明已四连通为例）
-扫描法连通区域标记： 例：对于二值图像、四连通
-第一次遍历： 1.建立一个和图像大小一样的矩阵保存结果，原图记为im,结果矩阵记为mask,mask各元素值可初始化为0. 从上到下，从左到右扫描原图像，变量Mark记录当前赋值 2.若当前访问像素坐标（i,j）且im[i,j]不为0，访问mask[i-1]j和mask[i,j-1]（若未越界）,二者若均为0，Mark++，赋值给当前坐标对应的mask. 若其中一个为0，将非0值赋值给mask[i][j]。 若均非0且相等，将mask[i][j]标记为同一类，若不等将二者最小值赋予mask[i][j],同时将二者合并为同一类（并查集）。
-第二次遍历： 根据并查集的内容对区域赋值。
-def countRegion(img): [high,width] = np.shape(img) mask = np.zeros_like(img) mark = 0 union = {} for i in range (high): for j in range(width): if i==0 and j==0: if img[i][j]==255: mark=mark+1 mask[i][j]=mark union[mark]=mark if i==0 and j!=0: if img[i][j]==255: left = mask[i][j-1] if left!=0: mask[i][j]=left else: mark = mark +1 mask[i][j]=mark union[mark]=mark if j==0 and i!=0: if img[i][j]==255: up = mask[i-1][j] up_right = mask[i-1][j+1] if up==0 and up_right==0: mark = mark+1 mask[i][j]=mark union[mark]=mark if up==0 and up_right!</description>
+      <guid>/post/coonectregion/</guid>
+      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
     </item>
     
   </channel>

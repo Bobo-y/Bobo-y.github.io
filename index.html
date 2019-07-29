@@ -1,610 +1,605 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
 <head>
-
-    <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.55.6" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Lin Yang&#39;s Blog | 专注于机器学习、深度学习、图像处理</title>
-    <meta property="og:title" content="Lin Yang&#39;s Blog | 专注于机器学习、深度学习、图像处理">
-    <meta property="og:type" content="website">
-    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
-    <meta name="description" content="">
-    <meta property="og:url" content="https://yl305237731.github.io/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://yl305237731.github.io/index.xml" title="Lin Yang's Blog" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-
-    
-
-
-    
-    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>扬帆起航</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.55.6" />
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="扬帆起航">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
 </head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="扬帆起航" rel="home">
+			<div class="logo__title">扬帆起航</div>			
+				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div> 
+			</a>
+			
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">选择</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">关于我</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">博客</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/timeline/">时间轴</a>
+		</li>
+	</ul>
+</nav>
 
-
-<body>
-<header id="header" class="clearfix">
-    <div class="container">
-        <div class="col-group">
-            <div class="site-name ">
-                
-                    <h1>
-                        <a id="logo" href="https://yl305237731.github.io/">
-                            Lin Yang&#39;s Blog
-                        </a>
-                    </h1>
-                
-                <p class="description">专注于机器学习、深度学习、图像处理</p>
-            </div>
-            <div>
-                <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://yl305237731.github.io/">首页</a>
-                    
-                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
-                    
-                </nav>
-            </div>
-        </div>
-    </div>
+	</div>
 </header>
-
-
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作" >Pandas常用操作</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月28日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                读数据 1.读csv
-df = pd.read_csv(&quot;data.csv&quot;)  2.读数据库
-import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&quot;localhost&quot;, # your host, usually localhost user=&quot;root&quot;, # your username passwd=&quot;password&quot;, # your password db=&quot;dbname&quot;) # name of the data base query = &quot;SELECT * FROM tablename&quot; df = read_sql(query, db)  数据快照 1.使用head和tail命令查看指定行数据
-import pandas as pd df = pd.read_csv(&quot;data.csv&quot;) # 返回数据帧的信息，包括行列数，列名，类型，大小等 df.info() # top 5 rows df.head() # top 50 rows df.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件" >使用SimpleHttpServer传输文件</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月24日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                此命令需要python支持，mac, linux默认自带，windows需要自己安装python
-命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认8000）  查看本机IP Mac， Linux
-ifconfig  en0 inet为本机IP：10.2.56.109 也可直接查看
-ifconfig en0  用其它电脑，登陆访问 使用别的电脑，打开浏览器，输入IP：端口 点击文件即可下载……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录" >Mac命令行命令记录</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月24日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                 mac 下查看端口占用 sudo lsod -i:端口号  ……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/maccmd/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测" >基于yolo_v3的水印检测</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月21日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
-基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
-一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
-基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
-结果 最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。
-展望 以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定， 个人觉得加入attention机制效果应该还会提升。……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/yovo-keras/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件" >mac通过跳板机对服务器上传下载文件</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月10日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用iterm2可方便使用rz、sz命令。 1.下载安装iterm2.iterm2链接，下载解压后打开，添加到应用程序即可。 2. 安装lrzsz brew install lrzsz  3. 下载iterm2-zmodem 直接进入GitHub下载iterm2-zmodem,解压后将iterm2-send-zmodem.sh和iterm2-recv-zmodem.sh复制到 /usr/local/bin
-# 解压后，进入iterm2-zmode-master cp iterm2-send-zmodem.sh /usr/local/bin/ cp iterm2-recv-zmodem.sh /usr/local/bin/ ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/sz ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/rz  4. 配置iterm2 点击 iterm2-&gt;preferences-&gt;profiles-&gt;Advanced,然后点击Triggers下面的edit,点击➕号，添加如下： 分别是：**B0100，**B00000000000000
-4.然后就可以通过iterm2使用sz,rz命令 ……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/tiaobanji/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记" >视频对象分割小记</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年6月6日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少，嘿嘿，所以相对好发（水）论文，马上毕业了，简单写个小记吧，不针对某篇论文做具体的技术分析。以下任务的定义等主要参考DAVIS benchmark，这个数据集确实推动了这个研究方向。
-任务定义与数据集 任务定义 视频对象分割可以被定义为将前景对象与背景区域进行分离的二值标记问题，如下图（图片来源DAVIS数据集）。视频对象分割一般是分割整个视频序列中最显著的、最关键的物体。 数据集 视频对象分割至2016年以来，这几年吸引了众多研究者的目光，同时取得了很大的研究进展。我个人认为这与DAVIS视频对象分割数据集的发布是密不可分的，所以非常感谢这些花费时间、金钱为我们这些小研究者铺平道路的大佬、科研机构们。
-  DAVIS数据集： DAVIS数据集是2016年伴随论文发布CVPR上的，其论文为： A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation（论文链接）。DAVIS2016数据集为单对象分割数据集，包含30个训练集，20个验证集。2017年，DAVIS在单对象分割数据集的基础上发布了多对象分割数据集DAVIS2017，一共有150个视频序列。如下图，单对象与多对象对比。 同时，DAVIS Benchmark包含了丰富的对比方法的评估结果。目前，DAVIS数据集应该是视频对象分割领域最完善的数据集。 DAVIS官方网站：https://davischallenge.org/
-SegTrack-v2: 此数据集包含14个视频序列，标注的质量一般，比较老，但对比实验一般会在这上面跑 SegTrack-v2链接
-YouTuBe: 此数据集的视频较长。而且原始的数据集中没有像素级的分割标签，是别的研究者做的标签。本文没有找到，所以未在这个数据集上做过对比实验。最关键的是，这个数据集太大了，官网下载得80多个G，国内下载网络还贼不稳定、贼慢，劝退-_-|| YouTuBe链接
-Moseg: 视频运动分割数据集，视频对象分割基本近年来没人用这个数据集 Moseg链接
-VSB100: VSB100虽然也称为视频对象分割benchmark。但个人认为偏向于静态图像分割，因为它对每一帧都进行了过度分割（如下图），要求太高了，与DAVIS中的定义有所差别。反正也没见人在这上面跑视频对象分割，-_-|| VSB100链接 GYGO: 2017年发布的视频对象分割数据集，其视频内容大都针对于电子商务，视频都比较短（1-10秒）。个人认为这个数据集的缺陷在于视频内容中所面临的问题太少，几乎不存在遮挡、快速运动等比较严苛的条件。所以这个数据集上的精度都在0.93以上，用的人少。 GYGO链接
-目前广泛被使用的是前三个数据集，DAVIS是根本，SegTrack和YouTuBe一般做泛化能力对比。
-评价指标 虽然基本各个数据集都会有自己的评价方式。目前主要还是根据DAVIS提供的代码做评估。主要包括：区域相似度（分割结果的IOU），轮廓准确性以及时域稳定性。
-技术路线分类 虽然视频对象分割技术各异，但从监督的程度被划分了三类。无监督式，半监督式以及监督式分割。
-无监督： 无监督式分割即不需要被分割样本的先验。传统的方法主要是从显著性或者运动信息来做，这一类比较经典的主要是FST论文链接。 对于深度学习实现的无监督视频对象分割，普遍通过离线进行有监督的训练得到通用的模型，对于新视频进行无监督的分割，本质上讲仍是通过有监督的学习而获得分割能力，这一类典型的有FSEG论文链接,SFL论文链接。
-半监督： 半监督式视频对象分割，即给出要分割的对象的一帧或多帧人工标注。半监督式分割一般为针对于特定物体的分割。同时，DAVIS上收录的近年来的做半监督论文几乎都是采用的神经网络。这一类典型的有OSVOS论文链接
-监督式： 此类的研究成果主要以某某-CUT为一个系列，主要继承自图割吧。这一方向，研究比较少，自己了解的不深。
-基于神经网络的模型 由于卷积神经网络的盛行，可以说近年来DAVIS收录的以及我所读过的论文，几乎都没离开过神经网络。虽然神经网络是黑盒模型，但仍然可以对当前的基于神经网络的论文按所学的特征进行划分。从FCN引入跳跃连接以及通过插值手段实现从图像到图像的分类以来，于是研究者的目光由图像分割扩展到视频对象分割。首先，与静态图像分割类似，视频对象分割模型从物体的外观（颜色、纹理、形状）等静态信息中学习特征，根据这些信息对物体进行分割。之后，考虑到视频与静态图像的本质区别在于视频包含了丰富的运动信息，运动信息与表观特征信息无疑成为互补，于是结合运动信息的模型成为了众多研究者所关注的方向。目前，结合表观信息与运动信息（运动信息目前几乎是采用光流）是视频对象分割的主流研究方向。
-表观信息模型 在FCN的启发下，OSVOS应运而生。OSVOS本质上是静态图像分割，不考虑视频具有的时域信息。即在大的数据集上离线训练一个通用前景-背景分类网络，测试阶段，针对于给定的分割对象，重新微调网络，使其针对于指定的分割对象。 OSVOS的流程如上图所示： Base Network: OSVOS的主干网络是基于VGG16实现的二分类网络。使用在ImageNet上预训练得到的模型参数初始化。 Parent Network： 在DAVIS单对象训练集上训练，使网络学会分割通用的前景-背景。 Test Network: 使用给定的视频的第一帧微调Parent Network，使网络快速针对于给定的目标。
-OSVOS在DAVIS上取得了0.79的精度。但是OSVOS也存在一个明显的问题，当目标发生了较大的变化时，网络适应不了物体的变化，视频的时域信息不应该不考虑。（哈哈，发现问题，接下来就是研究点了）既然OSVOS不考虑时域信息，那么引入时域信息不就是新的论文了吗？对，没错，接下来就是OnAVOS（论文链接），通过引入在线自适应提升了分割精度。（哈哈，我的第一篇论文也是针对自适应来做的，基本和OnAVOS同时做，可惜自己做的慢）
-表观信息加光流信息 随着光流网络的成熟，将基于FCN的表观信息模型与光流模型结合，实现两者的互补。 1.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/videoseg_summary/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记" >Linux命令随记</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月13日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/shell">shell</a></span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/linux">Linux</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                 记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &quot;*xxx*&quot; | xargs -i cp {} /home/XXX/XXX/  2. 在使用xshell登录服务器时跑代码时，xshell断开，程序停止 解决方法：nohup将程序后台运行，并返回进程号
-nohup python XXXX &amp;  使用setsid命令,例
-setsid python run.py -c config.json  退出xshell时，输入exit退出
-3.删除文件夹下的文件，保留文件夹 进入文件夹，比如删除文件夹下所有jpg图片
-find ./ -name &quot;*jpg&quot; | xargs rm  ……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/linux_cmd/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记" >Hr_net阅读笔记</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月13日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a></span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以及上采样的研究提供了一个新的参考，如图像语义分割、超分辨率重建等类似研究。 HRNet的网络结构 HRNet网络结构图如下（图片来自原论文）： HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。
-以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架： HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。
-信息交换单元： 下图说明了HRNet如何在各层之间进行特征的融合。 个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。 论文链接……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/hr_net/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录" >gitLab项目拉取及提交使用记录</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年3月30日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/tools">tools</a></span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/git">git</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。
-一.创建分支  首先登陆gitlab，进入你要拉取的项目.  点击Branches  输入分支名，创建分支 二.项目拉到本机 新建一个文件夹，在文件夹里鼠标右键选git bash here。
- git init 本地初始化  添加项目地址，此处的地址就是主分支（master）的地址  然后将刚刚创建的分支拉下来
- git fetch origin watermark_generator(刚刚在gitlab创建的分支名) 2.git checkout -b watermark_gen(本地要创建的分支名) origin/watermark_generator(gitlab上创建的分支) 3.git pull origin watermark_generator(gitlab上刚刚创建的分支名) 到此，分支就拉下来了。
-  三.本地代码上传 然后就开始写代码，写啊写啊，写好了。开始上传
-1.git status 查看当前有哪些修改为提交，红色的的都是 2. 然后指定添加哪些，.代表能加的全加 3. 提交到本地仓库 4.提交到服务器gitlab 刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。 四.将本地已有的代码直接上传到新的分支上 上面是从gitlab上拉取分支，再传代码。以下是本地代码已经有了，将代码上传到gitlab分支上，在本地增加远程分支。 1. 将本地写好的项目上传到远程master 进入项目工程
-git init git add . git commit -m &quot;submit&quot; git push -u origin master   将本地代码上传到master下的分支 进入项目工程  git init git remote add origin git@github.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/gitlab_1/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地" >Keras数据增强并保存到本地</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年3月29日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://yl305237731.github.io/categories/keras">Keras</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）方法可快速的实现 1.首先实例化ImageDataGenerator对象以自己想要的属性 img_datagen = keras.preprocessing.image.ImageDataGenerator(featurewise_center=False, samplewise_center=False, featurewise_std_normalization=False, samplewise_std_normalization=False, zca_whitening=False, zca_epsilon=1e-06, rotation_range=0, width_shift_range=0.0, height_shift_range=0.0, shear_range=0.0, zoom_range=0.0, horizontal_flip=False, vertical_flip=False, rescale=None, ) #### 对于数据增强主要可能用到的属性如下，按自己的需求设置即可： ##### featurewise_center: 布尔值。将输入数据的均值设置为 0，逐特征进行。 ##### samplewise_center: 布尔值。将每个样本的均值设置为 0。 ##### featurewise_std_normalization: Boolean. 布尔值。将输入除以数据标准差，逐特征进行。 ##### zca_epsilon: ZCA 白化的 epsilon 值，默认为 1e-6。 ##### zca_whitening: 布尔值。是否应用 ZCA 白化。 ##### rotation_range: 整数。随机旋转的度数范围。 ##### width_shift_range: 浮点数、一维数组或整数 ##### height_shift_range: 浮点数、一维数组或整数 ##### shear_range: 浮点数。剪切强度（以弧度逆时针方向剪切角度）。 ##### zoom_range: 浮点数 或 [lower, upper]。随机缩放范围。 ##### channel_shift_range: 浮点数。随机通道转换的范围。 ##### horizontal_flip: 布尔值。随机水平翻转。 ##### vertical_flip: 布尔值。随机垂直翻转。  2.……
-                            </div>
-                            <p class="readmore"><a href="https://yl305237731.github.io/post/keras_data_aug/">阅读全文</a></p>
-                        </article>
-                    
-                    
-
-
-
-<ol class="page-navigator">
-    
-
-    
-    <li  class="current">
-        <a href="https://yl305237731.github.io/">1</a>
-    </li>
-    
-    <li >
-        <a href="https://yl305237731.github.io/page/2/">2</a>
-    </li>
-    
-    <li >
-        <a href="https://yl305237731.github.io/page/3/">3</a>
-    </li>
-    
-
-    
-    <li class="next">
-        <a href="https://yl305237731.github.io/page/2/">下一页</a>
-    </li>
-    
-</ol>
-
-
-
-                </div>
-            </div>
-
-            <div id="secondary">
-    <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
-      
-      <input type="text" name="q" maxlength="20" placeholder="Search">
-      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
-      <button type="submit" class="submit icon-search"></button>
-</form>
-    </section>
-    
-    <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作">Pandas常用操作</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件">使用SimpleHttpServer传输文件</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录">Mac命令行命令记录</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
-    </li>
-    
-</ul>
-    </section>
-
-    
-
-    <section class="widget">
-        <h3 class="widget-title">分类</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/tools/">tools(11)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(6)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
-    </li>
-    
-</ul>
-    </section>
-
-    <section class="widget">
-        <h3 class="widget-title">标签</h3>
-<div class="tagcloud">
-    
-    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
-    
-    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
-    
-    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
-    
-    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
-    
-    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
-    
-    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
-    
-    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
-    
-    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
-    
-    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
-    
-    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
-    
-    <a href="https://yl305237731.github.io/tags/maccmd/">maccmd</a>
-    
-    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
-    
-    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
-    
-    <a href="https://yl305237731.github.io/tags/pandas/">pandas</a>
-    
-    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
-    
-    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
-    
-    <a href="https://yl305237731.github.io/tags/python/">python</a>
-    
-    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
-    
-    <a href="https://yl305237731.github.io/tags/simplehttpserver/">simplehttpserver</a>
-    
-    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
-    
-    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
-    
-    <a href="https://yl305237731.github.io/tags/yolo_v3/">yolo_v3</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
-    
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main list" role="main"><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+			<img src="/img/cover/favicon.png" alt="Pandas常用操作" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" rel="bookmark">
+			Pandas常用操作
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-28T21:58:03">2019-07-28</time>
 </div>
-    </section>
 
-    
-<section class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <ul class="widget-list">
-        
-        <li>
-            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
-        </li>
-        
-    </ul>
-</section>
-
-
-    <section class="widget">
-        <h3 class="widget-title">其它</h3>
-        <ul class="widget-list">
-            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
-        </ul>
-    </section>
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
 </div>
-        </div>
-    </div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">3 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		读数据 1.读csv df = pd.read_csv(&quot;data.csv&quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&quot;localhost&quot;, # your host, usually localhost user=&quot;root&quot;, # your username passwd=&quot;password&quot;, # your password db=&quot;dbname&quot;) # name of the data base query = &quot;SELECT * FROM tablename&quot; df = read_sql(query, db) 数据快照 1.使用h
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">
+			<img src="/img/cover/favicon.png" alt="使用SimpleHttpServer传输文件" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" rel="bookmark">
+			使用SimpleHttpServer传输文件
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-24T10:43:23">2019-07-24</time>
 </div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认800
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/maccmd/">
+			<img src="/img/cover/favicon.png" alt="Mac命令行命令记录" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/maccmd/" rel="bookmark">
+			Mac命令行命令记录
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-24T10:38:06">2019-07-24</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		mac 下查看端口占用 sudo lsod -i:端口号
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/yovo-keras/">
+			<img src="/img/cover/favicon.png" alt="基于yolo_v3的水印检测" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/yovo-keras/" rel="bookmark">
+			基于yolo_v3的水印检测
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-21T21:25:20">2019-07-21</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/yovo-keras/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/tiaobanji/">
+			<img src="/img/cover/favicon.png" alt="mac通过跳板机对服务器上传下载文件" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/tiaobanji/" rel="bookmark">
+			mac通过跳板机对服务器上传下载文件
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-10T13:27:58">2019-07-10</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用ite
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/tiaobanji/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/videoseg_summary/">
+			<img src="/img/cover/favicon.png" alt="视频对象分割小记" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/videoseg_summary/" rel="bookmark">
+			视频对象分割小记
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-06-06T15:25:02">2019-06-06</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">6 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/videoseg_summary/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/linux_cmd/">
+			<img src="/img/cover/favicon.png" alt="Linux命令随记" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/linux_cmd/" rel="bookmark">
+			Linux命令随记
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-04-13T15:12:08">2019-04-13</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/shell" rel="category">shell</a>, <a class="meta__link" href="/categories/linux" rel="category">Linux</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &quot;*xxx*&quot; | xargs -i cp {} /home/XXX/XXX/ 2. 在使
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/linux_cmd/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/hr_net/">
+			<img src="/img/cover/favicon.png" alt="Hr_net阅读笔记" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/hr_net/" rel="bookmark">
+			Hr_net阅读笔记
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-04-13T14:52:14">2019-04-13</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/hr_net/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/gitlab_1/">
+			<img src="/img/cover/favicon.png" alt="gitLab项目拉取及提交使用记录" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/gitlab_1/" rel="bookmark">
+			gitLab项目拉取及提交使用记录
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-30T14:59:05">2019-03-30</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a>, <a class="meta__link" href="/categories/git" rel="category">git</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Branches
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/gitlab_1/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/keras_data_aug/">
+			<img src="/img/cover/favicon.png" alt="Keras数据增强并保存到本地" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_data_aug/" rel="bookmark">
+			Keras数据增强并保存到本地
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-29T15:16:16">2019-03-29</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_data_aug/">阅读全文…</a>
+	</div>
+</article>
+</main>
+
+<div class="pagination">
+	
+	
+	
+	
+	
+	
+	
+	 
+		
+	
+	
+		
+		
+	
+		
+		
+	
+	
+	<span class="pagination__item pagination__item--current">1</span>
+		
+	
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/2/">2</a>
+		
+		
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/3/">3</a>
+		
+		
+	
+	<a class="pagination__item pagination__item--next btn" href="/page/2/">›</a>
+	<a class="pagination__item pagination__item--next btn" href="/page/3/">»</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;3&nbsp;页</span>
+	
+</div>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Pandas常用操作</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">使用SimpleHttpServer传输文件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/maccmd/">Mac命令行命令记录</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/tiaobanji/">mac通过跳板机对服务器上传下载文件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/videoseg_summary/">视频对象分割小记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/linux_cmd/">Linux命令随记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hr_net/">Hr_net阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/gitlab_1/">gitLab项目拉取及提交使用记录</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/keras_data_aug/">Keras数据增强并保存到本地</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">分类</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/git">Git</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%88%86%e7%b1%bb">分类</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb">多标签分类</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机 (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">社群</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">友情链接</h4>
+	<div class="widget-social__item widget__item">
+		<a class="widget-social__link widget__link btn" title="lulu" rel="noopener noreferrer" href="https://me.csdn.net/u013491950" target="_blank">
+			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
+			<path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
+			<span>lulu</span>
+		</a>
+	</div>
+</div>
+
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2019 扬帆起航.
+			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主题</span>
+		</div>
+	</div>
 </footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 
-
-
-
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
 
 </body>
 </html>

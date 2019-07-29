@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mnist转图片 on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
-    <description>Recent content in Mnist转图片 on Lin Yang&#39;s Blog</description>
+    <title>Mnist转图片 on 扬帆起航</title>
+    <link>/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
+    <description>Recent content in Mnist转图片 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Dec 2018 15:37:02 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python下mnist数据集转化为图片</title>
-      <link>https://yl305237731.github.io/post/mnist2img/</link>
+      <link>/post/mnist2img/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/mnist2img/</guid>
-      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr)  以上代码以训练集为例，将图片的vector转化为28*28的png图片，同时保存每一张图片对应的label（label由onehot转成数字）到TXT文本中。 以下是我的网盘链接：https://pan.baidu.com/s/1pV8KuKbDy9yktpREk5ZDvw 提取码：wac5</description>
+      <guid>/post/mnist2img/</guid>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
     </item>
     
   </channel>

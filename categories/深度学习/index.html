@@ -1,481 +1,437 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
 <head>
-
-    <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.55.6" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>深度学习 | Lin Yang&#39;s Blog</title>
-    <meta property="og:title" content="深度学习 - Lin Yang&#39;s Blog">
-    <meta property="og:type" content="article">
-        
-        
-    <meta name="Keywords" content="机器学习,CNN,keras,图像处理,python, spark">
-    <meta name="description" content="深度学习">
-        
-    <meta name="author" content="Lin Yang">
-    <meta property="og:url" content="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" title="Lin Yang's Blog" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-
-    
-
-
-    
-    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>深度学习 - 扬帆起航</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.55.6" />
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="alternate" type="application/rss+xml" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" title="扬帆起航">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
 </head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="扬帆起航" rel="home">
+			<div class="logo__title">扬帆起航</div>			
+				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div> 
+			</a>
+			
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">选择</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">关于我</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">博客</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/timeline/">时间轴</a>
+		</li>
+	</ul>
+</nav>
 
-
-<body>
-<header id="header" class="clearfix">
-    <div class="container">
-        <div class="col-group">
-            <div class="site-name ">
-                
-                    <a id="logo" href="https://yl305237731.github.io/">
-                        Lin Yang&#39;s Blog
-                    </a>
-                
-                <p class="description">专注于机器学习、深度学习、图像处理</p>
-            </div>
-            <div>
-                <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://yl305237731.github.io/">首页</a>
-                    
-                    <a  href="https://yl305237731.github.io/about/" title="关于">关于</a>
-                    
-                </nav>
-            </div>
-        </div>
-    </div>
+	</div>
 </header>
-
-
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        分类
-                        <span class="keyword">深度学习</span>
-                        中的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/yovo-keras/">基于yolo_v3的水印检测</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月21日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
-基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
-一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
-基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
-结果 最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。
-展望 以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定， 个人觉得加入attention机制效果应该还会提升。……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/yovo-keras/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/hr_net/">Hr_net阅读笔记</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年4月13日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以及上采样的研究提供了一个新的参考，如图像语义分割、超分辨率重建等类似研究。 HRNet的网络结构 HRNet网络结构图如下（图片来自原论文）： HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。
-以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架： HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。
-信息交换单元： 下图说明了HRNet如何在各层之间进行特征的融合。 个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。 论文链接……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/hr_net/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/keras_duofenlei/">Keras多标签分类网络实现</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年3月29日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/keras">Keras</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB">“多标签分类”</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为softmax函数。 * 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。
-数据准备 我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体
-数据目录如下： 按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的 数据生成 我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]
-data_gen.py
-import os import numpy as np from PIL import Image def to_multi_label(num_list, num_class): lab = np.zeros(shape=(1,num_class)) for i in num_list: lab[0,int(i)-1] = 1 return lab def generate_arrays_from_txt(path, batch_size, num_class): with open(path) as f: while True: imgs = [] labs = np.zeros(shape=(batch_size,num_class)) i= 0 while len(imgs) &lt; batch_size: line = f.readline() if not line: f.seek(0) line = f.……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/keras_duofenlei/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/mnist2img/">python下mnist数据集转化为图片</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月22日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/tools">tools</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr)  以上代码以训练集为例，将图片的vector转化为28*28的png图片，同时保存每一张图片对应的label（label由onehot转成数字）到TXT文本中。 以下是我的网盘链接：https://pan.baidu.com/s/1pV8KuKbDy9yktpREk5ZDvw 提取码：wac5……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/mnist2img/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/keras_simi/">基于Keras图像相似度计算孪生网络</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月12日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a>
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">图像处理</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = ['bear','blackswan','bus','camel','car','cows','dance','dog','hike','hoc','kite','lucia','mallerd','pigs','soapbox','stro','surf','swing','train','walking'] test_names = ['boat','dance-jump','drift-turn','elephant','libby'] def load_data(seq_names,data_number,seq_len): #生成图片对 print('loading data.....') frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &lt; data_number: count = count + 1 pos_neg = np.……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/keras_simi/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://yl305237731.github.io/post/kdog_cat/">Keras 猫狗二分类</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年11月11日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name=='cat': labels.……
-                                <p class="readmore"><a href="https://yl305237731.github.io/post/kdog_cat/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-
-                    
-
-
-
-
-
-                </div>
-            </div>
-
-            <div id="secondary">
-    <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
-      
-      <input type="text" name="q" maxlength="20" placeholder="Search">
-      <input type="hidden" name="sitesearch" value="https://yl305237731.github.io/">
-      <button type="submit" class="submit icon-search"></button>
-</form>
-    </section>
-    
-    <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="Pandas常用操作">Pandas常用操作</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" title="使用SimpleHttpServer传输文件">使用SimpleHttpServer传输文件</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/maccmd/" title="Mac命令行命令记录">Mac命令行命令记录</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/yovo-keras/" title="基于yolo_v3的水印检测">基于yolo_v3的水印检测</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/tiaobanji/" title="mac通过跳板机对服务器上传下载文件">mac通过跳板机对服务器上传下载文件</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/videoseg_summary/" title="视频对象分割小记">视频对象分割小记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/linux_cmd/" title="Linux命令随记">Linux命令随记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/hr_net/" title="Hr_net阅读笔记">Hr_net阅读笔记</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/gitlab_1/" title="gitLab项目拉取及提交使用记录">gitLab项目拉取及提交使用记录</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/post/keras_data_aug/" title="Keras数据增强并保存到本地">Keras数据增强并保存到本地</a>
-    </li>
-    
-</ul>
-    </section>
-
-    
-
-    <section class="widget">
-        <h3 class="widget-title">分类</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/git/">git(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/keras/">keras(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/leetcode/">leetcode(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/linux/">linux(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/shell/">shell(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/tools/">tools(11)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%88%86%E7%B1%BB/">分类(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习(6)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://yl305237731.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读(2)</a>
-    </li>
-    
-</ul>
-    </section>
-
-    <section class="widget">
-        <h3 class="widget-title">标签</h3>
-<div class="tagcloud">
-    
-    <a href="https://yl305237731.github.io/tags/gitlab/">gitlab</a>
-    
-    <a href="https://yl305237731.github.io/tags/google_images_download/">google_images_download</a>
-    
-    <a href="https://yl305237731.github.io/tags/hrnet/">hrnet</a>
-    
-    <a href="https://yl305237731.github.io/tags/imagenet/">imagenet</a>
-    
-    <a href="https://yl305237731.github.io/tags/iterm2/">iterm2</a>
-    
-    <a href="https://yl305237731.github.io/tags/keras/">keras</a>
-    
-    <a href="https://yl305237731.github.io/tags/knn/">knn</a>
-    
-    <a href="https://yl305237731.github.io/tags/leetcode/">leetcode</a>
-    
-    <a href="https://yl305237731.github.io/tags/libsvm/">libsvm</a>
-    
-    <a href="https://yl305237731.github.io/tags/linux/">linux</a>
-    
-    <a href="https://yl305237731.github.io/tags/maccmd/">maccmd</a>
-    
-    <a href="https://yl305237731.github.io/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/">mnist转图片</a>
-    
-    <a href="https://yl305237731.github.io/tags/numpy-gpu%E5%8A%A0%E9%80%9F/">numpy-gpu加速</a>
-    
-    <a href="https://yl305237731.github.io/tags/pandas/">pandas</a>
-    
-    <a href="https://yl305237731.github.io/tags/psnr/">psnr</a>
-    
-    <a href="https://yl305237731.github.io/tags/pyplot%E6%96%87%E6%A1%A3/">pyplot文档</a>
-    
-    <a href="https://yl305237731.github.io/tags/python/">python</a>
-    
-    <a href="https://yl305237731.github.io/tags/ransac/">ransac</a>
-    
-    <a href="https://yl305237731.github.io/tags/simplehttpserver/">simplehttpserver</a>
-    
-    <a href="https://yl305237731.github.io/tags/ubuntu/">ubuntu</a>
-    
-    <a href="https://yl305237731.github.io/tags/video-object-segementation/">video-object-segementation</a>
-    
-    <a href="https://yl305237731.github.io/tags/yolo_v3/">yolo_v3</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/">二分类</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%9B%9B%E9%A2%86%E5%9F%9F%E8%BF%9E%E9%80%9A%E6%A0%87%E8%AE%B0/">四领域连通标记</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/">多标签分类</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C/">孪生网络</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">数据加载</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/">数据增强</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">最小二乘法</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E6%A8%A1%E7%89%88%E5%8C%B9%E9%85%8D/">模版匹配</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E7%9B%B8%E5%85%B3/">相关</a>
-    
-    <a href="https://yl305237731.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">跳板机</a>
-    
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main list" role="main"><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/yovo-keras/">
+			<img src="/img/cover/favicon.png" alt="基于yolo_v3的水印检测" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/yovo-keras/" rel="bookmark">
+			基于yolo_v3的水印检测
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-07-21T21:25:20">2019-07-21</time>
 </div>
-    </section>
 
-    
-<section class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <ul class="widget-list">
-        
-        <li>
-            <a target="_blank" href="https://me.csdn.net/u013491950" title="我的csdn">我的csdn</a>
-        </li>
-        
-    </ul>
-</section>
-
-
-    <section class="widget">
-        <h3 class="widget-title">其它</h3>
-        <ul class="widget-list">
-            <li><a href="https://yl305237731.github.io/index.xml">文章 RSS</a></li>
-        </ul>
-    </section>
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
 </div>
-        </div>
-    </div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/yovo-keras/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/hr_net/">
+			<img src="/img/cover/favicon.png" alt="Hr_net阅读笔记" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/hr_net/" rel="bookmark">
+			Hr_net阅读笔记
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-04-13T14:52:14">2019-04-13</time>
 </div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2019 <a href="https://yl305237731.github.io/">Lin Yang&#39;s Blog By Lin Yang</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/hr_net/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/keras_duofenlei/">
+			<img src="/img/cover/favicon.png" alt="Keras多标签分类网络实现" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_duofenlei/" rel="bookmark">
+			Keras多标签分类网络实现
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-29T15:07:11">2019-03-29</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a>, <a class="meta__link" href="/categories/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" rel="category">“多标签分类”</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_duofenlei/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/mnist2img/">
+			<img src="/img/cover/favicon.png" alt="python下mnist数据集转化为图片" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/mnist2img/" rel="bookmark">
+			python下mnist数据集转化为图片
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-12-22T15:37:02">2018-12-22</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr) 以
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/mnist2img/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/keras_simi/">
+			<img src="/img/cover/favicon.png" alt="基于Keras图像相似度计算孪生网络" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_simi/" rel="bookmark">
+			基于Keras图像相似度计算孪生网络
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-11-12T16:32:32">2018-11-12</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a>, <a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a>, <a class="meta__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86" rel="category">图像处理</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = ['bear','blackswan','bus','camel','car','cows','dance','dog','hike','hoc','kite','lucia','mallerd','pigs','soapbox','stro','surf','swing','train','walking'] test_names = ['boat','dance-jump','drift-turn','elephant','libby'] def load_data(seq_names,data_number,seq_len): #生成图片对 print('loading data.....') frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &lt; data_number:
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_simi/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/kdog_cat/">
+			<img src="/img/cover/favicon.png" alt="Keras 猫狗二分类" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/kdog_cat/" rel="bookmark">
+			Keras 猫狗二分类
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-11-11T16:36:27">2018-11-11</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/kdog_cat/">阅读全文…</a>
+	</div>
+</article>
+</main>
+
+
+
+			</div>
+			
+<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Pandas常用操作</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">使用SimpleHttpServer传输文件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/maccmd/">Mac命令行命令记录</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/tiaobanji/">mac通过跳板机对服务器上传下载文件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/videoseg_summary/">视频对象分割小记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/linux_cmd/">Linux命令随记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/hr_net/">Hr_net阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/gitlab_1/">gitLab项目拉取及提交使用记录</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/keras_data_aug/">Keras数据增强并保存到本地</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">分类</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/git">Git</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%88%86%e7%b1%bb">分类</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb">多标签分类</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机 (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">社群</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">友情链接</h4>
+	<div class="widget-social__item widget__item">
+		<a class="widget-social__link widget__link btn" title="lulu" rel="noopener noreferrer" href="https://me.csdn.net/u013491950" target="_blank">
+			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
+			<path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
+			<span>lulu</span>
+		</a>
+	</div>
+</div>
+
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2019 扬帆起航.
+			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主题</span>
+		</div>
+	</div>
 </footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 
-
-
-
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
 
 </body>
 </html>

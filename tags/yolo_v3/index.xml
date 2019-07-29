@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yolo_v3 on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/yolo_v3/</link>
-    <description>Recent content in yolo_v3 on Lin Yang&#39;s Blog</description>
+    <title>yolo_v3 on 扬帆起航</title>
+    <link>/tags/yolo_v3/</link>
+    <description>Recent content in yolo_v3 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 21 Jul 2019 21:25:20 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/yolo_v3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/yolo_v3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>基于yolo_v3的水印检测</title>
-      <link>https://yl305237731.github.io/post/yovo-keras/</link>
+      <link>/post/yovo-keras/</link>
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/yovo-keras/</guid>
-      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
-基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
-一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
-基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
-结果 最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。
-展望 以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定， 个人觉得加入attention机制效果应该还会提升。</description>
+      <guid>/post/yovo-keras/</guid>
+      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
     </item>
     
   </channel>

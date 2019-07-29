@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ubuntu on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on Lin Yang&#39;s Blog</description>
+    <title>ubuntu on 扬帆起航</title>
+    <link>/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 28 Nov 2018 16:24:49 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu &#43; Python下libsvm使用小结</title>
-      <link>https://yl305237731.github.io/post/libsvm/</link>
+      <link>/post/libsvm/</link>
       <pubDate>Wed, 28 Nov 2018 16:24:49 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/libsvm/</guid>
-      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载网站是链接，目前更新到3.23版本。
-安装测试 我是在Ubuntu16.04环境下使用的 解压后目录如下： 针对Python，进入Python包，内容如下： 测试： 命令行输入：
-import sys sys.path.append(&#39;/home/thinkstation/liny/libsvm/python&#39;) import svm  如果系统里是第一次使用libsvm,此时会报错 LIBSVM library not found 进入linsvm目录，命令行输入
-make lib / /得到 libsvm.so.2  本地目录下测试可直接使用 加入系统路径： 加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中
-使用 1.使用 a1a二分类数据集 链接 特征已经进行了处理，libsvm 数据格式如下： 可以看出，格式为： 类别 index：特征 index：特征 &amp;hellip;&amp;hellip;.
-2.mnist数据集 libsvm官网数据集中的mnist数据 其中前两项数据没有经过scale，后两项没有经过scale 用未scale的数据训练测试： 训练了接近5个小时，-_-||
-精度竟然这么低。。。。。 换上scale后的数据： 训练时间10分钟左右，精度0.94
-3.猫狗二分类 数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1 准确率0.62，可能数据有点少吧。。。。 总之，作者写的很完善了，还在不断优化中。 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行
-主要使用函数 svmutil.py中 1. svm_load_model(model_file_name)
-2. svm_save_model(model_file_name, model)
-3. svm_train(arg1, arg2=None, arg3=None)
-4. svm_predict(y, x, m, options=&amp;ldquo;&amp;rdquo;)</description>
+      <guid>/post/libsvm/</guid>
+      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载</description>
     </item>
     
   </channel>

@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>深度学习 on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-    <description>Recent content in 深度学习 on Lin Yang&#39;s Blog</description>
+    <title>深度学习 on 扬帆起航</title>
+    <link>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 深度学习 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 21 Jul 2019 21:25:20 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>基于yolo_v3的水印检测</title>
-      <link>https://yl305237731.github.io/post/yovo-keras/</link>
+      <link>/post/yovo-keras/</link>
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/yovo-keras/</guid>
-      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水印）。 传统的水印检测方法主要是模版匹配方法，可能包含对 水印图片进行一系列的操作。 缺点很明显，水印种类多，即使同一类水印其大小等特征都具有明显的区别，通过 模版匹配的方法难以有效的检测。
-基于推荐的Faster RCNN系列 由于深度学习盛行，计算机视觉任务大多转向了基于深度学习实现。对于基于区域推荐的Faster RCNN系列 目标检测框架，通过two-step的形式进行检测。虽然faster rcnn将区域推荐以RPN实现，但其实时检测能力 仍然较弱。同时faster rcnn 实现较繁琐，自己训练模型往往达不到别人的效果。
-一步到位的SSD，YOLO系列 与基于区域推荐的框架不同，YOLO系列是直接在整张输入图片上进行回归，以检测出所有的目标。公开数据集 上的对比结果而言，YOLO系列的速度大大领先与faster rcnn一类，但精度稍差。
-基于YOLO_v3的小目标检测 偶然在fastai上看见一篇文章，文章明确了yolo_v3对小目标的检测能力。yolo_v3网络本身在设计时就考虑 到了小目标检测，网络在进行损失计算的时候计算了3个尺度的损失。对大部分水印而言，其实也并不完全是小 目标检测。因此，考虑到速度与精度。选择了yolo_v3. 关于yolo_v3模型的blog太多了，略过。 模型有了，剩下就是数据和调参数了。 在经过大量调参后，最终模型yolo_v3水印检测模型
-结果 最终测试集水印召回率可达95%。模型依赖数据，水印模版越多，召回率可更高。
-展望 以上实验并未修改模型，时间几乎全花在生成水印图片以及调参上。对于市面上的水印而言，80%的水印出现的位置固定， 个人觉得加入attention机制效果应该还会提升。</description>
+      <guid>/post/yovo-keras/</guid>
+      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
     </item>
     
     <item>
       <title>Hr_net阅读笔记</title>
-      <link>https://yl305237731.github.io/post/hr_net/</link>
+      <link>/post/hr_net/</link>
       <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/hr_net/</guid>
-      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以及上采样的研究提供了一个新的参考，如图像语义分割、超分辨率重建等类似研究。 HRNet的网络结构 HRNet网络结构图如下（图片来自原论文）： HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。
-以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架： HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。
-信息交换单元： 下图说明了HRNet如何在各层之间进行特征的融合。 个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。 论文链接</description>
+      <guid>/post/hr_net/</guid>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以</description>
     </item>
     
     <item>
       <title>Keras多标签分类网络实现</title>
-      <link>https://yl305237731.github.io/post/keras_duofenlei/</link>
+      <link>/post/keras_duofenlei/</link>
       <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_duofenlei/</guid>
-      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为softmax函数。 * 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。
-数据准备 我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体
-数据目录如下： 按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的 数据生成 我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]
-data_gen.py
-import os import numpy as np from PIL import Image def to_multi_label(num_list, num_class): lab = np.zeros(shape=(1,num_class)) for i in num_list: lab[0,int(i)-1] = 1 return lab def generate_arrays_from_txt(path, batch_size, num_class): with open(path) as f: while True: imgs = [] labs = np.zeros(shape=(batch_size,num_class)) i= 0 while len(imgs) &amp;lt; batch_size: line = f.readline() if not line: f.seek(0) line = f.</description>
+      <guid>/post/keras_duofenlei/</guid>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
     </item>
     
     <item>
       <title>python下mnist数据集转化为图片</title>
-      <link>https://yl305237731.github.io/post/mnist2img/</link>
+      <link>/post/mnist2img/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/mnist2img/</guid>
-      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr)  以上代码以训练集为例，将图片的vector转化为28*28的png图片，同时保存每一张图片对应的label（label由onehot转成数字）到TXT文本中。 以下是我的网盘链接：https://pan.baidu.com/s/1pV8KuKbDy9yktpREk5ZDvw 提取码：wac5</description>
+      <guid>/post/mnist2img/</guid>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
     </item>
     
     <item>
       <title>基于Keras图像相似度计算孪生网络</title>
-      <link>https://yl305237731.github.io/post/keras_simi/</link>
+      <link>/post/keras_simi/</link>
       <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/keras_simi/</guid>
-      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number: count = count + 1 pos_neg = np.</description>
+      <guid>/post/keras_simi/</guid>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
     </item>
     
     <item>
       <title>Keras 猫狗二分类</title>
-      <link>https://yl305237731.github.io/post/kdog_cat/</link>
+      <link>/post/kdog_cat/</link>
       <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/kdog_cat/</guid>
-      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if seq_name==&#39;cat&#39;: labels.</description>
+      <guid>/post/kdog_cat/</guid>
+      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
     </item>
     
   </channel>

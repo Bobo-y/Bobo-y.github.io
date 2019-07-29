@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PSNR on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/psnr/</link>
-    <description>Recent content in PSNR on Lin Yang&#39;s Blog</description>
+    <title>PSNR on 扬帆起航</title>
+    <link>/tags/psnr/</link>
+    <description>Recent content in PSNR on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 03 Oct 2018 16:55:08 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/psnr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/psnr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>图像相似度之PSNR与SSIM小结</title>
-      <link>https://yl305237731.github.io/post/psnr/</link>
+      <link>/post/psnr/</link>
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/psnr/</guid>
-      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数，比如 0-255的灰度图，n为8. PSNR算法简单，检查的速度也很快。但是其呈现的差异值有时候和人的主观感受不成比例。
-####SSIM（structural similarity）：结构相似性 \mu_x , \mu_y 分别为x,y的均值，\sigma_x , \sigmay ,\sigma{xy}分别为x,y的方差以及协方差。c1与c2用来维持稳定的常数。
-参考：opencv 中文教程</description>
+      <guid>/post/psnr/</guid>
+      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数</description>
     </item>
     
   </channel>

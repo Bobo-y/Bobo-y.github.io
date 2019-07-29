@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SimpleHttpServer on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/simplehttpserver/</link>
-    <description>Recent content in SimpleHttpServer on Lin Yang&#39;s Blog</description>
+    <title>SimpleHttpServer on 扬帆起航</title>
+    <link>/tags/simplehttpserver/</link>
+    <description>Recent content in SimpleHttpServer on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 24 Jul 2019 10:43:23 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/simplehttpserver/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/simplehttpserver/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用SimpleHttpServer传输文件</title>
-      <link>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <link>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
-      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python
-命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认8000）  查看本机IP Mac， Linux
-ifconfig  en0 inet为本机IP：10.2.56.109 也可直接查看
-ifconfig en0  用其它电脑，登陆访问 使用别的电脑，打开浏览器，输入IP：端口 点击文件即可下载</description>
+      <guid>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认800</description>
     </item>
     
   </channel>
