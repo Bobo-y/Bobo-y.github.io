@@ -439,7 +439,10 @@
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2018-07-21T11:17:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/links/</loc>
   </url>
   
 </urlset>

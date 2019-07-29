@@ -255,12 +255,21 @@
     </item>
     
     <item>
-      <title>关于我</title>
+      <title></title>
       <link>/about/</link>
-      <pubDate>Sat, 21 Jul 2018 11:17:35 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
       <description>联系方式 手机：15382022125 Email：yanglinself@gmail.com QQ/微信号：305237731/yl305237</description>
+    </item>
+    
+    <item>
+      <title>工具网站收集</title>
+      <link>/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/links/</guid>
+      <description></description>
     </item>
     
   </channel>
