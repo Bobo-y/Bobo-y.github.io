@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pyplot文档 - 扬帆起航</title>
+	<title>Hadoop命令记录 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,6 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/tags/pyplot%E6%96%87%E6%A1%A3/index.xml" title="扬帆起航">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -88,47 +87,133 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main"><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/doctran1/">
-			<img src="/img/cover/favicon.png" alt="Pyplot tutorial翻译文档" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/doctran1/" rel="bookmark">
-			Pyplot tutorial翻译文档
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-12-21T15:39:00">2018-12-21</time>
-</div>
-
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Hadoop命令记录</h1>
+			<div class="post__meta meta">
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
 	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">5 分钟</time>
+	<time class="meta__text">1 分钟</time>
 </div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Fig
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/doctran1/">阅读全文…</a>
-	</div>
-</article>
-</main>
+		</header>
+<div class="content post__content clearfix">
+			
 
+<h3 id="1-列出指定目录下文件-ls">1.列出指定目录下文件 -ls</h3>
+
+<pre><code class="language-shell">haddop fs -ls /dir
+haddop fs -ls -R /dir
+</code></pre>
+
+<h3 id="2-将本地文件放到hdfs文件系统中-put">2.将本地文件放到hdfs文件系统中  -put</h3>
+
+<pre><code class="language-shell">hadoop fs -put &lt;local file&gt;    &lt;hdfs file&gt;
+hadoop fs -put &lt;local file or dir&gt;  &lt;hdfs dir&gt;
+#将键盘输入录入到hdfs文件中
+haddop fs -  &lt;hdfs file&gt;
+</code></pre>
+
+<h3 id="3-从hdfs文件系统中拉取文件-get">3.从hdfs文件系统中拉取文件 -get</h3>
+
+<pre><code class="language-shell">haddop fs -get &lt;hdfs file&gt;  &lt;local file or dir&gt;
+haddop fs -get &lt;hdfs file or dir&gt;  &lt;local dir&gt;
+</code></pre>
+
+<h3 id="4-删除hdfs文件-rm">4. 删除hdfs文件  -rm</h3>
+
+<pre><code class="language-shell">hadoop fs -rm &lt;hdfs file&gt;
+hadoop fs -rm  -r &lt;hdfs dir&gt;
+</code></pre>
+
+<h3 id="5-hdfs创建文件夹-mkdir">5. hdfs创建文件夹   -mkdir</h3>
+
+<pre><code class="language-shell">#一级一级建目录，父目录存在
+hadoop  fs -mkdir  &lt;hdfs path&gt;
+#若父目录不存在，新建父目录
+hadoop  fs -mkdir  -p &lt;hdfs path&gt;
+</code></pre>
+
+<h3 id="6-复制-cp">6. 复制 -cp</h3>
+
+<pre><code class="language-shell">hadoop fs -cp &lt;hdfs file&gt;  &lt;hdfs file&gt;
+hadoop fs -cp &lt;hdfs file or dir&gt;  &lt;hdfs dir&gt;
+</code></pre>
+
+<h3 id="7-移动-mv">7.移动 -mv</h3>
+
+<p>不能跨文件系统执行（不能在hdfs 和local之间mv）</p>
+
+<pre><code class="language-shell">hadoop fs -mv &lt;hdfs file&gt;  &lt;hdfs file&gt;
+# 源路径有多个时，目标路径必须存在
+hadoop fs -cp &lt;hdfs file or dir&gt; .. &lt;hdfs dir&gt;
+</code></pre>
+
+<h3 id="8-统计-count">8. 统计 -count</h3>
+
+<pre><code class="language-shell"># 统计hdfs路径下的目录个数，文件个数，文件总计大小
+hadoop fs -count &lt;hdfs path&gt;
+</code></pre>
+
+<h3 id="9-文本格式输出-text">9. 文本格式输出 -text</h3>
+
+<pre><code class="language-shell">hadoop fs -text &lt;hdfs file&gt;
+</code></pre>
+
+<h3 id="10-命令行输出或重定向写入-cat">10. 命令行输出或重定向写入 -cat</h3>
+
+<pre><code class="language-shell">hadoop fs -cat &lt;hdfs file&gt;
+hadoop fs -cat &lt;hdfs file&gt;  &gt; ***.txt
+#小case  在显示的结果中搜索
+hadoop fs -cat &lt;hdfs file&gt;  |grep &quot;**&quot;
+</code></pre>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/hadoop%E5%91%BD%E4%BB%A4/" rel="tag">hadoop命令</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/coonectregion/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">图像联通区域标记</p></a>
+	</div>
+</nav>
+
+
+
+<script data-isso="/isso/" src="/isso/js/embed.min.js"></script>
+<section id="isso-thread"></section>
 
 
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">

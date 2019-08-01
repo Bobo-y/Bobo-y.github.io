@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hadoop命令 on 扬帆起航</title>
+    <link>/tags/hadoop%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in Hadoop命令 on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="/tags/hadoop%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hadoop命令记录</title>
+      <link>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>1.列出指定目录下文件 -ls haddop fs -ls /dir haddop fs -ls -R /dir 2.将本地文件放到hdfs文件系统中 -put hadoop fs -put &amp;lt;local file&amp;gt; &amp;lt;hdfs file&amp;gt; hadoop fs -put &amp;lt;local file or dir&amp;gt; &amp;lt;hdfs dir&amp;gt; #将键盘输入录入到hdfs文</description>
+    </item>
+    
+  </channel>
+</rss>
