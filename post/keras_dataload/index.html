@@ -141,7 +141,7 @@
             else:
                 labels.append(1)
     return np.array(tran_imags), np.array(labels)
-##    
+##
 train_data,train_labs = load_data()
 model.fit(train_data,keras.utils.to_categorical(train_labs),batch_size=32,epochs=50,verbose=1)
 
@@ -184,7 +184,7 @@ model.fit(train_data,keras.utils.to_categorical(train_labs),batch_size=32,epochs
 </code></pre>
 
 <p>我的txt文本格式如下：前面是图片路径，后面是类别标签，因为从1开始的，所以to_categorical 里面减了1.
-<img src="/img/keras_dataload/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<img src="/img/keras_loaddata/1.png" alt="" /></p>
 
 <h4 id="2-使用-flow-from-directory-directory">2).使用.flow_from_directory(directory)</h4>
 
@@ -209,7 +209,7 @@ model.fit_generator(train_generator,steps_per_epoch=N, epochs=EPOCH)
 </code></pre>
 
 <p>我的数据集目录结构如下：
-<img src="/img/keras_dataload/2.png" alt="在这里插入图片描述" /></p>
+<img src="/img/keras_loaddata/2.png" alt="" /></p>
 
 <h5 id="2-2-用于pix2pix">2.2 用于pix2pix</h5>
 
@@ -244,7 +244,7 @@ model.fit_generator(
 </code></pre>
 
 <p>对于标签为图像的数据，当用这种方式加载的时候，需将class_mode指定为None,表示不返回标签。对于训练图片和标签要保证顺序不变，一一对应，名字可不同
-<img src="/img/keras_dataload/3.png" alt="在这里插入图片描述" /><img src="/img/keras_dataload/4.png" alt="在这里插入图片描述" />
+<img src="/img/keras_loaddata/3.png" alt="" /><img src="/img/keras_loaddata/4.png" alt="" />
 需要将两个生成器的seed指定为相同的数字，此时两个生成器返回的图片对就一一对应</p>
 
 <h2 id="3-train-on-batch">3.train_on_batch()</h2>
