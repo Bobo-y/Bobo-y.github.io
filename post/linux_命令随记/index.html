@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>python - 扬帆起航</title>
+	<title>Linux命令随记 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,6 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/tags/python/index.xml" title="扬帆起航">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -88,80 +87,112 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main"><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/mnist2img/">
-			<img src="/img/cover/favicon.png" alt="python下mnist数据集转化为图片" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/mnist2img/" rel="bookmark">
-			python下mnist数据集转化为图片
-			</a>
-		</h3>
-		<div class="list__meta meta">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linux命令随记</h1>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-12-22T15:37:02">2018-12-22</time>
+	<time class="meta__text" datetime="2019-04-13T15:12:08">2019-04-13</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/shell" rel="category">shell</a>, <a class="meta__link" href="/categories/linux" rel="category">Linux</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
 	<time class="meta__text">1 分钟</time>
 </div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr) 以
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/mnist2img/">阅读全文…</a>
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/libsvm/">
-			<img src="/img/cover/favicon.png" alt="Ubuntu &#43; Python下libsvm使用小结" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/libsvm/" rel="bookmark">
-			Ubuntu &#43; Python下libsvm使用小结
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-11-28T16:24:49">2018-11-28</time>
-</div>
+		</header>
+<div class="content post__content clearfix">
+			
 
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0" rel="category">机器学习</a></span>
+<h2 id="记录自己操作linux时偶尔忘记的命令">记录自己操作Linux时偶尔忘记的命令</h2>
+
+<h3 id="1-将某个文件夹下的文件名带某个字符串的所有文件-文件名过长-复制到指定文件夹">1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹</h3>
+
+<pre><code class="language-bash">find -name &quot;*xxx*&quot; | xargs -i cp {} /home/XXX/XXX/
+</code></pre>
+
+<h3 id="2-在使用xshell登录服务器时跑代码时-xshell断开-程序停止">2. 在使用xshell登录服务器时跑代码时，xshell断开，程序停止</h3>
+
+<p>解决方法：nohup将程序后台运行，并返回进程号</p>
+
+<pre><code class="language-bash">nohup  python  XXXX  &amp;
+</code></pre>
+
+<p>使用setsid命令,例</p>
+
+<pre><code class="language-bash">setsid   python run.py  -c config.json
+</code></pre>
+
+<p>退出xshell时，输入exit退出</p>
+
+<h3 id="3-删除文件夹下的文件-保留文件夹">3.删除文件夹下的文件，保留文件夹</h3>
+
+<p>进入文件夹，比如删除文件夹下所有jpg图片</p>
+
+<pre><code class="language-bash">find ./ -name &quot;*jpg&quot; | xargs rm
+</code></pre>
+
+<h3 id="4-在命令行循环执行命令">4.在命令行循环执行命令</h3>
+
+<p>例：每隔10秒查看一次logs.txt最后10行</p>
+
+<pre><code class="language-xshell">while [ 1 = 1 ]
+do
+  cat logs.txt | tail -n 10
+  sleep 10;
+done
+</code></pre>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a></li>
+	</ul>
 </div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">2 分钟</time>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/libsvm/">阅读全文…</a>
-	</div>
-</article>
+	</article>
 </main>
+<div class="social-share"></div>
+  <br/>
 
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/hr_net/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Hr_net阅读笔记</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/videoseg_summary/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">视频对象分割小记</p></a>
+	</div>
+</nav>
+
+
+
+<script data-isso="/isso/" src="/isso/js/embed.min.js"></script>
+<section id="isso-thread"></section>
 
 
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
