@@ -6,10 +6,28 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Jul 2019 21:58:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2019 15:43:07 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hive命令记录</title>
+      <link>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
+      
+      <guid>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD DATA LOCAL INPATH &#39;/home/yourcsvfile.csv&#39; OVERWRITE</description>
+    </item>
+    
+    <item>
+      <title>（译）你的神经网络不工作的37个可能原因</title>
+      <link>/post/37reasonsforyournetnotwork/</link>
+      <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
+      
+      <guid>/post/37reasonsforyournetnotwork/</guid>
+      <description>神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。</description>
+    </item>
     
     <item>
       <title>Pandas常用操作</title>

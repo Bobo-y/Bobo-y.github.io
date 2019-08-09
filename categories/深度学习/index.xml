@@ -6,10 +6,19 @@
     <description>Recent content in 深度学习 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Jul 2019 21:25:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 11:29:13 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>（译）你的神经网络不工作的37个可能原因</title>
+      <link>/post/37reasonsforyournetnotwork/</link>
+      <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
+      
+      <guid>/post/37reasonsforyournetnotwork/</guid>
+      <description>神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。</description>
+    </item>
     
     <item>
       <title>基于yolo_v3的水印检测</title>
