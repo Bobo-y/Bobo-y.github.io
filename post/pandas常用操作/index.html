@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pandas常用操作 - 扬帆起航</title>
+	<title>Pandas常用操作以及常见tips、tricks - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -90,7 +90,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Pandas常用操作</h1>
+			<h1 class="post__title">Pandas常用操作以及常见tips、tricks</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
@@ -103,11 +103,13 @@
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">3 分钟</time>
+	<time class="meta__text">4 分钟</time>
 </div></div>
 		</header>
 <div class="content post__content clearfix">
 			
+
+<h2 id="常用操作">常用操作</h2>
 
 <h3 id="读数据">读数据</h3>
 
@@ -148,13 +150,10 @@ df.tail()
 df.tail(50)
 </code></pre>
 
-<p><img src="/img/pandas常用数据操作/0.png" alt="" />
-2.获取数值列的统计信息</p>
+<p>2.获取数值列的统计信息</p>
 
 <pre><code class="language-python">df.describe()
 </code></pre>
-
-<p><img src="/img/pandas常用数据操作/1.png" alt="" /></p>
 
 <pre><code class="language-python"># 取列名为num1的列
 col = df['num1']
@@ -283,6 +282,35 @@ df_merge = pd.merge(dataframe1,dataframe2,on='same_col',how='left')
 
 <p>连接方式有：[&lsquo;left&rsquo;,&lsquo;right&rsquo;,&lsquo;inner&rsquo;,&lsquo;outer&rsquo;]，大部分时候需要的是左连接</p>
 
+<h2 id="tips-and-tricks">Tips and tricks</h2>
+
+<ul>
+<li>很多方法并不会直接修改原dataframe，而是返回修改后的dataframe，如果想要直接修改原dataframe, 设置参数inpalce=True。</li>
+
+<li><p>以未知的index检索数据：对于海量数据，难以知道某一行的index，如</p>
+
+<pre><code class="language-python">#查询ID为1的行所在的index
+indexRequred = data.index[data['id']==1]
+# 检索index为indexRequired行的内容
+rowRequired = data.loc[indexRequred]
+</code></pre>
+
+<ul>
+<li>返回某一列所有不同的属性值： list_of_unique_ids = data[&lsquo;id&rsquo;].unique()</li>
+<li>对列填充缺失值：假如存在两列&rsquo;name&rsquo;,&lsquo;date&rsquo;,两列存在null值，希望对&rsquo;name&rsquo;为null的填充字符串‘lin’,&lsquo;date&rsquo;为null的填充‘2019-08-10’
+<code>python
+missing = {'name':'lin', 'date':'2019-08-10'}
+data.fillna(value = missing, inplace = True)
+</code></li>
+</ul></li>
+
+<li><p>对样本按属性排序：例，取前100行样本，按日期排序</p>
+
+<pre><code class="language-python">sample = data.sample(n=1000)
+sorted_sample = sample.sort_values(by=['date'])
+</code></pre></li>
+</ul>
+
 		</div>
 		
 <div class="post__tags tags clearfix">
@@ -342,7 +370,7 @@ df_merge = pd.merge(dataframe1,dataframe2,on='same_col',how='left')
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">Hive命令记录</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/37reasonsforyournetnotwork/">（译）你的神经网络不工作的37个可能原因</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Pandas常用操作</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Pandas常用操作以及常见tips、tricks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">使用SimpleHttpServer传输文件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/maccmd/">Mac命令行命令记录</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
