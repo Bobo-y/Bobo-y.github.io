@@ -106,24 +106,7 @@
 	<time class="meta__text">2 分钟</time>
 </div></div>
 		</header>
-
-		
-		<div id="container"></div>
-		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-		<script>
-		var gitment = new Gitment({
-		  id: '', 
-		  owner: 'yl305237731',              
-		  repo: 'yl305237731.github.io',                 
-		  oauth: {
-				client_id: '8f89dad1f2e3c1b60af5',
-				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-		  },
-		})
-		gitment.render('container')
-		</script>
-		<div class="content post__content clearfix">
+<div class="content post__content clearfix">
 			
 
 <p>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查看了opencv和MATLAB的实现，做个记录。（为了简单说明，以下说明已四连通为例）</p>
@@ -248,6 +231,23 @@
 	</ul>
 </div>
 	</article>
+	
+	<div id="container"></div>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+	var gitment = new Gitment({
+		id: '', 
+		owner: 'yl305237731',              
+		repo: 'yl305237731.github.io',                 
+		oauth: {
+			client_id: '8f89dad1f2e3c1b60af5',
+			client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		},
+	})
+	gitment.render('container')
+	</script>
+	
 </main>
 <div class="social-share"></div>
   <br/>

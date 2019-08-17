@@ -106,24 +106,7 @@
 	<time class="meta__text">1 分钟</time>
 </div></div>
 		</header>
-
-		
-		<div id="container"></div>
-		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-		<script>
-		var gitment = new Gitment({
-		  id: '', 
-		  owner: 'yl305237731',              
-		  repo: 'yl305237731.github.io',                 
-		  oauth: {
-				client_id: '8f89dad1f2e3c1b60af5',
-				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-		  },
-		})
-		gitment.render('container')
-		</script>
-		<div class="content post__content clearfix">
+<div class="content post__content clearfix">
 			<p>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比
 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2
 <img src="/img/psnr/1.png" alt="" />
@@ -145,6 +128,23 @@ PSNR算法简单，检查的速度也很快。但是其呈现的差异值有时�
 	</ul>
 </div>
 	</article>
+	
+	<div id="container"></div>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+	var gitment = new Gitment({
+		id: '', 
+		owner: 'yl305237731',              
+		repo: 'yl305237731.github.io',                 
+		oauth: {
+			client_id: '8f89dad1f2e3c1b60af5',
+			client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		},
+	})
+	gitment.render('container')
+	</script>
+	
 </main>
 <div class="social-share"></div>
   <br/>
