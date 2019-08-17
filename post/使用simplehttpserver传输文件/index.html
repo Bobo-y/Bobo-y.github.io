@@ -176,21 +176,22 @@
 </nav>
 
 
-<div id="git-comments"></div>
+<div id="container"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-  var gitment = new Gitment({
-    id: '',  
-    owner: 'yl305237731',
-    repo: 'yl305237731.github.io',
-    oauth: {
-      client_id: '8f89dad1f2e3c1b60af5',
-      client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-    }
-  })
-  gitment.render('git-comments')
+var gitment = new Gitment({
+  id: '', 
+  owner: 'yl305237731',              
+  repo: 'yl305237731.github.io',                 
+  oauth: {
+		client_id: '8f89dad1f2e3c1b60af5',
+		client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+  },
+})
+gitment.render('container')
 </script>
+</div>
 
 
 
