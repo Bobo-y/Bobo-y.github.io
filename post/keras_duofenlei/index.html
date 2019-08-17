@@ -106,7 +106,24 @@
 	<time class="meta__text">2 分钟</time>
 </div></div>
 		</header>
-<div class="content post__content clearfix">
+
+		
+		<div id="container"></div>
+		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+		<script>
+		var gitment = new Gitment({
+		  id: '', 
+		  owner: 'yl305237731',              
+		  repo: 'yl305237731.github.io',                 
+		  oauth: {
+				client_id: '8f89dad1f2e3c1b60af5',
+				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		  },
+		})
+		gitment.render('container')
+		</script>
+		<div class="content post__content clearfix">
 			
 
 <h1 id="简谈多分类与多标签分类">简谈多分类与多标签分类</h1>
@@ -299,24 +316,6 @@ model.fit_generator(train_data_gen, steps_per_epoch=100, epochs=50, verbose=1, c
 		<a class="post-nav__link" href="/post/keras_data_aug/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Keras数据增强并保存到本地</p></a>
 	</div>
 </nav>
-
-
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: '', 
-  owner: 'yl305237731',              
-  repo: 'yl305237731.github.io',                 
-  oauth: {
-		client_id: '8f89dad1f2e3c1b60af5',
-		client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-  },
-})
-gitment.render('container')
-</script>
-</div>
 
 
 

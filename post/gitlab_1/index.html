@@ -106,7 +106,24 @@
 	<time class="meta__text">2 分钟</time>
 </div></div>
 		</header>
-<div class="content post__content clearfix">
+
+		
+		<div id="container"></div>
+		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+		<script>
+		var gitment = new Gitment({
+		  id: '', 
+		  owner: 'yl305237731',              
+		  repo: 'yl305237731.github.io',                 
+		  oauth: {
+				client_id: '8f89dad1f2e3c1b60af5',
+				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		  },
+		})
+		gitment.render('container')
+		</script>
+		<div class="content post__content clearfix">
 			
 
 <p>实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。</p>
@@ -221,24 +238,6 @@ git push origin test
 		<a class="post-nav__link" href="/post/hr_net/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Hr_net阅读笔记</p></a>
 	</div>
 </nav>
-
-
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: '', 
-  owner: 'yl305237731',              
-  repo: 'yl305237731.github.io',                 
-  oauth: {
-		client_id: '8f89dad1f2e3c1b60af5',
-		client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-  },
-})
-gitment.render('container')
-</script>
-</div>
 
 
 

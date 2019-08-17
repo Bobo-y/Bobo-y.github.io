@@ -106,7 +106,24 @@
 	<time class="meta__text">2 分钟</time>
 </div></div>
 		</header>
-<div class="content post__content clearfix">
+
+		
+		<div id="container"></div>
+		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+		<script>
+		var gitment = new Gitment({
+		  id: '', 
+		  owner: 'yl305237731',              
+		  repo: 'yl305237731.github.io',                 
+		  oauth: {
+				client_id: '8f89dad1f2e3c1b60af5',
+				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		  },
+		})
+		gitment.render('container')
+		</script>
+		<div class="content post__content clearfix">
 			
 
 <h2 id="当需要对指定文件夹下的图片进行数据增广时-使用keras的imagedatagenerator类的flow-from-directory-方法可快速的实现">当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）方法可快速的实现</h2>
@@ -266,24 +283,6 @@ for im in data_gen:
 		<a class="post-nav__link" href="/post/gitlab_1/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">gitLab项目拉取及提交使用记录</p></a>
 	</div>
 </nav>
-
-
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: '', 
-  owner: 'yl305237731',              
-  repo: 'yl305237731.github.io',                 
-  oauth: {
-		client_id: '8f89dad1f2e3c1b60af5',
-		client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-  },
-})
-gitment.render('container')
-</script>
-</div>
 
 
 

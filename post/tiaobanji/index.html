@@ -106,7 +106,24 @@
 	<time class="meta__text">1 分钟</time>
 </div></div>
 		</header>
-<div class="content post__content clearfix">
+
+		
+		<div id="container"></div>
+		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+		<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+		<script>
+		var gitment = new Gitment({
+		  id: '', 
+		  owner: 'yl305237731',              
+		  repo: 'yl305237731.github.io',                 
+		  oauth: {
+				client_id: '8f89dad1f2e3c1b60af5',
+				client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
+		  },
+		})
+		gitment.render('container')
+		</script>
+		<div class="content post__content clearfix">
 			
 
 <h2 id="使用windows时-可以使用xshell通过rz-sz命令通过跳板机方便的上传-下载文件-而使用macos的scp命令比较麻烦-使用iterm2可方便使用rz-sz命令">使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用iterm2可方便使用rz、sz命令。</h2>
@@ -174,24 +191,6 @@ ln -s /usr/local/Cellar/lrzsz/0.12.20/bin/rz
 		<a class="post-nav__link" href="/post/yovo-keras/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">基于yolo_v3的水印检测</p></a>
 	</div>
 </nav>
-
-
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: '', 
-  owner: 'yl305237731',              
-  repo: 'yl305237731.github.io',                 
-  oauth: {
-		client_id: '8f89dad1f2e3c1b60af5',
-		client_secret: '441743126beb69d3bd58a9095b5df94d5aefc33a',
-  },
-})
-gitment.render('container')
-</script>
-</div>
 
 
 
