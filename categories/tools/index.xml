@@ -53,7 +53,7 @@
       <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
       
       <guid>/post/maccmd/</guid>
-      <description>mac 下查看端口占用 sudo lsod -i:端口号</description>
+      <description>mac 下查看端口占用 sudo lsof -i:端口号</description>
     </item>
     
     <item>
