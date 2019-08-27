@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keras on 扬帆起航</title>
+    <title>keras on 扬帆起航</title>
     <link>/tags/keras/</link>
-    <description>Recent content in Keras on 扬帆起航</description>
+    <description>Recent content in keras on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       
       <guid>/post/cyclegan/</guid>
-      <description>在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像必须成对的</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像</description>
     </item>
     
     <item>
