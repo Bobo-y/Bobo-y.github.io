@@ -17,7 +17,7 @@
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
       <guid>/post/coonectregion/</guid>
-      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); ###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易</description>
     </item>
     
   </channel>

@@ -116,7 +116,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if
+		(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = ['cat','dog'] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name))) for frame in frames: imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)]
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/post/kdog_cat/">阅读全文…</a>

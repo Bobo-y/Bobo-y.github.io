@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>keras on 扬帆起航</title>
+    <title>Keras on 扬帆起航</title>
     <link>/tags/keras/</link>
-    <description>Recent content in keras on 扬帆起航</description>
+    <description>Recent content in Keras on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 24 Aug 2019 00:03:12 +0800</pubDate>
       
       <guid>/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/</guid>
-      <description>.img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数。 # coding=utf-8 from keras</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); .img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
       <guid>/post/yovo-keras/</guid>
-      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
       <guid>/post/keras_data_aug/</guid>
-      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_direct</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
       
       <guid>/post/keras_duofenlei/</guid>
-      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Tue, 26 Mar 2019 15:20:23 +0800</pubDate>
       
       <guid>/post/keras_dataload/</guid>
-      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
       
       <guid>/post/keras_simi/</guid>
-      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count =</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
       
       <guid>/post/kdog_cat/</guid>
-      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)]</description>
     </item>
     
   </channel>

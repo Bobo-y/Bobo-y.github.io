@@ -17,7 +17,7 @@
       <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
       
       <guid>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
-      <description>常用操作 读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db) 数据快照 1</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常用操作 读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)</description>
     </item>
     
   </channel>
