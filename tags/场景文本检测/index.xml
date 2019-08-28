@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>场景文本检测 on 扬帆起航</title>
+    <link>/tags/%E5%9C%BA%E6%99%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B/</link>
+    <description>Recent content in 场景文本检测 on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Aug 2019 00:03:07 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%9C%BA%E6%99%AF%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>East:An Efficient and Accurate Scene Text Detector阅读及应用</title>
+      <link>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
+      
+      <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来</description>
+    </item>
+    
+  </channel>
+</rss>

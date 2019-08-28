@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:03:07 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>East:An Efficient and Accurate Scene Text Detector阅读及应用</title>
+      <link>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
+      
+      <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来</description>
+    </item>
     
     <item>
       <title>CycleGAN论文阅读总结及实现</title>

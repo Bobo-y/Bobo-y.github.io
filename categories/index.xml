@@ -6,7 +6,7 @@
     <description>Recent content in Categories on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 00:03:07 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>深度学习</title>
       <link>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>计算机视觉</title>
       <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>论文阅读</title>
+      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
     
@@ -35,15 +44,6 @@
       <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>论文阅读</title>
-      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Thu, 06 Jun 2019 15:25:02 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
     
