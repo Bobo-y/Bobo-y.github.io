@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:03:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2019 16:07:07 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CRNN笔记以及数字检测识别实践</title>
+      <link>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Sun, 08 Sep 2019 16:07:07 +0800</pubDate>
+      
+      <guid>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN</description>
+    </item>
     
     <item>
       <title>East:An Efficient and Accurate Scene Text Detector阅读及应用</title>
