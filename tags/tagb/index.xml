@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tagB on Lin Yang&#39;s Blog</title>
-    <link>https://yl305237731.github.io/tags/tagb/</link>
-    <description>Recent content in tagB on Lin Yang&#39;s Blog</description>
+    <title>tagB on 扬帆起航</title>
+    <link>/tags/tagb/</link>
+    <description>Recent content in tagB on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 21 Jul 2019 13:27:58 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 09 Sep 2019 23:39:48 +0800</lastBuildDate>
     
-	<atom:link href="https://yl305237731.github.io/tags/tagb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tagb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>2</title>
-      <link>https://yl305237731.github.io/post/2/</link>
-      <pubDate>Sun, 21 Jul 2019 13:27:58 +0800</pubDate>
+      <title>CTC理解</title>
+      <link>/post/ctc%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Mon, 09 Sep 2019 23:39:48 +0800</pubDate>
       
-      <guid>https://yl305237731.github.io/post/2/</guid>
-      <description></description>
+      <guid>/post/ctc%E7%90%86%E8%A7%A3/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({});</description>
     </item>
     
   </channel>
