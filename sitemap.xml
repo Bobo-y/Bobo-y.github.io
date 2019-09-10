@@ -3,59 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/ctc%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taga/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tagb/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/tools/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-09-09T23:39:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</loc>
     <lastmod>2019-09-08T16:07:07+08:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/ocr/</loc>
+    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2019-09-08T16:07:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -118,6 +95,12 @@
   
   <url>
     <loc>/tags/hive/</loc>
+    <lastmod>2019-08-09T15:43:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tools/</loc>
     <lastmod>2019-08-09T15:43:07+08:00</lastmod>
     <priority>0</priority>
   </url>
