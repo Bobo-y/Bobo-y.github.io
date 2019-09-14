@@ -3,42 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ocr/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <loc>/tags/lstm/</loc>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/post/lstm/</loc>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ocr/</loc>
     <lastmod>2019-09-08T16:07:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -189,13 +200,13 @@
   </url>
   
   <url>
-    <loc>/categories/linux/</loc>
+    <loc>/tags/linux/</loc>
     <lastmod>2019-04-13T15:12:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/linux/</loc>
+    <loc>/categories/linux/</loc>
     <lastmod>2019-04-13T15:12:08+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -285,13 +296,13 @@
   </url>
   
   <url>
-    <loc>/categories/leetcode/</loc>
+    <loc>/tags/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/leetcode/</loc>
+    <loc>/categories/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>

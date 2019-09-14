@@ -6,10 +6,19 @@
     <description>Recent content in 深度学习 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Sep 2019 16:07:07 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Sep 2019 19:51:54 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从RNN到LSTM小记</title>
+      <link>/post/lstm/</link>
+      <pubDate>Fri, 13 Sep 2019 19:51:54 +0800</pubDate>
+      
+      <guid>/post/lstm/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输</description>
+    </item>
     
     <item>
       <title>CRNN笔记以及数字检测识别实践</title>
