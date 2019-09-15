@@ -313,6 +313,22 @@
   </url>
   
   <url>
+    <loc>/categories/%E5%89%91%E6%8C%87offer/</loc>
+    <lastmod>2019-03-03T20:36:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/%E5%89%91%E6%8C%87offer4/</loc>
+    <lastmod>2019-03-03T20:36:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</loc>
+    <lastmod>2019-03-02T16:52:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/mnist%E8%BD%AC%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2018-12-22T15:37:02+08:00</lastmod>
     <priority>0</priority>

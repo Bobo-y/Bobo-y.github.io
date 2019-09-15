@@ -192,6 +192,24 @@
     </item>
     
     <item>
+      <title>剑指offer4：二维数组中的查找</title>
+      <link>/post/%E5%89%91%E6%8C%87offer4/</link>
+      <pubDate>Sun, 03 Mar 2019 20:36:38 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer4/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 问题描述：在一个二维数组中，每一行都按从做到右递增顺序排序，每一列都按从上到下递增顺序排序。输入一个二维数组与一个整数，判断数组中</description>
+    </item>
+    
+    <item>
+      <title>剑指offer3: 数组重复数字</title>
+      <link>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Sat, 02 Mar 2019 16:52:59 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目描述：在一个长度为n的数组里的所有数字都在0～n-1之间。数组中某些数字时重复的，但不知道有几个重复了，也不知道每个数字重复了</description>
+    </item>
+    
+    <item>
       <title>python下mnist数据集转化为图片</title>
       <link>/post/mnist2img/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
