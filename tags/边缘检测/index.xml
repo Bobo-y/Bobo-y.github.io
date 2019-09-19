@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>边缘检测 on 扬帆起航</title>
+    <link>/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/</link>
+    <description>Recent content in 边缘检测 on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 19 Sep 2019 23:32:10 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Edge_gan总结</title>
+      <link>/post/edge_gan/</link>
+      <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
+      
+      <guid>/post/edge_gan/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简</description>
+    </item>
+    
+  </channel>
+</rss>

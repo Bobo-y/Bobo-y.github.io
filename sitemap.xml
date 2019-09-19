@@ -4,7 +4,48 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/edge_gan/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -15,32 +56,8 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/post/lstm/</loc>
     <lastmod>2019-09-13T19:51:54+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2019-09-13T19:51:54+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -50,12 +67,6 @@
   
   <url>
     <loc>/tags/ocr/</loc>
-    <lastmod>2019-09-08T16:07:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2019-09-08T16:07:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -314,8 +325,13 @@
   
   <url>
     <loc>/categories/%E5%89%91%E6%8C%87offer/</loc>
-    <lastmod>2019-03-03T20:36:38+08:00</lastmod>
+    <lastmod>2019-03-09T23:40:45+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/%E5%89%91%E6%8C%87offer6/</loc>
+    <lastmod>2019-03-09T23:40:45+08:00</lastmod>
   </url>
   
   <url>
@@ -347,12 +363,6 @@
   
   <url>
     <loc>/tags/knn/</loc>
-    <lastmod>2018-12-22T15:34:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E5%88%86%E7%B1%BB/</loc>
     <lastmod>2018-12-22T15:34:07+08:00</lastmod>
     <priority>0</priority>
   </url>

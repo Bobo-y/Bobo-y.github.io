@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 13 Sep 2019 19:51:54 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 23:32:10 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>边缘检测</title>
+      <link>/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
+      
+      <guid>/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>LSTM</title>

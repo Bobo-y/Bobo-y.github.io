@@ -6,10 +6,19 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 13 Sep 2019 19:51:54 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 23:32:10 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Edge_gan总结</title>
+      <link>/post/edge_gan/</link>
+      <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
+      
+      <guid>/post/edge_gan/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简</description>
+    </item>
     
     <item>
       <title>从RNN到LSTM小记</title>
@@ -189,6 +198,15 @@
       
       <guid>/post/alg1/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],</description>
+    </item>
+    
+    <item>
+      <title>剑指offer6:从头打印链表</title>
+      <link>/post/%E5%89%91%E6%8C%87offer6/</link>
+      <pubDate>Sat, 09 Mar 2019 23:40:45 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer6/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 问题描述：输入一个链表的头节点，反向打印出链表. 链表结构如下 struct ListNode { int val; ListNode *next; ListNode(int x): val(x), next(NULL){ } }; 思路：链表反向打印，先进后出，考虑使用栈. class</description>
     </item>
     
     <item>
