@@ -228,6 +228,15 @@
     </item>
     
     <item>
+      <title>Markdown语法</title>
+      <link>/post/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 20 Feb 2019 17:23:49 +0800</pubDate>
+      
+      <guid>/post/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 标题 1.使用=和_标记一级和二级标题 一级标题 ======= 二级标题 ——————— 2.使用#号 # 一级标题 ## 二级标题 ### 三级标题 段落 换行：两个以上的</description>
+    </item>
+    
+    <item>
       <title>python下mnist数据集转化为图片</title>
       <link>/post/mnist2img/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
