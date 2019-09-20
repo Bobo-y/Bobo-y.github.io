@@ -68,6 +68,41 @@
 	</ul>
 </nav>
 
+		<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
 	</div>
   <head>
@@ -147,10 +182,9 @@
 
 <p>可记为：</p>
 
-<pre><code>            h(t) = tanh(W*h(t-1) + U*x(t))
+<p>$$h(t) = tanh(W*h(t-1) + U*x(t))$$</p>
 
-            y(t) = relu(V*h(t))
-</code></pre>
+<p>$$y(t) = relu(V*h(t))$$</p>
 
 <p>为了便于更加形象的理解，都倾向于将RNN按时间步展开（因为我们要使用7天的数据预测一天的温度，故时间步为7，因此展开为7个。同时只需要一个输出，因此将前6个的输出都标记为为虚线，即在7个时间步数据上进行处理后只有最后一步会得到一个输出）。在7个时间步上，u、v、w均是&rdquo;共享&rdquo;的(但这么说不太准，后面细说)，而信息由隐藏态h(t)进行在时间步上传递。</p>
 
@@ -171,12 +205,12 @@
 <p>其中：</p>
 
 <ul>
-<li>i&ndash;输入门： i = sigmoid(Wi*[h(t-1),x(t)] + bi）</li>
-<li>f&ndash;遗忘门： f = sigmoid(Wf*[h(t-1, x(t)] + bf)</li>
-<li>o&ndash;输出门： o = sigmoid(Wo*[h(t-1, x(t)] + bo)</li>
-<li>g = tanh(Wg*[h(t-1),x(t)] + bg)</li>
-<li>c(t) = c(t-1).* f + g.* i</li>
-<li>h(t) = tanh(c(t)) .* o</li>
+<li>i&ndash;输入门： $$i = sigmoid(Wi*[h(t-1),x(t)] + bi)$$</li>
+<li>f&ndash;遗忘门： $$f = sigmoid(Wf*[h(t-1, x(t)] + bf)$$</li>
+<li>o&ndash;输出门： $$o = sigmoid(Wo*[h(t-1, x(t)] + bo)$$</li>
+<li>$$g = tanh(Wg*[h(t-1),x(t)] + bg)$$</li>
+<li>$$c(t) = c(t-1).* f + g.* i$$</li>
+<li>$$h(t) = tanh(c(t)) .* o$$</li>
 </ul>
 
 <p>i,f,o三者通过sigmoid激活函数转换成0到1之间的数值，来作为一种门控状态.sigmoid函数调节这些门使其输出0和1之间的值，将产生的输出向量与另一个向量进行元素乘，以决定第二个向量有多少部分可以通过. g则是将结果通过tanh激活函数将转换成-1到1之间的值,g输入数据，而不是门控信号。 LSTM中具有两个状态,c(t)为长期记忆单元：变化慢，由c(t-1)加上一些数值，h(t)为短期记忆单元：不同节点下往往会有很大的区别。</p>
@@ -431,7 +465,41 @@ data = np.reshape(data, (4, 7, 3))
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>
-<script async src="/js/highlight.js"></script> 
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
   <script>
 (function(){
     var bp = document.createElement('script');
