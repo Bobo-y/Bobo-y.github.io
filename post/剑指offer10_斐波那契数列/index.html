@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>剑指offer4：二维数组中的查找 - 扬帆起航</title>
+	<title>剑指offer10:斐波那契数列 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -122,11 +122,11 @@ code.has-jax {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">剑指offer4：二维数组中的查找</h1>
+			<h1 class="post__title">剑指offer10:斐波那契数列</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-03-03T20:36:38">2019-03-03</time>
+	<time class="meta__text" datetime="2019-04-02T21:41:09">2019-04-02</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -156,46 +156,50 @@ code.has-jax {
 </script>
 </h2>
 
-<p>问题描述：在一个二维数组中，每一行都按从做到右递增顺序排序，每一列都按从上到下递增顺序排序。输入一个二维数组与一个整数，判断数组中是否有这个数。</p>
+<p>题目一： 求斐波那契数列的第n项. 斐波那契数列公式：</p>
 
-<hr />
+<p>$$f(0)=0$$
+$$f(1)=1$$
+$$f(n)=f(n-1) + f(n-2),n&gt;1$$</p>
 
-<p>思路：二维数组中查找，若按顺序，时间复杂度为o(n^2). 因为数组行列均递增.考虑如下数组：</p>
+<p>对于斐波那契数列，学过程序语言的应该都知道. 教学时基本都是使用它来说明递归，导致一遇到这个问题的时候，一下就能反映过来，使用递归.</p>
 
-<pre><code>    1  2  8   9
-    2  4  9   12
-    4  7  10  13 
-    6  8  11  15
+<pre><code class="language-c++">    int Fibonacci(int n) {
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
+        return Fibonacci(n-1) + Fibonacci(n-2);
+        }
 </code></pre>
 
-<p>对右上角数字9而言，同一行左边数字均比它小.同一列下边数字均比它大. 要查找7，7比9小，若存在的话必9所在列的左边，故能排出最后一列. 若要查找10,10比第一行最大的数字9大，故一定在9所在行的下方.因此每次搜索都会排除一行或一列.考虑最坏情况，数字在左下角或搜索到左下角仍不存在.时间复杂度为o(n+n)=o(n).类似于二分的思想.</p>
+<p>但是面试题这么就完了？ 😄，那是不可能的. 当我们把上诉代码展开时就会发现，出现了大量的重复计算，效率太低. 当不能递归时，一般从循环角度考虑，因为递归从上向下计算，导致出现重复计算，因此应该考虑从下往上计算，每个数字只计算一次.</p>
 
-<pre><code class="language-c++">class Solution {
-public:
-    bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) {
-        if(array.empty()){
-            return false;
+<pre><code class="language-c++">int Fibonacci(int n) {
+        if(n==0){
+            return 0;
         }
-        int rows = array.size();
-        int columns = array[0].size();
-        int r = 0;
-        int c = columns -1;
-        while(r &lt;rows &amp;&amp; c&gt;=0){
-            if(array[r][c]==target){
-                return true;
-            }else{
-                if(array[r][c]&lt;target){
-                    r++;
-                }
-                else{
-                    c--;
-                }
-            }
+        if(n==1){
+            return 1;
         }
-        return false;
-    }
-};
+        int f0 =0;
+        int f1= 1;
+        int fn= 0;
+        for(int i=2; i&lt;=n;i ++){
+            fn = f0 + f1;
+            //计算下一个数之前，更新fn-1和fn-2
+            f0 = f1;
+            f1 = fn;
+        }
+        return fn;
+        }
 </code></pre>
+
+<p>题目二：台阶及类似问题，有一个n阶台阶，一次可以跳一阶或者二阶，问跳上一个n阶台阶共有多少种跳法。</p>
+
+<p>假设当只有一个台阶时，那么只能跳一阶，当有两个台阶时，可以一次跳两阶或者跳两次. 当台阶有三阶时，跳到第三阶可能是从第二阶跳来，也可能是从第一阶跳来，则f(3)=f(2)+f(1).和斐波那契数列相同的递推公式. 换汤不换药,用递归思想分析问题，用循环实现.</p>
 
 		</div>
 		
@@ -228,10 +232,10 @@ public:
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">剑指offer3: 数组重复数字</p></a>
+		<a class="post-nav__link" href="/post/gitlab_1/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">gitLab项目拉取及提交使用记录</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/%E5%89%91%E6%8C%87offer6/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">剑指offer6:逆向打印链表</p></a>
+		<a class="post-nav__link" href="/post/hr_net/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Hr_net阅读笔记</p></a>
 	</div>
 </nav>
 

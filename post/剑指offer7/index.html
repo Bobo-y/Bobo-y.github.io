@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>剑指offer4：二维数组中的查找 - 扬帆起航</title>
+	<title>剑指offer7:重构二叉树 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -122,11 +122,11 @@ code.has-jax {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">剑指offer4：二维数组中的查找</h1>
+			<h1 class="post__title">剑指offer7:重构二叉树</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-03-03T20:36:38">2019-03-03</time>
+	<time class="meta__text" datetime="2019-03-01T19:10:54">2019-03-01</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -135,7 +135,7 @@ code.has-jax {
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
+	<time class="meta__text">2 分钟</time>
 </div></div>
 			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
@@ -156,45 +156,58 @@ code.has-jax {
 </script>
 </h2>
 
-<p>问题描述：在一个二维数组中，每一行都按从做到右递增顺序排序，每一列都按从上到下递增顺序排序。输入一个二维数组与一个整数，判断数组中是否有这个数。</p>
+<p>题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
 
-<hr />
+<p>思路：
+对于二叉树，其前序遍历为（根左右),中序为(左根右). 依次取前序序列的节点为当前根节点，可以将中序遍历结果划分为左子树，根节点，右子树.</p>
 
-<p>思路：二维数组中查找，若按顺序，时间复杂度为o(n^2). 因为数组行列均递增.考虑如下数组：</p>
+<p><img src="/img/剑指offer7/1.jpg"></p>
 
-<pre><code>    1  2  8   9
-    2  4  9   12
-    4  7  10  13 
-    6  8  11  15
-</code></pre>
+<p>如图所示，每次取前序遍历的第一个节点，可得到此节点的左右子树，对其左右子树，其构造过程和其相同，因此，可通过递归，每次取前序第一个节点将其划分为构造左右子树，当其为叶子节点时停止递归. 题目主要难点在左右子树的起始和终止节点的设置.</p>
 
-<p>对右上角数字9而言，同一行左边数字均比它小.同一列下边数字均比它大. 要查找7，7比9小，若存在的话必9所在列的左边，故能排出最后一列. 若要查找10,10比第一行最大的数字9大，故一定在9所在行的下方.因此每次搜索都会排除一行或一列.考虑最坏情况，数字在左下角或搜索到左下角仍不存在.时间复杂度为o(n+n)=o(n).类似于二分的思想.</p>
+<pre><code class="language-c++">#include &lt;vector&gt;
+using namespace std;
 
-<pre><code class="language-c++">class Solution {
-public:
-    bool Find(int target, vector&lt;vector&lt;int&gt; &gt; array) {
-        if(array.empty()){
-            return false;
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+
+    TreeNode* build_tree_node(vector&lt;int&gt; pre, vector&lt;int&gt; vin, int pl, int pr, int vl, int vr){
+        TreeNode* node = new TreeNode(pre[pl]);
+        //当前序左边界和前序右边界均指向此节点时，为叶子节点
+        if(pl == pr){
+            return node;
         }
-        int rows = array.size();
-        int columns = array[0].size();
-        int r = 0;
-        int c = columns -1;
-        while(r &lt;rows &amp;&amp; c&gt;=0){
-            if(array[r][c]==target){
-                return true;
-            }else{
-                if(array[r][c]&lt;target){
-                    r++;
-                }
-                else{
-                    c--;
-                }
-            }
+        int index = 0;
+        //记录当前根节点在中序中的位置
+        while(vin[index]!=pre[pl]) index++;
+        int k = index -vl;
+        //k为左子树的长度
+        if(k &gt; 0){
+            node-&gt;left = build_tree_node(pre, vin, pl + 1, pl + k, vl, vl +k -1);
         }
-        return false;
+        // 根节点index不等于中序右边界，即为存在右子树
+        if(index &lt; vr){
+            node-&gt;right = build_tree_node(pre, vin, pl + k +1, pr, index+1, vr);
+        }
+        return node;
     }
-};
+    TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) {
+        if(pre.size()==0 || pre.size()!=vin.size()){
+            return nullptr;
+        }
+        return build_tree_node(pre, vin, 0, pre.size()-1,0, vin.size()-1);
+    }
+
+    int main(){
+        vector&lt;int&gt; pre = {1,2,4,7,3,5,6,8};
+        vector&lt;int&gt; vin={4,7,2,1,5,3,8,6};
+        TreeNode* root = reConstructBinaryTree(pre, vin);
+        return 1;
+    }
 </code></pre>
 
 		</div>
@@ -228,10 +241,10 @@ public:
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">剑指offer3: 数组重复数字</p></a>
+		<a class="post-nav__link" href="/post/markdown%E8%AF%AD%E6%B3%95/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Markdown语法</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/%E5%89%91%E6%8C%87offer6/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">剑指offer6:逆向打印链表</p></a>
+		<a class="post-nav__link" href="/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">剑指offer3: 数组重复数字</p></a>
 	</div>
 </nav>
 
