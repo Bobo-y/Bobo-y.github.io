@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LeetCode - 扬帆起航</title>
+	<title>GRU小结 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,6 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/categories/leetcode/index.xml" title="扬帆起航">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -120,47 +119,95 @@ code.has-jax {
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main"><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/alg1/">
-			<img src="/img/cover/favicon.png" alt="LeetCode:开方函数sqrt实现" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/alg1/" rel="bookmark">
-			LeetCode:开方函数sqrt实现
-			</a>
-		</h3>
-		<div class="list__meta meta">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">GRU小结</h1>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-03-10T15:30:15">2019-03-10</time>
+	<time class="meta__text" datetime="2019-10-07T22:05:27">2019-10-07</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
 	<time class="meta__text">1 分钟</time>
 </div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/alg1/">阅读全文…</a>
-	</div>
-</article>
+			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
+		</header>
+<div class="content post__content clearfix">
+			
+
+<h2 id="hahahugoshortcode-s0-hbhb"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3547912397637948"
+     data-ad-slot="1692723023"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</h2>
+
+<p>GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门，输出门，GRU单元只有更新门z与重置门r.</p>
+
+<p><img src="/img/GRU/1.jpg"  height="300" width="400" align="center"></p>
+
+<p>其中$z_t$表示更新门，$r_t$表示重置门. 更新门用于控制前一时刻的状态信息被带入到当前状态中的程度，更新门的值越大说明前一时刻的状态信息带入越多。重置门控制前一状态有多少信息被写入到当前的候选集$h^-_t$上，重置门越小，前一状态的信息被写入的越少。</p>
+
+<p>计算公式：</p>
+
+<p>$$r_t= sigmoid(W_r . [h(t-1),x_t])$$
+$$z_t= sigmoid(W_z . [h(t-1),x_t])$$
+$$h^-_t = tanh(W_h^- .[r_t * h(t-1), x_T])$$
+$$h_t = (1-z_t) * h(t-1) + z_t * h^-_t$$</p>
+
+		</div>
+		
+	</article>
+	<script src="https://utteranc.es/client.js"
+	        repo="yl305237731/yl305237731.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script>
 </main>
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/edge_gan/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Edge_gan总结</p></a>
+	</div>
+</nav>
 
 
 
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">

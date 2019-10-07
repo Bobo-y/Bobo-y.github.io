@@ -4,7 +4,30 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+    <lastmod>2019-10-07T22:05:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/gru%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2019-10-07T22:05:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-10-07T22:05:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-10-07T22:05:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-10-07T22:05:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,25 +37,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
-    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2019-09-19T23:32:10+08:00</lastmod>
     <priority>0</priority>
   </url>
