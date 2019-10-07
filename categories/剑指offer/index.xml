@@ -6,10 +6,91 @@
     <description>Recent content in 剑指offer on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Apr 2019 21:41:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 18:53:24 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>剑指offer23:链表中环的入口地址</title>
+      <link>/post/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Sun, 07 Apr 2019 18:53:24 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null 思路：链表存在环，则没有尾节点. 对于链表一个指针无法</description>
+    </item>
+    
+    <item>
+      <title>剑指offer55:二叉树的深度</title>
+      <link>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</link>
+      <pubDate>Sat, 06 Apr 2019 23:03:12 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目一：输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度 思路</description>
+    </item>
+    
+    <item>
+      <title>剑指offer32:从上到下打印二叉树</title>
+      <link>/post/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Fri, 05 Apr 2019 23:53:14 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：从上往下打印出二叉树的每个节点，同层节点从左至右打印 思路：典型的队列使用 void PrintFromTopToBottom(TreeNode* root) { if(root==nullptr) return ; queue&amp;lt;TreeNode*&amp;gt; q; q.push(root); while(!q.empty()){ TreeNode* node = q.front(); q.pop(); cout&amp;lt;&amp;lt;node-&amp;gt;val&amp;lt;&amp;lt;&amp;quot; &amp;quot;; if(node-&amp;gt;left!=nullptr) q.push(node-&amp;gt;left); if(node-&amp;gt;right!=nullptr) q.push(node-&amp;gt;right); } } 拓展</description>
+    </item>
+    
+    <item>
+      <title>剑指offer30:包含min函数的栈</title>
+      <link>/post/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</link>
+      <pubDate>Fri, 05 Apr 2019 23:25:09 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1）. 思路：对于栈，要在O(1</description>
+    </item>
+    
+    <item>
+      <title>剑指offer12:矩阵中的路径</title>
+      <link>/post/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 05 Apr 2019 22:51:22 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在</description>
+    </item>
+    
+    <item>
+      <title>剑指offer27:树的镜像</title>
+      <link>/post/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Thu, 04 Apr 2019 23:52:48 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：操作给定的二叉树，将其变换为源二叉树的镜像 如上图所示，树的镜像是将每个节点的左右子树交换，因此，对于每个节点只需要交换左右子</description>
+    </item>
+    
+    <item>
+      <title>剑指offer26:树的子结构</title>
+      <link>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Thu, 04 Apr 2019 22:58:37 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目:输入两棵二叉树A，B，判断B是不是A的子结构. 如上图，其中B为A的子结构. 思路: 判断是否为子树，首先需要定位到子树的根节点，</description>
+    </item>
+    
+    <item>
+      <title>剑指offer24:反转链表</title>
+      <link>/post/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Wed, 03 Apr 2019 00:43:52 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个链表，反转链表后，输出新链表的表头. 思路一：链表反转，需将节点指向改变. 可以每次取下一个节点向之前的节点中插入，采用</description>
+    </item>
+    
+    <item>
+      <title>剑指offer22:链表倒数第k个节点</title>
+      <link>/post/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Tue, 02 Apr 2019 22:44:44 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个链表，输出该链表中倒数第k个结点. 链表长度未知，可以西安遍历一次得到链表长度，然后可计算出移动多少步. 然后这样做相当</description>
+    </item>
     
     <item>
       <title>剑指offer10:斐波那契数列</title>
@@ -18,6 +99,15 @@
       
       <guid>/post/%E5%89%91%E6%8C%87offer10_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目一： 求斐波那契数列的第n项. 斐波那契数列公式： $$f(0)=0$$ $$f(1)=1$$ $$f(n)=f(n-1) + f(n-2),n&amp;gt;1$$ 对于斐波那契数列，学过程序语言的应该都知道. 教学时基本都是使用它来说明</description>
+    </item>
+    
+    <item>
+      <title>剑指offer21:调整数组顺序使奇数位于偶数前</title>
+      <link>/post/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</link>
+      <pubDate>Mon, 01 Apr 2019 23:33:15 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使所有奇数位于数组的前半部分，所有偶数位于数组后半部分. 思路：交换数</description>
     </item>
     
     <item>
@@ -36,6 +126,24 @@
       
       <guid>/post/%E5%89%91%E6%8C%87offer6/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 问题描述：输入一个链表的头节点，反向打印出链表. 链表结构如下 struct ListNode { int val; ListNode *next; ListNode(int x): val(x), next(NULL){ } }; 思路：链表反向打印，先进后出，考虑使用栈. class</description>
+    </item>
+    
+    <item>
+      <title>剑指offer16:数字的整数次方</title>
+      <link>/post/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</link>
+      <pubDate>Thu, 07 Mar 2019 22:04:04 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。保证base和</description>
+    </item>
+    
+    <item>
+      <title>剑指offer15:二进制中1的个数</title>
+      <link>/post/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
+      <pubDate>Tue, 05 Mar 2019 22:19:22 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目： 请实现一个函数，输入一个整数，输出该二进制中表示1的个数. 对于二进制运算，主要是按位与、或、非. 1与1相与为1，1与0相与为</description>
     </item>
     
     <item>
