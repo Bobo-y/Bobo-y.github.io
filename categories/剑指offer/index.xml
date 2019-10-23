@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>剑指offer52:两个链表的第一个公共节点</title>
+      <link>/post/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Sun, 07 Apr 2019 15:33:31 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入两个链表，找出它们的第一个公共结点 思路：暴力法时间复杂度O(n^2). 当两个链表具有公共节点时，第一个公共节点之后的节点</description>
+    </item>
+    
+    <item>
       <title>剑指offer55:二叉树的深度</title>
       <link>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</link>
       <pubDate>Sat, 06 Apr 2019 23:03:12 +0800</pubDate>
@@ -72,6 +81,15 @@
       
       <guid>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目:输入两棵二叉树A，B，判断B是不是A的子结构. 如上图，其中B为A的子结构. 思路: 判断是否为子树，首先需要定位到子树的根节点，</description>
+    </item>
+    
+    <item>
+      <title>剑指offer25:合并两个排序的链表</title>
+      <link>/post/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Wed, 03 Apr 2019 16:58:07 +0800</pubDate>
+      
+      <guid>/post/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则. 思路：对于两个递增的链表合并，合</description>
     </item>
     
     <item>
