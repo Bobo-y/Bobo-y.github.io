@@ -161,49 +161,62 @@ code.has-jax {
 <h3 id="一-创建分支">一.创建分支</h3>
 
 <ul>
-<li>首先登陆gitlab，进入你要拉取的项目.
-<img src="/img/gitlab_1/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></li>
-<li>点击Branches
-<img src="/img/gitlab_1/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></li>
-
-<li><p>输入分支名，创建分支
-<img src="/img/gitlab_1/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<h3 id="二-项目拉到本机">二.项目拉到本机</h3></li>
-
-<li><p>新建一个文件夹，在文件夹里鼠标右键选git bash here。</p></li>
-
-<li><p>git init 本地初始化
-<img src="/img/gitlab_1/4.png" alt="在这里插入图片描述" /></p></li>
-
-<li><p>添加项目地址，此处的地址就是主分支（master）的地址
-<img src="/img/gitlab_1/5.png" alt="在这里插入图片描述" /></p></li>
-
-<li><p>然后将刚刚创建的分支拉下来</p></li>
-
-<li><p>git fetch origin  watermark_generator(刚刚在gitlab创建的分支名)
-<img src="/img/gitlab_1/6.png" alt="在这里插入图片描述" />
-2.git checkout -b watermark_gen(本地要创建的分支名)  origin/watermark_generator(gitlab上创建的分支)
-<img src="/img/gitlab_1/7.png" alt="在这里插入图片描述" />
-3.git pull origin watermark_generator(gitlab上刚刚创建的分支名)
-<img src="/img/gitlab_1/8.png" alt="在这里插入图片描述" />
-到此，分支就拉下来了。</p></li>
+<li>首先登陆gitlab，进入你要拉取的项目.</li>
 </ul>
+
+<p><img src="/img/gitlab_1/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<ul>
+<li>点击Branches</li>
+</ul>
+
+<p><img src="/img/gitlab_1/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
+* 输入分支名，创建分支</p>
+
+<p><img src="/img/gitlab_1/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<h3 id="二-项目拉到本机">二.项目拉到本机</h3>
+
+<ul>
+<li>新建一个文件夹，在文件夹里鼠标右键选git bash here。</li>
+<li>git init 本地初始化</li>
+</ul>
+
+<p><img src="/img/gitlab_1/4.png" alt="在这里插入图片描述" />
+* 添加项目地址，此处的地址就是主分支（master）的地址</p>
+
+<p><img src="/img/gitlab_1/5.png" alt="在这里插入图片描述" />
+* 然后将刚刚创建的分支拉下来
+1. git fetch origin  watermark_generator(刚刚在gitlab创建的分支名)</p>
+
+<p><img src="/img/gitlab_1/6.png" alt="在这里插入图片描述" />
+2.git checkout -b watermark_gen(本地要创建的分支名)  origin/watermark_generator(gitlab上创建的分支)</p>
+
+<p><img src="/img/gitlab_1/7.png" alt="在这里插入图片描述" />
+3.git pull origin watermark_generator(gitlab上刚刚创建的分支名)</p>
+
+<p><img src="/img/gitlab_1/8.png" alt="在这里插入图片描述" />
+到此，分支就拉下来了。</p>
 
 <h3 id="三-本地代码上传">三.本地代码上传</h3>
 
 <p>然后就开始写代码，写啊写啊，写好了。开始上传</p>
 
-<p>1.git status 查看当前有哪些修改为提交，红色的的都是
-<img src="/img/gitlab_1/9.png" alt="" />
-2. 然后指定添加哪些，.代表能加的全加
-<img src="/img/gitlab_1/10.png" alt="在这里插入图片描述" />
-3. 提交到本地仓库
-<img src="/img/gitlab_1/11.png" alt="在这里插入图片描述" />
-4.提交到服务器gitlab
-<img src="/img/gitlab_1/12.png" alt="在这里插入图片描述" />
-刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。
-<img src="/img/gitlab_1/13.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p>1.git status 查看当前有哪些修改为提交，红色的的都是</p>
+
+<p><img src="/img/gitlab_1/9.png" alt="" />
+2. 然后指定添加哪些，.代表能加的全加</p>
+
+<p><img src="/img/gitlab_1/10.png" alt="在这里插入图片描述" />
+3. 提交到本地仓库</p>
+
+<p><img src="/img/gitlab_1/11.png" alt="在这里插入图片描述" />
+4.提交到服务器gitlab</p>
+
+<p><img src="/img/gitlab_1/12.png" alt="在这里插入图片描述" />
+刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。</p>
+
+<p><img src="/img/gitlab_1/13.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 
 <h3 id="四-将本地已有的代码直接上传到新的分支上">四.将本地已有的代码直接上传到新的分支上</h3>
 
