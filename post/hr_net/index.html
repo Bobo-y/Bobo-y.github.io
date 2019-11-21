@@ -162,20 +162,28 @@ code.has-jax {
 
 <h2 id="hrnet的网络结构">HRNet的网络结构</h2>
 
-<p>HRNet网络结构图如下（图片来自原论文）：
-<img src="/img/HR_NET/1.png" alt="" />
-HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。</p>
+<p>HRNet网络结构图如下（图片来自原论文）：</p>
 
-<p>以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架：
-<img src="/img/HR_NET/2.png" alt="在这里插入图片描述" />
-<img src="/img/HR_NET/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-<img src="/img/HR_NET/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-<img src="/img/HR_NET/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。</p>
+<p><img src="/img/HR_NET/1.png" alt="" /></p>
+
+<p>HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。</p>
+
+<p>以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架：</p>
+
+<p><img src="/img/HR_NET/2.png" alt="在这里插入图片描述" /></p>
+
+<p><img src="/img/HR_NET/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p><img src="/img/HR_NET/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p><img src="/img/HR_NET/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。</p>
 
 <p>信息交换单元：
-下图说明了HRNet如何在各层之间进行特征的融合。
-<img src="/img/HR_NET/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+下图说明了HRNet如何在各层之间进行特征的融合。</p>
+
+<p><img src="/img/HR_NET/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 
 <h2 id="个人认为hrnet关键在于能更好的保留图像的细节信息-毕竟下采样会丢失大量信息-然后再恢复高分辨率难免丢失细节-hrnet的意义主要在于网络的构建思想吧-具体实现不同的任务有不同做法-最近在做图像修复-正好采用文中的思想来构造自己的网络来看看效果">个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。</h2>
 

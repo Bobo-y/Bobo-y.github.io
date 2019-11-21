@@ -157,23 +157,26 @@ code.has-jax {
 </h2>
 
 <ul>
-<li><p>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少，嘿嘿，所以相对好发（水）论文，马上毕业了，简单写个小记吧，不针对某篇论文做具体的技术分析。以下任务的定义等主要参考DAVIS benchmark，这个数据集确实推动了这个研究方向。</p>
+<li>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少，嘿嘿，所以相对好发（水）论文，马上毕业了，简单写个小记吧，不针对某篇论文做具体的技术分析。以下任务的定义等主要参考DAVIS benchmark，这个数据集确实推动了这个研究方向。</li>
+</ul>
 
 <h1 id="任务定义与数据集">任务定义与数据集</h1>
 
 <h2 id="任务定义">任务定义</h2>
 
-<p>视频对象分割可以被定义为将前景对象与背景区域进行分离的二值标记问题，如下图（图片来源DAVIS数据集）。视频对象分割一般是分割整个视频序列中最显著的、最关键的物体。
-<img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="1" /></p>
+<p>视频对象分割可以被定义为将前景对象与背景区域进行分离的二值标记问题，如下图（图片来源DAVIS数据集）。视频对象分割一般是分割整个视频序列中最显著的、最关键的物体。</p>
+
+<p><img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="1" /></p>
 
 <h2 id="数据集">数据集</h2>
 
-<p>视频对象分割至2016年以来，这几年吸引了众多研究者的目光，同时取得了很大的研究进展。我个人认为这与DAVIS视频对象分割数据集的发布是密不可分的，所以非常感谢这些花费时间、金钱为我们这些小研究者铺平道路的大佬、科研机构们。</p></li>
-</ul>
+<p>视频对象分割至2016年以来，这几年吸引了众多研究者的目光，同时取得了很大的研究进展。我个人认为这与DAVIS视频对象分割数据集的发布是密不可分的，所以非常感谢这些花费时间、金钱为我们这些小研究者铺平道路的大佬、科研机构们。</p>
 
-<p><strong>DAVIS数据集：</strong> DAVIS数据集是2016年伴随论文发布CVPR上的，其论文为： A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation（<a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf">论文链接</a>）。DAVIS2016数据集为单对象分割数据集，包含30个训练集，20个验证集。2017年，DAVIS在单对象分割数据集的基础上发布了多对象分割数据集DAVIS2017，一共有150个视频序列。如下图，单对象与多对象对比。
-<img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-同时，DAVIS Benchmark包含了丰富的对比方法的评估结果。目前，DAVIS数据集应该是视频对象分割领域最完善的数据集。
+<p><strong>DAVIS数据集：</strong> DAVIS数据集是2016年伴随论文发布CVPR上的，其论文为： A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation（<a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf">论文链接</a>）。DAVIS2016数据集为单对象分割数据集，包含30个训练集，20个验证集。2017年，DAVIS在单对象分割数据集的基础上发布了多对象分割数据集DAVIS2017，一共有150个视频序列。如下图，单对象与多对象对比。</p>
+
+<p><img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>同时，DAVIS Benchmark包含了丰富的对比方法的评估结果。目前，DAVIS数据集应该是视频对象分割领域最完善的数据集。
 <a href="https://davischallenge.org/">DAVIS官方网站</a>：<strong><a href="https://davischallenge.org/">https://davischallenge.org/</a></strong></p>
 
 <p><strong>SegTrack-v2:</strong> 此数据集包含14个视频序列，标注的质量一般，比较老，但对比实验一般会在这上面跑
@@ -186,9 +189,11 @@ code.has-jax {
 <a href="https://lmb.informatik.uni-freiburg.de/resources/datasets/moseg.en.html">Moseg链接</a></p>
 
 <p><strong>VSB100:</strong>  VSB100虽然也称为视频对象分割benchmark。但个人认为偏向于静态图像分割，因为它对每一帧都进行了过度分割（如下图），要求太高了，与DAVIS中的定义有所差别。反正也没见人在这上面跑视频对象分割，-_-||
-<a href="https://lmb.informatik.uni-freiburg.de/resources/datasets/vsb.en.html">VSB100链接</a>
-<img src="/img/vos_sum/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-<strong>GYGO:</strong> 2017年发布的视频对象分割数据集，其视频内容大都针对于电子商务，视频都比较短（1-10秒）。个人认为这个数据集的缺陷在于视频内容中所面临的问题太少，几乎不存在遮挡、快速运动等比较严苛的条件。所以这个数据集上的精度都在0.93以上，用的人少。
+<a href="https://lmb.informatik.uni-freiburg.de/resources/datasets/vsb.en.html">VSB100链接</a></p>
+
+<p><img src="/img/vos_sum/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p><strong>GYGO:</strong> 2017年发布的视频对象分割数据集，其视频内容大都针对于电子商务，视频都比较短（1-10秒）。个人认为这个数据集的缺陷在于视频内容中所面临的问题太少，几乎不存在遮挡、快速运动等比较严苛的条件。所以这个数据集上的精度都在0.93以上，用的人少。
 <a href="https://github.com/ilchemla/gygo-dataset">GYGO链接</a></p>
 
 <p><strong>目前广泛被使用的是前三个数据集，DAVIS是根本，SegTrack和YouTuBe一般做泛化能力对比。</strong></p>
@@ -213,12 +218,20 @@ code.has-jax {
 
 <h2 id="表观信息模型">表观信息模型</h2>
 
-<p>在FCN的启发下，OSVOS应运而生。OSVOS本质上是静态图像分割，不考虑视频具有的时域信息。即在大的数据集上离线训练一个通用前景-背景分类网络，测试阶段，针对于给定的分割对象，重新微调网络，使其针对于指定的分割对象。
-<img src="/img/vos_sum/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-OSVOS的流程如上图所示：
-<strong>Base Network:</strong> OSVOS的主干网络是基于VGG16实现的二分类网络。使用在ImageNet上预训练得到的模型参数初始化。
-<strong>Parent Network：</strong>  在DAVIS单对象训练集上训练，使网络学会分割通用的前景-背景。
-<strong>Test Network:</strong> 使用给定的视频的第一帧微调Parent Network，使网络快速针对于给定的目标。</p>
+<p>在FCN的启发下，OSVOS应运而生。OSVOS本质上是静态图像分割，不考虑视频具有的时域信息。即在大的数据集上离线训练一个通用前景-背景分类网络，测试阶段，针对于给定的分割对象，重新微调网络，使其针对于指定的分割对象。</p>
+
+<p><img src="/img/vos_sum/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>OSVOS的流程如上图所示：</p>
+
+<p><strong>Base Network:</strong>
+OSVOS的主干网络是基于VGG16实现的二分类网络。使用在ImageNet上预训练得到的模型参数初始化。</p>
+
+<p><strong>Parent Network：</strong>
+在DAVIS单对象训练集上训练，使网络学会分割通用的前景-背景。</p>
+
+<p><strong>Test Network:</strong>
+使用给定的视频的第一帧微调Parent Network，使网络快速针对于给定的目标。</p>
 
 <p>OSVOS在DAVIS上取得了0.79的精度。但是OSVOS也存在一个明显的问题，当目标发生了较大的变化时，网络适应不了物体的变化，视频的时域信息不应该不考虑。（哈哈，发现问题，接下来就是研究点了）既然OSVOS不考虑时域信息，那么引入时域信息不就是新的论文了吗？对，没错，接下来就是OnAVOS（<a href="https://www.researchgate.net/publication/318012664_Online_Adaptation_of_Convolutional_Neural_Networks_for_Video_Object_Segmentation">论文链接</a>），通过引入在线自适应提升了分割精度。（哈哈，我的第一篇论文也是针对自适应来做的，基本和OnAVOS同时做，可惜自己做的慢）</p>
 
@@ -228,14 +241,15 @@ OSVOS的流程如上图所示：
 1. 论文：FusionSeg: Learning to combine motion and appearance for fully automatic
 segmentation of generic objects in videos<a href="https://arxiv.org/pdf/1701.05384.pdf">论文链接</a></p>
 
-<pre><code>FSEG网络结构如下，包含两个分支，一个学习表观特征，一个学习光流特征（注意，光流特征输入的是光流图片，光流图片外部生成，一般用FlowNet），最后输出单个分割结果。
-</code></pre>
+<p>FSEG网络结构如下，包含两个分支，一个学习表观特征，一个学习光流特征（注意，光流特征输入的是光流图片，光流图片外部生成，一般用FlowNet），最后输出单个分割结果。</p>
 
-<p><img src="/img/vos_sum/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-2.论文：SegFlow: Joint Learning for Video Object Segmentation and Optical Flow<a href="https://arxiv.org/pdf/1709.06750v1.pdf">论文链接</a></p>
+<p><img src="/img/vos_sum/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 
-<p>SegFlow网络结构如下，它也是双分支网络，上端为表观分割网络，下端为FlowNetS网络（与FSEG不同的是此时光流端输入为图片对）。同时，在上采样层两个分支进行信息的交流，最终输出为光流与分割结果。
-<img src="/img/vos_sum/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p>2.论文：SegFlow: Joint Learning for Video Object Segmentation and Optical Flow<a href="https://arxiv.org/pdf/1709.06750v1.pdf">论文链接</a></p>
+
+<p>SegFlow网络结构如下，它也是双分支网络，上端为表观分割网络，下端为FlowNetS网络（与FSEG不同的是此时光流端输入为图片对）。同时，在上采样层两个分支进行信息的交流，最终输出为光流与分割结果。</p>
+
+<p><img src="/img/vos_sum/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 
 <h1 id="总结">总结</h1>
 
