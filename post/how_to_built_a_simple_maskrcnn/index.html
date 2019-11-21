@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Keras多标签分类网络实现 - 扬帆起航</title>
+	<title>动手搭建神经网络之:简单联合分割、检测网络 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -122,16 +122,16 @@ code.has-jax {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Keras多标签分类网络实现</h1>
+			<h1 class="post__title">动手搭建神经网络之:简单联合分割、检测网络</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-03-29T15:07:11">2019-03-29</time>
+	<time class="meta__text" datetime="2019-10-28T23:58:27">2019-10-28</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
@@ -143,7 +143,7 @@ code.has-jax {
 <div class="content post__content clearfix">
 			
 
-<h2 id="hahahugoshortcode-s0-hbhb"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <ins class="adsbygoogle"
      style="display:block"
@@ -154,150 +154,87 @@ code.has-jax {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</h2>
-
-<h1 id="简谈多分类与多标签分类">简谈多分类与多标签分类</h1>
-
-<p>简单的说，输入一张图片进行分类：
-* 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系，取最高概率标签为物体的类别。所以，多分类最后的激活为<strong>softmax</strong>函数。
-* 实际情况下，一个图片只能有一个物体未免太限制了，能不能一次性判断出图片里面多个物体，比如既有人又有车，网络输出含有每个物体的概率，其概率是非竞争的，这就是多标签分类。</p>
-
-<h1 id="数据准备">数据准备</h1>
-
-<p><strong>我自己做的是一个8标签的分类，当然了一张图片里面最多也就同时包含4个左右的物体</strong></p>
-
-<p>数据目录如下：
-<img src="/img/keras_multi_class/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-按以下格式写的data_train.txt,我是从txt中读取图片路径加载训练图片的
-<img src="/img/keras_multi_class/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<h1 id="数据生成">数据生成</h1>
-
-<p><strong>我没有使用ImageDataGenerator，使用生成器从txt中加载图像。一共有8各类，标签为1x8的向量，图片中包含某个物体，向量对于位置置1。如一张图中包含id为2，5，7三个物体，标签为[0,1,0,0,1,0,1,0]</strong></p>
-
-<p>data_gen.py</p>
-
-<pre><code class="language-python">import os
-import numpy as np
-from PIL import Image
 
 
-def to_multi_label(num_list, num_class):
-    lab = np.zeros(shape=(1,num_class))
-    for i in num_list:
-        lab[0,int(i)-1] = 1
-    return lab
+<p><em>coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支</em></p>
 
+<h2 id="网络结构">网络结构</h2>
 
-def generate_arrays_from_txt(path, batch_size, num_class):
-    with open(path) as f:
-        while True:
-            imgs = []
-            labs = np.zeros(shape=(batch_size,num_class))
-            i= 0
-            while len(imgs) &lt; batch_size:
-                line = f.readline()
-                if not line:
-                    f.seek(0)
-                    line = f.readline()
-                img_path = line.split(' ')[0]
-                lab = line.strip().split(' ')[1:]
-                img = np.array(Image.open(os.path.join('./', img_path)))
-                lab = to_multi_label(lab,num_class)
-                imgs.append(img)
-                labs[i] = lab
-                i = i + 1
-            yield (np.array(imgs),labs)
+<p>MASK-Rcnn主要是将目标分割、分类、以及定位融合在一起,其网络结构结构如下</p>
+
+<p><img src="/img/simple_mrcnn/1.jpg"  width="400" height="300"></p>
+
+<p>此小练习基于mask rcnn的思想，但直接进行box回归,因为是检测单一的前景目标，因此对应于yolo将图片视为一个cell，进行bounding box的回归，因为这个数据集中部分图片的前景目标包含了几个物体，分类分支无法收敛，因此删除了分类分支.</p>
+
+<p>base model采用预训练的VGG16前5层卷积与池化层，对于分割分支，采用U_net结构恢复空间分辨率，对于回归分支，在VGG16最后一层池化层后添加卷基层与全局平均池化层实现.</p>
+
+<p>网络结构图如下：</p>
+
+<p><img src="/img/simple_mrcnn/1.png" width="500" height="300"></p>
+
+<p>网络搭建</p>
+
+<pre><code class="language-python">class JointNet:
+
+    def __init__(self):
+        self.input_img = Input(name='input_img',
+                               shape=(512, 512, 3),
+                               dtype='float32')
+        self.out_channel = 1
+        self.bbox = 4
+        vgg16 = VGG16(input_tensor=self.input_img,
+                      weights='imagenet',
+                      include_top=False)
+
+        self.vgg_pools = [vgg16.get_layer('block%d_pool' % i).output
+                          for i in range(1, 6)]
+
+    def network(self):
+
+        def decoder(layer_input, skip_input, channel, last_block=False):
+            if not last_block:
+                concat = Concatenate(axis=-1)([layer_input, skip_input])
+                bn1 = BatchNormalization()(concat)
+            else:
+                bn1 = BatchNormalization()(layer_input)
+            conv_1 = Conv2D(channel, 1, activation='relu', padding='same')(bn1)
+            bn2 = BatchNormalization()(conv_1)
+            conv_2 = Conv2D(channel, 3, activation='relu', padding='same')(bn2)
+            return conv_2
+
+        d1 = decoder(UpSampling2D((2, 2))(self.vgg_pools[4]), self.vgg_pools[3], 128)
+        d2 = decoder(UpSampling2D((2, 2))(d1), self.vgg_pools[2], 64)
+        d3 = decoder(UpSampling2D((2, 2))(d2), self.vgg_pools[1], 32)
+        d4 = decoder(UpSampling2D((2, 2))(d3), self.vgg_pools[0], 32)
+        d5 = decoder(UpSampling2D((2, 2))(d4), None, 32, True)
+
+        # mask branch
+        mask = Conv2D(self.out_channel, 3, padding='same', name='mask')(d5)
+        # bbox branch
+        conv = Conv2D(512, (3, 3), padding='same', activation='relu', name='bbox_conv1')(self.vgg_pools[4])
+        conv_bbx = Conv2D(self.bbox, (3, 3), padding='same', activation='sigmoid',name='bbox_conv2')(conv)
+        bbox_head = GlobalAveragePooling2D(name='bbox_head')(conv_bbx)
+        model = Model(inputs=self.input_img, outputs=[mask, bbox_head])
+        model.summary()
+        return model
 </code></pre>
 
-<h1 id="网络结构">网络结构</h1>
+<h2 id="数据生成">数据生成</h2>
 
-<p><strong>我采用的是比较简单的Vgg-16网络。主要在于最后的激活函数，不能用softmax,使用sigmoid激活相当于对每个类别进行二分类，只是网络在同时进行多个二分类。</strong></p>
+<p>训练数据选用了<a href="https://davischallenge.org/">DAVIS2016</a>视频目标分割数据集。对于bbox,采用VOC格式，代码生成左上角坐标及物体宽高，同时，基于yolo思想将单张图片视为单个cell,预测坐标的偏移值，将坐标值归一化，加快收敛，因为DAVIS2016中的一个mask往往包含多个类别，因此没有加分类分支。</p>
 
-<p>model.py</p>
+<h2 id="网络训练">网络训练</h2>
 
-<pre><code class="language-python">from keras.models import Sequential
-from keras.layers import Dense, MaxPooling2D,  Flatten, Convolution2D, Dropout, GlobalAveragePooling2D
+<p>对于mask分支，采用二值交叉熵，对于bbox回归，采用smoothL1损失。联合训练时bbox分支收一般敛快，mask分支损失可能不下降，偏向于给mask分支更大的权重。本次实验中采用了分阶段训练，首先只训练mask分支，在网络具备分割能力后，冻结vgg16基网络，然后联合训练。</p>
 
+<h2 id="实验结果">实验结果</h2>
 
-def vgg_16(num_class, weights_path=None, has_fc=True):
-    model = Sequential()
-    model.add(Convolution2D(64, (3, 3), activation='relu', padding='same', input_shape=(224, 224, 3)))
-    model.add(Convolution2D(64, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
+<p><img src="/img/simple_mrcnn/result.jpg" width="400" height="600" align="center"></p>
 
-    model.add(Convolution2D(128, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(128, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
-
-    model.add(Convolution2D(256, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(256, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(256, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
-
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
-
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(Convolution2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(MaxPooling2D((2, 2), strides=(2, 2)))
-
-    if weights_path:
-        model.load_weights(weights_path)
-    if has_fc:
-        model.add(Flatten())
-        model.add(Dense(500, activation='relu'))
-        model.add(Dropout(0.5))
-        model.add(Dense(100, activation='relu'))
-        model.add(Dropout(0.5))
-        model.add(Dense(num_class, activation='sigmoid'))
-    else:
-        model.add(GlobalAveragePooling2D())
-        model.add(Dense(num_class, activation='sigmoid'))
-    # model.summary()
-    return model
-
-</code></pre>
-
-<h1 id="训练模型">训练模型</h1>
-
-<p><strong>损失函数为binary_crossentropy，就是计算输出与标签各个对应位置的损失，有点像图像分割。然后就可以跑起来了，看效果调参什么的。我调了好一些，0.85左右就上不去了，估计还是得换网络结构吧</strong></p>
-
-<pre><code class="language-python">from model import vgg_16
-from data_gen import generate_arrays_from_txt
-from keras.optimizers import SGD
-from keras.callbacks import TensorBoard
-from keras.callbacks import ModelCheckpoint
-import os
-
-
-
-train_data_gen = generate_arrays_from_txt('./data/train_data/data_train.txt', 32, 8)
-valid_data_gen = generate_arrays_from_txt('./data/valid_data/data_valid.txt', 32, 8)
-model = vgg_16( 8,'./model/vgg_16_without_fc.h5')
-sgd = SGD(lr=1e-6, momentum=0.9, decay=1e-6, nesterov=True)
-model.compile(optimizer=sgd, loss='binary_crossentropy', metrics=['accuracy'])
-tensor_board = TensorBoard(log_dir='log/ecpo1')
-ckpt = ModelCheckpoint(os.path.join('./model/ecpo1', 'vgg.h5'), verbose=1, period=1)
-model.fit_generator(train_data_gen, steps_per_epoch=100, epochs=50, verbose=1, callbacks=[tensor_board, ckpt],
-                    validation_data=valid_data_gen, validation_steps=5)
-</code></pre>
-
-<p><strong>不得不说，keras真是我这种懒人喜欢用库啊，♪(･ω･)ﾉ</strong>
-<strong>如果文中有说错的地方，还请指出，谢谢</strong></p>
+<p><a href="https://github.com/yl305237731/deeplearning.ai_works/tree/master/simple_joint_detec_seg">完整代码链接</a></p>
 
 		</div>
 		
-<div class="post__tags tags clearfix">
-	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/keras/" rel="tag">keras</a></li>
-		<li class="tags__item"><a class="tags__link btn" href="/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB/" rel="tag">多标签分类</a></li>
-	</ul>
-</div>
 	</article>
 	<script src="https://utteranc.es/client.js"
 	        repo="yl305237731/yl305237731.github.io"
@@ -324,37 +261,10 @@ model.fit_generator(train_data_gen, steps_per_epoch=100, epochs=50, verbose=1, c
 
 
 
-<aside class="sidebar">
-<h4>相关文章</h4>
-<div class="widget__content">
-		<ul class="widget__list">
-	
-	<li><a href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
-	
-	<li><a href="/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/">基于vgg16的半监督视频单目标分割网络</a></li>
-	
-	<li><a href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
-	
-	<li><a href="/post/keras_data_aug/">Keras数据增强并保存到本地</a></li>
-	
-	<li><a href="/post/keras_dataload/">Keras数据集加载小结</a></li>
-	
-	<li><a href="/post/keras_simi/">基于Keras图像相似度计算孪生网络</a></li>
-	
-	<li><a href="/post/kdog_cat/">Keras 猫狗二分类</a></li>
-	
-</ul>
-</div>
-<br/>
-</aside>
-
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/keras_dataload/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Keras数据集加载小结</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/keras_data_aug/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Keras数据增强并保存到本地</p></a>
+		<a class="post-nav__link" href="/post/gru%E5%B0%8F%E7%BB%93/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">GRU小结</p></a>
 	</div>
 </nav>
 

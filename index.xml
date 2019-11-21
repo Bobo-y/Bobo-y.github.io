@@ -6,10 +6,19 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 07 Oct 2019 22:05:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 23:58:27 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>动手搭建神经网络之:简单联合分割、检测网络</title>
+      <link>/post/how_to_built_a_simple_maskrcnn/</link>
+      <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>
+      
+      <guid>/post/how_to_built_a_simple_maskrcnn/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支 网络结构 MASK-Rc</description>
+    </item>
     
     <item>
       <title>GRU小结</title>
