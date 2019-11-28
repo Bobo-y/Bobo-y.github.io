@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Mac命令行命令记录 - 扬帆起航</title>
+	<title>linux进程、端口占用查看 - 扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -122,7 +122,7 @@ code.has-jax {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Mac命令行命令记录</h1>
+			<h1 class="post__title">linux进程、端口占用查看</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
@@ -156,9 +156,11 @@ code.has-jax {
 </script>
 </h2>
 
-<h3 id="mac-下查看端口占用">mac 下查看端口占用</h3>
+<h3 id="查看端口占用">查看端口占用</h3>
 
 <pre><code class="language-bash">sudo lsof -i:端口号
+
+netstat -anlp | grep 端口号
 </code></pre>
 
 <hr />
@@ -244,7 +246,6 @@ code.has-jax {
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/shell">Shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
