@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>压缩命令 on 扬帆起航</title>
+    <link>/tags/%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in 压缩命令 on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 04 Nov 2019 09:39:37 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux之tar命令</title>
+      <link>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 04 Nov 2019 09:39:37 +0800</pubDate>
+      
+      <guid>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); tar -c: 建立压缩文档 -x: 解压 -t: 查看内容 -r: 向压缩归档文件末尾追加文件 -u: 更新压缩包中的文件 以上五个是独立的命令，压缩解压都要用到其中一个，可</description>
+    </item>
+    
+  </channel>
+</rss>
