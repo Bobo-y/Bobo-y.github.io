@@ -6,19 +6,10 @@
     <description>Recent content in Categories on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Nov 2019 09:39:37 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 23:58:27 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Linux</title>
-      <link>/categories/linux/</link>
-      <pubDate>Mon, 04 Nov 2019 09:39:37 +0800</pubDate>
-      
-      <guid>/categories/linux/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>深度学习</title>
@@ -53,6 +44,15 @@
       <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/categories/linux/</link>
+      <pubDate>Sat, 04 May 2019 09:39:37 +0800</pubDate>
+      
+      <guid>/categories/linux/</guid>
       <description></description>
     </item>
     

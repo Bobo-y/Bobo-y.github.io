@@ -6,19 +6,10 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Nov 2019 09:39:37 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 23:58:27 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Linux之tar命令</title>
-      <link>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Mon, 04 Nov 2019 09:39:37 +0800</pubDate>
-      
-      <guid>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); tar -c: 建立压缩文档 -x: 解压 -t: 查看内容 -r: 向压缩归档文件末尾追加文件 -u: 更新压缩包中的文件 以上五个是独立的命令，压缩解压都要用到其中一个，可</description>
-    </item>
     
     <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
@@ -162,6 +153,24 @@
       
       <guid>/post/videoseg_summary/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的</description>
+    </item>
+    
+    <item>
+      <title>conda pip源</title>
+      <link>/post/conda_pip%E6%BA%90/</link>
+      <pubDate>Sun, 02 Jun 2019 19:52:40 +0800</pubDate>
+      
+      <guid>/post/conda_pip%E6%BA%90/</guid>
+      <description>conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip 指定清华源</description>
+    </item>
+    
+    <item>
+      <title>Linux之tar命令</title>
+      <link>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 04 May 2019 09:39:37 +0800</pubDate>
+      
+      <guid>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); tar -c: 建立压缩文档 -x: 解压 -t: 查看内容 -r: 向压缩归档文件末尾追加文件 -u: 更新压缩包中的文件 以上五个是独立的命令，压缩解压都要用到其中一个，可</description>
     </item>
     
     <item>

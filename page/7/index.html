@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>线性拟合笔记之：最小二乘法 - 扬帆起航</title>
+	<title>扬帆起航</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,6 +14,7 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="扬帆起航">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -119,202 +120,86 @@ code.has-jax {
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">线性拟合笔记之：最小二乘法</h1>
-			<div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-12-18T15:57:45">2018-12-18</time>
-</div>
-
+<main class="main list" role="main"><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">
+			<img src="/img/hadoop%e6%93%8d%e4%bd%9c%e8%ae%b0%e5%bd%95/1.jpeg" alt="Hadoop命令记录" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" rel="bookmark">
+			Hadoop命令记录
+			</a>
+		</h3>
+		<div class="list__meta meta">
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0" rel="category">机器学习</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">3 分钟</time>
+	<time class="meta__text">1 分钟</time>
 </div></div>
-			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
-		</header>
-<div class="content post__content clearfix">
-			
-
-<h2 id="hahahugoshortcode-s0-hbhb"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3547912397637948"
-     data-ad-slot="1692723023"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</h2>
-
-<h1 id="关于最小二乘法">关于最小二乘法</h1>
-
-<p>以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。最小二乘法还可用于曲线拟合。其他一些优化问题也可通过最小化能量或最大化熵用最小二乘法来表达。
-对于线性拟合，给定的具有线性关系的观测样本，可以通过最小二乘法求解得到线性模型。</p>
-
-<h1 id="一元线性回归模型求解">一元线性回归模型求解</h1>
-
-<p>给定的观测数据 ：(x1,y1),(x2,y1),(x3,y3)&hellip;&hellip;(xn,yn)，假设其存在着线性关系，线性模型为：$$ \bar{y} = wx +b $$
-优化目标函数为：
-<img src="/img/ercheng/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>即标签值和预测值之间的均方误差，所选择的回归模型应该使所有观察值的残差平方和达到最小，
-也就是 Least square。
-将目标函数展开：
-<img src="/img/ercheng/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_10,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>此时，L是关于w 和 b 的函数，要使 L的值最小，由数学知识可知，可以通过求偏导令为0可解得，即：
-<img src="/img/ercheng/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>记:
-<img src="/img/ercheng/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>则 <img src="/img/ercheng/7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>同理可得：
-<img src="/img/ercheng/8.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>即可求得w,b。</p>
-
-<h1 id="最小二乘实现">最小二乘实现</h1>
-
-<h2 id="一元最小二乘法">一元最小二乘法</h2>
-
-<p>由上面的 <em>w</em> 可以看出，整个计算结果依赖于$\bar{x}$,$\bar{y}$,$x<em>{i}y</em>{i}$,$x_{i}^{2}$</p>
-
-<p>python测试代码如下：</p>
-
-<pre><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np
-class Least_square:
-    weight = 0
-    bias = 0
-
-    def get_weight(self):
-        return self.weight
-
-    def get_bias(self):
-        return self.bias
-
-    def least_square(self,x,y):
-        if len(x)!= len(y):
-            print('data error')
-            return
-        x_ = 0
-        y_ = 0
-        x_mul_y = 0
-        x_2 = 0
-        n = len(x)
-        for i in range(n):
-            x_ = x[i] + x_
-            y_ = y[i] + y_
-            x_mul_y = x[i]*y[i] + x_mul_y
-            x_2 = x[i]*x[i] + x_2
-        x_ = x_ / n
-        y_ = y_ / n
-        self.weight = (x_mul_y - n*x_*y_)/(x_2 - n*x_*x_)
-        self.bias = y_ - self.weight*x_
-
-    def fun_plot(self):
-        data_x = np.linspace(0,10,20)
-        data_y = [self.weight * x +self.bias for x in data_x]
-        print('y='+str(self.weight)+'x+'+str(self.bias))
-        plt.plot(data_x,data_y)
-        plt.show()
-
-test = Least_square()
-x = np.array([1,2,3,6,1.5,4,7,4.3,9.2])
-y = np.array([2,1.5,4,7,1.8,5.3,8.6,5.6,11])
-plt.plot(x,y,'ro')
-test.least_square(x,y)
-test.fun_plot()
-</code></pre>
-
-<p>运行结果示例：
-<img src="/img/ercheng/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-因为最小二乘法是对所有数据进行拟合，寻找到所有点的误差最小的直线，当数据不存在大的异常点时，效果应该是很好的。
-如下图，当增加一个明显的异常点（蓝色点）时，拟合的直线会靠向异常点
-<img src="/img/ercheng/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<h2 id="多元线性回归模型">多元线性回归模型</h2>
-
-<p>百度百科：在回归分析中，如果有两个或两个以上的自变量，就称为多元回归。事实上，一种现象常常是与多个因素相联系的，由多个自变量的最优组合共同来预测或估计因变量，比只用一个自变量进行预测或估计更有效，更符合实际。因此多元线性回归比一元线性回归的实用意义更大。</p>
-
-<p>记多元线性回归模型为：
-<img src="/img/ercheng/9.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>已有的观测数据:(x1,y1),(x2,y1),(x3,y3)&hellip;&hellip;(xn,yn)
-最小化残差平方和函数：
-<img src="/img/ercheng/10.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>求偏导：
-<img src="/img/ercheng/11.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>然后写成：</p>
-
-<p><img src="/img/ercheng/12.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>矩阵形式：
-<img src="/img/ercheng/13.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-
-<p>这是一个通用的形式，管它几元都行。写成这样的形式，用numpy的mat计算就更方便了，代码就更简单了（前段时间的网易笔试题就让编多元最小二乘，哎，自己推半天，还错了，哈哈），数学真的太重要了！！！</p>
-
-<p>（从CSDN迁移过来的，公式不对，懒得打。。。）</p>
-
-<p>参考：1.百度百科</p>
-
-		</div>
-		
-<div class="post__tags tags clearfix">
-	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/" rel="tag">最小二乘法</a></li>
-	</ul>
-</div>
-	</article>
-	<script src="https://utteranc.es/client.js"
-	        repo="yl305237731/yl305237731.github.io"
-	        issue-term="pathname"
-	        theme="github-light"
-	        crossorigin="anonymous"
-	        async>
-	</script>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		(adsbygoogle = window.adsbygoogle || []).push({}); 1.列出指定目录下文件 -ls haddop fs -ls /dir haddop fs -ls -R /dir 2.将本地文件放到hdfs文件系统中 -put hadoop fs -put &lt;local file&gt; &lt;hdfs file&gt; hadoop fs -put &lt;local file or dir&gt; &lt;hdfs dir&gt; #将键盘输入录入到
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">阅读全文…</a>
+	</div>
+</article>
 </main>
-<div class="social-share"></div>
-  <br/>
 
-<div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name">关于 Lin Yang</span>
-	</div>
-	<div class="authorbox__description">
-		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
-	</div>
+<div class="pagination">
+	
+	
+	
+	<a class="pagination__item pagination__item--prev btn" href="/">«</a>
+	<a class="pagination__item pagination__item--prev btn" href="/page/6/">‹</a>
+	
+	
+	
+	
+	
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/2/">2</a>
+		
+		
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/3/">3</a>
+		
+		
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/4/">4</a>
+		
+		
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/5/">5</a>
+		
+		
+	
+		
+			<a class="pagination__item pagination__item btn" href="/page/6/">6</a>
+		
+		
+	
+		
+		
+	
+	
+	<span class="pagination__item pagination__item--current">7</span>
+		
+	
+	
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;7&nbsp;页</span>
+	
 </div>
-
-
-
-
-<nav class="post-nav flex">
-	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/libsvm/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Ubuntu &#43; Python下libsvm使用小结</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/ransac/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">线性拟合笔记之：Ransac算法</p></a>
-	</div>
-</nav>
 
 
 
