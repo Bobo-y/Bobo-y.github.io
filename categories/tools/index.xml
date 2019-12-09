@@ -71,7 +71,7 @@
       <pubDate>Sun, 02 Jun 2019 19:52:40 +0800</pubDate>
       
       <guid>/post/conda_pip%E6%BA%90/</guid>
-      <description>conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip 指定清华源</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip</description>
     </item>
     
     <item>

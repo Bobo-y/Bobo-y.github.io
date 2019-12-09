@@ -170,8 +170,11 @@ code.has-jax {
 <li>点击Branches</li>
 </ul>
 
-<p><img src="/img/gitlab_1/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-* 输入分支名，创建分支</p>
+<p><img src="/img/gitlab_1/2.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<ul>
+<li>输入分支名，创建分支</li>
+</ul>
 
 <p><img src="/img/gitlab_1/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 
@@ -182,21 +185,30 @@ code.has-jax {
 <li>git init 本地初始化</li>
 </ul>
 
-<p><img src="/img/gitlab_1/4.png" alt="在这里插入图片描述" />
-* 添加项目地址，此处的地址就是主分支（master）的地址</p>
+<p><img src="/img/gitlab_1/4.png" alt="在这里插入图片描述" /></p>
 
-<p><img src="/img/gitlab_1/5.png" alt="在这里插入图片描述" />
-* 然后将刚刚创建的分支拉下来
-1. git fetch origin  watermark_generator(刚刚在gitlab创建的分支名)</p>
+<ul>
+<li>添加项目地址，此处的地址就是主分支（master）的地址</li>
+</ul>
 
-<p><img src="/img/gitlab_1/6.png" alt="在这里插入图片描述" />
-2.git checkout -b watermark_gen(本地要创建的分支名)  origin/watermark_generator(gitlab上创建的分支)</p>
+<p><img src="/img/gitlab_1/5.png" alt="在这里插入图片描述" /></p>
 
-<p><img src="/img/gitlab_1/7.png" alt="在这里插入图片描述" />
-3.git pull origin watermark_generator(gitlab上刚刚创建的分支名)</p>
+<ul>
+<li>然后将刚刚创建的分支拉下来</li>
+<li>git fetch origin  watermark_generator(刚刚在gitlab创建的分支名)</li>
+</ul>
 
-<p><img src="/img/gitlab_1/8.png" alt="在这里插入图片描述" />
-到此，分支就拉下来了。</p>
+<p><img src="/img/gitlab_1/6.png" alt="在这里插入图片描述" /></p>
+
+<p>2.git checkout -b watermark_gen(本地要创建的分支名)  origin/watermark_generator(gitlab上创建的分支)</p>
+
+<p><img src="/img/gitlab_1/7.png" alt="在这里插入图片描述" /></p>
+
+<p>3.git pull origin watermark_generator(gitlab上刚刚创建的分支名)</p>
+
+<p><img src="/img/gitlab_1/8.png" alt="在这里插入图片描述" /></p>
+
+<p>到此，分支就拉下来了。</p>
 
 <h3 id="三-本地代码上传">三.本地代码上传</h3>
 
@@ -204,17 +216,25 @@ code.has-jax {
 
 <p>1.git status 查看当前有哪些修改为提交，红色的的都是</p>
 
-<p><img src="/img/gitlab_1/9.png" alt="" />
-2. 然后指定添加哪些，.代表能加的全加</p>
+<p><img src="/img/gitlab_1/9.png" alt="" /></p>
 
-<p><img src="/img/gitlab_1/10.png" alt="在这里插入图片描述" />
-3. 提交到本地仓库</p>
+<ol>
+<li>然后指定添加哪些，.代表能加的全加</li>
+</ol>
 
-<p><img src="/img/gitlab_1/11.png" alt="在这里插入图片描述" />
-4.提交到服务器gitlab</p>
+<p><img src="/img/gitlab_1/10.png" alt="在这里插入图片描述" /></p>
 
-<p><img src="/img/gitlab_1/12.png" alt="在这里插入图片描述" />
-刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。</p>
+<ol>
+<li>提交到本地仓库</li>
+</ol>
+
+<p><img src="/img/gitlab_1/11.png" alt="在这里插入图片描述" /></p>
+
+<p>4.提交到服务器gitlab</p>
+
+<p><img src="/img/gitlab_1/12.png" alt="在这里插入图片描述" /></p>
+
+<p>刷新gitlab就有了。然后可以申请和和主分支合并，点create merge request，等项目老大同意就行了。</p>
 
 <p><img src="/img/gitlab_1/13.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 

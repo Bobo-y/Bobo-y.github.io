@@ -13,10 +13,10 @@
     
     <item>
       <title>LeetCode:开方函数sqrt实现</title>
-      <link>/post/alg1/</link>
+      <link>/post/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</link>
       <pubDate>Sun, 10 Mar 2019 15:30:15 +0800</pubDate>
       
-      <guid>/post/alg1/</guid>
+      <guid>/post/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],</description>
     </item>
     
