@@ -4,25 +4,48 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-10-28T23:58:27+08:00</lastmod>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/post/docker%E5%B0%8F%E8%AE%B0/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2019-10-28T23:58:27+08:00</lastmod>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tools/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/how_to_built_a_simple_maskrcnn/</loc>
     <lastmod>2019-10-28T23:58:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-10-28T23:58:27+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -45,12 +68,6 @@
   <url>
     <loc>/post/edge_gan/</loc>
     <lastmod>2019-09-19T23:32:10+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-19T23:32:10+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -127,12 +144,6 @@
   
   <url>
     <loc>/tags/hive/</loc>
-    <lastmod>2019-08-09T15:43:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/tools/</loc>
     <lastmod>2019-08-09T15:43:07+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -489,7 +500,7 @@
   </url>
   
   <url>
-    <loc>/post/doctran1/</loc>
+    <loc>/post/pyplot%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2018-12-21T15:39:00+08:00</lastmod>
   </url>
   

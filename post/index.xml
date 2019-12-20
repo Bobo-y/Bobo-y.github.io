@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Oct 2019 23:58:27 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2019 20:38:40 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker小记</title>
+      <link>/post/docker%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
+      
+      <guid>/post/docker%E5%B0%8F%E8%AE%B0/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Window</description>
+    </item>
     
     <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
@@ -445,10 +454,10 @@
     
     <item>
       <title>Pyplot tutorial翻译文档</title>
-      <link>/post/doctran1/</link>
+      <link>/post/pyplot%E6%96%87%E6%A1%A3/</link>
       <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
       
-      <guid>/post/doctran1/</guid>
+      <guid>/post/pyplot%E6%96%87%E6%A1%A3/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在</description>
     </item>
     
