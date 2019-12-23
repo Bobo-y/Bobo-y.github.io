@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Oct 2019 23:58:27 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 11:59:07 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Squeeze-and-Excitation Networks</title>
+      <link>/post/se-net/</link>
+      <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
+      
+      <guid>/post/se-net/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进</description>
+    </item>
     
     <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
