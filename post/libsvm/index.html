@@ -163,12 +163,17 @@ code.has-jax {
 <h2 id="安装测试">安装测试</h2>
 
 <p>我是在Ubuntu16.04环境下使用的
-解压后目录如下：
-<img src="/img/libsvm/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="" />
-针对Python，进入Python包，内容如下：
-<img src="/img/libsvm/2.png" alt="" />
-<strong>测试：</strong>
-命令行输入：</p>
+解压后目录如下：</p>
+
+<p><img src="/img/libsvm/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="" /></p>
+
+<p>针对Python，进入Python包，内容如下：</p>
+
+<p><img src="/img/libsvm/2.png" alt="" /></p>
+
+<p><strong>测试：</strong></p>
+
+<p>命令行输入：</p>
 
 <pre><code class="language-shell">import sys
 sys.path.append('/home/thinkstation/liny/libsvm/python')
@@ -181,18 +186,22 @@ import svm
 <pre><code class="language-shell">make lib    / /得到 libsvm.so.2
 </code></pre>
 
-<p>本地目录下测试可直接使用
-<img src="/img/libsvm/4.png" alt="" />
-<strong>加入系统路径</strong>：
-加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中</p>
+<p>本地目录下测试可直接使用</p>
+
+<p><img src="/img/libsvm/4.png" alt="" /></p>
+
+<p><strong>加入系统路径</strong>：</p>
+
+<p>加Python包下的.py文件放到/usr/lib/python2.7/dist-packages中，libsvm.so.2放到/usr/local/lib/python2.7中</p>
 
 <h2 id="使用">使用</h2>
 
 <h3 id="1-使用-a1a二分类数据集">1.使用 a1a二分类数据集</h3>
 
 <p><a href="https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#a1a">链接</a>
-特征已经进行了处理，libsvm 数据格式如下：
-<img src="/img/libsvm/3.png" alt="在这里插入图片描述" />
+特征已经进行了处理，libsvm 数据格式如下：</p>
+
+<p><img src="/img/libsvm/3.png" alt="在这里插入图片描述" />
 可以看出，格式为：
 类别   index：特征    index：特征 &hellip;&hellip;.</p>
 
@@ -201,23 +210,29 @@ import svm
 
 <h3 id="2-mnist数据集">2.mnist数据集</h3>
 
-<p>libsvm官网数据集中的mnist数据
-<img src="/img/libsvm/7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-其中前两项数据没有经过scale，后两项没有经过scale
+<p>libsvm官网数据集中的mnist数据</p>
+
+<p><img src="/img/libsvm/7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>其中前两项数据没有经过scale，后两项没有经过scale
 用未scale的数据训练测试：
 训练了接近5个小时，-_-||</p>
 
 <p><img src="/img/libsvm/8.png" alt="在这里插入图片描述" />
 精度竟然这么低。。。。。
-换上scale后的数据：
-<img src="/img/libsvm/9.png" alt="在这里插入图片描述" />
-训练时间10分钟左右，精度0.94</p>
+换上scale后的数据：</p>
+
+<p><img src="/img/libsvm/9.png" alt="在这里插入图片描述" /></p>
+
+<p>训练时间10分钟左右，精度0.94</p>
 
 <h2 id="3-猫狗二分类">3.猫狗二分类</h2>
 
-<p>数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1
-<img src="/img/libsvm/10.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-准确率0.62，可能数据有点少吧。。。。
+<p>数据准备：猫狗图片各450张，大小 50*50，按照格式将每张图片转为一行，并将像素值归为0-1</p>
+
+<p><img src="/img/libsvm/10.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+
+<p>准确率0.62，可能数据有点少吧。。。。
 <strong>总之，作者写的很完善了，还在不断优化中。
 感觉我们如果要使用的话，需要自己做的主要是数据、特征方面的处理等，高深一点的就研究并行</strong></p>
 
@@ -239,7 +254,6 @@ import svm
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item"><a class="tags__link btn" href="/tags/libsvm/" rel="tag">libsvm</a></li>
-		<li class="tags__item"><a class="tags__link btn" href="/tags/python/" rel="tag">python</a></li>
 		<li class="tags__item"><a class="tags__link btn" href="/tags/ubuntu/" rel="tag">ubuntu</a></li>
 	</ul>
 </div>
@@ -268,18 +282,6 @@ import svm
 </div>
 
 
-
-<aside class="sidebar">
-<h4>相关文章</h4>
-<div class="widget__content">
-		<ul class="widget__list">
-	
-	<li><a href="/post/mnist2img/">python下mnist数据集转化为图片</a></li>
-	
-</ul>
-</div>
-<br/>
-</aside>
 
 
 <nav class="post-nav flex">
@@ -363,7 +365,7 @@ import svm
 		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档 (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
