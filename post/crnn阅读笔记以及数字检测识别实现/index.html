@@ -169,7 +169,7 @@ code.has-jax {
 
 <h3 id="网络结构">网络结构</h3>
 
-<p><img src="/img/数字识别与检测/1.jpg"  height="400" width="600" ></p>
+<div align="cetner"><img src="/img/数字识别与检测/1.jpg"  height="400" width="600" ></div>
 
 <p>网络架构。架构包括三部分：</p>
 
@@ -183,7 +183,7 @@ code.has-jax {
 
 <h3 id="特征序列提取">特征序列提取</h3>
 
-<p><img src="/img/数字识别与检测/2.jpg"  height="400" width="600" ></p>
+<div><img src="/img/数字识别与检测/2.jpg"  height="400" width="600" ></div>
 
 <p>在CRNN模型中，通过采用标准CNN模型（去除全连接层）中的卷积层和最大池化层来构造卷积层的组件。这样的组件用于从输入图像中提取序列特征表示。所有的图像需要缩放到相同的高度。然后从卷积层组件产生的特征图中提取特征向量序列，这些特征向量序列作为循环层的输入。具体地，特征序列的每一个特征向量在特征图上按列从左到右生成。这意味着第i个特征向量是所有特征图第i列的连接。在我们的设置中每列的宽度固定为单个像素。</p>
 
@@ -193,7 +193,7 @@ code.has-jax {
 
 <p>一个深度双向循环神经网络是建立在卷积层的顶部，作为循环层。循环层预测特征序列x=x1,…,xTx=x1,…,xT中每一帧xtxt的标签分布ytyt。循环层的优点是三重的。首先，RNN具有很强的捕获序列内上下文信息的能力。对于基于图像的序列识别使用上下文提示比独立处理每个符号更稳定且更有帮助。以场景文本识别为例，宽字符可能需要一些连续的帧来完全描述（参见图2）。此外，一些模糊的字符在观察其上下文时更容易区分，例如，通过对比字符高度更容易识别“il”而不是分别识别它们中的每一个。其次，RNN可以将误差差值反向传播到其输入，即卷积层，从而允许我们在统一的网络中共同训练循环层和卷积层。第三，RNN能够从头到尾对任意长度的序列进行操作。</p>
 
-<p><img src="/img/数字识别与检测/3.jpg"  height="400" width="600" ></p>
+<div align="center"><img src="/img/数字识别与检测/3.jpg"  height="400" width="600" ></div>
 
 <p>LSTM是定向的，它只使用过去的上下文。然而，在基于图像的序列中，两个方向的上下文是相互有用且互补的。因此，文中采用双向LSTM。此外，可以堆叠多个双向LSTM，得到如图3.b所示的深双向LSTM。深层结构允许比浅层抽象更高层次的抽象，并且在语音识别任务中取得了显著的性能改进[17]。</p>
 
@@ -209,13 +209,13 @@ code.has-jax {
 
 <p>检测与裁剪结果：</p>
 
-<p><img src="/img/数字识别与检测/4.jpg"  height="600" width="800" ></p>
+<div align="center"><img src="/img/数字识别与检测/4.jpg"  height="600" width="800" ></div>
 
 <h3 id="识别-双向lstm-cnn-ctc">识别,双向LSTM+CNN+CTC</h3>
 
 <p>测试图像与结果：</p>
 
-<p><img src="/img/数字识别与检测/5.jpg"  height="600" width="800" ></p>
+<div align="center"><img src="/img/数字识别与检测/5.jpg"  height="600" width="800" ></div>
 
 <div align="cetner"><img src="/img/数字识别与检测/6.jpg"  height="200" width="300"></div>
 
@@ -247,13 +247,13 @@ code.has-jax {
 
 <div class="authorbox clearfix">
 	<figure class="authorbox__avatar">
-		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
 	</figure>
 	<div class="authorbox__header">
 		<span class="authorbox__name">关于 Lin Yang</span>
 	</div>
 	<div class="authorbox__description">
-		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
+		走出校园的算法攻城狮一枚，专注于深度学习、计算机视觉、图像处理。
 	</div>
 </div>
 

@@ -131,11 +131,11 @@ code.has-jax {
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a>, <a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a>, <a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a>, <a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
+	<time class="meta__text">2 分钟</time>
 </div></div>
 			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
@@ -160,11 +160,33 @@ code.has-jax {
 
 <h2 id="squeeze-and-excitation-blocks">SQUEEZE-AND-EXCITATION BLOCKS</h2>
 
-<p><img src="/img/SE-net/block.jpg" width="600" height="400" align="center"></p>
+<div align=center><img src="/img/SE-net/block.jpg" width="600" height="400" align="center"></div>
 
-<p>上图是SE-block 结构，$F<em>{tr}$是卷积结构，$X$和$U$是卷积操作的输入与输入，SE-block对$U$进行了加权的重标定. 其中包含 $F</em>{sq}$ 和 $F_{ex}$ 操作.</p>
+<p>上图是SE-block 结构，$F_t$是卷积结构，$X$和$U$是卷积操作的输入与输入，SE-block对$U$进行了加权的重标定. 其中包含 $F_s$ 和 $F_e$ 操作(由于公式编辑器的原因，用$t$代替$tr$, $s$ 代替$sq$、 $e$代替$ex$).</p>
 
-<p><img src="/img/SE-net/se_module.jpg" width="600" height="400" align="center"></p>
+<h3 id="squeeze-global-information-embedding">Squeeze: Global Information Embedding</h3>
+
+<p>对于squeeze部分，作者提出将全局空间信息 <em>squeeze</em> 为 <em>channel</em> 描述子，通过使用全局平均池化（GAP）来生成 <em>channel-wise</em> 的统计 $z$.</p>
+
+<p>$$z_c = F_s(U_c) = \frac{1}{H ✖️ W}\sum^H_i\sum^W_j u_c(i,j)$$</p>
+
+<h3 id="excitation-adaptive-recalibration">Excitation: Adaptive Recalibration</h3>
+
+<p>为了利用 <em>squeeze</em> 模块获得信息，旨在完全获取 <em>channel-wise</em> 级的依赖关系. 作者认为自适应重标定需要满足以下两个准则：</p>
+
+<ul>
+<li>能够学得各个 <em>channel</em> 之间的非线性相互关系</li>
+<li>必须学的是非互斥得关系，因为可以有多个 <em>channel</em> 被强调，而不是 <em>one-hot</em> 激活</li>
+</ul>
+
+<p>$$s = F_e(z, W) = \sigma(g(z, W)) = \sigma(W_2\delta(W_1z))$$</p>
+
+<p>$W_1$, $W_2$为全连接， $\delta$ 为 <em>relu</em> 激活.
+对于激励模块，作者首先使用一个全连接层对 <em>GAP</em> 结果以 $\frac{C}{r}$降维, 然后接 <em>relu</em> 激活函数学习非线性相关性，之后再跟一个全连接恢复 <em>channel</em> 维度.</p>
+
+<div align="center"><img src="/img/SE-net/se_module.jpg" width="800" height="400" ></div>
+
+<p>$Fig.2$和$Fig.3$分别是SE-Inception module和SE-Resnet module.</p>
 
 		</div>
 		
@@ -188,13 +210,13 @@ code.has-jax {
 
 <div class="authorbox clearfix">
 	<figure class="authorbox__avatar">
-		<img alt="Lin Yang avatar" src="/img/beat.jpg" class="avatar" height="90" width="90">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
 	</figure>
 	<div class="authorbox__header">
 		<span class="authorbox__name">关于 Lin Yang</span>
 	</div>
 	<div class="authorbox__description">
-		走出校园的算法攻城狮一枚，专注于机器学习、深度学习、图像处理。
+		走出校园的算法攻城狮一枚，专注于深度学习、计算机视觉、图像处理。
 	</div>
 </div>
 
