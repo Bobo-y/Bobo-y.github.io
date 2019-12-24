@@ -78,6 +78,17 @@
   </url>
   
   <url>
+    <loc>/tags/inception/</loc>
+    <lastmod>2019-10-24T16:51:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/inception_v1_to_v4/</loc>
+    <lastmod>2019-10-24T16:51:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/gru%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2019-10-07T22:05:27+08:00</lastmod>
   </url>
