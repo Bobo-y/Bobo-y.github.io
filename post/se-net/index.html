@@ -186,7 +186,29 @@ code.has-jax {
 
 <div align="center"><img src="/img/SE-net/se_module.jpg" width="800" height="400" ></div>
 
-<p>$Fig.2$和$Fig.3$分别是SE-Inception module和SE-Resnet module.</p>
+<h3 id="usage">usage</h3>
+
+<ul>
+<li>SE-block 可用于分类与检测. 对于标准网络结构如VGGNet，SE-block 可以用在每一个卷积+非线性操作之后. $Fig.2$和$Fig.3$分别是SE-Inception module和SE-Resnet module.</li>
+
+<li><p>ratio.  在ImageNet上，作者得到的最佳ratio为16,可做相对参考</p>
+
+<h3 id="简单代码-keras">简单代码(keras)</h3></li>
+</ul>
+
+<pre><code class="language-python">def squeeze_excitation_layer(x, ratio, out_dim):
+    squeeze = GlobalAveragePooling2D()(x)
+
+    excitation = Dense(units=out_dim // ratio)(squeeze)
+    excitation = Activation('relu')(excitation)
+    excitation = Dense(units=out_dim)(excitation)
+    excitation = Activation('sigmoid')(excitation)
+    excitation = Reshape((1, 1, out_dim))(excitation)
+
+    scale = multiply([x, excitation])
+
+    return scale
+</code></pre>
 
 		</div>
 		
