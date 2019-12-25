@@ -46,7 +46,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="扬帆起航" rel="home">
 			<div class="logo__title">扬帆起航</div>
-				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
 			</a>
 			
 		</div>
@@ -164,26 +164,26 @@ code.has-jax {
 
 <p>HRNet网络结构图如下（图片来自原论文）：</p>
 
-<p><img src="/img/HR_NET/1.png" alt="" /></p>
+<div align="center"><img src="/img/HR_NET/1.png"></div>
 
 <p>HRNet的网络结构大体可看作三个并行具有不同分辨率的子网络，在三个并行的子网络之间存在着多次特征的融合。不断是将低分辨率特征加到高分辨率特征中。</p>
 
 <p>以下四个网络结构是目前采用的比较多的由高分辨率到低分辨率，再由低分辨率到高分辨率的框架：</p>
 
-<p><img src="/img/HR_NET/2.png" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/HR_NET/2.png"></div>
 
-<p><img src="/img/HR_NET/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/HR_NET/3.png"></div>
 
-<p><img src="/img/HR_NET/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/HR_NET/4.png"></div>
 
-<p><img src="/img/HR_NET/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/HR_NET/5.png"></div>
 
 <p>HRNet的不同在于高分辨率一直被保持，不断将低分辨率特征融合到高分辨特征中。而不是仅仅通过上采样或转置卷积将低分辨率特征恢复高分辨率再粗暴的将特征进行融合。</p>
 
 <p>信息交换单元：
 下图说明了HRNet如何在各层之间进行特征的融合。</p>
 
-<p><img src="/img/HR_NET/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/HR_NET/6.png"></div>
 
 <h2 id="个人认为hrnet关键在于能更好的保留图像的细节信息-毕竟下采样会丢失大量信息-然后再恢复高分辨率难免丢失细节-hrnet的意义主要在于网络的构建思想吧-具体实现不同的任务有不同做法-最近在做图像修复-正好采用文中的思想来构造自己的网络来看看效果">个人认为HRNet关键在于能更好的保留图像的细节信息，毕竟下采样会丢失大量信息，然后再恢复高分辨率难免丢失细节。HRNet的意义主要在于网络的构建思想吧，具体实现不同的任务有不同做法，最近在做图像修复，正好采用文中的思想来构造自己的网络来看看效果。</h2>
 
@@ -249,6 +249,7 @@ code.has-jax {
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
@@ -258,7 +259,6 @@ code.has-jax {
 			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
 		</ul>
 	</div>
 </div>
@@ -309,6 +309,7 @@ code.has-jax {
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>

@@ -46,7 +46,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="扬帆起航" rel="home">
 			<div class="logo__title">扬帆起航</div>
-				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
 			</a>
 			
 		</div>
@@ -160,13 +160,13 @@ code.has-jax {
 
 <h2 id="overview">Overview</h2>
 
-<p><img src="/img/east/1.jpg"  height="500" width="800" ></p>
+<div align="center"><img src="/img/east/1.jpg"  height="500" width="800" > </div>
 
 <p>East的检测流程如图所示,类似于maskRCNN,一个分支做像素级语义分割（二分类（文本框与背景）此处的像素级可能不太准确，因为East并没有恢复到输入的分辨率）,另一个分支做box的回归。然后NMS得到最终的目标框。</p>
 
 <h2 id="网络结构">网络结构</h2>
 
-<p><img src="/img/east/2.png"  height="400" width="600" ></p>
+<div align="center"><img src="/img/east/2.png"  height="400" width="600" ></div>
 
 <ul>
 <li>采用PVA net做特征提取, 然后又是标准的语义分割步骤,上采样以及跨层连接实现高层特征与低层特征融合。对于为什么没有恢复到原始大小,个人认为是否是若恢复原始尺寸,单个像素预测文本不太准（若输入为512*512,输出层为128*128,此时输出层一个像素对应来原图的4个像素）。</li>
@@ -177,16 +177,16 @@ code.has-jax {
 
 <p>QUAD:(x1,y1;x2,y2;x3,y3;x4,y4)。这种方式为每个像素点直接预测框的四个坐标（难度大）。</p>
 
-<h2 id="label-生成">label 生成</h2>
-
-<p><img src="/img/east/3.jpg"  height="400" width="600" ></p></li>
+<h2 id="label-生成">label 生成</h2></li>
 </ul>
+
+<div align="center"><img src="/img/east/3.jpg"  height="400" width="600" ></div>
 
 <p>如图中a所示,首先对人工的框进行缩放消除人工误差。对于像素级分割则生成b中所示的GT。生成以最小面积覆盖区域的旋转矩形,并计算每个像素点到旋转举行四条边的距离放到四个通道里。以及旋转角度为一个通道。</p>
 
 <h2 id="损失函数">损失函数</h2>
 
-<p><img src="/img/east/4.png"  height="400" width="600" ></p>
+<div align="center"><img src="/img/east/4.png"  height="400" width="600" ></div>
 
 <p>对于像素级分割采用平衡交叉熵损失,对于RBOX作者设计了IOU损失以及角度的cosine损失，QUAD在采用了smoothed L1损失。</p>
 
@@ -194,17 +194,17 @@ code.has-jax {
 
 <p>East对长文本检测效果欠佳(个人认为是由于文本跨度太长会导致中间部分像素预测不准)。在East的基础上，网上的大神对East的输出结构进行了改进。</p>
 
-<p><img src="/img/east/5.png"  height="400" width="600" align="center"></p>
+<div align="center"><img src="/img/east/5.png"  height="400" width="600" align="center"></div>
 
 <p>特征提取器没有太大的影响。作者主要修改了输出层,修改为7通道的输出。如下图：</p>
 
-<p><img src="/img/east/6.png"  height="400" width="600" align="center"></p>
+<div align="center"><img src="/img/east/6.png"  height="400" width="600" align="center"></div>
 
 <p>此时做box的回归预测不再是所有像素参与,仅使用边界像素去预测相邻的两个坐标。输出层分别是1位score map, 是否在文本框内；2位vertex code，是否属于文本框边界像素以及是头还是尾；4位geo，是边界像素可以预测的2个顶点坐标。所有像素构成了文本框形状，然后只用边界像素去预测回归顶点坐标。边界像素定义为黄色和绿色框内部所有像素，是用所有的边界像素预测值的加权平均来预测头或尾的短边两端的两个顶点。头和尾部分边界像素分别预测2个顶点，最后得到4个顶点坐标。</p>
 
 <p>advancedEAST后处理过程：</p>
 
-<p><img src="/img/east/7.jpeg"  height="400" width="600" align="center"></p>
+<div align="center"><img src="/img/east/7.jpeg"  height="400" width="600" align="center"></div>
 
 <ul>
 <li>1.由预测矩阵根据配置阈值得出激活像素集合</li>
@@ -220,7 +220,7 @@ code.has-jax {
 <li>1. 水印检测。训练集为算法合成水印,测试集为真实水印。水印召回接近90%,非水印图片检测为水印图片率为2%。待改进训练方式以及尝试加入attention机制。</li>
 </ul>
 
-<p><img src="/img/east/8.png"  height="400" width="600" align="center"></p>
+<div align="center"><img src="/img/east/8.png"  height="400" width="600" align="center"></div>
 
 <ul>
 <li>2.下一步手机号码检测识别。</li>
@@ -306,6 +306,7 @@ code.has-jax {
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
@@ -315,7 +316,6 @@ code.has-jax {
 			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
 		</ul>
 	</div>
 </div>
@@ -366,6 +366,7 @@ code.has-jax {
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>

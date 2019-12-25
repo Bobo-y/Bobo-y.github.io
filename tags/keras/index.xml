@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keras on 扬帆起航</title>
+    <title>keras on 扬帆起航</title>
     <link>/tags/keras/</link>
-    <description>Recent content in Keras on 扬帆起航</description>
+    <description>Recent content in keras on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>
@@ -31,10 +31,10 @@
     
     <item>
       <title>基于yolo_v3的水印检测</title>
-      <link>/post/yovo-keras/</link>
+      <link>/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/</link>
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
-      <guid>/post/yovo-keras/</guid>
+      <guid>/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数</description>
     </item>
     

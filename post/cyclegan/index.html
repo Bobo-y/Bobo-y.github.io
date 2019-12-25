@@ -46,7 +46,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="扬帆起航" rel="home">
 			<div class="logo__title">扬帆起航</div>
-				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
 			</a>
 			
 		</div>
@@ -158,18 +158,15 @@ code.has-jax {
 
 <p><em>在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像必须成对的问题。使生成器的学习过程比image2image更像是两个图像域之间图像“翻译”。</em></p>
 
-<ul>
-<li>训练图片说明
-下图分别是成对图像训练集与非成对图像训练集例子,成对图像训练时需要一一对应。</li>
-</ul>
+<h3 id="训练图片说明">训练图片说明</h3>
 
-<p><img src="/img/cyclegan/1.jpg"  height="300" width="500" ></p>
+<p>下图分别是成对图像训练集与非成对图像训练集例子,成对图像训练时需要一一对应。</p>
 
-<ul>
-<li>cyclegan</li>
-</ul>
+<div align="center"><img src="/img/cyclegan/1.jpg"  height="300" width="500" ></div>
 
-<p><img src="/img/cyclegan/2.jpg"  height="600" width="1800"></p>
+<h3 id="cyclegan">cyclegan</h3>
+
+<div align="center"><img src="/img/cyclegan/2.jpg"  height="600" width="800"></div>
 
 <p>cyclegan的网络设计思想本身不复杂。其中包含两个生成器，一个由图像域A生成图像域B，另一个由图像域B生成图像域A。两个判别器分别针对一个图像域。训练时，随机选一张域A的图像，由域A生成域B的图像，再将生成的图像由域B转换回域A,得到重构的输入图像，形成一个cycle。输入域B的图像过程与上相同。对每个生成器而言，误差即为重构误差（不采用identity loss的情况下）。</p>
 
@@ -177,15 +174,15 @@ code.has-jax {
 
 <p>对抗损失（判别器）：</p>
 
-<p><img src="/img/cyclegan/3.jpg"  height="200" width="900" ></p>
+<div align="center"><img src="/img/cyclegan/3.jpg"  height="200" width="600" ></div>
 
 <p>循环一致性损失（生成器重构误差）：</p>
 
-<p><img src="/img/cyclegan/4.jpg"  height="200" width="900" ></p>
+<div align="center"><img src="/img/cyclegan/4.jpg"  height="200" width="600" ></div>
 
 <p>总损失：</p>
 
-<p><img src="/img/cyclegan/5.jpg"  height="200" width="900"></p>
+<div align="center"><img src="/img/cyclegan/5.jpg"  height="200" width="600"></div>
 
 <ul>
 <li>网络实现。对于生成器，采用在imagenet上预训练的vgg16作为基础。</li>
@@ -297,25 +294,16 @@ code.has-jax {
 </code></pre>
 
 <ul>
-<li>复现结果，只复现了maps与monet2photo
-<style>
-.img-wrap{
-border: 1px
-}
-img{
-float: center;
-width: 33%;
-}
-</style></li>
+<li>复现结果，只复现了maps与monet2photo</li>
 </ul>
 
-<div class = "img-wrap">
+<div class = "img-wrap" align="center">
 <img src="/img/cyclegan/20200.png"  height="200" width="300">
 <img src="/img/cyclegan/32200.png"  height="200" width="300">
 <img src="/img/cyclegan/42200.png"  height="200" width="300">
 </div>
 
-<div class = "img-wrap">
+<div class = "img-wrap" align="center">
 <img src="/img/cyclegan/49200.png"  height="200" width="300">
 <img src="/img/cyclegan/67200.png"  height="200" width="300">
 <img src="/img/cyclegan/74200.png"  height="200" width="300">
@@ -368,7 +356,7 @@ width: 33%;
 	
 	<li><a href="/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/">基于vgg16的半监督视频单目标分割网络</a></li>
 	
-	<li><a href="/post/yovo-keras/">基于yolo_v3的水印检测</a></li>
+	<li><a href="/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/">基于yolo_v3的水印检测</a></li>
 	
 	<li><a href="/post/keras_data_aug/">Keras数据增强并保存到本地</a></li>
 	
@@ -411,6 +399,7 @@ width: 33%;
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
@@ -420,7 +409,6 @@ width: 33%;
 			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
 		</ul>
 	</div>
 </div>
@@ -471,6 +459,7 @@ width: 33%;
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>

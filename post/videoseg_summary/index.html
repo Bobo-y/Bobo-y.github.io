@@ -46,7 +46,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="扬帆起航" rel="home">
 			<div class="logo__title">扬帆起航</div>
-				<div class="logo__tagline">专注于机器学习、深度学习、图像处理</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
 			</a>
 			
 		</div>
@@ -166,7 +166,7 @@ code.has-jax {
 
 <p>视频对象分割可以被定义为将前景对象与背景区域进行分离的二值标记问题，如下图（图片来源DAVIS数据集）。视频对象分割一般是分割整个视频序列中最显著的、最关键的物体。</p>
 
-<p><img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="1" /></p>
+<div align="center"><img src="/img/vos_sum/1.png"></div>
 
 <h2 id="数据集">数据集</h2>
 
@@ -174,7 +174,7 @@ code.has-jax {
 
 <p><strong>DAVIS数据集：</strong> DAVIS数据集是2016年伴随论文发布CVPR上的，其论文为： A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation（<a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Perazzi_A_Benchmark_Dataset_CVPR_2016_paper.pdf">论文链接</a>）。DAVIS2016数据集为单对象分割数据集，包含30个训练集，20个验证集。2017年，DAVIS在单对象分割数据集的基础上发布了多对象分割数据集DAVIS2017，一共有150个视频序列。如下图，单对象与多对象对比。</p>
 
-<p><img src="/img/vos_sum/1.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/vos_sum/1.png"></div>
 
 <p>同时，DAVIS Benchmark包含了丰富的对比方法的评估结果。目前，DAVIS数据集应该是视频对象分割领域最完善的数据集。
 <a href="https://davischallenge.org/">DAVIS官方网站</a>：<strong><a href="https://davischallenge.org/">https://davischallenge.org/</a></strong></p>
@@ -191,7 +191,7 @@ code.has-jax {
 <p><strong>VSB100:</strong>  VSB100虽然也称为视频对象分割benchmark。但个人认为偏向于静态图像分割，因为它对每一帧都进行了过度分割（如下图），要求太高了，与DAVIS中的定义有所差别。反正也没见人在这上面跑视频对象分割，-_-||
 <a href="https://lmb.informatik.uni-freiburg.de/resources/datasets/vsb.en.html">VSB100链接</a></p>
 
-<p><img src="/img/vos_sum/3.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/vos_sum/3.png"></div>
 
 <p><strong>GYGO:</strong> 2017年发布的视频对象分割数据集，其视频内容大都针对于电子商务，视频都比较短（1-10秒）。个人认为这个数据集的缺陷在于视频内容中所面临的问题太少，几乎不存在遮挡、快速运动等比较严苛的条件。所以这个数据集上的精度都在0.93以上，用的人少。
 <a href="https://github.com/ilchemla/gygo-dataset">GYGO链接</a></p>
@@ -220,7 +220,7 @@ code.has-jax {
 
 <p>在FCN的启发下，OSVOS应运而生。OSVOS本质上是静态图像分割，不考虑视频具有的时域信息。即在大的数据集上离线训练一个通用前景-背景分类网络，测试阶段，针对于给定的分割对象，重新微调网络，使其针对于指定的分割对象。</p>
 
-<p><img src="/img/vos_sum/4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/vos_sum/4.png"></div>
 
 <p>OSVOS的流程如上图所示：</p>
 
@@ -243,13 +243,13 @@ segmentation of generic objects in videos<a href="https://arxiv.org/pdf/1701.053
 
 <p>FSEG网络结构如下，包含两个分支，一个学习表观特征，一个学习光流特征（注意，光流特征输入的是光流图片，光流图片外部生成，一般用FlowNet），最后输出单个分割结果。</p>
 
-<p><img src="/img/vos_sum/5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/vos_sum/5.png"></div>
 
 <p>2.论文：SegFlow: Joint Learning for Video Object Segmentation and Optical Flow<a href="https://arxiv.org/pdf/1709.06750v1.pdf">论文链接</a></p>
 
 <p>SegFlow网络结构如下，它也是双分支网络，上端为表观分割网络，下端为FlowNetS网络（与FSEG不同的是此时光流端输入为图片对）。同时，在上采样层两个分支进行信息的交流，最终输出为光流与分割结果。</p>
 
-<p><img src="/img/vos_sum/6.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM0OTE5NTA=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div align="center"><img src="/img/vos_sum/6.png"></div>
 
 <h1 id="总结">总结</h1>
 
@@ -315,6 +315,7 @@ segmentation of generic objects in videos<a href="https://arxiv.org/pdf/1701.053
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
@@ -324,7 +325,6 @@ segmentation of generic objects in videos<a href="https://arxiv.org/pdf/1701.053
 			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
 		</ul>
 	</div>
 </div>
@@ -375,6 +375,7 @@ segmentation of generic objects in videos<a href="https://arxiv.org/pdf/1701.053
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
