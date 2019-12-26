@@ -175,7 +175,7 @@ code.has-jax {
 
 <h2 id="depthwise-separable-convolutions">Depthwise Separable Convolutions</h2>
 
-<p>核空间可分离卷积不同的时，深度可分离卷积卷积核不能被“因子“化. 因此，使用的更广泛，如 <em>keras.layers.SeparableConv2D</em> or <em>tf.layers.separable_conv2d</em>.</p>
+<p>和空间可分离卷积不同的是，深度可分离卷积卷积核不能被“因子“化.</p>
 
 <div align="center"> <img src="/img/separable_conv/3.jpg" width="400" height="500"></div>
 
@@ -222,6 +222,16 @@ code.has-jax {
 <p><strong><em><u>the main difference is this: in the normal convolution, we are transforming the image 256 times. And every transformation uses up 5x5x3x8x8=4800 multiplications. In the separable convolution, we only really transform the image once — in the depthwise convolution. Then, we take the transformed image and simply elongate it to 256 channels. Without having to transform the image over and over again, we can save up on computational power.</u></em></strong>  <a href="https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728">ref</a></p>
 
 <p>深度可分离卷卷积由于计算量小，则参数量小，其学习能力不可避免的有所降低.</p>
+
+<h3 id="usage">usage</h3>
+
+<p>现有实现 <em>keras.layers.SeparableConv2D</em> or <em>tf.layers.separable_conv2d</em>.
+Keras 中有 <em>SeparableConv2D</em> 与 <em>DepthwiseConv2D</em> ,默认深度卷积输出通道为1，可通过设置 <em>depth_multiplier</em> 修改.</p>
+
+<ul>
+<li>SeparableConv2D： 即为完整的深度可分离卷积</li>
+<li>DepthwiseConv2D： 深度可分离卷积的第一部分深度卷积</li>
+</ul>
 
 <h3 id="reference">reference</h3>
 
