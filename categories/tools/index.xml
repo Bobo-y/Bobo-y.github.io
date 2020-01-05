@@ -85,10 +85,10 @@
     
     <item>
       <title>gitLab项目拉取及提交使用记录</title>
-      <link>/post/gitlab_1/</link>
+      <link>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
       
-      <guid>/post/gitlab_1/</guid>
+      <guid>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Bra</description>
     </item>
     
@@ -112,10 +112,10 @@
     
     <item>
       <title>python下mnist数据集转化为图片</title>
-      <link>/post/mnist2img/</link>
+      <link>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
-      <guid>/post/mnist2img/</guid>
+      <guid>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;)</description>
     </item>
     
@@ -130,28 +130,28 @@
     
     <item>
       <title>Numpy使用GPU加速</title>
-      <link>/post/numpyjiasu/</link>
+      <link>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
       
-      <guid>/post/numpyjiasu/</guid>
+      <guid>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊</description>
     </item>
     
     <item>
       <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
-      <link>/post/googleid/</link>
+      <link>/post/google_image_download%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
       
-      <guid>/post/googleid/</guid>
+      <guid>/post/google_image_download%E4%BD%BF%E7%94%A8/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络</description>
     </item>
     
     <item>
       <title>Imagenet数据集类别标签和对应的英文中文对照表</title>
-      <link>/post/imagenetlabel/</link>
+      <link>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</link>
       <pubDate>Mon, 08 Oct 2018 16:50:36 +0800</pubDate>
       
-      <guid>/post/imagenetlabel/</guid>
+      <guid>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark,</description>
     </item>
     

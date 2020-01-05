@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Densecrf与图像分割 - 扬帆起航</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.55.6" />
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+    <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+   (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3547912397637948",
+        enable_page_level_ads: true
+   });
+</script>
+</head>
+
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="扬帆起航" rel="home">
+			<div class="logo__title">扬帆起航</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
+			</a>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">选择</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">关于我</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">博客</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">链接收藏</a>
+		</li>
+	</ul>
+</nav>
+
+		<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+	</div>
+  <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3547912397637948",
+          enable_page_level_ads: true
+     });
+</script>
+</head>
+</header>
+
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Densecrf与图像分割</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-01-02T23:54:19">2020-01-02</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">3 分钟</time>
+</div></div>
+			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
+		</header>
+<div class="content post__content clearfix">
+			
+
+<h2 id="hahahugoshortcode-s0-hbhb"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3547912397637948"
+     data-ad-slot="1692723023"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</h2>
+
+<h2 id="在图像分割中-在fcn之前-流行的是以概率图模型为代表的传统方法-fcn出来之后一段时间-仍然流行的是以fcn为前端-crf为后端优化-随着网络的发展-crf的优化已慢慢不再具有明显的性能提升-不谈理论细节-仅示例介绍与使用"><em>在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端优化. 随着网络的发展，CRF的优化已慢慢不再具有明显的性能提升. 不谈理论细节，仅示例介绍与使用.</em></h2>
+
+<h2 id="dense-crf-图示">Dense-crf 图示</h2>
+
+<div align="center"><img src="/img/densecrf/1.jpg" width="400" height="300"></div>
+
+<p>如上图所示，有一张有一个小人的图像，需要对图像中的各个像素进行分类，△ 代表一个像素，像素集合为$X$，每一个像素所对应隐式类别 ⭕️ 为 $z$, 组成类别集合 $Z$. 观测即为像素的颜色、位置特征，需要推论的隐变量即为每个像素的类别.</p>
+
+<ol>
+<li><p>假如每一个像素的类别只和自己的像素特征相关. 如下图所示. 意味着对每一个像素单独进行一次分类，直观的讲，仅从一个像素所具有的特征是无法有效的对像素进行分类的. 自然而然的可以想到，一个像素的类别应该与它的邻域甚至所有像素相关.</p>
+
+<div align="center"><img src="/img/densecrf/2.jpg" width="400" height="300"></div></li>
+
+<li><p>下图所示，一个像素的类别信息由所有像素共同决定. 这实际上就是FCN所完成的工作.
+<div align="center"><img src="/img/densecrf/3.jpg" width="400" height="300"></div></p>
+
+<p><em>FCN只能解决图像像素和类别之间的相关关系，也就是$X$ 和 $Z$ 的联合建模. 而实际上每个像素的类别之间也存在关联关系，即图像平滑性&ndash;每一个像素的类别可能和临近点的类别很类似.这是FCN所欠缺的，也正是Dense-crf所弥补的. ref[1]</em></p></li>
+
+<li><p>因此，在上图的基础上，一个像素的类别不光受与所有像素相关. 同时与所有像素的类别相关. 故称为dense-crf. 如下图所示（由于链接太多，仅画出示意. 任意一对像素的类别信息都互联，任意单个像素的类别与所有像素相连）
+ <div align="center"><img src="/img/densecrf/4.jpg" width="400" height="300"></div></p></li>
+</ol>
+
+<h2 id="dense-crf-公式">Dense-crf 公式</h2>
+
+<p>$$E(z)=\sum_i \psi_u(X, z_i) + \sum _{i&lt;j} \psi_p(X,z_i,z_j)$$</p>
+
+<p>其中，第一项为与像素自身类别相关的 <em>unary</em> 能量函数. 后一项为 <em>pairwise</em> 函数中每一个像素的类别信息都与其它像素的类别信息、所有像素的信息相关.
+<em>pairwise</em> 函数展开为</p>
+
+<p>$$\psi_p(z_i, z_j) = \mu(z_i,z_j)\sum ^k _{m=1} w ^{(m)} k ^{(m)} (x_i,x_j)$$</p>
+
+<p>$\mu(z_i,z_j)$ 为标签一致性因子.  q其中：</p>
+
+<p>$$k ^{(m)}(f_i,f_j)=w ^{(1)} exp(-\frac{|p_i - p_j| ^2}{2\theta ^2 _\alpha} - \frac{|I_i - I_j| ^2}{2\theta ^2 _\beta}) + w ^{(2)} exp(-\frac{|p_i - p_j| ^2}{2\theta ^2 _\gamma})$$</p>
+
+<p>上式中，第一项为appearance kernel,  第二项为smooth kernel. appearance核中第一项 $p$ 代表像素的位置, 第二项 $I$ 为像素强度值.</p>
+
+<h2 id="pydensecrf-使用demo">pydensecrf 使用demo</h2>
+
+<p>此处使用开源实现的pydensecrf. <a href="https://github.com/lucasb-eyer/pydensecrf">安装及代码</a></p>
+
+<h3 id="demo1-densecrf2d-二分类">demo1: DenseCRF2D + 二分类</h3>
+
+<pre><code class="language-python">def dense_crf(img, probs, n_labels=2):
+    h = probs.shape[0]
+    w = probs.shape[1]
+
+    probs = np.expand_dims(probs, 0)
+    # 概率作为unary， 通道数和类别数相同
+    probs = np.append(1 - probs, probs, axis=0)
+
+    d = dcrf.DenseCRF2D(w, h, n_labels)
+    # unary 为负对数概率
+    U = -np.log(probs)
+    U = U.reshape((n_labels, -1))
+    U = np.ascontiguousarray(U)
+    img = np.ascontiguousarray(img)
+
+    U = U.astype(np.float32)
+    d.setUnaryEnergy(U) 
+
+    d.addPairwiseGaussian(sxy=20, compat=3)  #
+    d.addPairwiseBilateral(sxy=30, srgb=20, rgbim=img, compat=10)
+
+    Q = d.inference(5)
+    # 获得map对应的标签
+    Q = np.argmax(np.array(Q), axis=0).reshape((h, w))
+
+    return Q
+
+probs = infer_model.predict(image, batch_size=1)
+probs = np.squeeze(probs, axis=0)
+probs = sigmoid(probs)
+mask = dense_crf(np.array(image_ori).astype(np.uint8), probs)
+</code></pre>
+
+<p>此实例为前景背景分割二分类，网络输出经过 $sigmoid$ 激活函数的单通道概率.</p>
+
+<div align="center">
+<img src="/img/densecrf/5.jpg" width="300" height="300">
+<img src="/img/densecrf/6.jpg" width="300" height="300">
+</div>
+
+<p>左图为网络直接分割后得到的结果，右图为densecrf处理后的结果.</p>
+
+<h3 id="demo2-densecrf-多分类">demo2: DenseCRF + 多分类</h3>
+
+<p>pascal voc 21类语义分割测试，使用deeplab-resnet</p>
+
+<pre><code class="language-python">def dense_crf(probs, img, n_labels=21):
+    # unary shape 为（n_labels, height, width）
+    probs = probs.transpose((2, 0, 1))
+    unary = softmax_to_unary(probs)
+    unary = np.ascontiguousarray(unary)
+    d = dcrf.DenseCRF(img.shape[0] * img.shape[1], n_labels) # width, height, n_labels
+    d.setUnaryEnergy(unary)
+
+    # This potential penalizes small pieces of segmentation that are
+    # spatially isolated -- enforces more spatially consistent segmentations
+    feats = create_pairwise_gaussian(sdims=(10, 10), shape=img.shape[:2])
+    d.addPairwiseEnergy(feats, compat=3,
+                        kernel=dcrf.DIAG_KERNEL,
+                        normalization=dcrf.NORMALIZE_SYMMETRIC)
+
+    # This creates the color-dependent features --
+    # because the segmentation that we get from CNN are too coarse
+    # and we can use local color features to refine them
+    feats = create_pairwise_bilateral(sdims=(50, 50), schan=(20, 20, 20),
+                                      img=img, chdim=2)
+
+    d.addPairwiseEnergy(feats, compat=10,
+                        kernel=dcrf.DIAG_KERNEL,
+                        normalization=dcrf.NORMALIZE_SYMMETRIC)
+    Q = d.inference(5)
+    Q = np.argmax(Q, axis=0).reshape((img.shape[0], img.shape[1]))
+    return Q
+
+
+res = dense_crf(probs, img)
+res = res[np.newaxis,:,:,np.newaxis]
+msk = decode_labels(res, num_classes=21)
+im = Image.fromarray(msk[0])
+im.show()
+</code></pre>
+
+<div align="center">
+<img src="/img/densecrf/8.jpg" width="300" height="300">
+<img src="/img/densecrf/7.jpg" width="300" height="300">
+</div>
+
+<p>左图为网络分割结果，右图为dense-crf优化结果,可以看出效果甚至变差了. 网络够强的情况下，添加crf优化没有太大必要.</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li>深度学习轻松学：核心算法与视觉实践</li>
+<li>🍉📚. 周志华</li>
+<li><a href="https://github.com/lucasb-eyer/">pydensecrf</a></li>
+</ul>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/densecrf/" rel="tag">densecrf</a></li>
+	</ul>
+</div>
+	</article>
+	<script src="https://utteranc.es/client.js"
+	        repo="yl305237731/yl305237731.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script>
+</main>
+
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		走出校园的算法攻城狮一枚，专注于深度学习、计算机视觉、图像处理。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">可分离卷积</p></a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/densecrf%E5%B0%8F%E8%AE%A1/">Densecrf与图像分割</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/inception_v1_to_v4/">Inception系列</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/gru%E5%B0%8F%E7%BB%93/">GRU小结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/edge_gan/">Edge_gan总结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">分类</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/git">Git</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hive" title="Hive">Hive (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inception" title="Inception">Inception (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lstm" title="Lstm">Lstm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown%e8%af%ad%e6%b3%95" title="Markdown语法">Markdown语法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" title="深度学习">深度学习 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测 (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">社群</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:yanglinself@bjtu.edu.cn">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>16120438@bjtu.edu.cn</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">友情链接</h4>
+	<div class="widget-social__item widget__item">
+		<a class="widget-social__link widget__link btn" title="lulu" rel="noopener noreferrer" href="https://me.csdn.net/u013491950" target="_blank">
+			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
+			<path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
+			<span>lulu</span>
+		</a>
+	</div>
+</div>
+
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 扬帆起航.
+			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主题</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+</body>
+</html>
