@@ -183,7 +183,7 @@ code.has-jax {
 
 <p>$$\psi_p(z_i, z_j) = \mu(z_i,z_j)\sum ^k _{m=1} w ^{(m)} k ^{(m)} (x_i,x_j)$$</p>
 
-<p>$\mu(z_i,z_j)$ 为标签一致性因子.  q其中：</p>
+<p>$\mu(z_i,z_j)$ 为标签一致性因子.  其中：</p>
 
 <p>$$k ^{(m)}(f_i,f_j)=w ^{(1)} exp(-\frac{|p_i - p_j| ^2}{2\theta ^2 _\alpha} - \frac{|I_i - I_j| ^2}{2\theta ^2 _\beta}) + w ^{(2)} exp(-\frac{|p_i - p_j| ^2}{2\theta ^2 _\gamma})$$</p>
 
@@ -272,7 +272,7 @@ mask = dense_crf(np.array(image_ori).astype(np.uint8), probs)
 
 res = dense_crf(probs, img)
 res = res[np.newaxis,:,:,np.newaxis]
-msk = decode_labels(res, num_classes=21)
+msk = decode_labels(res, num_classes=21) #code from deeplab-resnet
 im = Image.fromarray(msk[0])
 im.show()
 </code></pre>
@@ -283,6 +283,14 @@ im.show()
 </div>
 
 <p>左图为网络分割结果，右图为dense-crf优化结果,可以看出效果甚至变差了. 网络够强的情况下，添加crf优化没有太大必要.</p>
+
+<h3 id="参数说明">参数说明</h3>
+
+<p>网络的概率输出作为 $unary$ 项.
++ addPairwiseGaussian.  仅使用位置特征
++ addPairwiseBilateral. 使用颜色与位置特征</p>
+
+<p>$sxy (sdims), srgb (schan)$ 分别对应 $pairwise$ 函数中的 $\theta _\beta , \theta _\alpha$ , 可逐通道指定. 对 $chdim$ ,$rgb$ 图像设为2, 单通道图像设为 -1.</p>
 
 <h2 id="参考文献">参考文献</h2>
 
