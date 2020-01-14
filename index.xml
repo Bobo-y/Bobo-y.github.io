@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Anchor box</title>
+      <link>/post/anchor_box/</link>
+      <pubDate>Fri, 01 Nov 2019 15:17:30 +0800</pubDate>
+      
+      <guid>/post/anchor_box/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
+    </item>
+    
+    <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
       <link>/post/how_to_built_a_simple_maskrcnn/</link>
       <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>
@@ -602,7 +611,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 联系方式 Email：yanglinself@gmail.com QQ/微信号：305237731/yl305237731 个人信息 硕士</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 联系方式 Email：yanglinself@gmail.com 个人信息 硕士/北京交通大学计算机系 工作年限：初入职场 Github：h</description>
     </item>
     
     <item>

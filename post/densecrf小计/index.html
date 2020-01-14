@@ -286,9 +286,12 @@ im.show()
 
 <h3 id="参数说明">参数说明</h3>
 
-<p>网络的概率输出作为 $unary$ 项.
-+ addPairwiseGaussian.  仅使用位置特征
-+ addPairwiseBilateral. 使用颜色与位置特征</p>
+<p>网络的概率输出作为 $unary$ 项.</p>
+
+<ul>
+<li>addPairwiseGaussian.  仅使用位置特征</li>
+<li>addPairwiseBilateral. 使用颜色与位置特征</li>
+</ul>
 
 <p>$sxy (sdims), srgb (schan)$ 分别对应 $pairwise$ 函数中的 $\theta _\beta , \theta _\alpha$ , 可逐通道指定. 对 $chdim$ ,$rgb$ 图像设为2, 单通道图像设为 -1.</p>
 
@@ -360,12 +363,12 @@ im.show()
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/anchor_box/">Anchor box</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/inception_v1_to_v4/">Inception系列</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/gru%E5%B0%8F%E7%BB%93/">GRU小结</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/edge_gan/">Edge_gan总结</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
 		</ul>
 	</div>
 </div>
@@ -390,6 +393,7 @@ im.show()
 <div class="widget-taglist widget">
 	<h4 class="widget__title">标签</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab (1)</a>

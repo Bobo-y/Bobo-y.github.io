@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anchor on 扬帆起航</title>
+    <link>/tags/anchor/</link>
+    <description>Recent content in anchor on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 01 Nov 2019 15:17:30 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/anchor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anchor box</title>
+      <link>/post/anchor_box/</link>
+      <pubDate>Fri, 01 Nov 2019 15:17:30 +0800</pubDate>
+      
+      <guid>/post/anchor_box/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
+    </item>
+    
+  </channel>
+</rss>
