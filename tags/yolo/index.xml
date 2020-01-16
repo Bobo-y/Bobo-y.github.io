@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yolo on 扬帆起航</title>
+    <link>/tags/yolo/</link>
+    <description>Recent content in Yolo on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 09 Nov 2019 17:16:26 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/yolo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+    </item>
+    
+  </channel>
+</rss>

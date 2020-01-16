@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+    </item>
+    
+    <item>
       <title>Anchor box</title>
       <link>/post/anchor_box/</link>
       <pubDate>Fri, 01 Nov 2019 15:17:30 +0800</pubDate>
@@ -629,7 +638,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description>工具网站 Keras Model Zoo opencv 谷歌colab平台 paper with code 数据集 pascal voc open images ADE 20k DAVIS 博客、论坛 machinelearningmastery pyimagesearch medium Art gallerix 世界油画集</description>
+      <description>工具网站 Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org 数据集 pascal voc open images ADE 20k DAVIS 博客、论坛 machinelearningmastery pyimagesearch medium Art gallerix 世界油画集</description>
     </item>
     
   </channel>

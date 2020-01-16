@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+    </item>
+    
+    <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
       <link>/post/how_to_built_a_simple_maskrcnn/</link>
       <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>

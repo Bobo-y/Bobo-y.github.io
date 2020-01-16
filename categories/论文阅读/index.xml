@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+    </item>
+    
+    <item>
       <title>Inception系列</title>
       <link>/post/inception_v1_to_v4/</link>
       <pubDate>Thu, 24 Oct 2019 16:51:27 +0800</pubDate>
