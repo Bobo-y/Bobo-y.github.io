@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pyplot tutorial翻译文档 - 扬帆起航</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.55.6" />
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+    <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+   (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3547912397637948",
+        enable_page_level_ads: true
+   });
+</script>
+</head>
+
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="扬帆起航" rel="home">
+			<div class="logo__title">扬帆起航</div>
+				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
+			</a>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">选择</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">关于我</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/leetcode/">刷刷刷</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">博客</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/wiki/">工具</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">链接</a>
+		</li>
+	</ul>
+</nav>
+
+		<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+	</div>
+  <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3547912397637948",
+          enable_page_level_ads: true
+     });
+</script>
+</head>
+</header>
+
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Pyplot tutorial翻译文档</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-12-21T15:39:00">2018-12-21</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">5 分钟</time>
+</div></div>
+			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
+		</header>
+<div class="content post__content clearfix">
+			
+
+<h2 id="hahahugoshortcode-s0-hbhb"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3547912397637948"
+     data-ad-slot="1692723023"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</h2>
+
+<h1 id="pyplot简介">pyplot简介</h1>
+
+<p>matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Figure上进行操作，比如在Figure上画点，画线等等。
+在pyplot中，各种状态在函数调用之间被保留，以便它跟踪诸如当前图形和绘图区域之类的内容，并且绘图函数指向当前轴。（意思就是在默认情况下，一连串的pyplot的操作结果都在一个Figure中）。</p>
+
+<p>使用pyplot快速生成可视化：</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+plt.plot([1,2,3,4])
+plt.ylabel('some numbers')
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/1.png"></div>
+在这个例子中只提供了一个轴的数据，结果显示在Y轴。 当只有一组数据时，matplotlib默认认为是Y轴数据，并根据其自动生成X轴的数据。其中生成的数据和给定的数据具有相同的长度，而且由于python的下标由0开始，故生成数据是[0,1,2,3]。
+
+plot() 是一个多功能的命令，它将接受任意数量的参数。例如，为了绘制x与y的对比，可以发出以下命令：
+
+```python
+plt.plot([1,2,3,4],[1,4,9,6])
+```
+<div align="center"><img src="/img/pyplot1/2.png"></div>
+
+<h2 id="定制plot风格">定制plot风格</h2>
+
+<p>对于每一对给定的数据，都有一个可选的第三个参数，用来指定线条的类型和颜色。格式字符串的字母和符号来自MATLAB，将颜色字符串与行样式字符串连接起来。默认格式的字符串是&rsquo;b-&lsquo;，它是一条实心的蓝色线。例如，要用红色圆圈绘制上面的图，需要发出以下命令</p>
+
+<pre><code class="language-python">plt.plot([1,2,3,4],[1,4,9,6],'ro')
+plt.axis([0,6,0,20])
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/3.png"></div>
+axis()函数指定了坐标轴视窗的范围，分别代表 [xmin,xmax,ymin,ymax]。
+
+如果matplotlib仅限于处理列表，那么它对于数值处理是相当无用的。通常，我们都使用numpy数组。实际上，所有序列在内部都被转换为numpy数组。下面的示例演示了在一个命令中使用数组绘制具有不同格式样式的几行图。
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.arange(0.,5.,0.2)
+plt.plot(data,data,'r--',data,data**2,'gs',data,data**3,'b^')
+plt.show()
+```
+<div align="center"><img src="/img/pyplot1/4.png"></div>
+
+<h1 id="使用关键字字符串绘图">使用关键字字符串绘图</h1>
+
+<p>在某些情况下，数据具有允许使用字符串访问特定变量的格式。例如，使用numpy.recarray或pandas.DataFrame。
+Matplotlib允许为这样的对象提供数据关键字参数。如果提供，则可以生成带有与这些变量相对应的字符串的图表。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+data = {'a': np.arange(50),
+        'c': np.random.randint(0, 50, 50),
+        'd': np.random.randn(50)}
+data['b'] = data['a'] + 10 * np.random.randn(50)
+data['d'] = np.abs(data['d']) * 100
+plt.scatter('a', 'b', c='c', s='d', data=data)
+plt.xlabel('entry a')
+plt.ylabel('entry b')
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/5.png"></div>
+
+<h1 id="使用分类变量进行绘图">使用分类变量进行绘图</h1>
+
+<p>还可以使用分类变量创建绘图。Matplotlib允许将分类变量直接传递给许多绘图函数。例如：</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+names = ['group_a', 'group_b', 'group_c']
+values = [5, 1, 30]
+
+plt.figure(1, figsize=(9, 3))
+
+plt.subplot(131)
+plt.bar(names, values)
+plt.subplot(132)
+plt.scatter(names, values)
+plt.subplot(133)
+plt.plot(names, values)
+plt.suptitle('Categorical Plotting')
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/6.png"></div>
+
+<h1 id="控制线条属性">控制线条属性</h1>
+
+<p>线条有许多可以设置的属性：线宽、虚线样式、反锯齿等；参见matplotlib.lines.Line2D。</p>
+
+<p>1.使用关键字参数：</p>
+
+<pre><code class="language-python">plt.plot(x,y,linewidth = 3.0)  #设置线宽3.0
+</code></pre>
+
+<p>2.使用Line2D实例的setter方法。 plot函数返回的Line2D对象的列表。比如 line1，line2 = plt.plot(x1,y1,x2,y2).</p>
+
+<pre><code class="language-python">line = plt.plot(x,y,'ro')
+line.set_linewidth(4)
+</code></pre>
+
+<p>(用IDE，调用line的内置方法竟然没有自动补全，全靠背？？)
+3.使用setp()命令。</p>
+
+<pre><code class="language-python">lines = plt.plot(x1,y1,x2,y2)
+plt.setp(lines,color='r',linewidth = 2.0)  #使用关键字
+plt.setp(lines,'color','r','linewidth',2.0)  # MATLAB风格，不建议
+</code></pre>
+
+<p>使用setp()函数可以得到线的可设置属性列表</p>
+
+<pre><code class="language-python">data = np.arange(0.,5.,0.2)
+line, = plt.plot(data,data,'r--')
+plt.setp(line)
+plt.show()
+</code></pre>
+
+<p>output:</p>
+
+<pre><code class="language-python">  alpha: float (0.0 transparent through 1.0 opaque)
+  animated: bool
+  antialiased or aa: bool
+  ......
+  visible: bool
+  xdata: 1D array
+  ydata: 1D array
+  zorder: float
+</code></pre>
+
+<h1 id="使用多个图形和轴">使用多个图形和轴</h1>
+
+<p>MATLAB和pyplot具有当前图和当前轴的概念。所有绘图命令都应用于当前轴。函数gca()返回当前轴（matplotlib.axes.Axes实例），gcf()返回当前图（matplotlib&hellip;Figure实例）。通常情况下，你不必担心这个，因为它都是在幕后处理的。下面是创建两个子绘图的脚本</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+def f(t):
+    return np.exp(-t) * np.cos(2*np.pi*t)
+
+t1 = np.arange(0.0, 5.0, 0.1)
+t2 = np.arange(0.0, 5.0, 0.02)
+
+plt.figure(1)
+plt.subplot(211)
+plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
+
+plt.subplot(212)
+plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/7.png"></div>
+
+<p>subplot()命令指定了Figure中子区域的排列情况，以及当前是第几个。如subplot(243)表示将figure分为2行4列（一个8个），当前在第三个子区域上绘图</p>
+
+<pre><code class="language-python">plt.subplot(241)
+plt.subplot(243)
+plt.plot([5,6,7,8],[1,2,3,4],'ro')
+plt.subplot(248)
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/8.png"></div>
+
+<p>可以使用多个Figure()生成多个figure，每个figure又可以具有各自的行为</p>
+
+<pre><code class="language-python">plt.figure(1)                # 第一个figure
+plt.subplot(211)             #
+plt.plot([1, 2, 3])
+plt.subplot(212)             #
+plt.plot([4, 5, 6])
+
+
+plt.figure(2)                # 第二个figure
+plt.plot([4, 5, 6])          # 默认创建subplot(111)
+
+plt.figure(1)                # 此时和前面的figure1是同一个figure
+plt.subplot(211)             #
+plt.title('Easy as 1, 2, 3') #
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/9.png"></div>
+
+<p>可以使用clf()或cla()清空当前Figure或axes.</p>
+
+<h1 id="文本处理">文本处理</h1>
+
+<p>text()命令可以用来给任意位置添加文本xlabel(),ylabel(),title()被用来给对应位置添加文本。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+
+# 直方图统计
+n, bins, patches = plt.hist(x, 50, density=1, facecolor='g', alpha=0.75)
+
+
+plt.xlabel('Smarts')
+plt.ylabel('Probability')
+plt.title('Histogram of IQ')
+plt.text(60, .025, r'$\mu=100,\ \sigma=15$') # 文本坐标，以及显示的文本（tex格式）
+plt.axis([40, 160, 0, 0.03]) # 视窗范围
+plt.grid(True) # 网格显示
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/10.png"></div>
+
+<h2 id="注释文本">注释文本</h2>
+
+<p>上面的基本text()命令的使用将文本放在Axes上的任意位置。文本的一个常见用途是注释绘图的某些特性，而annotate()方法提供了有用的功能，使注释变得容易。在注释中，需要考虑两点：由参数xy表示的注释位置和文本xy text的位置。这两个参数都是(x,y)元组。</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+ax = plt.subplot(111)
+
+t = np.arange(0.0, 5.0, 0.01)
+s = np.cos(2*np.pi*t)
+line, = plt.plot(t, s, lw=2)
+
+plt.annotate('local max', xy=(2, 1), xytext=(3, 1.5),
+             arrowprops=dict(facecolor='black', shrink=0.05),
+             )
+
+plt.ylim(-2, 2)
+plt.show()
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/11.png"></div>
+
+<h1 id="对数轴与非线性轴">对数轴与非线性轴</h1>
+
+<p>使用plt.xscale()火plt.yscale()即可改变轴的刻度</p>
+
+<pre><code class="language-python">from matplotlib.ticker import NullFormatter  # useful for `logit` scale
+import matplotlib.pyplot as plt
+import numpy as np
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+# make up some data in the interval ]0, 1[
+y = np.random.normal(loc=0.5, scale=0.4, size=1000)
+y = y[(y &gt; 0) &amp; (y &lt; 1)]
+y.sort()
+x = np.arange(len(y))
+
+# plot with various axes scales
+plt.figure(1)
+
+# linear
+plt.subplot(221)
+plt.plot(x, y)
+plt.yscale('linear')
+plt.title('linear')
+plt.grid(True)
+
+
+# log
+plt.subplot(222)
+plt.plot(x, y)
+plt.yscale('log')
+plt.title('log')
+plt.grid(True)
+
+
+# symmetric log
+plt.subplot(223)
+plt.plot(x, y - y.mean())
+plt.yscale('symlog', linthreshy=0.01)
+plt.title('symlog')
+plt.grid(True)
+
+# logit
+plt.subplot(224)
+plt.plot(x, y)
+plt.yscale('logit')
+plt.title('logit')
+plt.grid(True)
+# Format the minor tick labels of the y-axis into empty strings with
+# `NullFormatter`, to avoid cumbering the axis with too many labels.
+plt.gca().yaxis.set_minor_formatter(NullFormatter())
+# Adjust the subplot layout, because the logit one may take more space
+# than usual, due to y-tick labels like &quot;1 - 10^{-3}&quot;
+plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,
+                    wspace=0.35)
+
+plt.show()
+</code></pre>
+
+<div align="center"><img src="/img/pyplot1/12.png"></div>
+
+<p>写这篇出于加深pyplot的印象，自己以后再用也不用去翻别人的博客。</p>
+
+<p>官方链接：<a href="https://matplotlib.org/tutorials/introductory/pyplot.html#pyplot-tutorial">matplotlib/tutorials</a></p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/pyplot%E6%96%87%E6%A1%A3/" rel="tag">pyplot文档</a></li>
+	</ul>
+</div>
+	</article>
+	<script src="https://utteranc.es/client.js"
+	        repo="yl305237731/yl305237731.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script>
+</main>
+
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		走出校园的算法攻城狮一枚，专注于深度学习、计算机视觉、图像处理。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">Numpy使用GPU加速</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/wiki/markdown%E8%AF%AD%E6%B3%95/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Markdown语法</p></a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/densecrf%E5%B0%8F%E8%AE%A1/">Densecrf与图像分割</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/yolo/">Yolo: v1-v3</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/anchor_box/">Anchor box</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/inception_v1_to_v4/">Inception系列</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/gru%E5%B0%8F%E7%BB%93/">GRU小结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/edge_gan/">Edge_gan总结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">分类</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hive" title="Hive">Hive (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inception" title="Inception">Inception (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lstm" title="Lstm">Lstm (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown%e8%af%ad%e6%b3%95" title="Markdown语法">Markdown语法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" title="深度学习">深度学习 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测 (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">社群</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:yanglinself@bjtu.edu.cn">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>16120438@bjtu.edu.cn</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">友情链接</h4>
+	<div class="widget-social__item widget__item">
+		<a class="widget-social__link widget__link btn" title="lulu" rel="noopener noreferrer" href="https://me.csdn.net/u013491950" target="_blank">
+			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
+			<path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
+			<span>lulu</span>
+		</a>
+	</div>
+</div>
+
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 扬帆起航.
+			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主题</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+</body>
+</html>

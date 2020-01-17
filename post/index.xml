@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>Docker小记</title>
-      <link>/post/docker%E5%B0%8F%E8%AE%B0/</link>
-      <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
-      
-      <guid>/post/docker%E5%B0%8F%E8%AE%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Window</description>
-    </item>
-    
-    <item>
       <title>Squeeze-and-Excitation Networks</title>
       <link>/post/se-net/</link>
       <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
@@ -147,48 +138,12 @@
     </item>
     
     <item>
-      <title>Hive命令记录</title>
-      <link>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
-      
-      <guid>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD</description>
-    </item>
-    
-    <item>
       <title>（译）你的神经网络不工作的37个可能原因</title>
       <link>/post/37reasonsforyournetnotwork/</link>
       <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
       
       <guid>/post/37reasonsforyournetnotwork/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.</description>
-    </item>
-    
-    <item>
-      <title>Pandas常用操作以及常见tips、tricks</title>
-      <link>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
-      
-      <guid>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常用操作 读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)</description>
-    </item>
-    
-    <item>
-      <title>使用SimpleHttpServer传输文件</title>
-      <link>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
-      <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
-      
-      <guid>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（</description>
-    </item>
-    
-    <item>
-      <title>linux进程、端口占用查看</title>
-      <link>/post/maccmd/</link>
-      <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
-      
-      <guid>/post/maccmd/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号</description>
     </item>
     
     <item>
@@ -201,15 +156,6 @@
     </item>
     
     <item>
-      <title>mac通过跳板机对服务器上传下载文件</title>
-      <link>/post/tiaobanji/</link>
-      <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
-      
-      <guid>/post/tiaobanji/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，</description>
-    </item>
-    
-    <item>
       <title>视频对象分割小记</title>
       <link>/post/videoseg_summary/</link>
       <pubDate>Thu, 06 Jun 2019 15:25:02 +0800</pubDate>
@@ -219,165 +165,12 @@
     </item>
     
     <item>
-      <title>conda pip源</title>
-      <link>/post/conda_pip%E6%BA%90/</link>
-      <pubDate>Sun, 02 Jun 2019 19:52:40 +0800</pubDate>
-      
-      <guid>/post/conda_pip%E6%BA%90/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip</description>
-    </item>
-    
-    <item>
-      <title>Linux之tar命令</title>
-      <link>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Sat, 04 May 2019 09:39:37 +0800</pubDate>
-      
-      <guid>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); tar -c: 建立压缩文档 -x: 解压 -t: 查看内容 -r: 向压缩归档文件末尾追加文件 -u: 更新压缩包中的文件 以上五个是独立的命令，压缩解压都要用到其中一个，可</description>
-    </item>
-    
-    <item>
-      <title>Linux命令随记</title>
-      <link>/post/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</link>
-      <pubDate>Sat, 13 Apr 2019 15:12:08 +0800</pubDate>
-      
-      <guid>/post/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &amp;quot;*xxx*&amp;quot; | xargs -i cp</description>
-    </item>
-    
-    <item>
       <title>Hr_net阅读笔记</title>
       <link>/post/hr_net/</link>
       <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
       
       <guid>/post/hr_net/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层</description>
-    </item>
-    
-    <item>
-      <title>剑指offer23:链表中环的入口地址</title>
-      <link>/post/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</link>
-      <pubDate>Sun, 07 Apr 2019 18:53:24 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null 思路：链表存在环，则没有尾节点. 对于链表一个指针无法</description>
-    </item>
-    
-    <item>
-      <title>剑指offer52:两个链表的第一个公共节点</title>
-      <link>/post/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</link>
-      <pubDate>Sun, 07 Apr 2019 15:33:31 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入两个链表，找出它们的第一个公共结点 思路：暴力法时间复杂度O(n^2). 当两个链表具有公共节点时，第一个公共节点之后的节点</description>
-    </item>
-    
-    <item>
-      <title>剑指offer55:二叉树的深度</title>
-      <link>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</link>
-      <pubDate>Sat, 06 Apr 2019 23:03:12 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目一：输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度 思路</description>
-    </item>
-    
-    <item>
-      <title>剑指offer32:从上到下打印二叉树</title>
-      <link>/post/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
-      <pubDate>Fri, 05 Apr 2019 23:53:14 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：从上往下打印出二叉树的每个节点，同层节点从左至右打印 思路：典型的队列使用 void PrintFromTopToBottom(TreeNode* root) { if(root==nullptr) return ; queue&amp;lt;TreeNode*&amp;gt; q; q.push(root); while(!q.empty()){ TreeNode* node = q.front(); q.pop(); cout&amp;lt;&amp;lt;node-&amp;gt;val&amp;lt;&amp;lt;&amp;quot; &amp;quot;; if(node-&amp;gt;left!=nullptr) q.push(node-&amp;gt;left); if(node-&amp;gt;right!=nullptr) q.push(node-&amp;gt;right); } } 拓展</description>
-    </item>
-    
-    <item>
-      <title>剑指offer30:包含min函数的栈</title>
-      <link>/post/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</link>
-      <pubDate>Fri, 05 Apr 2019 23:25:09 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1）. 思路：对于栈，要在O(1</description>
-    </item>
-    
-    <item>
-      <title>剑指offer12:矩阵中的路径</title>
-      <link>/post/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</link>
-      <pubDate>Fri, 05 Apr 2019 22:51:22 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在</description>
-    </item>
-    
-    <item>
-      <title>剑指offer27:树的镜像</title>
-      <link>/post/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</link>
-      <pubDate>Thu, 04 Apr 2019 23:52:48 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：操作给定的二叉树，将其变换为源二叉树的镜像 如上图所示，树的镜像是将每个节点的左右子树交换，因此，对于每个节点只需要交换左右子</description>
-    </item>
-    
-    <item>
-      <title>剑指offer26:树的子结构</title>
-      <link>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Thu, 04 Apr 2019 22:58:37 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目:输入两棵二叉树A，B，判断B是不是A的子结构. 如上图，其中B为A的子结构. 思路: 判断是否为子树，首先需要定位到子树的根节点，</description>
-    </item>
-    
-    <item>
-      <title>剑指offer25:合并两个排序的链表</title>
-      <link>/post/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
-      <pubDate>Wed, 03 Apr 2019 16:58:07 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则. 思路：对于两个递增的链表合并，合</description>
-    </item>
-    
-    <item>
-      <title>剑指offer24:反转链表</title>
-      <link>/post/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
-      <pubDate>Wed, 03 Apr 2019 00:43:52 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个链表，反转链表后，输出新链表的表头. 思路一：链表反转，需将节点指向改变. 可以每次取下一个节点向之前的节点中插入，采用</description>
-    </item>
-    
-    <item>
-      <title>剑指offer22:链表倒数第k个节点</title>
-      <link>/post/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</link>
-      <pubDate>Tue, 02 Apr 2019 22:44:44 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个链表，输出该链表中倒数第k个结点. 链表长度未知，可以西安遍历一次得到链表长度，然后可计算出移动多少步. 然后这样做相当</description>
-    </item>
-    
-    <item>
-      <title>剑指offer10:斐波那契数列</title>
-      <link>/post/%E5%89%91%E6%8C%87offer10_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</link>
-      <pubDate>Tue, 02 Apr 2019 21:41:09 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer10_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目一： 求斐波那契数列的第n项. 斐波那契数列公式： $$f(0)=0$$ $$f(1)=1$$ $$f(n)=f(n-1) + f(n-2),n&amp;gt;1$$ 对于斐波那契数列，学过程序语言的应该都知道. 教学时基本都是使用它来说明</description>
-    </item>
-    
-    <item>
-      <title>剑指offer21:调整数组顺序使奇数位于偶数前</title>
-      <link>/post/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</link>
-      <pubDate>Mon, 01 Apr 2019 23:33:15 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使所有奇数位于数组的前半部分，所有偶数位于数组后半部分. 思路：交换数</description>
-    </item>
-    
-    <item>
-      <title>gitLab项目拉取及提交使用记录</title>
-      <link>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
-      
-      <guid>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Bra</description>
     </item>
     
     <item>
@@ -408,87 +201,6 @@
     </item>
     
     <item>
-      <title>剑指offer9:两个栈实现队列</title>
-      <link>/post/%E5%89%91%E6%8C%87offer9_%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</link>
-      <pubDate>Fri, 22 Mar 2019 22:44:49 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer9_%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：用两个栈实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路：队列的特点是先进先出，单个栈为先进后出</description>
-    </item>
-    
-    <item>
-      <title>LeetCode:开方函数sqrt实现</title>
-      <link>/post/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Sun, 10 Mar 2019 15:30:15 +0800</pubDate>
-      
-      <guid>/post/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 要求实现开方函数，面试时这个问题出现的次数还是比较多的。 一：二分查找法 对于一个给定的非负数A，它的平方根都不会大于[A/2+1],</description>
-    </item>
-    
-    <item>
-      <title>剑指offer6:逆向打印链表</title>
-      <link>/post/%E5%89%91%E6%8C%87offer6/</link>
-      <pubDate>Sat, 09 Mar 2019 23:40:45 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer6/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 问题描述：输入一个链表的头节点，反向打印出链表. 链表结构如下 struct ListNode { int val; ListNode *next; ListNode(int x): val(x), next(NULL){ } }; 思路：链表反向打印，先进后出，考虑使用栈. class</description>
-    </item>
-    
-    <item>
-      <title>剑指offer16:数字的整数次方</title>
-      <link>/post/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</link>
-      <pubDate>Thu, 07 Mar 2019 22:04:04 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。保证base和</description>
-    </item>
-    
-    <item>
-      <title>剑指offer15:二进制中1的个数</title>
-      <link>/post/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
-      <pubDate>Tue, 05 Mar 2019 22:19:22 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目： 请实现一个函数，输入一个整数，输出该二进制中表示1的个数. 对于二进制运算，主要是按位与、或、非. 1与1相与为1，1与0相与为</description>
-    </item>
-    
-    <item>
-      <title>剑指offer4：二维数组中的查找</title>
-      <link>/post/%E5%89%91%E6%8C%87offer4/</link>
-      <pubDate>Sun, 03 Mar 2019 20:36:38 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer4/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 问题描述：在一个二维数组中，每一行都按从做到右递增顺序排序，每一列都按从上到下递增顺序排序。输入一个二维数组与一个整数，判断数组中</description>
-    </item>
-    
-    <item>
-      <title>剑指offer3: 数组重复数字</title>
-      <link>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</link>
-      <pubDate>Sat, 02 Mar 2019 16:52:59 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目描述：在一个长度为n的数组里的所有数字都在0～n-1之间。数组中某些数字时重复的，但不知道有几个重复了，也不知道每个数字重复了</description>
-    </item>
-    
-    <item>
-      <title>剑指offer7:重构二叉树</title>
-      <link>/post/%E5%89%91%E6%8C%87offer7/</link>
-      <pubDate>Fri, 01 Mar 2019 19:10:54 +0800</pubDate>
-      
-      <guid>/post/%E5%89%91%E6%8C%87offer7/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序</description>
-    </item>
-    
-    <item>
-      <title>Markdown语法</title>
-      <link>/post/markdown%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Wed, 20 Feb 2019 17:23:49 +0800</pubDate>
-      
-      <guid>/post/markdown%E8%AF%AD%E6%B3%95/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 标题 1.使用=和_标记一级和二级标题 一级标题 ======= 二级标题 ——————— 2.使用#号 # 一级标题 ## 二级标题 ### 三级标题 段落 换行：两个以上的</description>
-    </item>
-    
-    <item>
       <title>python下mnist数据集转化为图片</title>
       <link>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
@@ -504,24 +216,6 @@
       
       <guid>/post/knn/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距</description>
-    </item>
-    
-    <item>
-      <title>Pyplot tutorial翻译文档</title>
-      <link>/post/pyplot%E6%96%87%E6%A1%A3/</link>
-      <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
-      
-      <guid>/post/pyplot%E6%96%87%E6%A1%A3/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在</description>
-    </item>
-    
-    <item>
-      <title>Numpy使用GPU加速</title>
-      <link>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
-      <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
-      
-      <guid>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊</description>
     </item>
     
     <item>
@@ -579,24 +273,6 @@
     </item>
     
     <item>
-      <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
-      <link>/post/google_image_download%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
-      
-      <guid>/post/google_image_download%E4%BD%BF%E7%94%A8/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络</description>
-    </item>
-    
-    <item>
-      <title>Imagenet数据集类别标签和对应的英文中文对照表</title>
-      <link>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Mon, 08 Oct 2018 16:50:36 +0800</pubDate>
-      
-      <guid>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark,</description>
-    </item>
-    
-    <item>
       <title>图像相似度之PSNR与SSIM小结</title>
       <link>/post/psnr/</link>
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
@@ -612,15 +288,6 @@
       
       <guid>/post/coonectregion/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); ###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易</description>
-    </item>
-    
-    <item>
-      <title>Hadoop命令记录</title>
-      <link>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 1.列出指定目录下文件 -ls haddop fs -ls /dir haddop fs -ls -R /dir 2.将本地文件放到hdfs文件系统中 -put hadoop fs -put &amp;lt;local file&amp;gt; &amp;lt;hdfs file&amp;gt; hadoop fs -put &amp;lt;local file or dir&amp;gt; &amp;lt;hdfs dir&amp;gt; #将键盘输入录入到</description>
     </item>
     
   </channel>

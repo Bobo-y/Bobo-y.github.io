@@ -13,19 +13,19 @@
     
     <item>
       <title>Docker小记</title>
-      <link>/post/docker%E5%B0%8F%E8%AE%B0/</link>
+      <link>/wiki/docker%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
       
-      <guid>/post/docker%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>/wiki/docker%E5%B0%8F%E8%AE%B0/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Window</description>
     </item>
     
     <item>
       <title>Hive命令记录</title>
-      <link>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <link>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
       
-      <guid>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <guid>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD</description>
     </item>
     
@@ -40,55 +40,55 @@
     
     <item>
       <title>Pandas常用操作以及常见tips、tricks</title>
-      <link>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <link>/wiki/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
       
-      <guid>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <guid>/wiki/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常用操作 读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db)</description>
     </item>
     
     <item>
       <title>使用SimpleHttpServer传输文件</title>
-      <link>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <link>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
       
-      <guid>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <guid>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（</description>
     </item>
     
     <item>
       <title>linux进程、端口占用查看</title>
-      <link>/post/maccmd/</link>
+      <link>/wiki/maccmd/</link>
       <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
       
-      <guid>/post/maccmd/</guid>
+      <guid>/wiki/maccmd/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号</description>
     </item>
     
     <item>
       <title>mac通过跳板机对服务器上传下载文件</title>
-      <link>/post/tiaobanji/</link>
+      <link>/wiki/tiaobanji/</link>
       <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
       
-      <guid>/post/tiaobanji/</guid>
+      <guid>/wiki/tiaobanji/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，</description>
     </item>
     
     <item>
       <title>conda pip源</title>
-      <link>/post/conda_pip%E6%BA%90/</link>
+      <link>/wiki/conda_pip%E6%BA%90/</link>
       <pubDate>Sun, 02 Jun 2019 19:52:40 +0800</pubDate>
       
-      <guid>/post/conda_pip%E6%BA%90/</guid>
+      <guid>/wiki/conda_pip%E6%BA%90/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip</description>
     </item>
     
     <item>
       <title>gitLab项目拉取及提交使用记录</title>
-      <link>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+      <link>/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
       
-      <guid>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+      <guid>/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Bra</description>
     </item>
     
@@ -103,10 +103,10 @@
     
     <item>
       <title>Markdown语法</title>
-      <link>/post/markdown%E8%AF%AD%E6%B3%95/</link>
+      <link>/wiki/markdown%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Wed, 20 Feb 2019 17:23:49 +0800</pubDate>
       
-      <guid>/post/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <guid>/wiki/markdown%E8%AF%AD%E6%B3%95/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 标题 1.使用=和_标记一级和二级标题 一级标题 ======= 二级标题 ——————— 2.使用#号 # 一级标题 ## 二级标题 ### 三级标题 段落 换行：两个以上的</description>
     </item>
     
@@ -121,46 +121,46 @@
     
     <item>
       <title>Pyplot tutorial翻译文档</title>
-      <link>/post/pyplot%E6%96%87%E6%A1%A3/</link>
+      <link>/wiki/pyplot%E6%96%87%E6%A1%A3/</link>
       <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
       
-      <guid>/post/pyplot%E6%96%87%E6%A1%A3/</guid>
+      <guid>/wiki/pyplot%E6%96%87%E6%A1%A3/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在</description>
     </item>
     
     <item>
       <title>Numpy使用GPU加速</title>
-      <link>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
+      <link>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
       
-      <guid>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
+      <guid>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊</description>
     </item>
     
     <item>
       <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
-      <link>/post/google_image_download%E4%BD%BF%E7%94%A8/</link>
+      <link>/wiki/google_image_download%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
       
-      <guid>/post/google_image_download%E4%BD%BF%E7%94%A8/</guid>
+      <guid>/wiki/google_image_download%E4%BD%BF%E7%94%A8/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络</description>
     </item>
     
     <item>
       <title>Imagenet数据集类别标签和对应的英文中文对照表</title>
-      <link>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</link>
+      <link>/wiki/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</link>
       <pubDate>Mon, 08 Oct 2018 16:50:36 +0800</pubDate>
       
-      <guid>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</guid>
+      <guid>/wiki/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark,</description>
     </item>
     
     <item>
       <title>Hadoop命令记录</title>
-      <link>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <link>/wiki/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <guid>/wiki/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 1.列出指定目录下文件 -ls haddop fs -ls /dir haddop fs -ls -R /dir 2.将本地文件放到hdfs文件系统中 -put hadoop fs -put &amp;lt;local file&amp;gt; &amp;lt;hdfs file&amp;gt; hadoop fs -put &amp;lt;local file or dir&amp;gt; &amp;lt;hdfs dir&amp;gt; #将键盘输入录入到</description>
     </item>
     

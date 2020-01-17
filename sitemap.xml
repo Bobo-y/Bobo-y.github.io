@@ -61,8 +61,14 @@
   </url>
   
   <url>
-    <loc>/post/docker%E5%B0%8F%E8%AE%B0/</loc>
+    <loc>/wiki/docker%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wiki/</loc>
+    <lastmod>2019-12-19T20:38:40+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -204,7 +210,7 @@
   </url>
   
   <url>
-    <loc>/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
+    <loc>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2019-08-09T15:43:07+08:00</lastmod>
   </url>
   
@@ -226,7 +232,7 @@
   </url>
   
   <url>
-    <loc>/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</loc>
+    <loc>/wiki/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2019-07-28T21:58:03+08:00</lastmod>
   </url>
   
@@ -237,7 +243,7 @@
   </url>
   
   <url>
-    <loc>/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</loc>
+    <loc>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2019-07-24T10:43:23+08:00</lastmod>
   </url>
   
@@ -248,7 +254,7 @@
   </url>
   
   <url>
-    <loc>/post/maccmd/</loc>
+    <loc>/wiki/maccmd/</loc>
     <lastmod>2019-07-24T10:38:06+08:00</lastmod>
   </url>
   
@@ -276,7 +282,7 @@
   </url>
   
   <url>
-    <loc>/post/tiaobanji/</loc>
+    <loc>/wiki/tiaobanji/</loc>
     <lastmod>2019-07-10T13:27:58+08:00</lastmod>
   </url>
   
@@ -298,7 +304,7 @@
   </url>
   
   <url>
-    <loc>/post/conda_pip%E6%BA%90/</loc>
+    <loc>/wiki/conda_pip%E6%BA%90/</loc>
     <lastmod>2019-06-02T19:52:40+08:00</lastmod>
   </url>
   
@@ -309,7 +315,7 @@
   </url>
   
   <url>
-    <loc>/post/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</loc>
+    <loc>/wiki/linux%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-05-04T09:39:37+08:00</lastmod>
   </url>
   
@@ -326,7 +332,7 @@
   </url>
   
   <url>
-    <loc>/post/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</loc>
+    <loc>/wiki/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</loc>
     <lastmod>2019-04-13T15:12:08+08:00</lastmod>
   </url>
   
@@ -342,80 +348,80 @@
   </url>
   
   <url>
+    <loc>/leetcode/</loc>
+    <lastmod>2019-04-07T18:53:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/%E5%89%91%E6%8C%87offer/</loc>
     <lastmod>2019-04-07T18:53:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</loc>
     <lastmod>2019-04-07T18:53:24+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer52%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9/</loc>
     <lastmod>2019-04-07T15:33:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer55%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</loc>
     <lastmod>2019-04-06T23:03:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer32%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2019-04-05T23:53:14+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer30%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/</loc>
     <lastmod>2019-04-05T23:25:09+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2019-04-05T22:51:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</loc>
     <lastmod>2019-04-04T23:52:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2019-04-04T22:58:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2019-04-03T16:58:07+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2019-04-03T00:43:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer22%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</loc>
     <lastmod>2019-04-02T22:44:44+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer10_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer10_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</loc>
     <lastmod>2019-04-02T21:41:09+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer21%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D/</loc>
     <lastmod>2019-04-01T23:33:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/git/</loc>
-    <lastmod>2019-03-30T14:59:05+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -425,7 +431,7 @@
   </url>
   
   <url>
-    <loc>/post/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</loc>
+    <loc>/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2019-03-30T14:59:05+08:00</lastmod>
   </url>
   
@@ -469,7 +475,7 @@
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer9_%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer9_%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</loc>
     <lastmod>2019-03-22T22:44:49+08:00</lastmod>
   </url>
   
@@ -486,37 +492,37 @@
   </url>
   
   <url>
-    <loc>/post/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</loc>
+    <loc>/leetcode/lettcode%E5%BC%80%E6%96%B9%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer6/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer6/</loc>
     <lastmod>2019-03-09T23:40:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer16%E6%95%B0%E5%AD%97%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</loc>
     <lastmod>2019-03-07T22:04:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer15%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</loc>
     <lastmod>2019-03-05T22:19:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer4/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer4/</loc>
     <lastmod>2019-03-03T20:36:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer_%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97/</loc>
     <lastmod>2019-03-02T16:52:59+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/%E5%89%91%E6%8C%87offer7/</loc>
+    <loc>/leetcode/%E5%89%91%E6%8C%87offer7/</loc>
     <lastmod>2019-03-01T19:10:54+08:00</lastmod>
   </url>
   
@@ -527,7 +533,7 @@
   </url>
   
   <url>
-    <loc>/post/markdown%E8%AF%AD%E6%B3%95/</loc>
+    <loc>/wiki/markdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2019-02-20T17:23:49+08:00</lastmod>
   </url>
   
@@ -566,7 +572,7 @@
   </url>
   
   <url>
-    <loc>/post/pyplot%E6%96%87%E6%A1%A3/</loc>
+    <loc>/wiki/pyplot%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2018-12-21T15:39:00+08:00</lastmod>
   </url>
   
@@ -583,7 +589,7 @@
   </url>
   
   <url>
-    <loc>/post/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</loc>
+    <loc>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</loc>
     <lastmod>2018-12-21T15:32:04+08:00</lastmod>
   </url>
   
@@ -678,7 +684,7 @@
   </url>
   
   <url>
-    <loc>/post/google_image_download%E4%BD%BF%E7%94%A8/</loc>
+    <loc>/wiki/google_image_download%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-10-10T16:43:55+08:00</lastmod>
   </url>
   
@@ -689,7 +695,7 @@
   </url>
   
   <url>
-    <loc>/post/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</loc>
+    <loc>/wiki/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</loc>
     <lastmod>2018-10-08T16:50:36+08:00</lastmod>
   </url>
   
@@ -725,7 +731,7 @@
   </url>
   
   <url>
-    <loc>/post/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
+    <loc>/wiki/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
   </url>
   
   <url>

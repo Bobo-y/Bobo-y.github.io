@@ -13,10 +13,10 @@
     
     <item>
       <title>Linux命令随记</title>
-      <link>/post/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</link>
+      <link>/wiki/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</link>
       <pubDate>Sat, 13 Apr 2019 15:12:08 +0800</pubDate>
       
-      <guid>/post/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</guid>
+      <guid>/wiki/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己操作Linux时偶尔忘记的命令 1.将某个文件夹下的文件名带某个字符串的所有文件(文件名过长)复制到指定文件夹 find -name &amp;quot;*xxx*&amp;quot; | xargs -i cp</description>
     </item>
     

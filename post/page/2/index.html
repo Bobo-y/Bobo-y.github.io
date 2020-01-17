@@ -56,11 +56,17 @@
 		<li class="menu__item">
 			<a class="menu__link" href="/about/">关于我</a>
 		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/leetcode/">刷刷刷</a>
+		</li>
 		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/post/">博客</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/links/">链接收藏</a>
+			<a class="menu__link" href="/wiki/">工具</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">链接</a>
 		</li>
 	</ul>
 </nav>
@@ -117,39 +123,6 @@ code.has-jax {
 			<div class="primary">
 			
 <main class="main list" role="main"><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/lstm/">
-			<img src="/img/lstm/5.png" alt="从RNN到LSTM小记" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/lstm/" rel="bookmark">
-			从RNN到LSTM小记
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-09-13T19:51:54">2019-09-13</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">6 分钟</time>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/lstm/">阅读全文…</a>
-	</div>
-</article><article class="list__item post">
 	<figure class="list__thumbnail">
 		<a href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">
 			<img src="/img/%e6%95%b0%e5%ad%97%e8%af%86%e5%88%ab%e4%b8%8e%e6%a3%80%e6%b5%8b/fav.jpg" alt="CRNN笔记以及数字检测识别实践" />
@@ -283,39 +256,6 @@ code.has-jax {
 	</div>
 </article><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">
-			<img src="/img/hive/Hive.png" alt="Hive命令记录" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" rel="bookmark">
-			Hive命令记录
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-08-09T15:43:07">2019-08-09</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT 'city_id', `area_code` string COMMENT 'area ID', `prediction` int COMMENT 'date prediction', `vdate` string COMMENT 'date') row format delimited fields terminated by ','; # 将本地数据写入数据库 LOAD
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">阅读全文…</a>
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
 		<a href="/post/37reasonsforyournetnotwork/">
 			<img src="/img/cover/favicon.png" alt="（译）你的神经网络不工作的37个可能原因" />
 		</a>
@@ -349,58 +289,91 @@ code.has-jax {
 	</div>
 </article><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-			<img src="/img/pandas%e5%b8%b8%e7%94%a8%e6%95%b0%e6%8d%ae%e6%93%8d%e4%bd%9c/logo.svg" alt="Pandas常用操作以及常见tips、tricks" />
+		<a href="/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/">
+			<img src="/img/yolo_v3/3.jpg" alt="基于yolo_v3的水印检测" />
 		</a>
 	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" rel="bookmark">
-			Pandas常用操作以及常见tips、tricks
+			<a href="/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/" rel="bookmark">
+			基于yolo_v3的水印检测
 			</a>
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-07-28T21:58:03">2019-07-28</time>
+	<time class="meta__text" datetime="2019-07-21T21:25:20">2019-07-21</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">4 分钟</time>
+	<time class="meta__text">2 分钟</time>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 常用操作 读数据 1.读csv df = pd.read_csv(&quot;data.csv&quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&quot;localhost&quot;, # your host, usually localhost user=&quot;root&quot;, # your username passwd=&quot;password&quot;, # your password db=&quot;dbname&quot;) # name of the data base query = &quot;SELECT * FROM tablename&quot; df = read_sql(query, db)
+		(adsbygoogle = window.adsbygoogle || []).push({}); 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数
 	</div>
 	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">阅读全文…</a>
+		<a class="list__footer-readmore btn" href="/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/">阅读全文…</a>
 	</div>
 </article><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">
-			<img src="/img/cover/favicon.png" alt="使用SimpleHttpServer传输文件" />
+		<a href="/post/videoseg_summary/">
+			<img src="/img/vos_sum/scooter-board.jpg" alt="视频对象分割小记" />
 		</a>
 	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/" rel="bookmark">
-			使用SimpleHttpServer传输文件
+			<a href="/post/videoseg_summary/" rel="bookmark">
+			视频对象分割小记
 			</a>
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-07-24T10:43:23">2019-07-24</time>
+	<time class="meta__text" datetime="2019-06-06T15:25:02">2019-06-06</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">6 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		(adsbygoogle = window.adsbygoogle || []).push({}); 写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/videoseg_summary/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/hr_net/">
+			<img src="/img/cover/favicon.png" alt="Hr_net阅读笔记" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/hr_net/" rel="bookmark">
+			Hr_net阅读笔记
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-04-13T14:52:14">2019-04-13</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
@@ -408,40 +381,76 @@ code.has-jax {
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（
+		(adsbygoogle = window.adsbygoogle || []).push({}); HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层
 	</div>
 	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">阅读全文…</a>
+		<a class="list__footer-readmore btn" href="/post/hr_net/">阅读全文…</a>
 	</div>
 </article><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="/post/maccmd/">
-			<img src="/img/cover/favicon.png" alt="linux进程、端口占用查看" />
+		<a href="/post/keras_data_aug/">
+			<img src="/img/keras_loaddata/keras-logo-2018-large-1200.png" alt="Keras数据增强并保存到本地" />
 		</a>
 	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="/post/maccmd/" rel="bookmark">
-			linux进程、端口占用查看
+			<a href="/post/keras_data_aug/" rel="bookmark">
+			Keras数据增强并保存到本地
 			</a>
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-07-24T10:38:06">2019-07-24</time>
+	<time class="meta__text" datetime="2019-03-29T15:16:16">2019-03-29</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
+	<time class="meta__text">3 分钟</time>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		(adsbygoogle = window.adsbygoogle || []).push({}); 查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号
+		(adsbygoogle = window.adsbygoogle || []).push({}); 当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_direct
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_data_aug/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/keras_duofenlei/">
+			<img src="/img/keras_loaddata/keras-logo-2018-large-1200.png" alt="Keras多标签分类网络实现" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_duofenlei/" rel="bookmark">
+			Keras多标签分类网络实现
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-29T15:07:11">2019-03-29</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">2 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		(adsbygoogle = window.adsbygoogle || []).push({}); 简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_duofenlei/">阅读全文…</a>
 	</div>
 </article>
 </main>
@@ -469,15 +478,6 @@ code.has-jax {
 		
 		
 	
-		
-		
-	
-		
-		
-	
-		
-		
-	
 	
 	<span class="pagination__item pagination__item--current">2</span>
 		
@@ -493,25 +493,10 @@ code.has-jax {
 		
 		
 	
-		
-			<a class="pagination__item pagination__item btn" href="/post/page/5/">5</a>
-		
-		
-	
-		
-			<a class="pagination__item pagination__item btn" href="/post/page/6/">6</a>
-		
-		
-	
-		
-			<a class="pagination__item pagination__item btn" href="/post/page/7/">7</a>
-		
-		
-	
 	<a class="pagination__item pagination__item--next btn" href="/post/page/3/">›</a>
-	<a class="pagination__item pagination__item--next btn" href="/post/page/7/">»</a>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/4/">»</a>
 	
-	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;7&nbsp;页</span>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;4&nbsp;页</span>
 	
 </div>
 
@@ -534,7 +519,6 @@ code.has-jax {
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/densecrf%E5%B0%8F%E8%AE%A1/">Densecrf与图像分割</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/docker%E5%B0%8F%E8%AE%B0/">Docker小记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/yolo/">Yolo: v1-v3</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/anchor_box/">Anchor box</a></li>
@@ -542,6 +526,7 @@ code.has-jax {
 			<li class="widget__item"><a class="widget__link" href="/post/inception_v1_to_v4/">Inception系列</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/gru%E5%B0%8F%E7%BB%93/">GRU小结</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/edge_gan/">Edge_gan总结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 		</ul>
 	</div>
 </div>
@@ -549,7 +534,6 @@ code.has-jax {
 	<h4 class="widget__title">分类</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/categories/git">Git</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
