@@ -229,7 +229,7 @@ $$Pr(Class_i | Objct) * Pr(Object) * IOU _{pred} ^{truth} = Pr(Class_i) * IOU _{
 
 <ul>
 <li>Pascal voc下, 每张图片可以预测7 * 7 * 2 = 98 个bounding-box.</li>
-<li>yolo-v1 每个grid 只能预测两个box, 且属于同一类. 故对靠的近的不同类物体检测能力不足.</li>
+<li>yolo-v1 每个grid 只能预测两个box, 且属于同一类. 故对靠的近的不同类物体检测能力不足. 同时, 由于一个 grid cell 内的两个检测器都针对于同一个目标, 在训练时谁预测的结果与 GT 的IOU 最大谁就负责检测.</li>
 <li>泛化能力较差. 倾向于检测长宽比类似于训练集长宽比的物体.</li>
 </ul>
 
