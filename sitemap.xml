@@ -112,17 +112,6 @@
   </url>
   
   <url>
-    <loc>/post/anchor_box/</loc>
-    <lastmod>2019-11-01T15:17:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/anchor/</loc>
-    <lastmod>2019-11-01T15:17:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/post/how_to_built_a_simple_maskrcnn/</loc>
     <lastmod>2019-10-28T23:58:27+08:00</lastmod>
   </url>
@@ -139,8 +128,30 @@
   </url>
   
   <url>
+    <loc>/tags/ssd/</loc>
+    <lastmod>2019-10-18T12:19:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/ssd/</loc>
+    <lastmod>2019-10-18T12:19:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/gru%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2019-10-07T22:05:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/anchor_box/</loc>
+    <lastmod>2019-10-01T15:17:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/anchor/</loc>
+    <lastmod>2019-10-01T15:17:30+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

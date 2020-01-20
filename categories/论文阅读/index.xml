@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>SSD: Single Shot MultiBox Detector</title>
+      <link>/post/ssd/</link>
+      <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
+      
+      <guid>/post/ssd/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
       <title>East:An Efficient and Accurate Scene Text Detector阅读及应用</title>
       <link>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>

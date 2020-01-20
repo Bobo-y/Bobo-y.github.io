@@ -62,7 +62,7 @@
 			<a class="menu__link" href="/post/">博客</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/wiki/">工具</a>
+			<a class="menu__link" href="/wiki/">日常工具集结</a>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/links/">链接</a>
@@ -232,8 +232,9 @@ model.fit(train_data,keras.utils.to_categorical(train_labs),batch_size=32,epochs
  ## 因为生成器是无限生成数据，所以它不知道一轮要训练多少图片，所以steps_per_epoch为数据集的总数除以batch_size。
 </code></pre>
 
-<p>我的txt文本格式如下：前面是图片路径，后面是类别标签，因为从1开始的，所以to_categorical 里面减了1.
-<img src="/img/keras_loaddata/1.png" alt="" /></p>
+<p>我的txt文本格式如下：前面是图片路径，后面是类别标签，因为从1开始的，所以to_categorical 里面减了1.</p>
+
+<p><img src="/img/keras_loaddata/1.png" alt="" /></p>
 
 <h4 id="2-使用-flow-from-directory-directory">2).使用.flow_from_directory(directory)</h4>
 
@@ -257,8 +258,9 @@ train_generator = train_datagen.flow_from_directory(
 model.fit_generator(train_generator,steps_per_epoch=N, epochs=EPOCH)
 </code></pre>
 
-<p>我的数据集目录结构如下：
-<img src="/img/keras_loaddata/2.png" alt="" /></p>
+<p>我的数据集目录结构如下：</p>
+
+<p><img src="/img/keras_loaddata/2.png" alt="" /></p>
 
 <h5 id="2-2-用于pix2pix">2.2 用于pix2pix</h5>
 
@@ -292,9 +294,11 @@ model.fit_generator(
     epochs=EPOCHS)
 </code></pre>
 
-<p>对于标签为图像的数据，当用这种方式加载的时候，需将class_mode指定为None,表示不返回标签。对于训练图片和标签要保证顺序不变，一一对应，名字可不同
-<img src="/img/keras_loaddata/3.png" alt="" /><img src="/img/keras_loaddata/4.png" alt="" />
-需要将两个生成器的seed指定为相同的数字，此时两个生成器返回的图片对就一一对应</p>
+<p>对于标签为图像的数据，当用这种方式加载的时候，需将class_mode指定为None,表示不返回标签。对于训练图片和标签要保证顺序不变，一一对应，名字可不同</p>
+
+<p><img src="/img/keras_loaddata/3.png" alt="" /><img src="/img/keras_loaddata/4.png" alt="" /></p>
+
+<p>需要将两个生成器的seed指定为相同的数字，此时两个生成器返回的图片对就一一对应</p>
 
 <h4 id="3-使用flow-x-y-none">3) 使用flow(x, y=None)</h4>
 
@@ -447,12 +451,12 @@ def image_a_b_gen(data_path):
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/">可分离卷积</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/se-net/">Squeeze-and-Excitation Networks</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/yolo/">Yolo: v1-v3</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/anchor_box/">Anchor box</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/how_to_built_a_simple_maskrcnn/">动手搭建神经网络之:简单联合分割、检测网络</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/inception_v1_to_v4/">Inception系列</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ssd/">SSD: Single Shot MultiBox Detector</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/gru%E5%B0%8F%E7%BB%93/">GRU小结</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/anchor_box/">Anchor box</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/edge_gan/">Edge_gan总结</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/lstm/">从RNN到LSTM小记</a></li>
 		</ul>
 	</div>
 </div>
@@ -506,6 +510,7 @@ def image_a_b_gen(data_path):
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo (1)</a>

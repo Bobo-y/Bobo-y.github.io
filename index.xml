@@ -57,15 +57,6 @@
     </item>
     
     <item>
-      <title>Anchor box</title>
-      <link>/post/anchor_box/</link>
-      <pubDate>Fri, 01 Nov 2019 15:17:30 +0800</pubDate>
-      
-      <guid>/post/anchor_box/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
-    </item>
-    
-    <item>
       <title>动手搭建神经网络之:简单联合分割、检测网络</title>
       <link>/post/how_to_built_a_simple_maskrcnn/</link>
       <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>
@@ -84,12 +75,30 @@
     </item>
     
     <item>
+      <title>SSD: Single Shot MultiBox Detector</title>
+      <link>/post/ssd/</link>
+      <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
+      
+      <guid>/post/ssd/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
       <title>GRU小结</title>
       <link>/post/gru%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Mon, 07 Oct 2019 22:05:27 +0800</pubDate>
       
       <guid>/post/gru%E5%B0%8F%E7%BB%93/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门</description>
+    </item>
+    
+    <item>
+      <title>Anchor box</title>
+      <link>/post/anchor_box/</link>
+      <pubDate>Tue, 01 Oct 2019 15:17:30 +0800</pubDate>
+      
+      <guid>/post/anchor_box/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
     </item>
     
     <item>
@@ -620,7 +629,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 联系方式 Email：yanglinself@gmail.com 个人信息 硕士/北京交通大学计算机系 Github：🔗 职位：算法工程师 方</description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 联系方式 - Email：yanglinself@gmail.com 个人信息 硕士/北京交通大学计算机系 Github：🔗 职位：算法工程师</description>
     </item>
     
     <item>
