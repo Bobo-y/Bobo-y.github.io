@@ -3,6 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/</loc>
+    <lastmod>2020-01-21T09:27:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/%E6%B8%85%E5%B9%B3%E8%B0%83-%E6%9D%8E%E7%99%BD/</loc>
+    <lastmod>2020-01-21T09:27:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/</loc>
+    <lastmod>2020-01-21T09:27:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-01-02T23:54:19+08:00</lastmod>
     <priority>0</priority>
@@ -27,12 +44,6 @@
   
   <url>
     <loc>/tags/densecrf/</loc>
-    <lastmod>2020-01-02T23:54:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-01-02T23:54:19+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -221,6 +232,11 @@
   </url>
   
   <url>
+    <loc>/%E7%BE%8E%E6%96%87/%E6%98%A5%E6%B1%9F%E8%8A%B1%E6%9C%88%E5%A4%9C-%E5%BC%A0%E8%8B%A5%E8%99%9A/</loc>
+    <lastmod>2019-08-21T10:31:51+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2019-08-09T15:43:07+08:00</lastmod>
   </url>
@@ -234,6 +250,11 @@
   <url>
     <loc>/post/37reasonsforyournetnotwork/</loc>
     <lastmod>2019-08-07T11:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/%E6%B1%9F%E5%9F%8E%E5%AD%90-%E4%B9%99%E5%8D%AF%E6%AD%A3%E6%9C%88%E4%BA%8C%E5%8D%81%E6%97%A5%E5%A4%9C%E8%AE%B0%E6%A2%A6/</loc>
+    <lastmod>2019-08-02T11:11:08+08:00</lastmod>
   </url>
   
   <url>
