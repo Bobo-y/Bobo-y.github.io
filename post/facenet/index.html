@@ -250,6 +250,12 @@ $$ Argmax   || f(x ^a _i) - f(x ^p _i) || ^2 _2 , eq1$$</p>
 <li>文中认为选择 hardest negatives 会导致 bad 局部极值, 导致无法训练. 作者选择 $semi-hard$, 即: $||f(x ^a _i) - f(x ^p _i)|| ^2 _2  &lt; ||f(x ^a _i) - f(x ^n _i)|| ^2 _2$ , 它们比 positive 样本离 anchor 更远，但是平方距离接近于 anchor-positive距离. 这些 negatives 样本位于边距 $\alpha$内.</li>
 </ul>
 
+<h2 id="ref">ref</h2>
+
+<ul>
+<li><a href="https://arxiv.org/abs/1503.03832">face-net</a></li>
+</ul>
+
 		</div>
 		
 <div class="post__tags tags clearfix">
