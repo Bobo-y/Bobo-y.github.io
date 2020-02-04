@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
+      <link>/post/progan%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
+      
+      <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练</description>
+    </item>
+    
+    <item>
       <title>秋风词</title>
       <link>/%E7%BE%8E%E6%96%87/%E7%A7%8B%E9%A3%8E%E8%AF%8D/</link>
       <pubDate>Fri, 10 Jan 2020 21:15:05 +0800</pubDate>
@@ -279,6 +288,15 @@
       
       <guid>/%E7%BE%8E%E6%96%87/%E9%95%BF%E6%81%A8%E6%AD%8C/</guid>
       <description>长恨歌 &amp;nbsp 白居易 &amp;nbsp &amp;nbsp 汉皇重色思倾国，御宇多年求不得。 &amp;nbsp 杨家有女初长成，养在深闺人未识。 &amp;nbsp 天生丽质难自弃，一朝选在君王侧。 &amp;nbsp 回眸一笑百媚生，六宫</description>
+    </item>
+    
+    <item>
+      <title>object detection(1): Rcnn</title>
+      <link>/post/rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
+      
+      <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcn</description>
     </item>
     
     <item>

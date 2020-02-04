@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Jan 2020 23:54:19 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 22:09:52 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>progan</title>
+      <link>/tags/progan/</link>
+      <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
+      
+      <guid>/tags/progan/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>densecrf</title>
@@ -84,6 +93,15 @@
     </item>
     
     <item>
+      <title>rcnn</title>
+      <link>/tags/rcnn/</link>
+      <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
+      
+      <guid>/tags/rcnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>anchor</title>
       <link>/tags/anchor/</link>
       <pubDate>Tue, 01 Oct 2019 15:17:30 +0800</pubDate>
@@ -120,7 +138,7 @@
     </item>
     
     <item>
-      <title>Keras</title>
+      <title>keras</title>
       <link>/tags/keras/</link>
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       

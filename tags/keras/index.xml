@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keras on 扬帆起航</title>
+    <title>keras on 扬帆起航</title>
     <link>/tags/keras/</link>
-    <description>Recent content in Keras on 扬帆起航</description>
+    <description>Recent content in keras on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 24 Aug 2019 21:42:13 +0800</lastBuildDate>

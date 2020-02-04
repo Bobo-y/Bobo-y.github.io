@@ -55,14 +55,49 @@
   </url>
   
   <url>
-    <loc>/%E7%BE%8E%E6%96%87/%E7%A7%8B%E9%A3%8E%E8%AF%8D/</loc>
-    <lastmod>2020-01-10T21:15:05+08:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-01-02T23:54:19+08:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/progan%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/progan/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-01-20T22:09:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/%E7%A7%8B%E9%A3%8E%E8%AF%8D/</loc>
+    <lastmod>2020-01-10T21:15:05+08:00</lastmod>
   </url>
   
   <url>
@@ -71,25 +106,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-01-02T23:54:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-01-02T23:54:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/densecrf/</loc>
-    <lastmod>2020-01-02T23:54:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2020-01-02T23:54:19+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -153,12 +170,6 @@
   <url>
     <loc>/post/se-net/</loc>
     <lastmod>2019-12-18T11:59:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2019-12-18T11:59:07+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -264,6 +275,17 @@
   <url>
     <loc>/%E7%BE%8E%E6%96%87/%E9%95%BF%E6%81%A8%E6%AD%8C/</loc>
     <lastmod>2019-10-05T17:55:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/rcnn%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2019-10-03T21:24:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rcnn/</loc>
+    <lastmod>2019-10-03T21:24:12+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -654,13 +676,13 @@
   </url>
   
   <url>
-    <loc>/tags/leetcode/</loc>
+    <loc>/categories/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/leetcode/</loc>
+    <loc>/tags/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>

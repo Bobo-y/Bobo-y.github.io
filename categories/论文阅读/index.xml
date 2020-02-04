@@ -6,10 +6,19 @@
     <description>Recent content in 论文阅读 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Dec 2019 11:59:07 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 22:09:52 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
+      <link>/post/progan%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
+      
+      <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练</description>
+    </item>
     
     <item>
       <title>Squeeze-and-Excitation Networks</title>
@@ -54,6 +63,15 @@
       
       <guid>/post/ssd/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
+      <title>object detection(1): Rcnn</title>
+      <link>/post/rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
+      
+      <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcn</description>
     </item>
     
     <item>
