@@ -93,6 +93,15 @@
     </item>
     
     <item>
+      <title>SPPnet</title>
+      <link>/tags/sppnet/</link>
+      <pubDate>Sat, 05 Oct 2019 19:40:34 +0800</pubDate>
+      
+      <guid>/tags/sppnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rcnn</title>
       <link>/tags/rcnn/</link>
       <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
@@ -138,7 +147,7 @@
     </item>
     
     <item>
-      <title>keras</title>
+      <title>Keras</title>
       <link>/tags/keras/</link>
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       
