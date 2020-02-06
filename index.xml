@@ -6,10 +6,19 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Jan 2020 22:39:21 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 16:21:14 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>登高</title>
+      <link>/%E7%BE%8E%E6%96%87/%E7%99%BB%E9%AB%98/</link>
+      <pubDate>Wed, 05 Feb 2020 16:21:14 +0800</pubDate>
+      
+      <guid>/%E7%BE%8E%E6%96%87/%E7%99%BB%E9%AB%98/</guid>
+      <description>登高 杜甫 风急天高猿啸哀，渚清沙白鸟飞回。 无边落木萧萧下，不尽长江滚滚来。 万里悲秋常作客，百年多病独登台。 艰难苦恨繁霜鬓，潦倒新停浊酒杯。 古今</description>
+    </item>
     
     <item>
       <title>木兰词·拟古决绝词柬友</title>
@@ -264,12 +273,30 @@
     </item>
     
     <item>
+      <title>Object detection(4): Faster R-CNN</title>
+      <link>/post/faster_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
+      
+      <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然</description>
+    </item>
+    
+    <item>
       <title>SSD: Single Shot MultiBox Detector</title>
       <link>/post/ssd/</link>
       <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
       
       <guid>/post/ssd/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
+      <title>object detection(3): Fast rcnn</title>
+      <link>/post/fast_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
+      
+      <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为</description>
     </item>
     
     <item>

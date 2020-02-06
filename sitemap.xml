@@ -4,19 +4,24 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-01-28T22:39:21+08:00</lastmod>
+    <lastmod>2020-02-05T16:21:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/%E7%99%BB%E9%AB%98/</loc>
+    <lastmod>2020-02-05T16:21:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/%E7%BE%8E%E6%96%87/</loc>
+    <lastmod>2020-02-05T16:21:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/%E7%BE%8E%E6%96%87/%E6%9C%A8%E5%85%B0%E8%AF%8D%E6%8B%9F%E5%8F%A4%E5%86%B3%E7%BB%9D%E8%AF%8D%E6%9F%AC%E5%8F%8B/</loc>
     <lastmod>2020-01-28T22:39:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/%E7%BE%8E%E6%96%87/</loc>
-    <lastmod>2020-01-28T22:39:21+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -199,12 +204,6 @@
   </url>
   
   <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E4%BD%A0%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2019-11-28T22:31:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/%E7%BE%8E%E6%96%87/%E8%9C%80%E9%81%93%E9%9A%BE/</loc>
     <lastmod>2019-11-27T21:19:50+08:00</lastmod>
   </url>
@@ -257,6 +256,17 @@
   </url>
   
   <url>
+    <loc>/post/faster_rcnn%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2019-10-20T22:10:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/faster_rcnn/</loc>
+    <lastmod>2019-10-20T22:10:11+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/ssd/</loc>
     <lastmod>2019-10-18T12:19:25+08:00</lastmod>
     <priority>0</priority>
@@ -265,6 +275,17 @@
   <url>
     <loc>/post/ssd/</loc>
     <lastmod>2019-10-18T12:19:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/fast-rcnn/</loc>
+    <lastmod>2019-10-09T21:24:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/fast_rcnn%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2019-10-09T21:24:19+08:00</lastmod>
   </url>
   
   <url>

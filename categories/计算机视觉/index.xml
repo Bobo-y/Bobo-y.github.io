@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Facenet: A Unified Embedding for Face Recognition and Clustering</title>
+      <link>/post/facenet/</link>
+      <pubDate>Thu, 28 Nov 2019 22:31:58 +0800</pubDate>
+      
+      <guid>/post/facenet/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相</description>
+    </item>
+    
+    <item>
       <title>Yolo: v1-v3</title>
       <link>/post/yolo/</link>
       <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
@@ -75,12 +84,30 @@
     </item>
     
     <item>
+      <title>Object detection(4): Faster R-CNN</title>
+      <link>/post/faster_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
+      
+      <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然</description>
+    </item>
+    
+    <item>
       <title>SSD: Single Shot MultiBox Detector</title>
       <link>/post/ssd/</link>
       <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
       
       <guid>/post/ssd/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
+      <title>object detection(3): Fast rcnn</title>
+      <link>/post/fast_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
+      
+      <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为</description>
     </item>
     
     <item>
