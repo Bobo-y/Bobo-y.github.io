@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROIAlign on 扬帆起航</title>
+    <link>/tags/roialign/</link>
+    <description>Recent content in ROIAlign on 扬帆起航</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 07 Feb 2020 00:12:19 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/roialign/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>目标检测与实例分割: Mask rcnn</title>
+      <link>/post/mask_rcnn/</link>
+      <pubDate>Fri, 07 Feb 2020 00:12:19 +0800</pubDate>
+      
+      <guid>/post/mask_rcnn/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI poolin</description>
+    </item>
+    
+  </channel>
+</rss>
