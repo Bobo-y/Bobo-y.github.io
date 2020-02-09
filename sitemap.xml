@@ -4,13 +4,59 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/post/focal_loss/</loc>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/fpn/</loc>
+    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/fpn/</loc>
+    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -21,32 +67,8 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/post/mask_rcnn/</loc>
     <lastmod>2020-02-07T00:12:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2020-02-07T00:12:19+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -506,12 +528,6 @@
   <url>
     <loc>/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2019-07-21T21:25:20+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2019-07-21T21:25:20+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

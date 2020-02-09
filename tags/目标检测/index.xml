@@ -6,10 +6,73 @@
     <description>Recent content in 目标检测 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Jul 2019 21:25:20 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 14:42:44 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FPN: Feature Pyramid Networks for Object Detection </title>
+      <link>/post/fpn/</link>
+      <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
+      
+      <guid>/post/fpn/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用</description>
+    </item>
+    
+    <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+    </item>
+    
+    <item>
+      <title>Object detection(4): Faster R-CNN</title>
+      <link>/post/faster_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
+      
+      <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然</description>
+    </item>
+    
+    <item>
+      <title>SSD: Single Shot MultiBox Detector</title>
+      <link>/post/ssd/</link>
+      <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
+      
+      <guid>/post/ssd/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+    </item>
+    
+    <item>
+      <title>object detection(3): Fast rcnn</title>
+      <link>/post/fast_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
+      
+      <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为</description>
+    </item>
+    
+    <item>
+      <title>object detection(1): Rcnn</title>
+      <link>/post/rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
+      
+      <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcn</description>
+    </item>
+    
+    <item>
+      <title>Anchor box</title>
+      <link>/post/anchor_box/</link>
+      <pubDate>Tue, 01 Oct 2019 15:17:30 +0800</pubDate>
+      
+      <guid>/post/anchor_box/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
+    </item>
     
     <item>
       <title>基于yolo_v3的水印检测</title>

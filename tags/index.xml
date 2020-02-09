@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Feb 2020 00:12:19 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 14:42:44 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FPN</title>
+      <link>/tags/fpn/</link>
+      <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
+      
+      <guid>/tags/fpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>目标检测</title>
+      <link>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
+      
+      <guid>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ROIAlign</title>
@@ -242,15 +260,6 @@
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
       <guid>/tags/yolo_v3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>目标检测</title>
-      <link>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</link>
-      <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
-      
-      <guid>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,28 @@
     <description>Recent content in 论文阅读 on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Feb 2020 00:12:19 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 18:54:07 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Focal loss </title>
+      <link>/post/focal_loss/</link>
+      <pubDate>Sun, 09 Feb 2020 18:54:07 +0800</pubDate>
+      
+      <guid>/post/focal_loss/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); intro 主流的目标检测网络主要包含两种架构,一种是先进行region proposal再分别对得到的region 进行分类与边框回归的 two-stage 网络</description>
+    </item>
+    
+    <item>
+      <title>FPN: Feature Pyramid Networks for Object Detection </title>
+      <link>/post/fpn/</link>
+      <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
+      
+      <guid>/post/fpn/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用</description>
+    </item>
     
     <item>
       <title>目标检测与实例分割: Mask rcnn</title>
