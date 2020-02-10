@@ -6,10 +6,19 @@
     <description>Recent content on 扬帆起航</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Feb 2020 18:54:07 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Feb 2020 13:10:54 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Accelerating Object Detection by Erasing Background Activations 阅读</title>
+      <link>/post/omg_net/</link>
+      <pubDate>Mon, 10 Feb 2020 13:10:54 +0800</pubDate>
+      
+      <guid>/post/omg_net/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 该篇论文来源于Intel, 如其名用来加速目标检测. 主要针对于 one-stage 的目标检测算法. 主要创新点 对于 one-stage 的目标检测算法而言, 由于其设置了大量</description>
+    </item>
     
     <item>
       <title>Focal loss </title>

@@ -3,38 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/omg_net/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
-    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-02-10T13:10:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/focal_loss/</loc>
     <lastmod>2020-02-09T18:54:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2020-02-09T18:54:07+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -46,18 +63,6 @@
   <url>
     <loc>/post/fpn/</loc>
     <lastmod>2020-02-09T14:42:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-02-09T14:42:44+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -735,13 +740,13 @@
   </url>
   
   <url>
-    <loc>/categories/leetcode/</loc>
+    <loc>/tags/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/leetcode/</loc>
+    <loc>/categories/leetcode/</loc>
     <lastmod>2019-03-10T15:30:15+08:00</lastmod>
     <priority>0</priority>
   </url>
