@@ -140,7 +140,7 @@ code.has-jax {
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">2 分钟</time>
+	<time class="meta__text">3 分钟</time>
 </div></div>
 			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
@@ -175,11 +175,12 @@ code.has-jax {
 <li>重复这个过程,直到 B 为空.</li>
 </ul>
 
-<pre><code class="language-python">def nms(dests, thresh=0.3):
+<pre><code class="language-python">def nms(dests, thresh=0.3, top_k=-1, eps=1e-5):
     &quot;&quot;&quot;
     :param dests: box array  [[x1, y1, x2, y2, score],[x1, y1, x2, y2, score]...]
     :param thresh: nms ignore threshold
-    :return:
+    :param top_k:  keep top_k results. If k &lt;= 0, keep all the results.
+    :return: picked_box_scores (K, 5): results of NMS.
     &quot;&quot;&quot;
     x1 = dests[:, 0]
     y1 = dests[:, 1]
@@ -193,6 +194,8 @@ code.has-jax {
     while order.size &gt; 0:
         cur_ind = order[0]
         keep_box.append(dests[cur_ind, :])
+        if len(keep_box) == top_k &gt; 0 or dests.shape[0] == 1:
+            break
 
         xlt = np.maximum(x1[cur_ind], x1[order[1:]])
         ylt = np.maximum(y1[cur_ind], y1[order[1:]])
@@ -202,7 +205,7 @@ code.has-jax {
         inter_w = np.maximum(xrd - xlt + 1, 0.0)
         inter_h = np.maximum(yrd - ylt + 1, 0.0)
         inter = inter_h * inter_w
-        iou_area = inter / (areas[cur_ind] + areas[order[1:]] - inter)
+        iou_area = inter / (areas[cur_ind] + areas[order[1:]] - inter + eps)
         # 筛选出 IOU 小于阈值的 box 在 iou_area 中的index, 大于阈值的box作为冗余被去除
         ind = np.where(iou_area &lt;= thresh)[0]
         # 将筛选出的 box 的 index 重新构成 order, iou_area 中 ind 在 order中对应为 ind + 1
@@ -231,7 +234,7 @@ $$h = max(y _{rd} - y _{lt}, 0)$$</p>
 
 <p>当两个 box 不相交时, 坐标相减为负值, 置为0.</p>
 
-<pre><code class="language-python">def iou(box_a, box_b):
+<pre><code class="language-python">def iou(box_a, box_b, eps=1e-5):
     &quot;&quot;&quot;
     :param box_a: [x1, y1, x2, y2]
     :param box_b: [x1, y1, x2, y2]
@@ -249,7 +252,65 @@ $$h = max(y _{rd} - y _{lt}, 0)$$</p>
         inter_h = max(y_rb - y_lt, 0)
         return float(inter_w * inter_h)
     area_inter = intersection(box_a, box_b)
-    return area_inter / (area_boxa + area_boxb - area_inter)
+    return area_inter / (area_boxa + area_boxb - area_inter + eps)
+</code></pre>
+
+<hr />
+
+<h2 id="softnms">softnms</h2>
+
+<div align="center"><img src="/img/nms/3.jpg" width="400" height="400"></div>
+
+<p>对于上图, 得到两个 box, 目标概率分别为0.9, 0.8。 使用 NMS 算法, 设置 0.3 左右的 IOU 会导致绿色框被抑制掉. softnms 则采用降低重叠框的置信度, 重新个重叠框计算目标概率, 最后在根据给定的概率进行过滤.</p>
+
+<div align="left"><img src="/img/nms/4.jpg" width="400" height="500"></div> 
+
+<p>softnms 算法流程如上图, 对于 NMS 是将 IOU 大于给定值得 box 直接丢掉, softnms 则是对 box 进行重新计算 score. 计算完之后, 所有的 box 都在, 然后根据给定的包含目标的概率阈值进行筛选.</p>
+
+<p>算法中计算 $s_i$ 的公式普遍采用以下形式:</p>
+
+<p>$$s_i = s_i e ^{- \frac{iou(M,b_i)^2}{\sigma}}, \forall b_i \not\in D$$</p>
+
+<pre><code class="language-python">def softnms(dests, obj_thresh, sigma=0.5, top_k=-1, eps=1e-5):
+    &quot;&quot;&quot;
+    :param dests: box array  [[x1, y1, x2, y2, score],[x1, y1, x2, y2, score]...]
+    :param obj_thresh: object threshold
+    :param sigma: the parameter in score re-computation.
+                scores[i] = scores[i] * exp(-(iou_i)^2 / simga)
+    :param top_k:  keep top_k results. If k &lt;= 0, keep all the results.
+    :param eps: a small number to avoid 0 as denominator.
+    :return: picked_box_scores (K, 5): results of NMS.
+    &quot;&quot;&quot;
+    x1 = dests[:, 0]
+    y1 = dests[:, 1]
+    x2 = dests[:, 2]
+    y2 = dests[:, 3]
+    scores = dests[:, 4]
+    areas = (x2 - x1) * (y2 - y1)
+    order = scores.argsort()[::-1]
+    keep_box = []
+
+    while order.size &gt; 0:
+        cur_ind = order[0]
+        keep_box.append(dests[cur_ind, :])
+        if len(keep_box) == top_k &gt; 0 or dests.shape[0] == 1:
+            break
+
+        xlt = np.maximum(x1[cur_ind], x1[order[1:]])
+        ylt = np.maximum(y1[cur_ind], y1[order[1:]])
+        xrd = np.minimum(x2[cur_ind], x2[order[1:]])
+        yrd = np.minimum(y2[cur_ind], y2[order[1:]])
+
+        inter_w = np.maximum(xrd - xlt + 1, 0.0)
+        inter_h = np.maximum(yrd - ylt + 1, 0.0)
+        inter = inter_h * inter_w
+        iou_area = inter / (areas[cur_ind] + areas[order[1:]] - inter + eps)
+        #   scores[i] = scores[i] * exp(-(iou_i)^2 / simga)
+        dests[order[1:], -1] = dests[order[1:], -1] * np.exp(-(iou_area * iou_area) / sigma)
+        #   去掉小于 obj_thresh 的 box
+        ind = np.where(dests[order[1:], -1] &gt;= obj_thresh)[0]
+        order = order[ind + 1]
+    return keep_box
 </code></pre>
 
 		</div>
