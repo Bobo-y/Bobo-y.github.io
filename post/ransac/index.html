@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>线性拟合笔记之：Ransac算法 - 扬帆起航</title>
+	<title>线性拟合笔记之：Ransac算法 - fly away, chase dream</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -40,35 +40,35 @@
 		<header class="header">
 	<div class="container">
 		<div class="logo">
-			<a class="logo__link" href="/" title="扬帆起航" rel="home">
-			<div class="logo__title">扬帆起航</div>
-				<div class="logo__tagline">专注于机器学习、深度学习、计算机视觉、图像处理</div>
+			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
+			<div class="logo__title">fly away, chase dream</div>
+				<div class="logo__tagline">ML、CV、Image process, NLP</div>
 			</a>
 			
 		</div>
 		
 <nav class="menu">
 	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">选择</span>
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">关于我</a>
+			<a class="menu__link" href="/about/">about</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/leetcode/">力扣刷刷刷</a>
+			<a class="menu__link" href="/post/">blog</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/">博客</a>
+			<a class="menu__link" href="/leetcode/">leetcode</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/wiki/">日常工具集结</a>
+			<a class="menu__link" href="/links/">links</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/%E7%BE%8E%E6%96%87/">那些诗文</a>
+			<a class="menu__link" href="/%E7%BE%8E%E6%96%87/">read📚</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/links/">链接</a>
+			<a class="menu__link" href="/wiki/">wiki</a>
 		</li>
 	</ul>
 </nav>
@@ -140,7 +140,7 @@ code.has-jax {
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">3 分钟</time>
+	<time class="meta__text">3 minutes</time>
 </div></div>
 			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 			            <span id="busuanzi_container_site_pv">本站访问次数:<span id="busuanzi_value_site_pv">
@@ -320,10 +320,10 @@ plt.pause(3)
 		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
 	</figure>
 	<div class="authorbox__header">
-		<span class="authorbox__name">关于 Lin Yang</span>
+		<span class="authorbox__name">About Lin Yang</span>
 	</div>
 	<div class="authorbox__description">
-		走出校园的算法攻城狮一枚，专注于深度学习、计算机视觉、图像处理。
+		ML, DL, CV, NLP ....
 	</div>
 </div>
 
@@ -332,10 +332,10 @@ plt.pause(3)
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/linersqur/" rel="prev"><span class="post-nav__caption">«&thinsp;前一篇</span><p class="post-nav__post-title">线性拟合笔记之：最小二乘法</p></a>
+		<a class="post-nav__link" href="/post/linersqur/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">线性拟合笔记之：最小二乘法</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">模版匹配之相关匹配</p></a>
+		<a class="post-nav__link" href="/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">模版匹配之相关匹配</p></a>
 	</div>
 </nav>
 
@@ -345,14 +345,14 @@ plt.pause(3)
 			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
-			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
 		<input type="hidden" name="sitesearch" value="" />
 	</form>
 </div>
 <div class="widget-recent widget">
-	<h4 class="widget__title">近期文章</h4>
+	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/omg_net/">Accelerating Object Detection by Erasing Background Activations 阅读</a></li>
@@ -369,7 +369,7 @@ plt.pause(3)
 	</div>
 </div>
 <div class="widget-categories widget">
-	<h4 class="widget__title">分类</h4>
+	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
@@ -386,7 +386,7 @@ plt.pause(3)
 	</div>
 </div>
 <div class="widget-taglist widget">
-	<h4 class="widget__title">标签</h4>
+	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf (1)</a>
@@ -449,7 +449,7 @@ plt.pause(3)
 	</div>
 </div>
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">社群</h4>
+	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
 		<div class="widget-social__item widget__item">
 			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
@@ -467,7 +467,7 @@ plt.pause(3)
 </div>
 
 <div class="widget-social widget">
-	<h4 class="widget-social__title widget__title">友情链接</h4>
+	<h4 class="widget-social__title widget__title">friend link</h4>
 	<div class="widget-social__item widget__item">
 		<a class="widget-social__link widget__link btn" title="lulu" rel="noopener noreferrer" href="https://me.csdn.net/u013491950" target="_blank">
 			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
@@ -483,8 +483,8 @@ plt.pause(3)
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 扬帆起航.
-			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主题</span>
+			&copy; 2020 fly away, chase dream.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
 </footer>

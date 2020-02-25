@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tools on 扬帆起航</title>
+    <title>tools on fly away, chase dream</title>
     <link>/categories/tools/</link>
-    <description>Recent content in tools on 扬帆起航</description>
+    <description>Recent content in tools on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Dec 2019 20:38:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2020 14:00:55 +0800</lastBuildDate>
     
 	<atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python Orator 查询构造器速查手记</title>
+      <link>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Fri, 21 Feb 2020 14:00:55 +0800</pubDate>
+      
+      <guid>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); orator 是轻量级的数据库查询构造器, 提供便利的接口可以创建和执行查询操作，可以在大多数数据库中使用. 安装 pip install orator 配置, 获取数据库管理器实例</description>
+    </item>
     
     <item>
       <title>Docker小记</title>
@@ -18,6 +27,15 @@
       
       <guid>/wiki/docker%E5%B0%8F%E8%AE%B0/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Window</description>
+    </item>
+    
+    <item>
+      <title>Python 从图像URL获取图像数据的几种方式</title>
+      <link>/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 21 Oct 2019 15:12:24 +0800</pubDate>
+      
+      <guid>/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/</guid>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 线上服务器获取图像大都是从URL获取, 总结 Python 环境下, 以下几种从图像 URL 获取图像数据 PIL.Image + requests import requests as req from PIL import Image from io import BytesIO response = req.get(img_url) image = Image.open(BytesIO(response.content)) skimage from skimage import</description>
     </item>
     
     <item>
@@ -67,10 +85,10 @@
     
     <item>
       <title>mac通过跳板机对服务器上传下载文件</title>
-      <link>/wiki/tiaobanji/</link>
+      <link>/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
       
-      <guid>/wiki/tiaobanji/</guid>
+      <guid>/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({}); 使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，</description>
     </item>
     
