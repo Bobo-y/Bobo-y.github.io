@@ -6,7 +6,7 @@
     <description>Recent content in 论文阅读 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 14 Feb 2020 23:35:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 23:35:58 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</title>
       <link>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</link>
-      <pubDate>Fri, 14 Feb 2020 23:35:58 +0800</pubDate>
+      <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
       
       <guid>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</guid>
       <description>主流的目标检测算法大多数是基于anchor box的, one-stage 的yolo-v2, yolo-v3, ssd&amp;hellip;以及two-stage 的faster rcnn</description>
@@ -161,7 +161,7 @@
       <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
-      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即</description>
+      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上</description>
     </item>
     
     <item>

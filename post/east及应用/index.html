@@ -11,7 +11,7 @@
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.57.2" />
 	<meta property="og:title" content="East:An Efficient and Accurate Scene Text Detector阅读及应用" />
-<meta property="og:description" content="East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即" />
+<meta property="og:description" content="East是旷视科技2017年发表的论文,针对于场景文本检测。East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/" />
 <meta property="article:published_time" content="2019-08-28T00:03:07+08:00" />
@@ -108,20 +108,20 @@
 <div class="content post__content clearfix">
 			
 
-<p><em>East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即为检测文本框。因此,East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上做手机号码检测与识别,以及之前的基于yolo的水印检测。</em></p>
+<p><em>East是旷视科技2017年发表的论文,针对于场景文本检测。East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上做手机号码检测与识别,以及之前的基于yolo的水印检测。</em></p>
 
 <h2 id="overview">Overview</h2>
 
 <div align="center"><img src="/img/east/1.jpg"  height="500" width="800" > </div>
 
-<p>East的检测流程如图所示,类似于maskRCNN,一个分支做像素级语义分割（二分类（文本框与背景）此处的像素级可能不太准确，因为East并没有恢复到输入的分辨率）,另一个分支做box的回归。然后NMS得到最终的目标框。</p>
+<p>East的检测流程如图所示,类似于maskRCNN,一个分支做像素级语义分割（二分类（文本框与背景）,另一个分支做box的回归。然后NMS得到最终的目标框。</p>
 
 <h2 id="网络结构">网络结构</h2>
 
 <div align="center"><img src="/img/east/2.png"  height="400" width="600" ></div>
 
 <ul>
-<li>采用PVA net做特征提取, 然后又是标准的语义分割步骤,上采样以及跨层连接实现高层特征与低层特征融合。对于为什么没有恢复到原始大小,个人认为是否是若恢复原始尺寸,单个像素预测文本不太准（若输入为512*512,输出层为128*128,此时输出层一个像素对应来原图的4个像素）。</li>
+<li>采用PVA net做特征提取, 然后又是标准的语义分割步骤,上采样以及跨层连接实现高层特征与低层特征融合。</li>
 
 <li><p>对于网络的输出，首先输出单通道的score-map,每个点是否属于文本的概率。对于box回归，作者设计了两种方式，一种是RBOX,二是QUAD。</p>
 
@@ -251,10 +251,10 @@
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/">Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/">目标检测网络: yolo-v2 损失函数实现讲解</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/omg_net/">Accelerating Object Detection by Erasing Background Activations 阅读</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/focal_loss/">Focal loss </a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/fpn/">FPN: Feature Pyramid Networks for Object Detection </a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/mask_rcnn/">目标检测与实例分割: Mask rcnn</a></li>
 		</ul>
 	</div>
 </div>
@@ -311,6 +311,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>

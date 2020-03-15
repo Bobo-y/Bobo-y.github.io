@@ -26,7 +26,7 @@
       <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
-      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即</description>
+      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上</description>
     </item>
     
   </channel>

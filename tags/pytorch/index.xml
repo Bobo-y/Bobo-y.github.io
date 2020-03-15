@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pytorch on fly away, chase dream</title>
+    <link>/tags/pytorch/</link>
+    <description>Recent content in pytorch on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 10 Feb 2020 16:20:36 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>目标检测网络: yolo-v2 损失函数实现讲解</title>
+      <link>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Mon, 10 Feb 2020 16:20:36 +0800</pubDate>
+      
+      <guid>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</guid>
+      <description>最近闲暇时自己在pytorch实现并训练了yolo-v2, 对yolo-v2的实现做一个简单的总结, 主要是loss 层, 别的地方都没啥难度 关于y</description>
+    </item>
+    
+    <item>
+      <title>目标检测网络: yolo-v1 实现关键点讲解</title>
+      <link>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v1%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 10 Dec 2019 16:20:31 +0800</pubDate>
+      
+      <guid>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v1%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</guid>
+      <description>yolo-v1作为anchor free 的目标检测方法, 虽然已经较老，但深入理解其原理还是很有必要的. 对于个人而言, 完全从头实现目标检测算法是必不可</description>
+    </item>
+    
+  </channel>
+</rss>
