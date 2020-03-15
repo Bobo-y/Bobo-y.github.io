@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
       
       <guid>/post/edge_gan/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简</description>
+      <description>最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简单做个小结</description>
     </item>
     
   </channel>

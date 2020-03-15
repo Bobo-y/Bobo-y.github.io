@@ -17,7 +17,7 @@
       <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
       
       <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然</description>
+      <description>主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然后在RPN</description>
     </item>
     
   </channel>

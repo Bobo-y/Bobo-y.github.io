@@ -17,7 +17,7 @@
       <pubDate>Tue, 01 Oct 2019 15:17:30 +0800</pubDate>
       
       <guid>/post/anchor_box/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
+      <description>对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid 输出两个b</description>
     </item>
     
   </channel>

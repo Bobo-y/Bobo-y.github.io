@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Feb 2020 13:10:54 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2020 23:35:58 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</title>
+      <link>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</link>
+      <pubDate>Fri, 14 Feb 2020 23:35:58 +0800</pubDate>
+      
+      <guid>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</guid>
+      <description>主流的目标检测算法大多数是基于anchor box的, one-stage 的yolo-v2, yolo-v3, ssd&amp;hellip;以及two-stage 的faster rcnn</description>
+    </item>
     
     <item>
       <title>Accelerating Object Detection by Erasing Background Activations 阅读</title>
@@ -17,7 +26,7 @@
       <pubDate>Mon, 10 Feb 2020 13:10:54 +0800</pubDate>
       
       <guid>/post/omg_net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 该篇论文来源于Intel, 如其名用来加速目标检测. 主要针对于 one-stage 的目标检测算法. 主要创新点 对于 one-stage 的目标检测算法而言, 由于其设置了大量</description>
+      <description>该篇论文来源于Intel, 如其名用来加速目标检测. 主要针对于 one-stage 的目标检测算法. 主要创新点 对于 one-stage 的目标检测算法而言, 由于其设置了大量的 default box, 然后</description>
     </item>
     
     <item>
@@ -26,7 +35,7 @@
       <pubDate>Sun, 09 Feb 2020 18:54:07 +0800</pubDate>
       
       <guid>/post/focal_loss/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); intro 主流的目标检测网络主要包含两种架构,一种是先进行region proposal再分别对得到的region 进行分类与边框回归的 two-stage 网络</description>
+      <description>intro 主流的目标检测网络主要包含两种架构,一种是先进行region proposal再分别对得到的region 进行分类与边框回归的 two-stage 网络, RCNN 及其衍</description>
     </item>
     
     <item>
@@ -35,7 +44,7 @@
       <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
       
       <guid>/post/fpn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用</description>
+      <description>常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用单方向多个</description>
     </item>
     
     <item>
@@ -44,7 +53,7 @@
       <pubDate>Fri, 07 Feb 2020 00:12:19 +0800</pubDate>
       
       <guid>/post/mask_rcnn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI poolin</description>
+      <description>mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI pooling存在的 misalignment</description>
     </item>
     
     <item>
@@ -53,7 +62,7 @@
       <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
       
       <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练</description>
+      <description>主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练的进行网络</description>
     </item>
     
     <item>
@@ -62,7 +71,7 @@
       <pubDate>Thu, 02 Jan 2020 23:54:19 +0800</pubDate>
       
       <guid>/post/densecrf%E5%B0%8F%E8%AE%A1/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端</description>
+      <description>在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端优化. 随着</description>
     </item>
     
     <item>
@@ -71,7 +80,7 @@
       <pubDate>Tue, 24 Dec 2019 22:09:22 +0800</pubDate>
       
       <guid>/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 可分离卷积主要包括空间可分离卷积（Spatial Separable Convolutions）、深度可分离卷积（Depthwise Separable Convolut</description>
+      <description>可分离卷积主要包括空间可分离卷积（Spatial Separable Convolutions）、深度可分离卷积（Depthwise Separable Convolutions.</description>
     </item>
     
     <item>
@@ -80,7 +89,7 @@
       <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
       
       <guid>/post/se-net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进</description>
+      <description>Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进行强化来提</description>
     </item>
     
     <item>
@@ -89,7 +98,25 @@
       <pubDate>Thu, 28 Nov 2019 22:31:58 +0800</pubDate>
       
       <guid>/post/facenet/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相</description>
+      <description>主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相似人脸) 任</description>
+    </item>
+    
+    <item>
+      <title>Anchor free 目标检测修炼之路: DenseBox : Unifying Landmark Localization with End to End Object Detection</title>
+      <link>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFdense_box/</link>
+      <pubDate>Wed, 13 Nov 2019 22:16:21 +0800</pubDate>
+      
+      <guid>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFdense_box/</guid>
+      <description>DenseBox 是与yolo, faster rcnn同期的目标检测网络, 与yolo v1一样采用 anchor-free的思想, 网络结构采用FCN来实现目标检测 主要创新点</description>
+    </item>
+    
+    <item>
+      <title>Dlib 人脸相关实践</title>
+      <link>/post/dlib%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
+      
+      <guid>/post/dlib%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dlib由C++编写，提供了和机器学习、数值计算、图模型算法、图像处理等领域相关的一系列功能, 对Python 也提供了便利的接口, 但C++ 版功</description>
     </item>
     
     <item>
@@ -98,7 +125,7 @@
       <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
       
       <guid>/post/yolo/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+      <description>目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网络. 主要区</description>
     </item>
     
     <item>
@@ -107,7 +134,7 @@
       <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>
       
       <guid>/post/how_to_built_a_simple_maskrcnn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支 网络结构 MASK-Rc</description>
+      <description>coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支 网络结构 MASK-Rcnn主要是</description>
     </item>
     
     <item>
@@ -116,7 +143,7 @@
       <pubDate>Thu, 24 Oct 2019 16:51:27 +0800</pubDate>
       
       <guid>/post/inception_v1_to_v4/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对卷积神经网络而言，提升网络的深度与宽度能够显著提升网络的性能，但是网络越大意味着参数量的增加，会使网络更加容易过拟合。同时，增加</description>
+      <description>对卷积神经网络而言，提升网络的深度与宽度能够显著提升网络的性能，但是网络越大意味着参数量的增加，会使网络更加容易过拟合。同时，增加网络的大小</description>
     </item>
     
     <item>
@@ -125,7 +152,7 @@
       <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
       
       <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然</description>
+      <description>主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然后在RPN</description>
     </item>
     
     <item>
@@ -134,7 +161,7 @@
       <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
       
       <guid>/post/ssd/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超</description>
+      <description>SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超越. SSD 具有</description>
     </item>
     
     <item>
@@ -143,7 +170,7 @@
       <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
       
       <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为</description>
+      <description>主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为训练SVM</description>
     </item>
     
     <item>
@@ -152,7 +179,7 @@
       <pubDate>Mon, 07 Oct 2019 22:05:27 +0800</pubDate>
       
       <guid>/post/gru%E5%B0%8F%E7%BB%93/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门</description>
+      <description>GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门，输出门，</description>
     </item>
     
     <item>
@@ -161,7 +188,7 @@
       <pubDate>Sat, 05 Oct 2019 19:40:34 +0800</pubDate>
       
       <guid>/post/spp_net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连</description>
+      <description>在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连接的CNN</description>
     </item>
     
     <item>
@@ -170,7 +197,7 @@
       <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
       
       <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcn</description>
+      <description>Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcnn 进行小结</description>
     </item>
     
     <item>
@@ -179,7 +206,7 @@
       <pubDate>Tue, 01 Oct 2019 15:17:30 +0800</pubDate>
       
       <guid>/post/anchor_box/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid</description>
+      <description>对于主流的 one-stage(Faster r-cnn&amp;hellip;) 或者是 tow-stage(SSD, YOLO&amp;hellip;)的目标检测算法, 大多都采用了 anchor/prior box机制. Anchor-box 的意义 在yolo-v1 中, 每个grid 输出两个b</description>
     </item>
     
     <item>
@@ -188,7 +215,7 @@
       <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
       
       <guid>/post/edge_gan/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简</description>
+      <description>最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简单做个小结</description>
     </item>
     
     <item>
@@ -197,7 +224,7 @@
       <pubDate>Fri, 13 Sep 2019 19:51:54 +0800</pubDate>
       
       <guid>/post/lstm/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输</description>
+      <description>记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输入数据具有</description>
     </item>
     
     <item>
@@ -206,7 +233,7 @@
       <pubDate>Thu, 12 Sep 2019 17:28:58 +0800</pubDate>
       
       <guid>/post/nms/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 非极大值抑制（Non-Maximum Suppression，NMS），即抑制不是极大值的元素，可以理解为局部最大搜索. 在目标检测中</description>
+      <description>非极大值抑制（Non-Maximum Suppression，NMS），即抑制不是极大值的元素，可以理解为局部最大搜索. 在目标检测中, 无论是 one-stage</description>
     </item>
     
     <item>
@@ -215,7 +242,7 @@
       <pubDate>Sun, 08 Sep 2019 16:07:07 +0800</pubDate>
       
       <guid>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN</description>
+      <description>主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN及其变体。</description>
     </item>
     
     <item>
@@ -224,7 +251,7 @@
       <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来</description>
+      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即</description>
     </item>
     
     <item>
@@ -233,7 +260,7 @@
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       
       <guid>/post/cyclegan/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像</description>
+      <description>在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像必须成对的</description>
     </item>
     
     <item>
@@ -242,7 +269,7 @@
       <pubDate>Sat, 24 Aug 2019 00:03:12 +0800</pubDate>
       
       <guid>/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); .img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数</description>
+      <description>.img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数。使用de</description>
     </item>
     
     <item>
@@ -251,7 +278,7 @@
       <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
       
       <guid>/post/37reasonsforyournetnotwork/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.</description>
+      <description>神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.最基本的措</description>
     </item>
     
     <item>
@@ -260,7 +287,7 @@
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
       <guid>/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数</description>
+      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
     </item>
     
     <item>
@@ -269,7 +296,7 @@
       <pubDate>Thu, 06 Jun 2019 15:25:02 +0800</pubDate>
       
       <guid>/post/videoseg_summary/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的</description>
+      <description>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少</description>
     </item>
     
     <item>
@@ -278,7 +305,7 @@
       <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
       
       <guid>/post/hr_net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层</description>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以</description>
     </item>
     
     <item>
@@ -287,7 +314,7 @@
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
       <guid>/post/keras_data_aug/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_direct</description>
+      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）</description>
     </item>
     
     <item>
@@ -296,7 +323,7 @@
       <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
       
       <guid>/post/keras_duofenlei/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率</description>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
     </item>
     
     <item>
@@ -305,7 +332,7 @@
       <pubDate>Tue, 26 Mar 2019 15:20:23 +0800</pubDate>
       
       <guid>/post/keras_dataload/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来</description>
+      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera</description>
     </item>
     
     <item>
@@ -314,7 +341,7 @@
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
       <guid>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;)</description>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
     </item>
     
     <item>
@@ -323,7 +350,7 @@
       <pubDate>Sat, 22 Dec 2018 15:34:07 +0800</pubDate>
       
       <guid>/post/knn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距</description>
+      <description>KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出</description>
     </item>
     
     <item>
@@ -332,7 +359,7 @@
       <pubDate>Thu, 20 Dec 2018 15:44:06 +0800</pubDate>
       
       <guid>/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图</description>
+      <description>模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图像的什么地</description>
     </item>
     
     <item>
@@ -341,7 +368,7 @@
       <pubDate>Wed, 19 Dec 2018 15:52:22 +0800</pubDate>
       
       <guid>/post/ransac/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算</description>
+      <description>关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数</description>
     </item>
     
     <item>
@@ -350,7 +377,7 @@
       <pubDate>Tue, 18 Dec 2018 15:57:45 +0800</pubDate>
       
       <guid>/post/linersqur/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配</description>
+      <description>关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小</description>
     </item>
     
     <item>
@@ -359,7 +386,7 @@
       <pubDate>Wed, 28 Nov 2018 16:24:49 +0800</pubDate>
       
       <guid>/post/libsvm%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页</description>
+      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载</description>
     </item>
     
     <item>
@@ -368,7 +395,7 @@
       <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
       
       <guid>/post/keras_simi/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count =</description>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
     </item>
     
     <item>
@@ -377,7 +404,7 @@
       <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
       
       <guid>/post/kdog_cat/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)]</description>
+      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
     </item>
     
     <item>
@@ -386,7 +413,7 @@
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
       
       <guid>/post/psnr/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); ###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样</description>
+      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数</description>
     </item>
     
     <item>
@@ -395,7 +422,7 @@
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
       <guid>/post/coonectregion/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); ###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易</description>
+      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
     </item>
     
   </channel>

@@ -17,7 +17,7 @@
       <pubDate>Tue, 24 Dec 2019 22:09:22 +0800</pubDate>
       
       <guid>/post/%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8D%B7%E7%A7%AF/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 可分离卷积主要包括空间可分离卷积（Spatial Separable Convolutions）、深度可分离卷积（Depthwise Separable Convolut</description>
+      <description>可分离卷积主要包括空间可分离卷积（Spatial Separable Convolutions）、深度可分离卷积（Depthwise Separable Convolutions.</description>
     </item>
     
     <item>
@@ -26,7 +26,16 @@
       <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
       
       <guid>/post/se-net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进</description>
+      <description>Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进行强化来提</description>
+    </item>
+    
+    <item>
+      <title>Dlib 人脸相关实践</title>
+      <link>/post/dlib%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
+      
+      <guid>/post/dlib%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dlib由C++编写，提供了和机器学习、数值计算、图模型算法、图像处理等领域相关的一系列功能, 对Python 也提供了便利的接口, 但C++ 版功</description>
     </item>
     
     <item>
@@ -35,7 +44,7 @@
       <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
       
       <guid>/post/yolo/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网</description>
+      <description>目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网络. 主要区</description>
     </item>
     
     <item>
@@ -44,7 +53,7 @@
       <pubDate>Mon, 28 Oct 2019 23:58:27 +0800</pubDate>
       
       <guid>/post/how_to_built_a_simple_maskrcnn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支 网络结构 MASK-Rc</description>
+      <description>coursera deeplearning.ai目标检测课后实践，构建一个简化版单目标yolo目标检测并添加前景对象分割分支 网络结构 MASK-Rcnn主要是</description>
     </item>
     
     <item>
@@ -53,7 +62,7 @@
       <pubDate>Mon, 07 Oct 2019 22:05:27 +0800</pubDate>
       
       <guid>/post/gru%E5%B0%8F%E7%BB%93/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门</description>
+      <description>GRU(Gated Recurrent Unit)即门控循环单元，是LSTM的变体. GRU保留了LSTM对梯度消失问题的抗力，但内部更简单. LSTM有：输入门，遗忘门，输出门，</description>
     </item>
     
     <item>
@@ -62,7 +71,7 @@
       <pubDate>Thu, 19 Sep 2019 23:32:10 +0800</pubDate>
       
       <guid>/post/edge_gan/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简</description>
+      <description>最近刚好在做分割，顺手玩玩用GAN做边缘检测. 本意是想在BSDS轮廓分割数据集上做，同时验证针对样本极不平衡的损失函数挑选问题，简单做个小结</description>
     </item>
     
     <item>
@@ -71,7 +80,7 @@
       <pubDate>Fri, 13 Sep 2019 19:51:54 +0800</pubDate>
       
       <guid>/post/lstm/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输</description>
+      <description>记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输入数据具有</description>
     </item>
     
     <item>
@@ -80,7 +89,7 @@
       <pubDate>Sun, 08 Sep 2019 16:07:07 +0800</pubDate>
       
       <guid>/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN</description>
+      <description>主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN及其变体。</description>
     </item>
     
     <item>
@@ -89,7 +98,7 @@
       <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
       
       <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来</description>
+      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。与较早的rcnn,ctpn不同之处个人认为主要在于East以目标检测来做。目标即</description>
     </item>
     
     <item>
@@ -98,7 +107,7 @@
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       
       <guid>/post/cyclegan/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像</description>
+      <description>在cyclegan之前，对于两个域的图像进行转化，比如图像风格转换，它们的训练集图像都是成对的.而cyclegan则解决了训练图像必须成对的</description>
     </item>
     
     <item>
@@ -107,7 +116,7 @@
       <pubDate>Sat, 24 Aug 2019 00:03:12 +0800</pubDate>
       
       <guid>/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); .img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数</description>
+      <description>.img-wrap{ border: 1px } img{ float: left; width: 25%; height: 160; } one-shot 半监督视频单目标分割 网络实现 采用keras实现，网络结构如下。 类似于unet，但没有unet那么多的参数。使用de</description>
     </item>
     
     <item>
@@ -116,7 +125,7 @@
       <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
       
       <guid>/post/37reasonsforyournetnotwork/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.</description>
+      <description>神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.最基本的措</description>
     </item>
     
     <item>
@@ -125,7 +134,7 @@
       <pubDate>Sun, 21 Jul 2019 21:25:20 +0800</pubDate>
       
       <guid>/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数</description>
+      <description>背景 近年来版权意识的提高，在使用别人图片的时候（尤其是商业领域），需要检测图片是否有别的公司的水印（ 主要针对人眼可见的水印，除去数字加密等水</description>
     </item>
     
     <item>
@@ -134,7 +143,7 @@
       <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
       
       <guid>/post/hr_net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层</description>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以</description>
     </item>
     
     <item>
@@ -143,7 +152,7 @@
       <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
       
       <guid>/post/keras_duofenlei/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率</description>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
     </item>
     
     <item>
@@ -152,7 +161,7 @@
       <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
       
       <guid>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;)</description>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
     </item>
     
     <item>
@@ -161,7 +170,7 @@
       <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
       
       <guid>/post/keras_simi/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count =</description>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
     </item>
     
     <item>
@@ -170,7 +179,7 @@
       <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
       
       <guid>/post/kdog_cat/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)]</description>
+      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
     </item>
     
   </channel>

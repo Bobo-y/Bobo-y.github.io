@@ -17,7 +17,7 @@
       <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
       
       <guid>/post/fpn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用</description>
+      <description>常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用单方向多个</description>
     </item>
     
   </channel>

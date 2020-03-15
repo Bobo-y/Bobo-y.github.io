@@ -17,7 +17,7 @@
       <pubDate>Sat, 22 Dec 2018 15:34:07 +0800</pubDate>
       
       <guid>/post/knn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距</description>
+      <description>KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出</description>
     </item>
     
   </channel>

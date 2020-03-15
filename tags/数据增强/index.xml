@@ -17,7 +17,7 @@
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
       <guid>/post/keras_data_aug/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_direct</description>
+      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）</description>
     </item>
     
   </channel>

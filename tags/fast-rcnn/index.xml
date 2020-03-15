@@ -17,7 +17,7 @@
       <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
       
       <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为</description>
+      <description>主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为训练SVM</description>
     </item>
     
   </channel>

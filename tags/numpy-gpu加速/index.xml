@@ -17,7 +17,7 @@
       <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
       
       <guid>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊</description>
+      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），</description>
     </item>
     
   </channel>

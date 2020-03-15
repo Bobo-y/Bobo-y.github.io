@@ -17,7 +17,7 @@
       <pubDate>Fri, 07 Feb 2020 00:12:19 +0800</pubDate>
       
       <guid>/post/mask_rcnn/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI poolin</description>
+      <description>mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI pooling存在的 misalignment</description>
     </item>
     
   </channel>

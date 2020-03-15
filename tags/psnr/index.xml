@@ -17,7 +17,7 @@
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
       
       <guid>/post/psnr/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); ###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样</description>
+      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数</description>
     </item>
     
   </channel>

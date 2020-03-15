@@ -6,7 +6,7 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 26 Feb 2020 11:14:30 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 16:31:43 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>tools</title>
       <link>/categories/tools/</link>
-      <pubDate>Wed, 26 Feb 2020 11:14:30 +0800</pubDate>
+      <pubDate>Thu, 05 Mar 2020 16:31:43 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>计算机视觉</title>
       <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Mon, 10 Feb 2020 13:10:54 +0800</pubDate>
+      <pubDate>Fri, 14 Feb 2020 23:35:58 +0800</pubDate>
       
       <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>论文阅读</title>
       <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Mon, 10 Feb 2020 13:10:54 +0800</pubDate>
+      <pubDate>Fri, 14 Feb 2020 23:35:58 +0800</pubDate>
       
       <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
       <description></description>
@@ -44,6 +44,15 @@
       <pubDate>Tue, 24 Dec 2019 22:09:22 +0800</pubDate>
       
       <guid>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>机器学习</title>
+      <link>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
+      
+      <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     
@@ -80,15 +89,6 @@
       <pubDate>Sun, 10 Mar 2019 15:30:15 +0800</pubDate>
       
       <guid>/categories/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>机器学习</title>
-      <link>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sat, 22 Dec 2018 15:34:07 +0800</pubDate>
-      
-      <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     

@@ -17,7 +17,7 @@
       <pubDate>Sat, 05 Oct 2019 19:40:34 +0800</pubDate>
       
       <guid>/post/spp_net/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连</description>
+      <description>在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连接的CNN</description>
     </item>
     
   </channel>

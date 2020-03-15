@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
       
       <guid>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD</description>
+      <description>1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD DATA LOCAL INPATH &#39;/home/yourcsvfile.csv&#39; OVERWRITE</description>
     </item>
     
   </channel>

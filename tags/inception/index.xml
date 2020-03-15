@@ -17,7 +17,7 @@
       <pubDate>Thu, 24 Oct 2019 16:51:27 +0800</pubDate>
       
       <guid>/post/inception_v1_to_v4/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 对卷积神经网络而言，提升网络的深度与宽度能够显著提升网络的性能，但是网络越大意味着参数量的增加，会使网络更加容易过拟合。同时，增加</description>
+      <description>对卷积神经网络而言，提升网络的深度与宽度能够显著提升网络的性能，但是网络越大意味着参数量的增加，会使网络更加容易过拟合。同时，增加网络的大小</description>
     </item>
     
   </channel>

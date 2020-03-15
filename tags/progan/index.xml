@@ -17,7 +17,7 @@
       <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
       
       <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练</description>
+      <description>主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练的进行网络</description>
     </item>
     
   </channel>

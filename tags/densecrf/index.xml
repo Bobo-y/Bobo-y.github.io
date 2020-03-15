@@ -17,7 +17,7 @@
       <pubDate>Thu, 02 Jan 2020 23:54:19 +0800</pubDate>
       
       <guid>/post/densecrf%E5%B0%8F%E8%AE%A1/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); 在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端</description>
+      <description>在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端优化. 随着</description>
     </item>
     
   </channel>

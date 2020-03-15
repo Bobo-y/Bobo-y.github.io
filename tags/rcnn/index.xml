@@ -17,7 +17,7 @@
       <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
       
       <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
-      <description>(adsbygoogle = window.adsbygoogle || []).push({}); Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcn</description>
+      <description>Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcnn 进行小结</description>
     </item>
     
   </channel>
