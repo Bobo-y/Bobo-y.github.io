@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</title>
+      <link>/post/ohem/</link>
+      <pubDate>Sun, 16 Feb 2020 18:46:23 +0800</pubDate>
+      
+      <guid>/post/ohem/</guid>
+      <description>在目标检测中, 存在正负样本类别不平衡的现象, 特别是对于单阶段的目标检测算法. 如果每张训练图片中目标个数还很少的话, 背景区域就占了绝大部分, 分</description>
+    </item>
+    
+    <item>
       <title>目标检测网络: yolo-v2 损失函数实现讲解</title>
       <link>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Mon, 10 Feb 2020 16:20:36 +0800</pubDate>
