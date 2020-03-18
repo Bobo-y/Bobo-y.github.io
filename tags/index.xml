@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Anchor Free</title>
+      <title>Anchor free</title>
       <link>/tags/anchor-free/</link>
       <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
       
@@ -98,6 +98,15 @@
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
       
       <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>人脸检测</title>
+      <link>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Wed, 18 Dec 2019 22:54:51 +0800</pubDate>
+      
+      <guid>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
       <description></description>
     </item>
     

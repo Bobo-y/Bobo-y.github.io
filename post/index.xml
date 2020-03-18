@@ -102,6 +102,15 @@
     </item>
     
     <item>
+      <title>人脸检测网络: SSH: Single Stage Headless Face Detector</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bssh%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Wed, 18 Dec 2019 22:54:51 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bssh%E7%BD%91%E7%BB%9C/</guid>
+      <description>最近看了一下人脸检测的论文, 除了通用的目标检测方法, 看见了这篇论文, 整体上而言和yolo-v3结构是类似的, SSH 设计了不同的检测头. SSH 网络 SSH 网</description>
+    </item>
+    
+    <item>
       <title>Squeeze-and-Excitation Networks</title>
       <link>/post/se-net/</link>
       <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
@@ -126,6 +135,15 @@
       
       <guid>/post/facenet/</guid>
       <description>主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相似人脸) 任</description>
+    </item>
+    
+    <item>
+      <title>目标检测之RFB模块: Receptive Field Block Net for Accurate and Fast Object Detection</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B9%8Brfb%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 18 Nov 2019 22:02:39 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B9%8Brfb%E6%A8%A1%E5%9D%97/</guid>
+      <description>RFB 模块主要是针对在保持轻量级网络的速度快、计算量小的情况下, 提升检测的精度, 模块如其名, 从感受野角度入手, 增强轻量级网络的特征表示, 主要用来</description>
     </item>
     
     <item>

@@ -70,10 +70,10 @@
 			<a class="menu__link" href="/leetcode/">leetcode</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/links/">links</a>
+			<a class="menu__link" href="/life/">life📚</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/%E7%BE%8E%E6%96%87/">read📚</a>
+			<a class="menu__link" href="/links/">links</a>
 		</li>
 		<li class="menu__item">
 			<a class="menu__link" href="/wiki/">wiki</a>
@@ -91,6 +91,66 @@
 			<div class="primary">
 			
 <main class="main list" role="main"><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/keras_dataload/">
+			<img src="/img/keras_loaddata/keras-logo-2018-large-1200.png" alt="Keras数据集加载小结" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_dataload/" rel="bookmark">
+			Keras数据集加载小结
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-26T15:20:23">2019-03-26</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_dataload/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<figure class="list__thumbnail">
+		<a href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/">
+			<img src="/img/cover/favicon.png" alt="python下mnist数据集转化为图片" />
+		</a>
+	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/" rel="bookmark">
+			python下mnist数据集转化为图片
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-12-22T15:37:02">2018-12-22</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr) 以
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	<figure class="list__thumbnail">
 		<a href="/post/knn/">
 			<img src="/img/cover/favicon.png" alt="监督分类之：KNN算法" />
@@ -330,36 +390,6 @@
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/post/psnr/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/coonectregion/">
-			<img src="/img/cover/favicon.png" alt="图像联通区域标记" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/coonectregion/" rel="bookmark">
-			图像联通区域标记
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-09-21T17:01:55">2018-09-21</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86" rel="category">图像处理</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/coonectregion/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -395,13 +425,23 @@
 		
 		
 	
+		
+		
+	
 	
 	<span class="pagination__item pagination__item--current">5</span>
 		
 	
 	
+		
+			<a class="pagination__item pagination__item btn" href="/post/page/6/">6</a>
+		
+		
 	
-	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;5&nbsp;页</span>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/6/">›</a>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/6/">»</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;6&nbsp;页</span>
 	
 </div>
 
@@ -498,6 +538,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类</a>
