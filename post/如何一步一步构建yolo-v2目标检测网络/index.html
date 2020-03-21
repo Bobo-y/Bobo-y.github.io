@@ -142,15 +142,17 @@
         &quot;&quot;&quot;
         batch_size = len(ground_truth)
         # anchor mask 标记哪些 anchor 激活负责检测目标, 负责检测目标置为1
-        anchor_mask = torch.zeros(batch_size, self.anchor_number, 1, grid_h * grid_w)
-        # obj_mask 标记哪些 grid cell内有目标
-        obj_mask = torch.zeros(batch_size, self.anchor_number, grid_h * grid_w)
+        anchor_mask = torch.zeros(batch_size, self.anchor_number, grid_h * grid_w)
         # 构建yolo输出
         targets = torch.zeros(batch_size, self.anchor_number, 5 + 1, grid_h * grid_w)
+
+        true_bboxs = torch.zeros((batch_size, self.max_box_per_image, 4))
+        bbox_count = torch.zeros((batch_size,))
+
         if self.use_gpu:
             anchor_mask = anchor_mask.cuda()
-            obj_mask = obj_mask.cuda()
             targets = targets.cuda()
+            true_bboxs = true_bboxs.cuda()
 
         # 对于batch_size 内的每一个box, 分配anchor, 生成需要的格式
         for b in range(batch_size):
@@ -158,6 +160,11 @@
             if len(bboxs) == 0:
                 continue
             for box in bboxs:
+                # 记录每张图片里的真实bbox
+                bbox_ind = int(bbox_count[b] % self.max_box_per_image)
+                true_bboxs[b][bbox_ind, :4] = box[:4]
+                bbox_count[b] += 1
+
                 best_iou = 0
                 best_anchor_index = 0
                 # Torch的多分类交叉熵函数的label输入为类别的index, 非 one-hot
@@ -191,10 +198,9 @@
                 # 将当前 box 的信息赋值给对应的anchor, 同时对 mask 进行标记
                 grid_info = torch.cat([x_offset.view(-1, 1), y_offset.view(-1, 1), w_log.view(-1, 1), h_log.view(-1, 1), obj_conf.view(-1, 1), cls.view(-1, 1)], dim=1)
                 targets[b, best_anchor_index, :, row * grid_w + col] = grid_info.clone()
-                anchor_mask[b, best_anchor_index, :, row * grid_w + col] = 1
-                obj_mask[b, :, row * grid_w + col] = 1
+                anchor_mask[b, best_anchor_index, row * grid_w + col] = 1
 
-        return targets, anchor_mask, obj_mask
+        return targets, anchor_mask, true_bboxs
 </code></pre>
 
 <p>损失计算</p>
@@ -202,9 +208,9 @@
 <pre><code class="language-python">def forward(self, net_out, ground_truth):
         # 网络输出shape
         batch_size, grid_h, grid_w, out_channel = net_out.shape
-        targets, anchor_mask, obj_mask = self.encode_target(ground_truth, grid_h, grid_w)
-        # 置信度 mask
-        conf_mask = anchor_mask.squeeze(dim=2)
+        targets, anchor_mask, true_bboxs = self.encode_target(ground_truth, grid_h, grid_w)
+        anchor_mask = anchor_mask.unsqueeze(dim=2)
+
         # 将网络的输出变形, 方便统一计算
         net_out = net_out.view(batch_size, self.anchor_number, self.class_number + 5, grid_h * grid_w)
         coords = torch.zeros_like(net_out[:, :, :4, :])
@@ -217,106 +223,50 @@
         # 宽和高
         coords[:, :, 2:4, :] = net_out[:, :, 2:4, :]
         # 置信度
-        conf = net_out[:, :, 4, :].sigmoid()
-        # 类别预测, 并view 成交叉熵函数需要的格式
+        p_conf = net_out[:, :, 4, :].sigmoid()
+        # 类别预测, 并view 成多分类交叉熵函数需要的格式
         clas = net_out[:, :, 5:, :].view(batch_size * self.anchor_number, self.class_number, grid_h * grid_w).transpose(
             1, 2).contiguous().view(-1, self.class_number)
 
         # anchor mask view 成 BCE 输出格式
-        clas_mask = anchor_mask.view(batch_size * self.anchor_number, 1, grid_h * grid_w).transpose(1,2).contiguous().view(-1, 1)
+        clas_mask = anchor_mask.view(batch_size * self.anchor_number, 1, grid_h * grid_w).transpose(1, 2).contiguous().view(-1, 1)
         # class gt view 成 BCE 输入格式
-        t_clas = targets[:, :, 5, :].view(batch_size * self.anchor_number, 1, grid_h * grid_w).transpose(1,2).contiguous().view(-1, 1).long()
+        t_clas = targets[:, :, 5, :].view(batch_size * self.anchor_number, 1, grid_h * grid_w).transpose(1, 2).contiguous().view(-1, 1).long()
         # 计算 class mask 中激活的anchor的分类损失
         clas_loss = F.cross_entropy(clas, t_clas.squeeze(dim=1), reduction='none') * clas_mask.squeeze(dim=1)
 
-        # 由于引入了预测阶段, 预热的目的是为了让网络先学习anchor的shape, 因此对坐标的计算方式做了一点修改
-        true_box_xy = targets[:, :, 0:2, :]
-        true_box_wh = targets[:, :, 2:4, :]
-        xywh_mask = anchor_mask
-
-        if self.warmup_keeper &lt; self.warmup_batches:
-            self.warmup_batches += batch_size
-            # 预热阶段, 对于所有不负责检测的anchor, 让它们学习以对应感受野中心点为中心的, 宽和高为为当前层anchor的目标
-            # 对不包含物体的GT将其x,y 偏移量设为0.5
-            true_box_xy = (true_box_xy + 0.5) * (1 - anchor_mask) + true_box_xy
-            # 所有anchor全部激活
-            xywh_mask = torch.ones_like(anchor_mask)
-
-            if self.use_gpu:
-                xywh_mask = xywh_mask.cuda()
-
         # coords loss
-        anchor_w = self.anchors[:, 0].contiguous().view(self.anchor_number, 1)
-        anchor_h = self.anchors[:, 1].contiguous().view(self.anchor_number, 1)
-
-        if self.use_gpu:
-            anchor_w = anchor_w.cuda()
-            anchor_h = anchor_h.cuda()
-        # 为了统一预热和正式训练的损失计算, 改为计算预测物体宽高与图像的宽高的比, 网络仍然学习的是log(w(h)/anchor_w(h))
-        # 以下操作将网络输出与GT还原, 并计算比例
-        t_w_scale = true_box_wh[:, :, 0, :].exp() * anchor_w / self.net_factor[0]
-        t_h_scale = true_box_wh[:, :, 1, :].exp() * anchor_h / self.net_factor[1]
-
-        p_w_scale = coords[:, :, 2, :].exp() * anchor_w / self.net_factor[0]
-        p_h_scale = coords[:, :, 3, :].exp() * anchor_h / self.net_factor[1]
-
-        true_wh_scale = torch.cat([torch.unsqueeze(t_w_scale, 2), torch.unsqueeze(t_h_scale, 2)], dim=2)
-        pre_wh_scale = torch.cat([torch.unsqueeze(p_w_scale, 2), torch.unsqueeze(p_h_scale, 2)], dim=2)
-
-        xy_loss = F.mse_loss(coords[:, :, :2, :], true_box_xy, reduction='none') * xywh_mask
-        wh_loss = F.mse_loss(pre_wh_scale, true_wh_scale, reduction='none') * xywh_mask
+        wh_loss_scale = 2.0 - 1.0 * targets[:, :, 2:3, :] * targets[:, :, 3:4, :] / (torch.pow(self.reduction, 2) * grid_w * grid_h)
+        xy_loss = F.mse_loss(coords[:, :, :2, :], targets[:, :, 0:2, :], reduction='none') * anchor_mask * wh_loss_scale
+        wh_loss = F.mse_loss(coords[:, :, 2:4, :], targets[:, :, 2:4, :], reduction='none') * anchor_mask * wh_loss_scale
         coords_loss = xy_loss.sum() + wh_loss.sum()
 
         # 置信度损失
-        # 1. 当 grid cell 内有目标时, 计算负责检测的anchor与gt的置信度损失
         t_conf = targets[:, :, 4, :]
-        obj_conf_loss = F.mse_loss(conf, t_conf, reduction='none') * conf_mask
+        grid_predicts = self.rescale_to_img(coords, grid_h, grid_w).permute(0, 3, 1, 2).unsqueeze(3)
+        iou_scores = self.compute_iou(grid_predicts, true_bboxs.unsqueeze(1).unsqueeze(1))
+        iou_max = iou_scores.max(-1, keepdim=True)[0]
+        noobj_mask = 1 - anchor_mask.squeeze(dim=2)
+        label_noobj_mask = (iou_max &lt; self.obj_thresh).squeeze(3).permute(0, 2, 1).float() * noobj_mask
+        obj_conf_loss = anchor_mask.squeeze(dim=2) * self.focal_loss(p_conf, t_conf)
+        noobj_conf_loss = label_noobj_mask * self.focal_loss(p_conf, t_conf)
 
-        # 2. 无目标置信度损失
-        # 2.1 当grid cell 内无目标时
-        noobj_conf_loss1 = F.mse_loss(conf, t_conf, reduction='none') * (1 - obj_mask)
+        pos_count = anchor_mask.sum() + 1e-5
+        neg_count = label_noobj_mask.sum() + 1e-5
 
-        # 2.2 当grid cell 内有目标, 未激活的anchor 的置信度损失. 如果anchor 的预测与GT的iou大于给定阈值, 则不计算损失,
-        # 否则作为背景计算损失.
+        clas_loss = clas_loss.sum() * self.class_scale / batch_size
+        coords_loss = coords_loss * self.coord_scale / batch_size
+        obj_conf_loss = obj_conf_loss.sum() * self.obj_scale / batch_size
+        noobj_conf_loss = noobj_conf_loss.sum() * self.noobj_scale / batch_size
+        total_loss = clas_loss + coords_loss + obj_conf_loss + noobj_conf_loss
 
-        # 获取grid内有目标, 但是没有分配物体的anchor
-        no_response_anchors_mask = (1 - conf_mask) * obj_mask
-        # 将网络的输出还原成真实的坐标（可以不用还原到真实坐标, 还原到相对grid cell的值也可）
-        grid_predicts = self.to_grid_coords(coords, grid_h, grid_w, anchor_w, anchor_h)
-        # 将gt还原为真实坐标
-        grid_gts = self.to_grid_coords(targets[:, :, 0:4, :], grid_h, grid_w, anchor_w, anchor_h)
-        # 计算每一个anchor预测值与gt的iou
-        iou_scores = self.compute_iou(grid_predicts, grid_gts)
-        # 挑选出哪些anchor预测值小于给定阈值
-        iou_gt_pred_mask = (iou_scores &lt; self.obj_thresh).float()
-        # 计算grid cell 内有目标, 同时anchor预测IOU小于给定阈值的置信度损失
-        noobj_conf_loss2 = F.mse_loss(conf, t_conf, reduction='none') * no_response_anchors_mask * iou_gt_pred_mask
-
-        noobj_conf_loss = noobj_conf_loss1 + noobj_conf_loss2
-
-        total_loss = clas_loss.sum() * self.class_scale + coords_loss * self.coord_scale + obj_conf_loss.sum() * self.obj_scale + noobj_conf_loss.sum() * self.noobj_scale
-
-        # 做一些在线统计
-        count = conf_mask.sum()
-        count_noobj = (1 - obj_mask).sum()
-        recall_50 = ((iou_scores &gt;= 0.5).float() * conf_mask).sum() / (count + 1e-3)
-        recall_75 = ((iou_scores &gt;= 0.75).float() * conf_mask).sum() / (count + 1e-3)
-        avg_iou = (iou_scores * conf_mask).sum() / (count + 1e-3)
-        avg_obj = (conf * conf_mask).sum() / (count + 1e-3)
-        avg_noobj = (conf * (1 - obj_mask)).sum() / (count_noobj + 1e-3)
-        obj_conf = list(zip(*torch.where(conf * conf_mask)))
-
-        for i in range(len(obj_conf)):
-            print(&quot; obj {}  confidence: {}, prids coords: {}, t_coords: {}&quot;.format(i, conf[obj_conf[i]],
-                  to_cpu(grid_predicts[obj_conf[i][0], obj_conf[i][1], :, obj_conf[i][2]]),
-                  to_cpu(grid_gts[obj_conf[i][0], obj_conf[i][1], :, obj_conf[i][2]])))
-        print(&quot; avg_obj_conf: {}\n avg_noobj_cof: {}\n avg_iou: {}\n count obj: {}\n count noobj: {}\n iou &gt; 50 recall:&quot;
-              &quot;{}\n iou &gt;75 recall: {}&quot;.format(avg_obj, avg_noobj, avg_iou, count, count_noobj, recall_50, recall_75))
-
-        print(&quot;total loss: {}, class loss: {}, coords loss: {}, obj_conf loss: {}, noobj_conf loss: {}&quot;.format(
-            total_loss, clas_loss.sum() * self.class_scale, coords_loss * self.coord_scale, obj_conf_loss.sum() *
-            self.obj_scale, noobj_conf_loss.sum() * self.noobj_scale))
-        print(&quot;--------------------------------------------------------&quot;)
+        # Online statistics
+        print(&quot;network output shape: ({}, {}), pos_num: {}, neg_num: {}, total loss: {}, class loss: {}, coords loss: &quot;
+              &quot;{}, obj_conf loss: {}, noobj_conf loss: {}&quot;.format(grid_w, grid_h, torch.floor(pos_count),
+                                                                  torch.floor(neg_count), total_loss, clas_loss,
+                                                                  coords_loss, obj_conf_loss, noobj_conf_loss))
+        print(&quot;object average conf: {}&quot;.format((anchor_mask.squeeze(dim=2) * p_conf).sum() / pos_count))
+        print(&quot;background average conf: {}&quot;.format((label_noobj_mask * p_conf).sum() / label_noobj_mask.sum()))
 
         return total_loss
 </code></pre>
