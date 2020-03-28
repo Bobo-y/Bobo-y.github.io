@@ -25,6 +25,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
 	
 	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -50,7 +54,8 @@
 				<div class="logo__tagline">ML、CV、Image process...</div> 
 			</a>
 			
-			<div class="float_right"></div>
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
 			
 		</div>
 		
@@ -382,7 +387,8 @@ conn.table('users').where('votes', '&gt;', 100).lock_for_update().get()
 		
 	</article>
 </main>
-
+<div class="social-share"></div>
+  <br/>
 
 <div class="authorbox clearfix">
 	<figure class="authorbox__avatar">
@@ -407,6 +413,18 @@ conn.table('users').where('votes', '&gt;', 100).lock_for_update().get()
 		<a class="post-nav__link" href="/wiki/centos7%E5%AE%89%E8%A3%85pip/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Centos7将默认Python升级到Python3以及安装pip</p></a>
 	</div>
 </nav>
+
+
+
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yl305237731/yl305237731.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
 
 
 
