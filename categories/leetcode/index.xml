@@ -6,10 +6,46 @@
     <description>Recent content in LeetCode on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 10 Mar 2019 15:30:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 18:20:03 +0800</lastBuildDate>
     
 	<atom:link href="/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数组中数字出现的次数</title>
+      <link>/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</link>
+      <pubDate>Fri, 27 Mar 2020 18:20:03 +0800</pubDate>
+      
+      <guid>/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</guid>
+      <description>给定一个数组, 假设其中有两个数只出现了一次, 其它均出现了两次, 让找出只出现了一次的两个数字. 对于数字出现次数, 可从异或角度出发. 当数组中只有</description>
+    </item>
+    
+    <item>
+      <title>字符串全排列</title>
+      <link>/leetcode/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/</link>
+      <pubDate>Fri, 27 Mar 2020 15:16:15 +0800</pubDate>
+      
+      <guid>/leetcode/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/</guid>
+      <description>给定字符串, 输出或统计全排列个数. 并去重 void judge(char* p, char* P1){ while(p&amp;lt;p1){ if(*p==*p1) return true; } return false; } void permutation(char* orig, char* ind_cur){ if(*ind_cur==&#39;\0&#39;) cout&amp;lt;&amp;lt;orig&amp;lt;&amp;lt;endl; else{ for(char* p=ind_cur;p!=&#39;\0&#39;;p++){ if(judge(ind_cur, p)) continue; char temp = *p; *p=*ind_cur; *ind_cur=temp; permutation(orig, ind_cur+1); temp=*p; *p=*ind_cur; *ind_cur=temp; } } } void permutation(char* str){ if(str==nullptr) return; permutation(str,str); }</description>
+    </item>
+    
+    <item>
+      <title>二叉树</title>
+      <link>/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Wed, 25 Mar 2020 18:39:38 +0800</pubDate>
+      
+      <guid>/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>树节点 struct TreeNode{ int val; TreeNode * left, * right; TreeNode(int val){ this-&amp;gt;val = val; this-&amp;gt;left=nullptr; this-&amp;gt;right= nullptr; } }; 二叉树前中后序遍历递归非递归 // 递归实现 void pre_order(TreeNode * head){ if(head==nullptr) return; cout&amp;lt;&amp;lt;head-&amp;gt;val&amp;lt;&amp;lt;endl; if(head-&amp;gt;left) pre_order(head-&amp;gt;left); if(head-&amp;gt;right) pre_order(head-&amp;gt;right); } void in_order(TreeNode * head){ if(head-&amp;gt;left) in_order(head-&amp;gt;left); cout&amp;lt;&amp;lt;head-&amp;gt;val&amp;lt;&amp;lt;endl; if(head-&amp;gt;right) in_order(head-&amp;gt;right); } void post_order(TreeNode * head){ if(head-&amp;gt;left) post_order(head-&amp;gt;left); if(head-&amp;gt;right)</description>
+    </item>
+    
+    <item>
+      <title>堆排序以及topk问题</title>
+      <link>/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 25 Mar 2020 15:10:37 +0800</pubDate>
+      
+      <guid>/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
+      <description>大根堆排序流程: 建堆, 构建二叉树, 父节点均大于子节点 将堆首元素与堆尾元素交换 重新调整堆, 不包含堆尾元素 void adjustHeap(std::vector&amp;lt;int&amp;gt; &amp;amp;arr, int p_ind, int size){ int l_child = 2 * p_ind + 1; while(l_child &amp;lt; size){ if(l_child</description>
+    </item>
     
     <item>
       <title>LeetCode:开方函数sqrt实现</title>

@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>图像修复3: Free-Form Image Inpainting with Gated Convolution</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</link>
+      <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</guid>
+      <description>此文与图像修复2中review过的论文一样, 出至Adobe同一人之手. 主要创新点 提出门控卷积解决普通卷积将所有输入像素都视为有效像素的问题,</description>
+    </item>
+    
+    <item>
       <title>OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</title>
       <link>/post/ohem/</link>
       <pubDate>Sun, 16 Feb 2020 18:46:23 +0800</pubDate>
@@ -75,6 +84,15 @@
     </item>
     
     <item>
+      <title>图像修复1: Image Inpainting for Irregular Holes Using Partial Convolutions</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</link>
+      <pubDate>Tue, 28 Jan 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
+      <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
+    </item>
+    
+    <item>
       <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
       <link>/post/progan%E9%98%85%E8%AF%BB/</link>
       <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
@@ -90,6 +108,15 @@
       
       <guid>/post/densecrf%E5%B0%8F%E8%AE%A1/</guid>
       <description>在图像分割中，在FCN之前，流行的是以概率图模型为代表的传统方法. FCN出来之后一段时间，仍然流行的是以FCN为前端，CRF为后端优化. 随着</description>
+    </item>
+    
+    <item>
+      <title>图像修复2: Generative Image Inpainting with Contextual Attention</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</link>
+      <pubDate>Thu, 02 Jan 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</guid>
+      <description>之前介绍过NVIDIA的图像修复方法, 使用的img-img的方法. 由于GAN网络在图像生成方向的大放异彩, 今天review一下, Adobe的</description>
     </item>
     
     <item>
@@ -135,6 +162,15 @@
       
       <guid>/post/facenet/</guid>
       <description>主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相似人脸) 任</description>
+    </item>
+    
+    <item>
+      <title>Dcgan: 深度卷积生成对抗网络</title>
+      <link>/post/dcgan/</link>
+      <pubDate>Tue, 26 Nov 2019 19:58:17 +0800</pubDate>
+      
+      <guid>/post/dcgan/</guid>
+      <description>DCGAN 在 Ian Goodfellow 提出GAN 以来, 在图像领域GAN 可谓被玩的声名大噪. DCAGN 主要是针对卷积实现GAN时, 提出一系列架构设计规则, 使其训练更稳定. 主要有以下</description>
     </item>
     
     <item>
@@ -463,11 +499,11 @@
     
     <item>
       <title>图像联通区域标记</title>
-      <link>/post/coonectregion/</link>
+      <link>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</link>
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
-      <guid>/post/coonectregion/</guid>
-      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
+      <guid>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</guid>
+      <description>由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查</description>
     </item>
     
   </channel>

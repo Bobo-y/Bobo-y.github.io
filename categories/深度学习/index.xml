@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Dcgan: 深度卷积生成对抗网络</title>
+      <link>/post/dcgan/</link>
+      <pubDate>Tue, 26 Nov 2019 19:58:17 +0800</pubDate>
+      
+      <guid>/post/dcgan/</guid>
+      <description>DCGAN 在 Ian Goodfellow 提出GAN 以来, 在图像领域GAN 可谓被玩的声名大噪. DCAGN 主要是针对卷积实现GAN时, 提出一系列架构设计规则, 使其训练更稳定. 主要有以下</description>
+    </item>
+    
+    <item>
       <title>Dlib 人脸相关实践</title>
       <link>/post/dlib%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>

@@ -6,10 +6,19 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 10 Mar 2020 23:35:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 18:20:03 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode</title>
+      <link>/categories/leetcode/</link>
+      <pubDate>Fri, 27 Mar 2020 18:20:03 +0800</pubDate>
+      
+      <guid>/categories/leetcode/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>计算机视觉</title>
@@ -35,6 +44,15 @@
       <pubDate>Thu, 05 Mar 2020 16:31:43 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>图像修复</title>
+      <link>/categories/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D/</link>
+      <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/categories/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D/</guid>
       <description></description>
     </item>
     
@@ -80,15 +98,6 @@
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
       <guid>/categories/keras/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LeetCode</title>
-      <link>/categories/leetcode/</link>
-      <pubDate>Sun, 10 Mar 2019 15:30:15 +0800</pubDate>
-      
-      <guid>/categories/leetcode/</guid>
       <description></description>
     </item>
     

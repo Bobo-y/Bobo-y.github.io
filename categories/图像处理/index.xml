@@ -40,11 +40,11 @@
     
     <item>
       <title>图像联通区域标记</title>
-      <link>/post/coonectregion/</link>
+      <link>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</link>
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
-      <guid>/post/coonectregion/</guid>
-      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
+      <guid>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</guid>
+      <description>由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查</description>
     </item>
     
   </channel>

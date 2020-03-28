@@ -15,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/leetcode/" />
 
-<meta property="og:updated_time" content="2019-04-07T18:53:24+08:00" />
+<meta property="og:updated_time" content="2020-03-27T18:20:03+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -91,6 +91,103 @@
 			<div class="primary">
 			
 <main class="main list" role="main"><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/" rel="bookmark">
+			数组中数字出现的次数
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-03-27T18:20:03">2020-03-27</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		给定一个数组, 假设其中有两个数只出现了一次, 其它均出现了两次, 让找出只出现了一次的两个数字. 对于数字出现次数, 可从异或角度出发. 当数组中只有
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/leetcode/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/" rel="bookmark">
+			字符串全排列
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-03-27T15:16:15">2020-03-27</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		给定字符串, 输出或统计全排列个数. 并去重 void judge(char* p, char* P1){ while(p&lt;p1){ if(*p==*p1) return true; } return false; } void permutation(char* orig, char* ind_cur){ if(*ind_cur=='\0') cout&lt;&lt;orig&lt;&lt;endl; else{ for(char* p=ind_cur;p!='\0';p++){ if(judge(ind_cur, p)) continue; char temp = *p; *p=*ind_cur; *ind_cur=temp; permutation(orig, ind_cur+1); temp=*p; *p=*ind_cur; *ind_cur=temp; } } } void permutation(char* str){ if(str==nullptr) return; permutation(str,str); }
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="bookmark">
+			二叉树
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-03-25T18:39:38">2020-03-25</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		树节点 struct TreeNode{ int val; TreeNode * left, * right; TreeNode(int val){ this-&gt;val = val; this-&gt;left=nullptr; this-&gt;right= nullptr; } }; 二叉树前中后序遍历递归非递归 // 递归实现 void pre_order(TreeNode * head){ if(head==nullptr) return; cout&lt;&lt;head-&gt;val&lt;&lt;endl; if(head-&gt;left) pre_order(head-&gt;left); if(head-&gt;right) pre_order(head-&gt;right); } void in_order(TreeNode * head){ if(head-&gt;left) in_order(head-&gt;left); cout&lt;&lt;head-&gt;val&lt;&lt;endl; if(head-&gt;right) in_order(head-&gt;right); } void post_order(TreeNode * head){ if(head-&gt;left) post_order(head-&gt;left); if(head-&gt;right)
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/" rel="bookmark">
+			堆排序以及topk问题
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-03-25T15:10:37">2020-03-25</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		大根堆排序流程: 建堆, 构建二叉树, 父节点均大于子节点 将堆首元素与堆尾元素交换 重新调整堆, 不包含堆尾元素 void adjustHeap(std::vector&lt;int&gt; &amp;arr, int p_ind, int size){ int l_child = 2 * p_ind + 1; while(l_child &lt; size){ if(l_child
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/leetcode/%E5%89%91%E6%8C%87offer23%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/" rel="bookmark">
@@ -240,106 +337,6 @@
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/leetcode/%E5%89%91%E6%8C%87offer12%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/leetcode/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/" rel="bookmark">
-			剑指offer27:树的镜像
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-04-04T23:52:48">2019-04-04</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%89%91%e6%8c%87offer" rel="category">剑指offer</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		题目：操作给定的二叉树，将其变换为源二叉树的镜像 如上图所示，树的镜像是将每个节点的左右子树交换，因此，对于每个节点只需要交换左右子树的指针，
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/leetcode/%E5%89%91%E6%8C%87offer27%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/leetcode/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/" rel="bookmark">
-			剑指offer26:树的子结构
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-04-04T22:58:37">2019-04-04</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%89%91%e6%8c%87offer" rel="category">剑指offer</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		题目:输入两棵二叉树A，B，判断B是不是A的子结构. 如上图，其中B为A的子结构. 思路: 判断是否为子树，首先需要定位到子树的根节点，然后对两颗
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/leetcode/%E5%89%91%E6%8C%87offer26%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/leetcode/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/" rel="bookmark">
-			剑指offer25:合并两个排序的链表
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-04-03T16:58:07">2019-04-03</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%89%91%e6%8c%87offer" rel="category">剑指offer</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		题目：输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则. 思路：对于两个递增的链表合并，合并后仍递增
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/leetcode/%E5%89%91%E6%8C%87offer25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/leetcode/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" rel="bookmark">
-			剑指offer24:反转链表
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-04-03T00:43:52">2019-04-03</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%89%91%e6%8c%87offer" rel="category">剑指offer</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		题目：输入一个链表，反转链表后，输出新链表的表头. 思路一：链表反转，需将节点指向改变. 可以每次取下一个节点向之前的节点中插入，采用头插法实现
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/leetcode/%E5%89%91%E6%8C%87offer24%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -401,10 +398,10 @@
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/">Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/">图像修复3: Free-Form Image Inpainting with Gated Convolution</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ohem/">OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/">目标检测网络: yolo-v2 损失函数实现讲解</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/omg_net/">Accelerating Object Detection by Erasing Background Activations 阅读</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/focal_loss/">Focal loss </a></li>
 		</ul>
 	</div>
 </div>
@@ -417,6 +414,7 @@
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
@@ -437,6 +435,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/fast-rcnn" title="Fast rcnn">Fast rcnn</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/faster_rcnn" title="Faster rcnn">Faster rcnn</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/fpn" title="Fpn">Fpn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gan" title="Gan">Gan</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令</a>

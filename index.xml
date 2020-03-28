@@ -6,10 +6,46 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Mar 2020 09:03:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 18:20:03 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数组中数字出现的次数</title>
+      <link>/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</link>
+      <pubDate>Fri, 27 Mar 2020 18:20:03 +0800</pubDate>
+      
+      <guid>/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</guid>
+      <description>给定一个数组, 假设其中有两个数只出现了一次, 其它均出现了两次, 让找出只出现了一次的两个数字. 对于数字出现次数, 可从异或角度出发. 当数组中只有</description>
+    </item>
+    
+    <item>
+      <title>字符串全排列</title>
+      <link>/leetcode/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/</link>
+      <pubDate>Fri, 27 Mar 2020 15:16:15 +0800</pubDate>
+      
+      <guid>/leetcode/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/</guid>
+      <description>给定字符串, 输出或统计全排列个数. 并去重 void judge(char* p, char* P1){ while(p&amp;lt;p1){ if(*p==*p1) return true; } return false; } void permutation(char* orig, char* ind_cur){ if(*ind_cur==&#39;\0&#39;) cout&amp;lt;&amp;lt;orig&amp;lt;&amp;lt;endl; else{ for(char* p=ind_cur;p!=&#39;\0&#39;;p++){ if(judge(ind_cur, p)) continue; char temp = *p; *p=*ind_cur; *ind_cur=temp; permutation(orig, ind_cur+1); temp=*p; *p=*ind_cur; *ind_cur=temp; } } } void permutation(char* str){ if(str==nullptr) return; permutation(str,str); }</description>
+    </item>
+    
+    <item>
+      <title>二叉树</title>
+      <link>/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Wed, 25 Mar 2020 18:39:38 +0800</pubDate>
+      
+      <guid>/leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>树节点 struct TreeNode{ int val; TreeNode * left, * right; TreeNode(int val){ this-&amp;gt;val = val; this-&amp;gt;left=nullptr; this-&amp;gt;right= nullptr; } }; 二叉树前中后序遍历递归非递归 // 递归实现 void pre_order(TreeNode * head){ if(head==nullptr) return; cout&amp;lt;&amp;lt;head-&amp;gt;val&amp;lt;&amp;lt;endl; if(head-&amp;gt;left) pre_order(head-&amp;gt;left); if(head-&amp;gt;right) pre_order(head-&amp;gt;right); } void in_order(TreeNode * head){ if(head-&amp;gt;left) in_order(head-&amp;gt;left); cout&amp;lt;&amp;lt;head-&amp;gt;val&amp;lt;&amp;lt;endl; if(head-&amp;gt;right) in_order(head-&amp;gt;right); } void post_order(TreeNode * head){ if(head-&amp;gt;left) post_order(head-&amp;gt;left); if(head-&amp;gt;right)</description>
+    </item>
+    
+    <item>
+      <title>堆排序以及topk问题</title>
+      <link>/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 25 Mar 2020 15:10:37 +0800</pubDate>
+      
+      <guid>/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
+      <description>大根堆排序流程: 建堆, 构建二叉树, 父节点均大于子节点 将堆首元素与堆尾元素交换 重新调整堆, 不包含堆尾元素 void adjustHeap(std::vector&amp;lt;int&amp;gt; &amp;amp;arr, int p_ind, int size){ int l_child = 2 * p_ind + 1; while(l_child &amp;lt; size){ if(l_child</description>
+    </item>
     
     <item>
       <title>沁园春.雪</title>
@@ -63,6 +99,15 @@
       
       <guid>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</guid>
       <description>orator 是轻量级的数据库查询构造器, 提供便利的接口可以创建和执行查询操作，可以在大多数数据库中使用. 安装 pip install orator 配置, 获取数据库管理器实例 from orator import DatabaseManager config</description>
+    </item>
+    
+    <item>
+      <title>图像修复3: Free-Form Image Inpainting with Gated Convolution</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</link>
+      <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</guid>
+      <description>此文与图像修复2中review过的论文一样, 出至Adobe同一人之手. 主要创新点 提出门控卷积解决普通卷积将所有输入像素都视为有效像素的问题,</description>
     </item>
     
     <item>
@@ -156,6 +201,15 @@
     </item>
     
     <item>
+      <title>图像修复1: Image Inpainting for Irregular Holes Using Partial Convolutions</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</link>
+      <pubDate>Tue, 28 Jan 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
+      <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
+    </item>
+    
+    <item>
       <title>梦游天姥吟留别</title>
       <link>/life/%E6%A2%A6%E6%B8%B8%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%AB/</link>
       <pubDate>Mon, 27 Jan 2020 21:14:02 +0800</pubDate>
@@ -243,6 +297,15 @@
       
       <guid>/life/%E9%A2%98%E9%83%BD%E5%9F%8E%E5%8D%97%E5%BA%84/</guid>
       <description>题都城南庄 崔护 去年今日此门中， 人面桃花相映红。 人面不知何处去， 桃花依旧笑春风。</description>
+    </item>
+    
+    <item>
+      <title>图像修复2: Generative Image Inpainting with Contextual Attention</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</link>
+      <pubDate>Thu, 02 Jan 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</guid>
+      <description>之前介绍过NVIDIA的图像修复方法, 使用的img-img的方法. 由于GAN网络在图像生成方向的大放异彩, 今天review一下, Adobe的</description>
     </item>
     
     <item>
@@ -342,6 +405,15 @@
       
       <guid>/life/%E8%9C%80%E9%81%93%E9%9A%BE/</guid>
       <description>蜀道难 噫吁嚱，危乎高哉！蜀道之难，难于上青天！ 蚕丛及鱼凫，开国何茫然！ 尔来四万八千岁，不与秦塞通人烟。 西当太白有鸟道，可以横绝峨眉巅。 地崩山</description>
+    </item>
+    
+    <item>
+      <title>Dcgan: 深度卷积生成对抗网络</title>
+      <link>/post/dcgan/</link>
+      <pubDate>Tue, 26 Nov 2019 19:58:17 +0800</pubDate>
+      
+      <guid>/post/dcgan/</guid>
+      <description>DCGAN 在 Ian Goodfellow 提出GAN 以来, 在图像领域GAN 可谓被玩的声名大噪. DCAGN 主要是针对卷积实现GAN时, 提出一系列架构设计规则, 使其训练更稳定. 主要有以下</description>
     </item>
     
     <item>
@@ -931,10 +1003,10 @@
     
     <item>
       <title>剑指offer6:逆向打印链表</title>
-      <link>/leetcode/%E5%89%91%E6%8C%87offer6/</link>
+      <link>/leetcode/%E9%80%86%E5%90%91%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Sat, 09 Mar 2019 23:40:45 +0800</pubDate>
       
-      <guid>/leetcode/%E5%89%91%E6%8C%87offer6/</guid>
+      <guid>/leetcode/%E9%80%86%E5%90%91%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</guid>
       <description>问题描述：输入一个链表的头节点，反向打印出链表. 链表结构如下 struct ListNode { int val; ListNode *next; ListNode(int x): val(x), next(NULL){ } }; 思路：链表反向打印，先进后出，考虑使用栈. class Solution { public: void printListFromTailToHead(ListNode*</description>
     </item>
     
@@ -958,10 +1030,10 @@
     
     <item>
       <title>剑指offer4：二维数组中的查找</title>
-      <link>/leetcode/%E5%89%91%E6%8C%87offer4/</link>
+      <link>/leetcode/%E5%89%91%E6%8C%87offer4%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/</link>
       <pubDate>Sun, 03 Mar 2019 20:36:38 +0800</pubDate>
       
-      <guid>/leetcode/%E5%89%91%E6%8C%87offer4/</guid>
+      <guid>/leetcode/%E5%89%91%E6%8C%87offer4%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/</guid>
       <description>问题描述：在一个二维数组中，每一行都按从做到右递增顺序排序，每一列都按从上到下递增顺序排序。输入一个二维数组与一个整数，判断数组中是否有这个</description>
     </item>
     
@@ -976,10 +1048,10 @@
     
     <item>
       <title>剑指offer7:重构二叉树</title>
-      <link>/leetcode/%E5%89%91%E6%8C%87offer7/</link>
+      <link>/leetcode/%E9%87%8D%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
       <pubDate>Fri, 01 Mar 2019 19:10:54 +0800</pubDate>
       
-      <guid>/leetcode/%E5%89%91%E6%8C%87offer7/</guid>
+      <guid>/leetcode/%E9%87%8D%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
       <description>题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{</description>
     </item>
     
@@ -1111,11 +1183,11 @@
     
     <item>
       <title>图像联通区域标记</title>
-      <link>/post/coonectregion/</link>
+      <link>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</link>
       <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
       
-      <guid>/post/coonectregion/</guid>
-      <description>###由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），</description>
+      <guid>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</guid>
+      <description>由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查</description>
     </item>
     
     <item>
