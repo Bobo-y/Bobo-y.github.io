@@ -75,15 +75,6 @@
     </item>
     
     <item>
-      <title>图像修复1: Image Inpainting for Irregular Holes Using Partial Convolutions</title>
-      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</link>
-      <pubDate>Tue, 28 Jan 2020 01:00:09 +0800</pubDate>
-      
-      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
-      <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
-    </item>
-    
-    <item>
       <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
       <link>/post/progan%E9%98%85%E8%AF%BB/</link>
       <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
@@ -99,6 +90,15 @@
       
       <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</guid>
       <description>之前介绍过NVIDIA的图像修复方法, 使用的img-img的方法. 由于GAN网络在图像生成方向的大放异彩, 今天review一下, Adobe的</description>
+    </item>
+    
+    <item>
+      <title>图像修复1: Image Inpainting for Irregular Holes Using Partial Convolutions</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</link>
+      <pubDate>Sat, 28 Dec 2019 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
+      <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
     </item>
     
     <item>
