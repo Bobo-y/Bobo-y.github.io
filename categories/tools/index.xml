@@ -6,10 +6,19 @@
     <description>Recent content in tools on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 05 Mar 2020 16:31:43 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 17:04:12 +0800</lastBuildDate>
     
 	<atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Three-sum</title>
+      <link>/leetcode/three_sum/</link>
+      <pubDate>Wed, 01 Apr 2020 17:04:12 +0800</pubDate>
+      
+      <guid>/leetcode/three_sum/</guid>
+      <description>Three sum 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。 注意：</description>
+    </item>
     
     <item>
       <title>Siege 对web 接口进行 post 压力测试</title>
@@ -36,6 +45,15 @@
       
       <guid>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</guid>
       <description>orator 是轻量级的数据库查询构造器, 提供便利的接口可以创建和执行查询操作，可以在大多数数据库中使用. 安装 pip install orator 配置, 获取数据库管理器实例 from orator import DatabaseManager config</description>
+    </item>
+    
+    <item>
+      <title>使用onnx将Pytorch模型转到tf</title>
+      <link>/post/pytorch_onnx_tf/</link>
+      <pubDate>Thu, 02 Jan 2020 16:19:16 +0800</pubDate>
+      
+      <guid>/post/pytorch_onnx_tf/</guid>
+      <description>安装 按照官方的指导来, 在装好 onnx, pytorch, tensorflow, torchvision 后, git clone git@github.com:onnx/onnx-tensorflow.git &amp;amp;&amp;amp; cd onnx-tensorflow pip install -e . #( 建议加上 -i https://pypi.tuna.tsinghua.edu.cn/simple) 使用</description>
     </item>
     
     <item>
