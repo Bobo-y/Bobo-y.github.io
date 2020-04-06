@@ -6,10 +6,19 @@
     <description>Recent content in 人脸检测 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Dec 2019 22:54:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 18:03:03 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>人脸检测网络: MTCNN</title>
+      <link>/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/</link>
+      <pubDate>Sat, 04 Apr 2020 18:03:03 +0800</pubDate>
+      
+      <guid>/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/</guid>
+      <description>之前做人脸检测使用的是retinaface做的, 刚好最近被问到MTCNN, 以前没有细看, 正好做个笔记. MTCNN是2015年提出的用于人脸检</description>
+    </item>
     
     <item>
       <title>人脸检测网络: SSH: Single Stage Headless Face Detector</title>

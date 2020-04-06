@@ -6,10 +6,19 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:04:06 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 18:03:03 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>人脸检测</title>
+      <link>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Sat, 04 Apr 2020 18:03:03 +0800</pubDate>
+      
+      <guid>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>图像去雾</title>
@@ -107,15 +116,6 @@
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
       
       <guid>/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>人脸检测</title>
-      <link>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
-      <pubDate>Wed, 18 Dec 2019 22:54:51 +0800</pubDate>
-      
-      <guid>/tags/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
       <description></description>
     </item>
     

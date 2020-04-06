@@ -6,10 +6,19 @@
     <description>Recent content in 深度学习 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 29 Dec 2019 13:51:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 19:15:55 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>内容损失与风格损失</title>
+      <link>/post/%E5%86%85%E5%AE%B9%E6%8D%9F%E5%A4%B1%E4%B8%8E%E9%A3%8E%E6%A0%BC%E6%8D%9F%E5%A4%B1/</link>
+      <pubDate>Tue, 04 Feb 2020 19:15:55 +0800</pubDate>
+      
+      <guid>/post/%E5%86%85%E5%AE%B9%E6%8D%9F%E5%A4%B1%E4%B8%8E%E9%A3%8E%E6%A0%BC%E6%8D%9F%E5%A4%B1/</guid>
+      <description>在画风迁移与超分辨率重建以及图像修复等视觉领域, 内容损失又称感知损失, 使用的较多, 在此做个记录, 同时也记录下风格损失 内容损失与提取计算 内容损</description>
+    </item>
     
     <item>
       <title>深度学习归一化: BN,LN,IN,GN</title>

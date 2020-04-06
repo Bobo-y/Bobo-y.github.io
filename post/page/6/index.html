@@ -15,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
 
-<meta property="og:updated_time" content="2020-04-03T15:04:06+08:00" />
+<meta property="og:updated_time" content="2020-04-04T18:03:03+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,10 +97,85 @@
 			
 <main class="main list" role="main"><article class="list__item post">
 	<figure class="list__thumbnail">
-		<a href="/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/">
-			<img src="/img/cover/favicon.png" alt="模版匹配之相关匹配" />
+		<a href="/post/keras_dataload/">
+			<img src="/img/keras_loaddata/keras-logo-2018-large-1200.png" alt="Keras数据集加载小结" />
 		</a>
 	</figure>
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/keras_dataload/" rel="bookmark">
+			Keras数据集加载小结
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-26T15:20:23">2019-03-26</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/keras_dataload/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/" rel="bookmark">
+			python下mnist数据集转化为图片
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-12-22T15:37:02">2018-12-22</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets('MNIST_data/',one_hot=True) result_path ='mnist_data\\train' def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open('train_labs.txt','w') for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+' '+str(img_id)+'\n') img_path = os.path.join(result_path,str(i)+'.png') misc.imsave(img_path,img_arr) 以
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/post/knn/" rel="bookmark">
+			监督分类之：KNN算法
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2018-12-22T15:34:07">2018-12-22</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0" rel="category">机器学习</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/knn/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/" rel="bookmark">
@@ -126,11 +201,6 @@
 		<a class="list__footer-readmore btn" href="/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/">Read more…</a>
 	</div>
 </article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/ransac/">
-			<img src="/img/cover/favicon.png" alt="线性拟合笔记之：Ransac算法" />
-		</a>
-	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/ransac/" rel="bookmark">
@@ -156,11 +226,6 @@
 		<a class="list__footer-readmore btn" href="/post/ransac/">Read more…</a>
 	</div>
 </article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/linersqur/">
-			<img src="/img/cover/favicon.png" alt="线性拟合笔记之：最小二乘法" />
-		</a>
-	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/linersqur/" rel="bookmark">
@@ -186,11 +251,6 @@
 		<a class="list__footer-readmore btn" href="/post/linersqur/">Read more…</a>
 	</div>
 </article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/libsvm%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/">
-			<img src="/img/cover/favicon.png" alt="Ubuntu &#43; Python下libsvm使用小结" />
-		</a>
-	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/libsvm%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/" rel="bookmark">
@@ -276,11 +336,6 @@
 		<a class="list__footer-readmore btn" href="/post/kdog_cat/">Read more…</a>
 	</div>
 </article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/psnr/">
-			<img src="/img/cover/favicon.png" alt="图像相似度之PSNR与SSIM小结" />
-		</a>
-	</figure>
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/psnr/" rel="bookmark">
@@ -304,36 +359,6 @@
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/post/psnr/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<figure class="list__thumbnail">
-		<a href="/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/">
-			<img src="/img/cover/favicon.png" alt="图像联通区域标记" />
-		</a>
-	</figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/" rel="bookmark">
-			图像联通区域标记
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-09-21T17:01:55">2018-09-21</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86" rel="category">图像处理</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/">Read more…</a>
 	</div>
 </article>
 </main>
@@ -375,13 +400,23 @@
 		
 		
 	
+		
+		
+	
 	
 	<span class="pagination__item pagination__item--current">6</span>
 		
 	
 	
+		
+			<a class="pagination__item pagination__item btn" href="/post/page/7/">7</a>
+		
+		
 	
-	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;6&nbsp;页</span>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/7/">›</a>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/7/">»</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;7&nbsp;页</span>
 	
 </div>
 
@@ -402,11 +437,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/">人脸检测网络: MTCNN</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%9A%97%E9%80%9A%E9%81%93%E5%8E%BB%E9%9B%BEsingle_image_haze_he/">图像去雾: Single Image Haze Removal Using Dark Channel Prior</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/">Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/">图像修复3: Free-Form Image Inpainting with Gated Convolution</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/ohem/">OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/">目标检测网络: yolo-v2 损失函数实现讲解</a></li>
 		</ul>
 	</div>
 </div>

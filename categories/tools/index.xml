@@ -48,15 +48,6 @@
     </item>
     
     <item>
-      <title>使用onnx将Pytorch模型转到tf</title>
-      <link>/post/pytorch_onnx_tf/</link>
-      <pubDate>Thu, 02 Jan 2020 16:19:16 +0800</pubDate>
-      
-      <guid>/post/pytorch_onnx_tf/</guid>
-      <description>安装 按照官方的指导来, 在装好 onnx, pytorch, tensorflow, torchvision 后, git clone git@github.com:onnx/onnx-tensorflow.git &amp;amp;&amp;amp; cd onnx-tensorflow pip install -e . #( 建议加上 -i https://pypi.tuna.tsinghua.edu.cn/simple) 使用</description>
-    </item>
-    
-    <item>
       <title>Docker小记</title>
       <link>/wiki/docker%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>

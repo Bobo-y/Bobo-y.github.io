@@ -6,10 +6,28 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:04:06 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 18:03:03 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>计算机视觉</title>
+      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
+      <pubDate>Sat, 04 Apr 2020 18:03:03 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>论文阅读</title>
+      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sat, 04 Apr 2020 18:03:03 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>图像增强</title>
@@ -39,24 +57,6 @@
     </item>
     
     <item>
-      <title>计算机视觉</title>
-      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>论文阅读</title>
-      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>图像修复</title>
       <link>/categories/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D/</link>
       <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
@@ -68,7 +68,7 @@
     <item>
       <title>深度学习</title>
       <link>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sun, 29 Dec 2019 13:51:47 +0800</pubDate>
+      <pubDate>Tue, 04 Feb 2020 19:15:55 +0800</pubDate>
       
       <guid>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
@@ -80,6 +80,15 @@
       <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
       
       <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>图像处理</title>
+      <link>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 04 May 2019 10:50:37 +0800</pubDate>
+      
+      <guid>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     
@@ -107,15 +116,6 @@
       <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
       
       <guid>/categories/keras/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>图像处理</title>
-      <link>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</link>
-      <pubDate>Thu, 20 Dec 2018 15:44:06 +0800</pubDate>
-      
-      <guid>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     
