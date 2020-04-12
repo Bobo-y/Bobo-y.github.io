@@ -6,10 +6,19 @@
     <description>Recent content in 图像增强 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Apr 2020 15:04:06 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 19:41:57 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>超分辨率重建: SRGAN</title>
+      <link>/post/srgan/</link>
+      <pubDate>Sun, 12 Apr 2020 19:41:57 +0800</pubDate>
+      
+      <guid>/post/srgan/</guid>
+      <description>对于图像超分辨率重建, 第一个使用CNN实现的是SRCNN, 类似于编码器解码器结构. SRGAN是第一个使用GAN网络解决超分辨率重构的网络 创新</description>
+    </item>
     
     <item>
       <title>图像去雾: Single Image Haze Removal Using Dark Channel Prior</title>
