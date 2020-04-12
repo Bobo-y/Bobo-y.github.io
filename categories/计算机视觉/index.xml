@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Apr 2020 23:11:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 23:11:46 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>语义分割: UNET</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2unet/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:46 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2unet/</guid>
+      <description>说到语义分割, 不得不说一下U-net, U-net首先针对于医学图像分割提出, 由于其卓越的性能, 目前大部分医学图像分割都是基于U-net或者U</description>
+    </item>
     
     <item>
       <title>语义分割: deeplab V1到deeplab V3</title>
