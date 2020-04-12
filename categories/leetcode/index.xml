@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeetCode on fly away, chase dream</title>
+    <title>Leetcode on fly away, chase dream</title>
     <link>/categories/leetcode/</link>
-    <description>Recent content in LeetCode on fly away, chase dream</description>
+    <description>Recent content in Leetcode on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Apr 2020 12:55:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 21:02:42 +0800</lastBuildDate>
     
 	<atom:link href="/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode:1038</title>
+      <link>/leetcode/leetcode1038.%E4%BB%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%88%B0%E6%9B%B4%E5%A4%A7%E5%92%8C%E6%A0%91/</link>
+      <pubDate>Tue, 07 Apr 2020 21:02:42 +0800</pubDate>
+      
+      <guid>/leetcode/leetcode1038.%E4%BB%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%88%B0%E6%9B%B4%E5%A4%A7%E5%92%8C%E6%A0%91/</guid>
+      <description>给出二叉 搜索 树的根节点，该二叉树的节点值各不相同，修改二叉树，使每个节点 node 的新值等于原树中大于或等于 node.val 的值之和。 提醒一下，二叉搜索树满足下列</description>
+    </item>
     
     <item>
       <title>Excel列表字母数字转换</title>

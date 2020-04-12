@@ -6,10 +6,37 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 04 Apr 2020 18:03:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 23:11:32 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>语义分割: deeplab V1到deeplab V3</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2deeplab-v1%E5%88%B0deeplab-v3/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:32 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2deeplab-v1%E5%88%B0deeplab-v3/</guid>
+      <description>deeplab 为一个系列, 因此将其放在一起进行个回顾 Deeplab-v1 与deeplab-v2 将deeplab-v1与deeplab-v2放在一起, 主要是因为二者总体结构</description>
+    </item>
+    
+    <item>
+      <title>语义分割之: FCN</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2fcn/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:05 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2fcn/</guid>
+      <description>研究生阶段自己对分割这边还是很熟悉的, 工作后发现很多网络只能说出原理和整体框架, 面试时问的很细节, 再次将经典分割网络仔细review一遍. 主</description>
+    </item>
+    
+    <item>
+      <title>Leetcode:1038</title>
+      <link>/leetcode/leetcode1038.%E4%BB%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%88%B0%E6%9B%B4%E5%A4%A7%E5%92%8C%E6%A0%91/</link>
+      <pubDate>Tue, 07 Apr 2020 21:02:42 +0800</pubDate>
+      
+      <guid>/leetcode/leetcode1038.%E4%BB%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%88%B0%E6%9B%B4%E5%A4%A7%E5%92%8C%E6%A0%91/</guid>
+      <description>给出二叉 搜索 树的根节点，该二叉树的节点值各不相同，修改二叉树，使每个节点 node 的新值等于原树中大于或等于 node.val 的值之和。 提醒一下，二叉搜索树满足下列</description>
+    </item>
     
     <item>
       <title>人脸检测网络: MTCNN</title>
