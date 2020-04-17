@@ -804,6 +804,15 @@
     </item>
     
     <item>
+      <title>目标检测map计算</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Tue, 17 Sep 2019 20:23:17 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/</guid>
+      <description>目标检测评价指标MAP计算流程小结 目标检测由于包含分类以及box回归, 对其进行评价相对于单独的分类问题更复杂，直接使用精度、召回作为评估准则</description>
+    </item>
+    
+    <item>
       <title>国风.邺风.静女</title>
       <link>/life/%E9%9D%99%E5%A5%B3/</link>
       <pubDate>Sun, 15 Sep 2019 14:30:46 +0800</pubDate>

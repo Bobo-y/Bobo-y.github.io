@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>从RNN到LSTM小记 - fly away, chase dream</title>
+	<title>目标检测map计算 - fly away, chase dream</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.57.2" />
-	<meta property="og:title" content="从RNN到LSTM小记" />
-<meta property="og:description" content="记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输入数据具有" />
+	<meta property="og:title" content="目标检测map计算" />
+<meta property="og:description" content="目标检测评价指标MAP计算流程小结 目标检测由于包含分类以及box回归, 对其进行评价相对于单独的分类问题更复杂，直接使用精度、召回作为评估准则" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/lstm/" />
-<meta property="article:published_time" content="2019-09-13T19:51:54+08:00" />
-<meta property="article:modified_time" content="2019-09-13T19:51:54+08:00" />
+<meta property="og:url" content="/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/" />
+<meta property="article:published_time" content="2019-09-17T20:23:17+08:00" />
+<meta property="article:modified_time" content="2019-09-17T20:23:17+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,159 +97,60 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">从RNN到LSTM小记</h1>
+			<h1 class="post__title">目标检测map计算</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-09-13T19:51:54">2019-09-13</time>
+	<time class="meta__text" datetime="2019-09-17T20:23:17">2019-09-17</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
 </div>
 </div>
 		</header>
 <div class="content post__content clearfix">
 			
 
-<p><em>记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。</em></p>
+<h2 id="目标检测评价指标map计算流程小结">目标检测评价指标MAP计算流程小结</h2>
 
-<hr />
+<p>目标检测由于包含分类以及box回归, 对其进行评价相对于单独的分类问题更复杂，直接使用精度、召回作为评估准则不太适合, 使用MAP作为评估准则.</p>
 
-<h3 id="1-simplernn">1.SimpleRNN</h3>
+<p>TP、FP的判定，目标检测涉及到IOU计算MAP时需要先指定一个IOU阈值，计算此IOU阈值下的MAP，取阈值设为0.5，假设共有15个GT框，检测出了24个预测框。若预测框与GT框的IOU大于阈值则记为TP，小于阈值则记为FP，同时，当多个预测框针对于一个GT 时，最高IOU的预测框记为TP，其余的为FP。</p>
 
-<p>对于多层感知机网络而言，是假设每个输入数据具有独立性。如训练图像分类网络时，每次根据输入图片计算误差更新网络权重，当前输入图像不会对后续输入产生影响。但是对于时序数据而言，如翻译、天气预测、股票预测等，此时输入数据之间具有相关性。因此我门希望网络能够记住当前数据的关键信息，并用之于后续数据，以此循环。</p>
+<p>$$precision= \frac{TP}{TP + FP}$$</p>
 
-<p>RNN用隐藏状态或记忆引入后序数据对前面数据的依赖，以保存当前关键信息。</p>
+<p>上式分母即为所有检测出的框，即为24</p>
 
-<p><em>理论结合实际最好理解，因此下文都基于：给出前7天的天气数据，希望预测出接下来一天的温度.</em></p>
+<p>$$recall= \frac{TP}{TP + FN}$$</p>
 
-<p>则RNN结构图如下：</p>
+<p>上式分母为所有的GT box，即为15</p>
 
-<p><img src="/img/lstm/1.png"  height="600" width="600" ></p>
-
-<p>RNN可图形化为左图的结构，其中</p>
+<p>每一个类别的AP计算流程如下:</p>
 
 <ul>
-<li>X(t)为时间步t的输入数据，即每一天的天气数据特征（特征具体是什么暂时不考虑）</li>
-<li>y(t)为对应时间步的输出。同时，输出的一部分（隐藏状态h(t)）反馈给神经单元，以在接下来的时间步t+1使用。即隐藏状态使序列信息得到保留以作用于下一个输入。</li>
-<li>u,v,w为权重矩阵。</li>
+<li>将该类别的检测结果按置信度逆序排序，对每一个置信度计算累计的TP、FP（如置信度0.95 时，TP 一个，FP 为0, 当置信度为0.85 时，累计TP为0.95的TP + 当前0.85 的TP个数，FP同理）, 然后计算当前置信度下的P、R值，那么每个置信度都能得到一对P、R</li>
+<li>以R为横轴，P为纵轴，绘制PR图，一个recall可能会对应多个precision</li>
+<li>计算AP，两种方式11点内插法或所有点进行内插，一般使用第二种，即计算AUC面积，即为当前类的AP</li>
 </ul>
 
-<p>可记为：</p>
+<div align="center"><img src="/img/de_map/1.jpg" width="600" height="600"></div>
 
-<p>$$h(t) = tanh(W*h(t-1) + U*x(t))$$</p>
+<p>11点内插法: 将每个红点的值相加再除以11</p>
 
-<p>$$y(t) = relu(V*h(t))$$</p>
+<div align="center"><img src="/img/de_map/2.jpg" width="600" height="600"></div>
 
-<p>为了便于更加形象的理解，都倾向于将RNN按时间步展开（因为我们要使用7天的数据预测一天的温度，故时间步为7，因此展开为7个。同时只需要一个输出，因此将前6个的输出都标记为为虚线，即在7个时间步数据上进行处理后只有最后一步会得到一个输出）。在7个时间步上，u、v、w均是&rdquo;共享&rdquo;的(但这么说不太准，后面细说)，而信息由隐藏态h(t)进行在时间步上传递。</p>
+<p>每点内插法: 求出四个区域的面积相加即可</p>
 
-<p><strong>由于展开更加形象，往往会导致误解一个RNN模块由多个左图构成（😄我以前就犯了这种错）.谨记：展开只是为了便于理解，实际上不管时间步有多少，一个RNN模块只有左边一个结构，所以上面说的共享不太确切（本身就是它自己）. 具体来说就是，输入了7天的天气数据给RNN，RNN首先处理x(1)的数据得到h(1),然后又处理x(2)的数据&hellip;,RNN模块都是同一个。为什么强调这个问题呢，因为在写代码定义RNN的时候，如keras指定units,并不是指定有多少个RNN模块，而是一个RNN模块它的神经元个数。</strong></p>
+<p>得到每一个类的AP值后，再求个均值即为MAP。</p>
 
-<hr />
+<h2 id="参考">参考</h2>
 
-<h3 id="2-lstm">2.LSTM</h3>
-
-<p>长短期记忆（Long short-term memory, LSTM）是RNN的变体之一，主要是为了解决长序列训练过程中的梯度消失和梯度爆炸问题。简单来说，就是相比普通的RNN，LSTM能够在更长的序列中有更好的表现。</p>
-
-<p><img src="/img/lstm/2.png"  height="600" width="600" ></p>
-
-<p>LSTM 按3个时间步展开如上图所示. LSTM单元内部结构比RNN更加复杂。LSTM单元内部结构如下图：</p>
-
-<p><img src="/img/lstm/3.png"  height="600" width="600" ></p>
-
-<p>其中：</p>
-
-<ul>
-<li>i&ndash;输入门： $$i = sigmoid(Wi*[h(t-1),x(t)] + bi)$$</li>
-<li>f&ndash;遗忘门： $$f = sigmoid(Wf*[h(t-1, x(t)] + bf)$$</li>
-<li>o&ndash;输出门： $$o = sigmoid(Wo*[h(t-1, x(t)] + bo)$$</li>
-<li>$$g = tanh(Wg*[h(t-1),x(t)] + bg)$$</li>
-<li>$$c(t) = c(t-1).* f + g.* i$$</li>
-<li>$$h(t) = tanh(c(t)) .* o$$</li>
-</ul>
-
-<p>i,f,o三者通过sigmoid激活函数转换成0到1之间的数值，来作为一种门控状态.sigmoid函数调节这些门使其输出0和1之间的值，将产生的输出向量与另一个向量进行元素乘，以决定第二个向量有多少部分可以通过. g则是将结果通过tanh激活函数将转换成-1到1之间的值,g输入数据，而不是门控信号。 LSTM中具有两个状态,c(t)为长期记忆单元：变化慢，由c(t-1)加上一些数值，h(t)为短期记忆单元：不同节点下往往会有很大的区别。</p>
-
-<p>1.忘记阶段： 遗忘门定义了h(t-1)传进来的输入有多少可以通过。简单来说就是会 “忘记不重要的，记住重要的”。遗忘门设为0时表示忽略所有就记忆。</p>
-
-<p>2.选择记忆阶段： 输入门定义为当前输入x(t)新计算出来的状态有多少可以通过。</p>
-
-<p>3.输出阶段：这个阶段输出门将决定哪些将会被当成当前状态的输出。</p>
-
-<p>对比于RNN，LSTM通过门控状态来控制传输状态，记住需要长时间记忆的，忘记不重要的信息；而不像普通的RNN那样只能够简单的记忆叠加。对很多需要“长期记忆”的任务来说，尤其好用。</p>
-
-<hr />
-
-<h3 id="3-lstm参数计算">3.LSTM参数计算</h3>
-
-<p>当我们在代码中定义了一个LSTM层时，只包含一个LSTM模块。实例如下：假设每天的天气数据只包含温度，即根据前7天的温度预测接下来一天的温度（😁当然实际这么做没意义），即一个时间步只有一个特征。</p>
-
-<p>在keras中LSTM的输入数据格式为（samples, timesteps,features）,samples相当于CNN中batch_size，本文中timesteps为7，features为每个时间步的特征纬度，此处为1.</p>
-
-<p>由第二部分LSTM的计算公式可以知道，参数来自于i、f、o、g,假设设置LSTM units为128，此时的128指的是i、f、o、g各具有128个神经元。同时，LSTM是全连接，所以必须知道features的纬度（在CRNN中就有）。</p>
-
-<p>因此，参数计算公式为:(units * (units + features) + units) * 4.</p>
-
-<p>第一units代表每个部分具有的神经元个数，第二个units代表的隐层h的输出纬度（由o的公式可知，与神经元个数相同）,features是特征纬度，第三个units是bias(多少个神经元，多少个bias). 因为是全连接，因此units * (units + features).</p>
-
-<pre><code class="language-python"># 本例中，假设units 128, features 1, 公式可得一层LSTM参数为 66560
-
-n_timesteps = 7
-n_features = 1
-model = Sequential()
-model.add(LSTM(128, activation='relu', input_shape=(n_timesteps, n_features)))
-model.add(Dense(1))
-model.add(Activation(&quot;relu&quot;))
-model.summary()
-
-</code></pre>
-
-<p>运行结果（多试了几个，没毛病😄）：</p>
-
-<p><img src="/img/lstm/4.png"  height="200" width="600" ></p>
-
-<h3 id="4-keras-lstm-输入">4.keras LSTM 输入</h3>
-
-<p>第一次使用LSTM的时候，关于输入数据的格式纠结了很久，主要是自己的观念没有从图像转过来，理解之后和CNN其实一个道理。</p>
-
-<p>在keras中，LSTM输入数据是3D的&ndash;（samples, timesteps, features）.</p>
-
-<ul>
-<li>samples为样本个数，即为Batch_size</li>
-<li>timesteps为时间步数，即控制一个LSTM单元在一个样本上会执行多少次。对于序列数据而言，即依赖于前多少个数据。比如我们用7天预测之后一天，时间步即为7.用5天即为5.</li>
-<li>features为每一个时间步的特征的纬度，此处的纬度为一维向量(所以在将LSTM和CNN结合时都需要将CNN输出flatten).  本例中假如只根据前7天的温度来预测之后一天的温度.那么每一天的特征只有温度，则features为1. 引入更多特征，features即为特征向量的长度。</li>
-</ul>
-
-<p>因此，当features为1时，每个样本的数据格式为（7,1）数组即可.若每次输出一个样本，使用numpy.reshape,将输入reshape为(1, 7, 1)即可.</p>
-
-<pre><code class="language-python"># 假如每个时间步，特征纬度为1，一个样本数据如下
-data = np.array([1, 2, 3, 4, 5, 6, 7]) 
-data = np.reshape(data, (1, 7, 1))
-
-# 特征纬度为3,一个样本的数据格式如：
-# shape(7, 3)
-data = [[1, 2, 3],
-		[2, 4, 6],
-		[4, 3, 5],
-		[7, 5, 9],
-		[1, 2, 3],
-		[6, 3, 9],
-		[3, 5, 7]]
-# 若一次要训练多个样本，如samples=4,则读取的data shape为（28，3）
-data = np.array(...)
-data = np.reshape(data, (4, 7, 3))
-</code></pre>
+<p><a href="https://github.com/rafaelpadilla/Object-Detection-Metrics">最流行的度量标准，用于评估对象检测算法</a></p>
 
 		</div>
 		
-<div class="post__tags tags clearfix">
-	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/lstm/" rel="tag">lstm</a></li>
-	</ul>
-</div>
 	</article>
 </main>
 
@@ -285,10 +186,10 @@ data = np.reshape(data, (4, 7, 3))
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/nms/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">目标检测非极大值抑制: NMS</p></a>
+		<a class="post-nav__link" href="/post/lstm/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">从RNN到LSTM小记</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">目标检测map计算</p></a>
+		<a class="post-nav__link" href="/post/edge_gan/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Edge_gan总结</p></a>
 	</div>
 </nav>
 
