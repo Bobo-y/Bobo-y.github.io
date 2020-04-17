@@ -6,10 +6,28 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 19:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>图像处理</title>
+      <link>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机视觉</title>
+      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>图像增强</title>
@@ -17,15 +35,6 @@
       <pubDate>Sun, 12 Apr 2020 19:41:57 +0800</pubDate>
       
       <guid>/categories/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>计算机视觉</title>
-      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Sun, 12 Apr 2020 19:41:57 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
       <description></description>
     </item>
     
@@ -80,15 +89,6 @@
       <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
       
       <guid>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>图像处理</title>
-      <link>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</link>
-      <pubDate>Sat, 04 May 2019 10:50:37 +0800</pubDate>
-      
-      <guid>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     

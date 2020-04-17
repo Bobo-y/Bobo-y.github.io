@@ -231,6 +231,31 @@
 		<a class="list__footer-readmore btn" href="/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/">Read more…</a>
 	</div>
 </article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/wiki/mac_clion_opencv/" rel="bookmark">
+			MacOS下Clion 使用OpenCV
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-08-16T19:46:35">2019-08-16</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		MAC 下使用Clion 配置OpenCV brew install opencv 在Clion中新建项目, 假设项目名为demo, 在 CMAKELists.txt中编辑 cmake_minimum_required(VERSION 3.9) project(demo) set(CMAKE_CXX_STANDARD 11) find_package(OpenCV) include_directories(${OpenCV_INCLUDE_DIRS}) add_executable(demo main.cpp)
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/wiki/mac_clion_opencv/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	<figure class="list__thumbnail">
 		<a href="/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">
 			<img src="/img/hive/Hive.png" alt="Hive命令记录" />
@@ -337,31 +362,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/" rel="bookmark">
-			mac通过跳板机对服务器上传下载文件
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-07-10T13:27:58">2019-07-10</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用ite
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -380,6 +380,9 @@
 		
 		
 	
+		
+		
+	
 	
 	<span class="pagination__item pagination__item--current">1</span>
 		
@@ -390,10 +393,15 @@
 		
 		
 	
-	<a class="pagination__item pagination__item--next btn" href="/wiki/page/2/">›</a>
-	<a class="pagination__item pagination__item--next btn" href="/wiki/page/2/">»</a>
+		
+			<a class="pagination__item pagination__item btn" href="/wiki/page/3/">3</a>
+		
+		
 	
-	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;2&nbsp;页</span>
+	<a class="pagination__item pagination__item--next btn" href="/wiki/page/2/">›</a>
+	<a class="pagination__item pagination__item--next btn" href="/wiki/page/3/">»</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;3&nbsp;页</span>
 	
 </div>
 
@@ -414,11 +422,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/">基于内容的图像检索: pytorch</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/srgan/">超分辨率重建: SRGAN</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2unet/">语义分割: UNET</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2deeplab-v1%E5%88%B0deeplab-v3/">语义分割: deeplab V1到deeplab V3</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2fcn/">语义分割之: FCN</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/">人脸检测网络: MTCNN</a></li>
 		</ul>
 	</div>
 </div>
@@ -446,6 +454,7 @@
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/anchor-free" title="Anchor free">Anchor free</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbir" title="Cbir">Cbir</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/deeplab" title="Deeplab">Deeplab</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dlib" title="Dlib">Dlib</a>

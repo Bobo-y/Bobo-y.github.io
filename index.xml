@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 19:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于内容的图像检索: pytorch</title>
+      <link>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</guid>
+      <description>看了Jason Brownlee博士的Keras CBIR demo, 自己也动手用pytorch写一个. CBIR CBIR 为基于内容的图像检索. 用于在图像数据数据库上检索具有</description>
+    </item>
     
     <item>
       <title>超分辨率重建: SRGAN</title>
@@ -885,6 +894,15 @@
     </item>
     
     <item>
+      <title>MacOS下Clion 使用OpenCV</title>
+      <link>/wiki/mac_clion_opencv/</link>
+      <pubDate>Fri, 16 Aug 2019 19:46:35 +0800</pubDate>
+      
+      <guid>/wiki/mac_clion_opencv/</guid>
+      <description>MAC 下使用Clion 配置OpenCV brew install opencv 在Clion中新建项目, 假设项目名为demo, 在 CMAKELists.txt中编辑 cmake_minimum_required(VERSION 3.9) project(demo) set(CMAKE_CXX_STANDARD 11) find_package(OpenCV) include_directories(${OpenCV_INCLUDE_DIRS}) add_executable(demo main.cpp)</description>
+    </item>
+    
+    <item>
       <title>清平调: 云想衣裳花想容</title>
       <link>/life/%E6%B8%85%E5%B9%B3%E8%B0%83-%E6%9D%8E%E7%99%BD/</link>
       <pubDate>Sun, 11 Aug 2019 09:27:19 +0800</pubDate>
@@ -1412,7 +1430,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org  数据集  pascal voc open images ADE 20k DAVIS  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
+      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org pytorch cmake 使用指南  数据集  pascal voc open images ADE 20k DAVIS  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
     </item>
     
     <item>

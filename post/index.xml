@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 19:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于内容的图像检索: pytorch</title>
+      <link>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</guid>
+      <description>看了Jason Brownlee博士的Keras CBIR demo, 自己也动手用pytorch写一个. CBIR CBIR 为基于内容的图像检索. 用于在图像数据数据库上检索具有</description>
+    </item>
     
     <item>
       <title>超分辨率重建: SRGAN</title>

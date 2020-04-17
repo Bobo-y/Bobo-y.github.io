@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>MacOS下Clion 使用OpenCV</title>
+      <link>/wiki/mac_clion_opencv/</link>
+      <pubDate>Fri, 16 Aug 2019 19:46:35 +0800</pubDate>
+      
+      <guid>/wiki/mac_clion_opencv/</guid>
+      <description>MAC 下使用Clion 配置OpenCV brew install opencv 在Clion中新建项目, 假设项目名为demo, 在 CMAKELists.txt中编辑 cmake_minimum_required(VERSION 3.9) project(demo) set(CMAKE_CXX_STANDARD 11) find_package(OpenCV) include_directories(${OpenCV_INCLUDE_DIRS}) add_executable(demo main.cpp)</description>
+    </item>
+    
+    <item>
       <title>Hive命令记录</title>
       <link>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>

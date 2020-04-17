@@ -6,10 +6,19 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 19:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CBIR</title>
+      <link>/tags/cbir/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/tags/cbir/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>超分辨率重建</title>
