@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2020 11:55:48 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>谷歌最新目标检测论文: EfficientDet</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/</link>
+      <pubDate>Sat, 18 Apr 2020 11:55:48 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/</guid>
+      <description>最近谷歌放出了 EfficientDet 论文与代码, 在COCO上取得了最好的MAP, 本文对 efficientDet 做个简要的总结, 同时对efficientNet也做个回顾. Efficie</description>
+    </item>
     
     <item>
       <title>基于内容的图像检索: pytorch</title>

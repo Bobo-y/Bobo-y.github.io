@@ -4,26 +4,46 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-04-17T16:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/cbir/</loc>
-    <lastmod>2020-04-17T16:33:21+08:00</lastmod>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-04-17T16:33:21+08:00</lastmod>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-04-17T16:33:21+08:00</lastmod>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/</loc>
+    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cbir/</loc>
     <lastmod>2020-04-17T16:33:21+08:00</lastmod>
   </url>
   
@@ -38,17 +58,7 @@
   </url>
   
   <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2020-04-17T16:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</loc>
-    <lastmod>2020-04-12T19:41:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2020-04-12T19:41:57+08:00</lastmod>
   </url>
   
@@ -229,11 +239,6 @@
   
   <url>
     <loc>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</loc>
-    <lastmod>2020-03-10T23:35:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2020-03-10T23:35:58+08:00</lastmod>
   </url>
   
