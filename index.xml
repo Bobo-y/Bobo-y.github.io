@@ -6,10 +6,28 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Apr 2020 11:55:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 23:37:42 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</title>
+      <link>/post/yolov4/</link>
+      <pubDate>Tue, 28 Apr 2020 23:37:42 +0800</pubDate>
+      
+      <guid>/post/yolov4/</guid>
+      <description>最近目标检测又出了yolo-v4，作为一个做目标检测的不可不膜拜膜拜。首先由于约瑟夫大神已经退出CV，yolo-v4 的一作是DarkNet的</description>
+    </item>
+    
+    <item>
+      <title>目标检测IOU评价指标汇总: GIOU, DIOU, CIOU</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Biou%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Fri, 24 Apr 2020 23:18:06 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Biou%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E6%B1%87%E6%80%BB/</guid>
+      <description>在目标检测中, IOU 可以被用来评估预测框的性能，IOU越大预测框越准。IOU可表示两个框的距离，IOU越大距离越小. 对于目标检测坐标损失虽然一般</description>
+    </item>
     
     <item>
       <title>谷歌最新目标检测论文: EfficientDet</title>
@@ -813,6 +831,15 @@
     </item>
     
     <item>
+      <title>L1、L2、Smooth_L1损失函数对比</title>
+      <link>/post/l1_l2_smoothl1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Thu, 19 Sep 2019 11:07:59 +0800</pubDate>
+      
+      <guid>/post/l1_l2_smoothl1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%AF%B9%E6%AF%94/</guid>
+      <description>L1、L2以及Smooth_L1损失函数作为目标检测中回归层常用的损失函数，对他们进行一个对比分析. 三者公式对比如下: 分别对三者求导数: L2</description>
+    </item>
+    
+    <item>
       <title>目标检测map计算</title>
       <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/</link>
       <pubDate>Tue, 17 Sep 2019 20:23:17 +0800</pubDate>
@@ -1421,7 +1448,7 @@
       <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
       
       <guid>/post/psnr/</guid>
-      <description>###PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数</description>
+      <description>PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数，比如</description>
     </item>
     
     <item>

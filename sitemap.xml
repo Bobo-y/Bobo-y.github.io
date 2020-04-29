@@ -4,37 +4,47 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/yolov4/</loc>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2020-04-18T11:55:48+08:00</lastmod>
+    <lastmod>2020-04-28T23:37:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Biou%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2020-04-24T23:18:06+08:00</lastmod>
   </url>
   
   <url>
@@ -670,6 +680,11 @@
   <url>
     <loc>/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/</loc>
     <lastmod>2019-09-19T23:32:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/l1_l2_smoothl1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%AF%B9%E6%AF%94/</loc>
+    <lastmod>2019-09-19T11:07:59+08:00</lastmod>
   </url>
   
   <url>

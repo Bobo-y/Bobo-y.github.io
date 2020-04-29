@@ -6,10 +6,19 @@
     <description>Recent content in 论文阅读 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Apr 2020 11:55:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 23:37:42 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</title>
+      <link>/post/yolov4/</link>
+      <pubDate>Tue, 28 Apr 2020 23:37:42 +0800</pubDate>
+      
+      <guid>/post/yolov4/</guid>
+      <description>最近目标检测又出了yolo-v4，作为一个做目标检测的不可不膜拜膜拜。首先由于约瑟夫大神已经退出CV，yolo-v4 的一作是DarkNet的</description>
+    </item>
     
     <item>
       <title>谷歌最新目标检测论文: EfficientDet</title>
