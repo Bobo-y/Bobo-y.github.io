@@ -6,10 +6,19 @@
     <description>Recent content in OCR on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Sep 2019 16:07:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2020 17:20:52 +0800</lastBuildDate>
     
 	<atom:link href="/tags/ocr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>文本检测中的nms</title>
+      <link>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</link>
+      <pubDate>Wed, 29 Apr 2020 17:20:52 +0800</pubDate>
+      
+      <guid>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</guid>
+      <description>今天被问到了OCR相关的NMS，个人一直偏向于通用目标检测的NMS，正好补补课，扩展一下OCR方向的知识. 对通用目标检测或者人脸检测等得到的</description>
+    </item>
     
     <item>
       <title>CRNN笔记以及数字检测识别实践</title>

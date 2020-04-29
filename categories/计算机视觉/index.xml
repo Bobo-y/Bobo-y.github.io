@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Apr 2020 23:37:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2020 17:20:52 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>文本检测中的nms</title>
+      <link>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</link>
+      <pubDate>Wed, 29 Apr 2020 17:20:52 +0800</pubDate>
+      
+      <guid>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</guid>
+      <description>今天被问到了OCR相关的NMS，个人一直偏向于通用目标检测的NMS，正好补补课，扩展一下OCR方向的知识. 对通用目标检测或者人脸检测等得到的</description>
+    </item>
     
     <item>
       <title>YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</title>

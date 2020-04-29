@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Docker小记 - fly away, chase dream</title>
+	<title>文本检测中的nms - fly away, chase dream</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.57.2" />
-	<meta property="og:title" content="Docker小记" />
-<meta property="og:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，" />
+	<meta property="og:title" content="文本检测中的nms" />
+<meta property="og:description" content="今天被问到了OCR相关的NMS，个人一直偏向于通用目标检测的NMS，正好补补课，扩展一下OCR方向的知识. 对通用目标检测或者人脸检测等得到的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/wiki/docker%E5%B0%8F%E8%AE%B0/" />
-<meta property="article:published_time" content="2019-12-19T20:38:40+08:00" />
-<meta property="article:modified_time" content="2019-12-19T20:38:40+08:00" />
+<meta property="og:url" content="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/" />
+<meta property="article:published_time" content="2020-04-29T17:20:52+08:00" />
+<meta property="article:modified_time" content="2020-04-29T17:20:52+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,385 +97,250 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Docker小记</h1>
+			<h1 class="post__title">文本检测中的nms</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-12-19T20:38:40">2019-12-19</time>
+	<time class="meta__text" datetime="2020-04-29T17:20:52">2020-04-29</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a></span>
 </div>
 </div>
 		</header>
-
-  
-    <div class="toc">
-        <div class="toc__title"><span id="toc_menu_tip">展开书签</span></div>
-        <div class="toc__menu">
-          <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#docker-容器使用">Docker 容器使用</a>
-<ul>
-<li><a href="#获取镜像">获取镜像</a></li>
-<li><a href="#启动容器">启动容器</a></li>
-<li><a href="#查看所有容器">查看所有容器</a></li>
-<li><a href="#启动-终止-重启-容器">启动/终止/重启/容器</a></li>
-<li><a href="#后台运行">后台运行</a></li>
-<li><a href="#进入容器">进入容器</a></li>
-<li><a href="#容器导出与导入">容器导出与导入</a></li>
-<li><a href="#删除容器">删除容器</a></li>
-<li><a href="#web应用程序">web应用程序</a></li>
-</ul></li>
-<li><a href="#docker-镜像使用">Docker 镜像使用</a>
-<ul>
-<li><a href="#创建镜像">创建镜像</a>
-<ul>
-<li><a href="#更新镜像">更新镜像</a></li>
-<li><a href="#构建镜像">构建镜像</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#docker-dockerfile-指令">Docker Dockerfile 指令</a>
-<ul>
-<li><a href="#from">FROM</a></li>
-<li><a href="#run">RUN</a></li>
-<li><a href="#copy">COPY</a></li>
-<li><a href="#add">ADD</a></li>
-<li><a href="#cmd">CMD</a></li>
-<li><a href="#env">ENV</a></li>
-<li><a href="#arg">ARG</a></li>
-<li><a href="#volume">VOLUME</a></li>
-<li><a href="#workdir">WORKDIR</a></li>
-<li><a href="#user">USER</a></li>
-<li><a href="#healthcheck">HEALTHCHECK</a></li>
-</ul></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
-</nav>
-        </div>  
-    </div>
-    <script type="text/javascript">
-    $(".toc__title").click( function () {
-      if($(".toc__menu").css('display') == 'none') {
-        $(".toc__menu").show(); 
-        $("#toc_menu_tip").html("收起书签");
-      } else {
-        $(".toc__menu").hide(); 
-        $("#toc_menu_tip").html("展开书签");
-      }
-    });
-    </script>
-  
 <div class="content post__content clearfix">
 			
 
-<p><em>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化. 例如：需要将开发环境中的深度学习算法部署到生产环境中提供网络接口服务时，可能由于依赖库、环境较多，需要在每一个生成环境中一一去配置，若开发环境是ubuntu，生成环境是centos，部署成本更高. 因此，使用docker,可以将整个应用及依赖打包，在新机器上装上docker即可加载运行.</em></p>
+<p><em>今天被问到了OCR相关的NMS，个人一直偏向于通用目标检测的NMS，正好补补课，扩展一下OCR方向的知识.</em></p>
 
-<hr />
+<p>对通用目标检测或者人脸检测等得到的检测框都是矩形的，而文本检测又具有特殊性，会包含倾斜、弯曲，因此通用的NMS算法不是特别适合。目前主要有 locality-aware NMS，inclined NMS，mask NMS，polygonal NMS.</p>
 
-<h2 id="docker-容器使用">Docker 容器使用</h2>
+<h2 id="locality-aware-nms">locality aware NMS</h2>
 
-<h3 id="获取镜像">获取镜像</h3>
-
-<p>载入ubuntu镜像</p>
-
-<pre><code class="language-shell">docker pull ubuntu   
-</code></pre>
-
-<h3 id="启动容器">启动容器</h3>
-
-<p>以ubuntu镜像启动一个容器，以命令行模式进入该容器</p>
-
-<pre><code class="language-shell">docker  run -it ubuntu /bin/bash    
-</code></pre>
-
-<p>参数说明：</p>
+<p>LNMS是旷视论文EAST中提出来的. 由于文本检测可能会检测出大量的候选box，此时使用标准NMS的话时间复杂度高。作者基于这样一个假设：靠的近的像素倾向于具有高的相关性。因此逐行将得到的几何体进行合并。LNMS一般用于轴对齐的矩形框（即水平bbox），特别是离得很近的倾斜文本.</p>
 
 <ul>
-<li>-i: 交互式操作</li>
-<li>-t: 终端</li>
-<li>ubuntu： 镜像名</li>
-<li>/bin/bash：即执行的命令</li>
-</ul>
+<li>对输出的每个box根据IOU阈值进行合并</li>
 
-<h3 id="查看所有容器">查看所有容器</h3>
+<li><p>对合并后的box进行标准NMS</p>
 
-<pre><code class="language-shell">docker ps -a
-</code></pre>
+<pre><code class="language-python">import numpy as np
+from shapely.geometry import Polygon
 
-<div align="center"><img src="/img/docker/1.jpg"> </div>
 
-<p>参数说明：</p>
+def intersection(g, p):
+# 求 p,q面积的IOU
+g = Polygon(g[:8].reshape((4, 2)))
+p = Polygon(p[:8].reshape((4, 2)))
+if not g.is_valid or not p.is_valid:
+    return 0
+inter = Polygon(g).intersection(Polygon(p)).area
+union = g.area + p.area - inter
+if union == 0:
+    return 0
+else:
+    return inter/union
 
-<ul>
-<li>CONTAINER ID ： 容器ID</li>
-<li>IMAGE ： 使用的镜像名字</li>
-<li>COMMAND ： 执行的命令</li>
-<li>CREATED ： 容器创建时间</li>
-<li>SATATUS ： 容器状态</li>
-<li>PORTS： 容器端口/端口映射</li>
-<li>NAMES： 随机生成的容器名字，可指定,通过 &ndash;name 指定</li>
-</ul>
 
-<h3 id="启动-终止-重启-容器">启动/终止/重启/容器</h3>
+def weighted_merge(g, p):
+# 合并后的几何体的坐标是合并前两个几何体坐标的加权再除以权重和，权重为预测的得分
+g[:8] = (g[8] * g[:8] + p[8] * p[:8])/(g[8] + p[8])
+# 合并后的几何体的得分为两个几何体得分的总和
+g[8] = (g[8] + p[8])
+return g
 
-<pre><code class="language-shell">docker start 容器ID/容器名
-docker stop  容器ID/容器名
-docker restart  容器ID/容器名
-</code></pre>
 
-<h3 id="后台运行">后台运行</h3>
+def standard_nms(S, thres):
+order = np.argsort(S[:, 8])[::-1]
+keep = []
+while order.size &gt; 0:
+    i = order[0]
+    keep.append(i)
+    ovr = np.array([intersection(S[i], S[t]) for t in order[1:]])
 
-<pre><code class="language-shell">docker run -itd --name test  ubuntu  /bin/bash
-</code></pre>
+    inds = np.where(ovr &lt;= thres)[0]
+    order = order[inds+1]
 
-<ul>
-<li>&ndash;name: 指定容器名</li>
-<li>-d :  默认不进入容器</li>
-</ul>
+return S[keep]
 
-<h3 id="进入容器">进入容器</h3>
 
-<p>使用 -d参数时，容器进入后台，可通过以下命令进入：</p>
+def nms_locality(polys, thres=0.3):
+'''
+locality aware nms of EAST
+:param polys: a N*9 numpy array. first 8 coordinates, then prob
+:return: boxes after nms
+'''
+S = []
+p = None
+for g in polys:
+    if p is not None and intersection(g, p) &gt; thres:
+        p = weighted_merge(g, p)
+    else:
+        if p is not None:
+            S.append(p)
+        p = g
+if p is not None:
+    S.append(p)
 
-<ul>
-<li>docker attach : 不推荐使用，此命令退出容器终端时，容器会停止</li>
-
-<li><p>docker exec ：推荐，退出容器终端时，不会导致容器停止</p>
-
-<pre><code class="language-shell">docker attach  容器ID/容器名
-docker exec -it 容器ID/容器名
+if len(S) == 0:
+    return np.array([])
+return standard_nms(np.array(S), thres)
 </code></pre></li>
 </ul>
 
-<h3 id="容器导出与导入">容器导出与导入</h3>
+<h2 id="inclined-nms-倾斜nms">inclined NMS（倾斜NMS）</h2>
 
-<p>导出：</p>
+<p>对于带旋转角度的框，进行NMS时考虑角度</p>
 
-<pre><code class="language-shell">docker export 容器名/ID  &gt;  导出文件名
-docker export test &gt; test.tar
+<pre><code class="language-python">#coding=utf-8
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import numpy as np
+import cv2
+import tensorflow as tf
+
+def nms_rotate(decode_boxes, scores, iou_threshold, max_output_size,
+               use_angle_condition=False, angle_threshold=0, use_gpu=False, gpu_id=0):
+    &quot;&quot;&quot;
+    :param boxes: format [x_c, y_c, w, h, theta]
+    :param scores: scores of boxes
+    :param threshold: iou threshold (0.7 or 0.5)
+    :param max_output_size: max number of output
+    :return: the remaining index of boxes
+    &quot;&quot;&quot;
+    if use_gpu:
+        #采用gpu方式
+        keep = nms_rotate_gpu(boxes_list=decode_boxes,
+                              scores=scores,
+                              iou_threshold=iou_threshold,
+                              angle_gap_threshold=angle_threshold,
+                              use_angle_condition=use_angle_condition,
+                              device_id=gpu_id)
+
+        keep = tf.cond(
+            tf.greater(tf.shape(keep)[0], max_output_size),
+            true_fn=lambda: tf.slice(keep, [0], [max_output_size]),
+            false_fn=lambda: keep)
+    else:　#采用cpu方式
+        keep = tf.py_func(nms_rotate_cpu,
+                          inp=[decode_boxes, scores, iou_threshold, max_output_size],
+                          Tout=tf.int64)
+    return keep
+
+def nms_rotate_cpu(boxes, scores, iou_threshold, max_output_size):
+    keep = []　#保留框的结果集合
+    order = scores.argsort()[::-1]　#对检测结果得分进行降序排序
+    num = boxes.shape[0]　#获取检测框的个数
+
+    suppressed = np.zeros((num), dtype=np.int)
+    for _i in range(num):
+        if len(keep) &gt;= max_output_size:　　＃若当前保留框集合中的个数大于max_output_size时，直接返回
+            break
+
+        i = order[_i]
+        if suppressed[i] == 1:　＃对于抑制的检测框直接跳过
+            continue
+        keep.append(i)　　#保留当前框的索引
+        r1 = ((boxes[i, 1], boxes[i, 0]), (boxes[i, 3], boxes[i, 2]), boxes[i, 4])  ＃根据box信息组合成opencv中的旋转bbox
+        print(&quot;r1:{}&quot;.format(r1))
+        area_r1 = boxes[i, 2] * boxes[i, 3]　　＃计算当前检测框的面积
+        for _j in range(_i + 1, num):　　＃对剩余的而进行遍历
+            j = order[_j]
+            if suppressed[i] == 1:
+                continue
+            r2 = ((boxes[j, 1], boxes[j, 0]), (boxes[j, 3], boxes[j, 2]), boxes[j, 4])
+            area_r2 = boxes[j, 2] * boxes[j, 3]
+            inter = 0.0
+
+            int_pts = cv2.rotatedRectangleIntersection(r1, r2)[1]　＃求两个旋转矩形的交集，并返回相交的点集合
+            if int_pts is not None:
+                order_pts = cv2.convexHull(int_pts, returnPoints=True)　#求点集的凸边形
+                int_area = cv2.contourArea(order_pts)　　#计算当前点集合组成的凸边形的面积
+                inter = int_area * 1.0 / (area_r1 + area_r2 - int_area + 0.0000001)
+
+            if inter &gt;= iou_threshold:　　#对大于设定阈值的检测框进行滤除
+                suppressed[j] = 1
+
+    return np.array(keep, np.int64)
+
+# gpu的实现方式
+def nms_rotate_gpu(boxes_list, scores, iou_threshold, use_angle_condition=False, angle_gap_threshold=0, device_id=0):
+    if use_angle_condition:
+        y_c, x_c, h, w, theta = tf.unstack(boxes_list, axis=1)
+        boxes_list = tf.transpose(tf.stack([x_c, y_c, w, h, theta]))
+        det_tensor = tf.concat([boxes_list, tf.expand_dims(scores, axis=1)], axis=1)
+        keep = tf.py_func(rotate_gpu_nms,
+                          inp=[det_tensor, iou_threshold, device_id],
+                          Tout=tf.int64)
+        return keep
+    else:
+        y_c, x_c, h, w, theta = tf.unstack(boxes_list, axis=1)
+        boxes_list = tf.transpose(tf.stack([x_c, y_c, w, h, theta]))
+        det_tensor = tf.concat([boxes_list, tf.expand_dims(scores, axis=1)], axis=1)
+        keep = tf.py_func(rotate_gpu_nms,
+                          inp=[det_tensor, iou_threshold, device_id],
+                          Tout=tf.int64)
+        keep = tf.reshape(keep, [-1])
+        return keep
 </code></pre>
 
-<p>导入：</p>
+<h2 id="polygon-nms-多边形nms">Polygon NMS(多边形NMS)</h2>
 
-<pre><code class="language-shell"># 将快照文件test.tar 导入到镜像training/webapp:v1 
-cat test.tar | docker import - training/webapp:v1 
-# 或指定url或某个目录来导入
-docker import http://example.com/exampleimage.tgz example/imagerepo 
+<p>来源于论文 Detecting Curve Text in the Wild: New Dataset and New Solution， 做曲线文本检测. 这篇论文中是检测14个点. 就是将标准NMS4个点换成14点的多边形.</p>
+
+<pre><code class="language-python">def py_cpu_pnms(dets, thresh):
+    bbox = dets[:, :4]
+    scores = dets[:, 4]
+    info_bbox = dets[:, 5:33] # syn
+    
+    pts = []
+    for i in xrange(dets.shape[0]):
+        pts.append([[int(bbox[i, 0]) + info_bbox[i, j], int(bbox[i, 1]) + info_bbox[i, j+1]] for j in xrange(0,28,2)])
+
+    order = scores.argsort()[::-1]
+    areas = np.zeros(scores.shape)
+    order = scores.argsort()[::-1]
+    inter_areas = np.zeros((scores.shape[0], scores.shape[0]))
+    for il in xrange(len(pts)):
+        poly = Polygon(pts[il])
+        areas[il] = poly.area
+        for jl in xrange(il, len(pts)):
+            polyj = Polygon(pts[jl])
+            inS = poly.intersection(polyj)
+            inter_areas[il][jl] = inS.area
+            inter_areas[jl][il] = inS.area
+
+    keep = []
+    while order.size &gt; 0:
+        i = order[0]
+        keep.append(i)
+
+        ovr = inter_areas[i][order[1:]] / (areas[i] + areas[order[1:]] - inter_areas[i][order[1:]])
+
+        inds = np.where(ovr &lt;= thresh)[0]
+        order = order[inds + 1]
+
+    return keep
 </code></pre>
 
-<h3 id="删除容器">删除容器</h3>
+<h2 id="ref">REF</h2>
 
-<pre><code class="language-shell">docker rm -f  容器ID/名
+<p><a href="https://github.com/argman/EAST/blob/master/locality_aware_nms.py">LNMS代码</a></p>
 
-# 清理掉所有处于终止状态的容器
-docker container prune
-</code></pre>
+<p><a href="https://github.com/DetectionTeamUCAS/RetinaNet_Tensorflow_Rotation/blob/master/libs/box_utils/nms_rotate.py">INMS代码</a></p>
 
-<h3 id="web应用程序">web应用程序</h3>
-
-<pre><code class="language-shell">docker run -d -P training/webapp  python app.py
-docker run -d -p 5000:5000 training/webapp python app.py
-</code></pre>
-
-<ul>
-<li>-P : 将容器内部使用的网络端口映射到我们使用的主机上</li>
-
-<li><p>-p : 指定本地主机映射的端口号 本机端口：容器端口</p>
-
-<pre><code class="language-shell"># 查看容器端口映射
-docker port 容器ID/名
-</code></pre>
-
-<pre><code class="language-shell"># 查看容器内部的标准输出
-docker logs -f 容器ID/名
-</code></pre>
-
-<pre><code class="language-shell"># 查看容器内部运行的进程
-docker top 容器ID/名
-</code></pre>
-
-<pre><code class="language-shell"># 查看容器的配置和状态
-docker inspect 容器ID/名
-</code></pre></li>
-</ul>
-
-<h2 id="docker-镜像使用">Docker 镜像使用</h2>
-
-<pre><code class="language-shell"># 列出本地主机上的镜像
-docker images
-
-# 使用本机不存在的镜像时，docker 会自动下载
-docker pull  镜像名
-
-# 查找镜像
-docker  search  镜像名
-
-# 删除镜像
-docker  rmi  镜像名
-</code></pre>
-
-<h3 id="创建镜像">创建镜像</h3>
-
-<ul>
-<li>从已创建的容器中更新镜像，并且提交镜像</li>
-<li>使用Dockerfile指令创建新的镜像</li>
-</ul>
-
-<h4 id="更新镜像">更新镜像</h4>
-
-<ul>
-<li>创建容器，并对容器进行更新，如 apt-get update</li>
-
-<li><p>提交容器副本</p>
-
-<pre><code class="language-shell">docker commit -m=&quot;update&quot;  -a=&quot;linyang&quot;  容器ID   目标镜像名
-参数说明：
- -m : 提交的描述信息
- -a : 镜像作者
-</code></pre></li>
-
-<li><p>使用新的镜像来启动容器</p></li>
-</ul>
-
-<h4 id="构建镜像">构建镜像</h4>
-
-<pre><code class="language-shell">docker build -t  目标镜像   Dockerfile路径
-</code></pre>
-
-<p>参数说明：</p>
-
-<ul>
-<li>-t : 指定要创建的目标镜像名</li>
-<li>. : Dockerfile 文件所在目录，可以指定为绝对路径</li>
-</ul>
-
-<h2 id="docker-dockerfile-指令">Docker Dockerfile 指令</h2>
-
-<p>例：</p>
-
-<pre><code>FROM centos
-RUN yum install wget
-RUN wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-5.0.3.tar.gz&quot;
-RUN tar -xvf redis.tar.gz
-</code></pre>
-
-<h3 id="from">FROM</h3>
-
-<pre><code>定制的镜像都是基于 FROM 的镜像
-</code></pre>
-
-<h3 id="run">RUN</h3>
-
-<pre><code> 用于执行后面跟着的命令行命令
-</code></pre>
-
-<h3 id="copy">COPY</h3>
-
-<pre><code> 复制指令，从上下文目录中复制文件或者目录到容器里指定路径
-</code></pre>
-
-<pre><code class="language-shell">    COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;源路径1&gt;...  &lt;目标路径&gt;
-
-    COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&quot;&lt;源路径1&gt;&quot;,...  &quot;&lt;目标路径&gt;&quot;]
-</code></pre>
-
-<h3 id="add">ADD</h3>
-
-<pre><code>ADD 指令和 COPY 的使用格式一致（同样需求下，官方推荐使用 COPY），在执行 &lt;源文件&gt; 为 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，会自动复制并解压到 &lt;目标路径&gt;
-</code></pre>
-
-<h3 id="cmd">CMD</h3>
-
-<pre><code> 类似于 RUN 指令，用于运行程序，但二者运行的时间点不同:
-</code></pre>
-
-<pre><code class="language-shell">    CMD shell 命令 
-
-    CMD [&quot;&lt;可执行文件或命令&gt;&quot;,&quot;&lt;param1&gt;&quot;,&quot;&lt;param2&gt;&quot;,...] 
-
-    CMD [&quot;&lt;param1&gt;&quot;,&quot;&lt;param2&gt;&quot;,...]  # 该写法是为 ENTRYPOINT 指令指定的程序提供默认参数
-</code></pre>
-
-<pre><code>CMD 在docker run 时运行。
-
-RUN 是在 docker build。
-
-作用：为启动的容器指定默认要运行的程序，程序运行结束，容器也就结束。CMD 指令指定的程序可被 docker run 命令行参数中指定要运行的程序所覆盖。如果 Dockerfile 中如果存在多个 CMD 指令，仅最后一个生效。
-</code></pre>
-
-<h3 id="env">ENV</h3>
-
-<pre><code>设置环境变量，定义了环境变量，那么在后续的指令中，就可以使用这个环境变量
-</code></pre>
-
-<pre><code class="language-shell">ENV &lt;key&gt; &lt;value&gt;
-ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...
-</code></pre>
-
-<h3 id="arg">ARG</h3>
-
-<pre><code>构建参数，与 ENV 作用一至。不过作用域不一样。ARG 设置的环境变量仅对 Dockerfile 内有效，也就是说只有 docker build 的过程中有效，构建好的镜像内不存在此环境变量
-</code></pre>
-
-<pre><code class="language-shell">    ARG &lt;参数名&gt;[=&lt;默认值&gt;]
-</code></pre>
-
-<h3 id="volume">VOLUME</h3>
-
-<pre><code>定义匿名数据卷。在启动容器时忘记挂载数据卷，会自动挂载到匿名卷。
-</code></pre>
-
-<pre><code class="language-shell">VOLUME [&quot;&lt;路径1&gt;&quot;, &quot;&lt;路径2&gt;&quot;...]
-VOLUME &lt;路径&gt;
-</code></pre>
-
-<h3 id="workdir">WORKDIR</h3>
-
-<pre><code>指定工作目录。用 WORKDIR 指定的工作目录，会在构建镜像的每一层中都存在, docker build 构建镜像过程中的，每一个 RUN 命令都是新建的一层。只有通过 WORKDIR 创建的目录才会一直存在
-</code></pre>
-
-<h3 id="user">USER</h3>
-
-<pre><code>用于指定执行后续命令的用户和用户组，这边只是切换后续命令执行的用户（用户和用户组必须提前已经存在）
-</code></pre>
-
-<pre><code class="language-shell">USER &lt;用户名&gt;[:&lt;用户组&gt;]
-</code></pre>
-
-<h3 id="healthcheck">HEALTHCHECK</h3>
-
-<pre><code>用于指定某个程序或者指令来监控 docker 容器服务的运行状态
-</code></pre>
-
-<pre><code class="language-shell">HEALTHCHECK [选项] CMD &lt;命令&gt;：设置检查容器健康状况的命令
-HEALTHCHECK NONE：如果基础镜像有健康检查指令，使用这行可以屏蔽掉其健康检查指令
-
-HEALTHCHECK [选项] CMD &lt;命令&gt; : 这边 CMD 后面跟随的命令使用，可以参考 CMD 的用法
-</code></pre>
-
-<hr />
-
-<div align="center"><img src="/img/docker/2.png"> </div>
-
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="https://www.runoob.com/docker/docker-tutorial.html">菜鸟教程</a></li>
-<li><a href="https://www.cnblogs.com/panwenbin-logs/p/8007348.html">图2来源于🔘</a></li>
-</ul>
+<p><a href="https://github.com/Yuliang-Liu/Curve-Text-Detector/blob/master/lib/nms/py_cpu_nms.py">PNMS代码</a></p>
 
 		</div>
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/docker/" rel="tag">docker</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/ocr/" rel="tag">OCR</a></li>
 	</ul>
 </div>
 	</article>
@@ -510,13 +375,24 @@ HEALTHCHECK [选项] CMD &lt;命令&gt; : 这边 CMD 后面跟随的命令使用
 
 
 
+<aside class="sidebar">
+<h4>See Also</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	
+	<li><a href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
+	
+	<li><a href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
+	
+</ul>
+</div>
+<br/>
+</aside>
+
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Python 从图像URL获取图像数据的几种方式</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Python Orator 查询构造器速查手记</p></a>
+		<a class="post-nav__link" href="/post/yolov4/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</p></a>
 	</div>
 </nav>
 
