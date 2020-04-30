@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Pytorch内置 ctc_loss 使用</title>
-      <link>/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/</link>
+      <title>Pytorch: CRNN 实践</title>
+      <link>/post/pytorch_crnn%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Thu, 30 Apr 2020 16:49:49 +0800</pubDate>
       
-      <guid>/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/</guid>
-      <description>参照之前Keras的代码用pytorch复现CRNN, 记录一下pytorch下ctc loss结合具体例子怎么使用, 推导这块还待继续学习 基本设</description>
+      <guid>/post/pytorch_crnn%E5%AE%9E%E8%B7%B5/</guid>
+      <description>最近开始深入OCR这块, 以前倒是训练过开源的Keras-CRNN, 但是它和原文还是不一样, 今天参照Keras-CRNN代码和CRNN论文用p</description>
     </item>
     
     <item>
