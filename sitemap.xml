@@ -4,36 +4,41 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/ocr/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</loc>
-    <lastmod>2020-04-29T17:20:52+08:00</lastmod>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/</loc>
     <lastmod>2020-04-29T17:20:52+08:00</lastmod>
   </url>
   

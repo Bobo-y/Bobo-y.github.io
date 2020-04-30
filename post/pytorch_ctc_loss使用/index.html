@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Excel列表字母数字转换 - fly away, chase dream</title>
+	<title>Pytorch内置 ctc_loss 使用 - fly away, chase dream</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.57.2" />
-	<meta property="og:title" content="Excel列表字母数字转换" />
-<meta property="og:description" content="给定一个Excel表格中的列名称，返回其相应的列序号 例如， A -&gt; 1 B -&gt; 2 C -&gt; 3 ... Z -&gt; 26 AA -&gt; 27 AB -&gt; 28 ... 26进制 int titleToNumber(string s) { if(s.size()==0) return 0; int len = s.size(); int res =0; for(int i=0; i&lt;len;i&#43;&#43;){" />
+	<meta property="og:title" content="Pytorch内置 ctc_loss 使用" />
+<meta property="og:description" content="参照之前Keras的代码用pytorch复现CRNN, 记录一下pytorch下ctc loss结合具体例子怎么使用, 推导这块还待继续学习 基本设" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/leetcode/excel%E5%88%97%E8%A1%A8%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2/" />
-<meta property="article:published_time" content="2020-04-03T12:55:05+08:00" />
-<meta property="article:modified_time" content="2020-04-03T12:55:05+08:00" />
+<meta property="og:url" content="/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2020-04-30T16:49:49+08:00" />
+<meta property="article:modified_time" content="2020-04-30T16:49:49+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,79 +97,94 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Excel列表字母数字转换</h1>
+			<h1 class="post__title">Pytorch内置 ctc_loss 使用</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2020-04-03T12:55:05">2020-04-03</time>
+	<time class="meta__text" datetime="2020-04-30T16:49:49">2020-04-30</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/leetcode" rel="category">LeetCode</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a></span>
 </div>
 </div>
 		</header>
 <div class="content post__content clearfix">
-			<p>给定一个Excel表格中的列名称，返回其相应的列序号</p>
+			
 
-<p>例如，</p>
+<p><em>参照之前Keras的代码用pytorch复现CRNN, 记录一下pytorch下ctc loss结合具体例子怎么使用, 推导这块还待继续学习</em></p>
 
-<pre><code>A -&gt; 1
-B -&gt; 2
-C -&gt; 3
-...
-Z -&gt; 26
-AA -&gt; 27
-AB -&gt; 28 
-...
+<p>基本设置:</p>
+
+<ul>
+<li>任务背景: 数字识别 0-9, 加一个blank 共11个字符</li>
+<li>图片大小: 原CRNN中为 100 * 31 （宽 * 高）, 本次实验环境下大小为 200 * 31</li>
+<li>识别字符的最长长度: 本次实验设置的最长长度为 20</li>
+<li>网络输出为 T 50（输入LSTM的数据的时间步, CNN 部分输出序列长度） * 11 （一共11个不同的字符, 有多少字符此处数字为多少）</li>
+</ul>
+
+<h2 id="获取ctc对象">获取CTC对象</h2>
+
+<pre><code class="language-python">characters = &quot;-0123456789&quot;
+
+ctc_loss = CTCLoss(blank=0, reduction='mean')
 </code></pre>
 
-<p>26进制</p>
+<ul>
+<li>blank: 占位符 &lsquo;-&rsquo; 所在的索引, 上例中为0</li>
+<li>reduction: 处理loss的方式</li>
+</ul>
 
-<pre><code class="language-c++">int titleToNumber(string s) {
-        if(s.size()==0)
-        return 0;
-    int len = s.size();
-    int res =0;
-    for(int i=0; i&lt;len;i++){
-        int cur= s[i]-'A' +1;
-        res = res * 26 + cur;
+<p>损失计算:</p>
 
-    }
-    return res;
-    }
+<pre><code class="language-python">ctc_loss(log_probs, targets, input_lengths, target_lengths)
 </code></pre>
 
-<p>给定一个正整数，返回它在 Excel 表中相对应的列名称</p>
+<ul>
+<li>log_probs: 网络输出的tensor, shape为 (T, N, C）, T 为时间步, N 为batch_size, C 为字符总数（包括blank）. 本例中，假如batch_size=8，网络输出为 (50，8，11)。网络输出需要进行log_softmax</li>
+<li>targets: 目标tensor, targets有两种输入形式。其一: shape为 （N，S），N为batch_size，S 为识别序列的最长长度，值为每一个字符的index，不能包含blank的index。由于可能每个序列的长度不一样，而数组必须维度一样，就需要将短的序列padded 为最长序列长度（不过怎么padded没太弄明白，TensorFlow CTC_Loss 里面使用blank去填充, 但是这儿说了不能包含blank，有点迷糊, 还是用第二种吧）。 其二: 将该batch_size 内每一张图片的字符的index拼成一个一维数组. 会按照target_lengths 中的值自动对该一维数组中的index进行划分到对应图片</li>
+<li>target_lengths: shape 为(N) 的Tensor, 每一个位置记录了对应图片所含有的字符数. 假如 N=4，即共有4张图片，每一张图片中包含的字符个数分别为: 8, 10, 12, 20, 那么 target_lengths = (8, 10, 12, 20), 同时targets 中共有 （8 + 10 + 12 + 20）个值，按照target_lengths中的值依次在targets 中取值即可</li>
+<li>input_lengths: shape 为 (N) 的Tensor, 值为输出序列长度T, 因为图片宽度都固定了，所以都为T</li>
+</ul>
 
-<p>例如，</p>
+<p>个人实现代码如下:</p>
 
-<pre><code>1 -&gt; A
-2 -&gt; B
-3 -&gt; C
-...
-26 -&gt; Z
-27 -&gt; AA
-28 -&gt; AB 
-...
+<pre><code class="language-python">def custom_collate_fn(batch, T=50):
+        items = list(zip(*batch))
+        items[0] = default_collate(items[0])
+        labels = list(items[1])
+        items[1] = []
+        target_lengths = torch.zeros((len(batch,)), dtype=torch.int)
+        input_lengths = torch.zeros(len(batch,), dtype=torch.int)
+        for idx, label in enumerate(labels):
+            # 记录每个图片对应的字符总数
+            target_lengths[idx] = len(label)
+            # 将batch内的label拼成一个list
+            items[1].extend(label)
+            # input_lengths 恒为 T
+            input_lengths[idx] = T
+
+        return items[0], torch.tensor(items[1]), target_lengths, input_lengths
+
+batch_iterator = iter(DataLoader(trainSet, args.batch_size, shuffle=True, num_workers=args.num_workers, collate_fn=custom_collate_fn))
+images, labels, target_lengths, input_lengths = next(batch_iterator)
+out = net(images)
+loss = ctc_loss(log_probs=out, targets=labels, target_lengths=target_lengths, input_lengths=input_lengths)
 </code></pre>
 
-<pre><code class="language-c++">string convertToTitle(int n) {
-        string ans = &quot;&quot;;
-        while (n &gt; 0)
-        {
-            n -= 1;
-            ans.push_back('A' + (n % 26));
-            n /= 26;
-        }
-        reverse(ans.begin(), ans.end());
-        return ans;
-    }
-</code></pre>
+<h2 id="ref">REF</h2>
+
+<p>pytorch ctc_loss</p>
 
 		</div>
 		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/ocr/" rel="tag">OCR</a></li>
+	</ul>
+</div>
 	</article>
 </main>
 
@@ -202,13 +217,26 @@ AB -&gt; 28
 
 
 
+<aside class="sidebar">
+<h4>See Also</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	
+	<li><a href="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/">文本检测中的nms</a></li>
+	
+	<li><a href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
+	
+	<li><a href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
+	
+</ul>
+</div>
+<br/>
+</aside>
+
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/leetcode/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">数组中第K个最大元素</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/leetcode/leetcode1038.%E4%BB%8E%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%88%B0%E6%9B%B4%E5%A4%A7%E5%92%8C%E6%A0%91/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Leetcode:1038</p></a>
+		<a class="post-nav__link" href="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">文本检测中的nms</p></a>
 	</div>
 </nav>
 

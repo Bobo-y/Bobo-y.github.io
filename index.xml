@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Apr 2020 17:20:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2020 16:49:49 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pytorch内置 ctc_loss 使用</title>
+      <link>/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 30 Apr 2020 16:49:49 +0800</pubDate>
+      
+      <guid>/post/pytorch_ctc_loss%E4%BD%BF%E7%94%A8/</guid>
+      <description>参照之前Keras的代码用pytorch复现CRNN, 记录一下pytorch下ctc loss结合具体例子怎么使用, 推导这块还待继续学习 基本设</description>
+    </item>
     
     <item>
       <title>文本检测中的nms</title>
