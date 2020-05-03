@@ -6,10 +6,19 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Apr 2020 16:49:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2020 17:03:16 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NLP</title>
+      <link>/tags/nlp/</link>
+      <pubDate>Sat, 02 May 2020 17:03:16 +0800</pubDate>
+      
+      <guid>/tags/nlp/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>OCR</title>
@@ -291,7 +300,7 @@
     </item>
     
     <item>
-      <title>keras</title>
+      <title>Keras</title>
       <link>/tags/keras/</link>
       <pubDate>Sat, 24 Aug 2019 21:42:13 +0800</pubDate>
       

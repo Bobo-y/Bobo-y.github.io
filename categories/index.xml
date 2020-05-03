@@ -6,7 +6,7 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 May 2020 17:31:29 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2020 17:03:16 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>自然语言处理</title>
       <link>/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
-      <pubDate>Fri, 01 May 2020 17:31:29 +0800</pubDate>
+      <pubDate>Sat, 02 May 2020 17:03:16 +0800</pubDate>
       
       <guid>/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</guid>
       <description></description>
@@ -57,7 +57,7 @@
     </item>
     
     <item>
-      <title>Leetcode</title>
+      <title>LeetCode</title>
       <link>/categories/leetcode/</link>
       <pubDate>Tue, 07 Apr 2020 21:02:42 +0800</pubDate>
       
