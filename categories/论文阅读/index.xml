@@ -6,10 +6,19 @@
     <description>Recent content in 论文阅读 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Apr 2020 23:37:42 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 16:23:18 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Image Caption模型</title>
+      <link>/post/image_caption_1/</link>
+      <pubDate>Sun, 03 May 2020 16:23:18 +0800</pubDate>
+      
+      <guid>/post/image_caption_1/</guid>
+      <description>图像描述生成作为结合CV与NLP的跨模态学习任务, 在人工智能领域也是热门的研究点. 模型 Image caption 是在给定照片的情况下生成人类可读的文字描述的具有挑</description>
+    </item>
     
     <item>
       <title>YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</title>

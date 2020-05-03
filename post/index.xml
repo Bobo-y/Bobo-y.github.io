@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 02 May 2020 17:03:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 16:23:18 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Image Caption模型</title>
+      <link>/post/image_caption_1/</link>
+      <pubDate>Sun, 03 May 2020 16:23:18 +0800</pubDate>
+      
+      <guid>/post/image_caption_1/</guid>
+      <description>图像描述生成作为结合CV与NLP的跨模态学习任务, 在人工智能领域也是热门的研究点. 模型 Image caption 是在给定照片的情况下生成人类可读的文字描述的具有挑</description>
+    </item>
     
     <item>
       <title>Seq2Seq模型: 从理论到实践(二)</title>
