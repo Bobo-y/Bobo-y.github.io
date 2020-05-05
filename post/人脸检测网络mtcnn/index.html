@@ -132,9 +132,39 @@
 <li>对候选框进一步进行人脸/背景分类, 以及box回归, 同时增加landmark关键点回归</li>
 </ul>
 
+<div align="center"><img src="/img/MTCNN/2.jpg" width="700" height="600"></div>
+
+<h2 id="训练流程">训练流程</h2>
+
+<ul>
+<li>Pnet 输入为 12 * 12 的图像，从训练数据集中裁剪出 12 * 12 的样本，裁剪的人脸与GT IOU 大于0.65 记为正样本，小于0.4 记为负样本，二者之间的为部分人脸样本。</li>
+<li>由于Rnet与Onet带全连接层，输入固定。Rnet 输入为24 * 24。从数据集中裁剪 24 * 24 的人脸框训练，以及使用Pnet的proposal作为训练样本（先NMS在resize到24 * 24）</li>
+<li>Onet 输入大小为48 * 48 ，使用Rnet生成的候选框（先NMS，再resize到48 * 48）作为训练样本；同时使用从数据集中裁剪的人脸作为训练样本</li>
+</ul>
+
+<p>人脸分类任务：利用正样本和负样本进行训练</p>
+
+<p>人脸边框回归任务：利用正样本和部分样本进行训练</p>
+
+<p>关键点检测任务：利用关键点样本进行训练</p>
+
+<p>关键点检测在 Pnet和Rnet中作为辅助，损失占比较小，预测时仅使用Onet的关键点输出结果</p>
+
+<h2 id="测试流程">测试流程</h2>
+
+<p>Pnet为全卷积网络，输入可以为任意大小，但训练时均为12 * 12，为了检测不同大小的人脸，因此测试时先向下生成图像金字塔，下采样一倍时，12 * 12 的像素区域包含的信息为之前得 24 * 24 像素区域. 然后在不同的尺度下进行检测，使用NMS后，根据候选框提取图像，resize到24 * 24，输入Rnet, 再到Onet 输出.</p>
+
 <h2 id="损失">损失</h2>
 
 <p>典型的多任务损失, 分类加回归损失.</p>
+
+<p>边框偏移回归损失计算: 给定人脸标注框，(x1,y1)为左上角坐标，(x2,y2)为右下角坐标，新剪裁的边框坐标为(xn1,yn1),(xn2,yn2),width,height．则</p>
+
+<p>$$offset _{x1} = (x1 - xn1)/width$$</p>
+
+<h2 id="ref">ref</h2>
+
+<p><a href="https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf">Zhang, K., Zhang, Z., Li, Z., and Qiao, Y. (2016). Joint face detection and alignment using multitask cascaded convolutional networks. IEEE Signal Processing Letters, 23(10):1499–1503.</a></p>
 
 		</div>
 		
