@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 03 May 2020 16:23:18 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 11:27:35 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CBAM注意力模块: Convolutional Block Attention Module</title>
+      <link>/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 11 May 2020 11:27:35 +0800</pubDate>
+      
+      <guid>/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/</guid>
+      <description>之前谈过SE-net, 对于目标检测或检测用于特征通道的attention, 今天记录一下CBAM模块, 对分类或检测中用来获取通道、空间位置的a</description>
+    </item>
     
     <item>
       <title>Image Caption模型</title>
@@ -1520,7 +1529,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org pytorch cmake 使用指南 arxiv中科院镜像  数据集  pascal voc open images ADE 20k DAVIS  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
+      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org pytorch cmake 使用指南 arxiv中科院镜像 scikit-learn  数据集  pascal voc open images ADE 20k DAVIS  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
     </item>
     
     <item>
