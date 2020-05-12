@@ -113,7 +113,7 @@
 <div class="content post__content clearfix">
 			
 
-<p><em>本文图片、代码来源于<a href="http://localhost:8889/notebooks/2%20-%20Learning%20Phrase%20Representations%20using%20RNN%20Encoder-Decoder%20for%20Statistical%20Machine%20Translation.ipynb">pytorch-se12seq</a>, 加深个人理解</em></p>
+<p><em>本文图片、代码来源于<a href="https://github.com/bentrevett/pytorch-seq2seq/blob/master/2%20-%20Learning%20Phrase%20Representations%20using%20RNN%20Encoder-Decoder%20for%20Statistical%20Machine%20Translation.ipynb">pytorch-se12seq</a>, 加深个人理解</em></p>
 
 <p>在<a href="http://note4lin.top/post/seq2seq%E6%A8%A1%E5%9E%8B/">上文</a>中使用的编码器-解码器结构如下:</p>
 
@@ -190,7 +190,7 @@
 
 <p>上面的模型在一定程度上解决了信息压缩的问题, 存在的问题是：在将输入句子编码为定长的向量后，每次解码时使用context vector，而context vector 中每个词的权重一样。比如对于翻译而言，输出的一个词往往对应于输出的一个或多个词，每次都用整个语句是不合理的。因此，attention的思想就是对源语句的每个词在每次解码时赋予不同的权重，权重越大，贡献越大.</p>
 
-<p>在翻译中的实现: 参照<a href="http://localhost:8889/notebooks/3%20-%20Neural%20Machine%20Translation%20by%20Jointly%20Learning%20to%20Align%20and%20Translate.ipynb">3 - Neural Machine Translation by Jointly Learning to Align and Translate</a></p>
+<p>在翻译中的实现: 参照<a href="https://github.com/bentrevett/pytorch-seq2seq/blob/master/3%20-%20Neural%20Machine%20Translation%20by%20Jointly%20Learning%20to%20Align%20and%20Translate.ipynb">3 - Neural Machine Translation by Jointly Learning to Align and Translate</a></p>
 
 <p>使用GRU为解码器，解码器 t-1 时间步的hidden state 为，$s _{t-1}$，编码器在整个序列上的 $h_t$ 构成的 $H$. (LSTM、GRU 返回值详见源码, 简单说第一项为每个时间步的hidden state, 第二项为最后一个时间步的hidden state). 解码的每一个时间步，attention 层输出一个attention vector  $a _t$，$a_t$中每一个元素值在0-1之间，且 $sum(a_t)=1$.</p>
 
@@ -210,12 +210,22 @@
 
 <ul>
 <li>编码器部分对输入序列进行编码，输出每个时间步的hidden state作为attention 需要的输入和最后一个时间步的状态作为context vector</li>
-<li>解码器的每一个时间步, 首先根据上一个时间步的hidden state 和编码器所有的hidden state $W$ 得到attention的权值，将 $W$ 加权后和embedded vector输入解码器.</li>
+<li>解码器的每一个时间步, 首先根据上一个时间步得到的hidden state 和编码器所有的hidden state $W$ 得到attention的权值，将 $W$ 加权后和embedded vector输入解码器.</li>
 </ul>
+
+<p>对于seq2seq 模型的attention模型可按以下图理解:</p>
+
+<p><em>在解码阶段，每一次都会根据当前的hidden state 与输入序列的所有hidden state计算attention值，本质是为了得到当前的hidden state 与输入序列哪些最相关，即 $ s _{t-1} $ 为一个query，去源语句的hidden state 中去查找哪些与它最相关，key, value 是编码器每一个时间步的hidden state，使用 query与每个key计算匹配度，再乘以value，即得到加权的value&ndash;attention</em></p>
+
+<div align="center"><img src="/img/seq2seq/7.jpg" width="600"></div>
+
+<p>模型通过Q和K的匹配计算出权重，再结合V得到输出, attention 可表示为下式:</p>
+
+<p>$$Attention(Q,K,V)=softmax(match(Q,K)) * V$$</p>
 
 <h2 id="ref">REF</h2>
 
-<p><a href="http://localhost:8889/notebooks/3%20-%20Neural%20Machine%20Translation%20by%20Jointly%20Learning%20to%20Align%20and%20Translate.ipynb">参考代码</a></p>
+<p><a href="https://github.com/bentrevett/pytorch-seq2seq/blob/master/3%20-%20Neural%20Machine%20Translation%20by%20Jointly%20Learning%20to%20Align%20and%20Translate.ipynb">参考代码</a></p>
 
 		</div>
 		
