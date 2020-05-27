@@ -48,6 +48,24 @@
     </item>
     
     <item>
+      <title>Vim支持中文</title>
+      <link>/wiki/vim%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Mon, 27 Jan 2020 09:21:45 +0800</pubDate>
+      
+      <guid>/wiki/vim%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87/</guid>
+      <description>全局支持: 编辑 /etc/vimrc, 文件未添加 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 set termencoding=utf-8 set encoding=utf-8 只修改个人: 将 /etc/vimrc 复制到个人根目录, 修改为 .vimrc, 添加上面三句话到文件未</description>
+    </item>
+    
+    <item>
+      <title>在服务器中使用jupyter以及在本地pycharm编辑代码并同步到服务器并运行</title>
+      <link>/wiki/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8jupyter/</link>
+      <pubDate>Fri, 27 Dec 2019 22:26:59 +0800</pubDate>
+      
+      <guid>/wiki/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8jupyter/</guid>
+      <description>在服务器中使用 jupyter 在使用服务器开发时, 服务器无法浏览器打开，因此在服务器上配置端口以运行jupyter 一: 安装 jupyter 二: 运行 jupyter notebook &amp;ndash;generate-config ，生成配置文件 三</description>
+    </item>
+    
+    <item>
       <title>Docker小记</title>
       <link>/wiki/docker%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
