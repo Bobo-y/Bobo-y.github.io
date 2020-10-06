@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式算法服务 on fly away, chase dream</title>
+    <link>/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E6%9C%8D%E5%8A%A1/</link>
+    <description>Recent content in 分布式算法服务 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Oct 2020 14:10:30 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用nginx将tf_serving反向代理实现负载均衡</title>
+      <link>/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <pubDate>Tue, 06 Oct 2020 14:10:30 +0800</pubDate>
+      
+      <guid>/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <description>对外提供网络接口服务，当单机容量达到极限时，可以从业务拆分和分布式部署两个方面进行分析，来解决接口访问量大，并发量高，海量数据的问题。从单机</description>
+    </item>
+    
+  </channel>
+</rss>
