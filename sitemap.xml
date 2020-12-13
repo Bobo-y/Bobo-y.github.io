@@ -4,26 +4,46 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-10-06T14:10:30+08:00</lastmod>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/</loc>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/darknet/</loc>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-10-06T14:10:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/nginx/</loc>
-    <lastmod>2020-10-06T14:10:30+08:00</lastmod>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-10-06T14:10:30+08:00</lastmod>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/yolov3/</loc>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-12-13T12:12:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nginx/</loc>
     <lastmod>2020-10-06T14:10:30+08:00</lastmod>
   </url>
   
@@ -423,11 +443,6 @@
   </url>
   
   <url>
-    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-02-04T19:15:55+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/life/%E6%9C%A8%E5%85%B0%E8%AF%8D%E6%8B%9F%E5%8F%A4%E5%86%B3%E7%BB%9D%E8%AF%8D%E6%9F%AC%E5%8F%8B/</loc>
     <lastmod>2020-01-28T22:39:21+08:00</lastmod>
   </url>
@@ -520,6 +535,11 @@
   <url>
     <loc>/wiki/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8jupyter/</loc>
     <lastmod>2019-12-27T22:26:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/pytorch%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2019-12-25T12:37:07+08:00</lastmod>
   </url>
   
   <url>

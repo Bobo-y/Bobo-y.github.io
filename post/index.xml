@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Oct 2020 14:10:30 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 12:12:32 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Darkent训练小记</title>
+      <link>/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Sun, 13 Dec 2020 12:12:32 +0800</pubDate>
+      
+      <guid>/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>使用nginx将tf_serving反向代理实现负载均衡</title>
@@ -288,6 +297,15 @@
       
       <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
       <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
+    </item>
+    
+    <item>
+      <title>libtorch c&#43;&#43; 使用例子</title>
+      <link>/post/pytorch%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 25 Dec 2019 12:37:07 +0800</pubDate>
+      
+      <guid>/post/pytorch%E9%83%A8%E7%BD%B2/</guid>
+      <description>pytorch可使用flask作为服务器部署，但是由于Python的可移植性和速度比不上c++, pytorch还提供将模型转化到c++端运行</description>
     </item>
     
     <item>

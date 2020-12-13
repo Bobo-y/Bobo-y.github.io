@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>libtorch c&#43;&#43; 使用例子</title>
+      <link>/post/pytorch%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 25 Dec 2019 12:37:07 +0800</pubDate>
+      
+      <guid>/post/pytorch%E9%83%A8%E7%BD%B2/</guid>
+      <description>pytorch可使用flask作为服务器部署，但是由于Python的可移植性和速度比不上c++, pytorch还提供将模型转化到c++端运行</description>
+    </item>
+    
+    <item>
       <title>Docker小记</title>
       <link>/wiki/docker%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>

@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>libtorch c&#43;&#43; 使用例子</title>
+      <link>/post/pytorch%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 25 Dec 2019 12:37:07 +0800</pubDate>
+      
+      <guid>/post/pytorch%E9%83%A8%E7%BD%B2/</guid>
+      <description>pytorch可使用flask作为服务器部署，但是由于Python的可移植性和速度比不上c++, pytorch还提供将模型转化到c++端运行</description>
+    </item>
+    
+    <item>
       <title>目标检测网络: yolo-v1 实现关键点讲解</title>
       <link>/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v1%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 10 Dec 2019 16:20:31 +0800</pubDate>
