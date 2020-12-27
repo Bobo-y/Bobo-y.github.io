@@ -6,17 +6,17 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Dec 2020 12:12:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 22:46:55 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>深度学习</title>
-      <link>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sun, 13 Dec 2020 12:12:32 +0800</pubDate>
+      <title>计算机视觉</title>
+      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
+      <pubDate>Mon, 26 Oct 2020 22:46:55 +0800</pubDate>
       
-      <guid>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
       <description></description>
     </item>
     
@@ -35,15 +35,6 @@
       <pubDate>Mon, 01 Jun 2020 21:01:10 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>计算机视觉</title>
-      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Mon, 11 May 2020 11:27:35 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
       <description></description>
     </item>
     
@@ -84,7 +75,7 @@
     </item>
     
     <item>
-      <title>LeetCode</title>
+      <title>Leetcode</title>
       <link>/categories/leetcode/</link>
       <pubDate>Tue, 07 Apr 2020 21:02:42 +0800</pubDate>
       
@@ -98,6 +89,15 @@
       <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
       
       <guid>/categories/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>深度学习</title>
+      <link>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Tue, 04 Feb 2020 19:15:55 +0800</pubDate>
+      
+      <guid>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     

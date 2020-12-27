@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 May 2020 11:27:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 22:46:55 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSPNet</title>
+      <link>/post/cspnet/</link>
+      <pubDate>Mon, 26 Oct 2020 22:46:55 +0800</pubDate>
+      
+      <guid>/post/cspnet/</guid>
+      <description>CSPNet出至论文：CSPNet: A New Backbone that can Enhance Learning Capability of CNN, 近来yolo-v4,yolo-v5都使用其作为主干网络的结构，其主要用于降低计算量的</description>
+    </item>
     
     <item>
       <title>CBAM注意力模块: Convolutional Block Attention Module</title>

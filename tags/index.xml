@@ -6,26 +6,17 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Dec 2020 12:12:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 22:46:55 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>darknet</title>
-      <link>/tags/darknet/</link>
-      <pubDate>Sun, 13 Dec 2020 12:12:32 +0800</pubDate>
+      <title>CSPNet</title>
+      <link>/tags/cspnet/</link>
+      <pubDate>Mon, 26 Oct 2020 22:46:55 +0800</pubDate>
       
-      <guid>/tags/darknet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>yolov3</title>
-      <link>/tags/yolov3/</link>
-      <pubDate>Sun, 13 Dec 2020 12:12:32 +0800</pubDate>
-      
-      <guid>/tags/yolov3/</guid>
+      <guid>/tags/cspnet/</guid>
       <description></description>
     </item>
     
@@ -138,7 +129,7 @@
     </item>
     
     <item>
-      <title>Anchor Free</title>
+      <title>Anchor free</title>
       <link>/tags/anchor-free/</link>
       <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
       

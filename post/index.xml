@@ -6,26 +6,26 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Dec 2020 12:12:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 22:46:55 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Darkent训练小记</title>
-      <link>/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/</link>
-      <pubDate>Sun, 13 Dec 2020 12:12:32 +0800</pubDate>
+      <title>CSPNet</title>
+      <link>/post/cspnet/</link>
+      <pubDate>Mon, 26 Oct 2020 22:46:55 +0800</pubDate>
       
-      <guid>/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/</guid>
-      <description></description>
+      <guid>/post/cspnet/</guid>
+      <description>CSPNet出至论文：CSPNet: A New Backbone that can Enhance Learning Capability of CNN, 近来yolo-v4,yolo-v5都使用其作为主干网络的结构，其主要用于降低计算量的</description>
     </item>
     
     <item>
-      <title>使用nginx将tf_serving反向代理实现负载均衡</title>
-      <link>/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <title>使用nginx实现服务反向代理实现负载均衡</title>
+      <link>/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
       <pubDate>Tue, 06 Oct 2020 14:10:30 +0800</pubDate>
       
-      <guid>/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <guid>/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
       <description>对外提供网络接口服务，当单机容量达到极限时，可以从业务拆分和分布式部署两个方面进行分析，来解决接口访问量大，并发量高，海量数据的问题。从单机</description>
     </item>
     
