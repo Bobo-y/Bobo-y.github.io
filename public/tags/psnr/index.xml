@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PSNR on fly away, chase dream</title>
+    <link>/tags/psnr/</link>
+    <description>Recent content in PSNR on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Oct 2018 16:55:08 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/psnr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>图像相似度之PSNR与SSIM小结</title>
+      <link>/post/psnr/</link>
+      <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
+      
+      <guid>/post/psnr/</guid>
+      <description>PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数，比如</description>
+    </item>
+    
+  </channel>
+</rss>

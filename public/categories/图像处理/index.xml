@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图像处理 on fly away, chase dream</title>
+    <link>/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</link>
+    <description>Recent content in 图像处理 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于内容的图像检索: pytorch</title>
+      <link>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</guid>
+      <description>看了Jason Brownlee博士的Keras CBIR demo, 自己也动手用pytorch写一个. CBIR CBIR 为基于内容的图像检索. 用于在图像数据数据库上检索具有</description>
+    </item>
+    
+    <item>
+      <title>图像处理: 双边滤波器</title>
+      <link>/post/%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2%E5%99%A8/</link>
+      <pubDate>Sat, 04 May 2019 10:50:37 +0800</pubDate>
+      
+      <guid>/post/%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2%E5%99%A8/</guid>
+      <description>双边滤波器 百科 &amp;ldquo;双边滤波（Bilateral Filter）是非线性滤波中的一种。这是一种结合图像的空间邻近度与像素值相似度的处理</description>
+    </item>
+    
+    <item>
+      <title>图像处理: 高斯滤波器</title>
+      <link>/post/%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2%E5%99%A8/</link>
+      <pubDate>Sat, 06 Apr 2019 12:58:48 +0800</pubDate>
+      
+      <guid>/post/%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2%E5%99%A8/</guid>
+      <description>高斯滤波是一种线性平滑滤波，适用于消除高斯噪声，广泛应用于图像处理的减噪过程, 高斯滤波就是对整幅图像进行加权平均的过程，每一个像素点的值，都</description>
+    </item>
+    
+    <item>
+      <title>模版匹配之相关匹配</title>
+      <link>/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Thu, 20 Dec 2018 15:44:06 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%B8%E5%85%B3%E5%8C%B9%E9%85%8D/</guid>
+      <description>模板匹配 最近准备把学过的一些知识整理写成博客，加深印象。 模板匹配是一种最原始、最基本的模式识别方法，研究某一特定对象物的图案位于图像的什么地</description>
+    </item>
+    
+    <item>
+      <title>基于Keras图像相似度计算孪生网络</title>
+      <link>/post/keras_simi/</link>
+      <pubDate>Mon, 12 Nov 2018 16:32:32 +0800</pubDate>
+      
+      <guid>/post/keras_simi/</guid>
+      <description>import keras from keras.layers import Input,Dense,Conv2D from keras.layers import MaxPooling2D,Flatten,Convolution2D from keras.models import Model import os import numpy as np from PIL import Image from keras.optimizers import SGD from scipy import misc root_path = os.getcwd() train_names = [&#39;bear&#39;,&#39;blackswan&#39;,&#39;bus&#39;,&#39;camel&#39;,&#39;car&#39;,&#39;cows&#39;,&#39;dance&#39;,&#39;dog&#39;,&#39;hike&#39;,&#39;hoc&#39;,&#39;kite&#39;,&#39;lucia&#39;,&#39;mallerd&#39;,&#39;pigs&#39;,&#39;soapbox&#39;,&#39;stro&#39;,&#39;surf&#39;,&#39;swing&#39;,&#39;train&#39;,&#39;walking&#39;] test_names = [&#39;boat&#39;,&#39;dance-jump&#39;,&#39;drift-turn&#39;,&#39;elephant&#39;,&#39;libby&#39;] def load_data(seq_names,data_number,seq_len): #生成图片对 print(&#39;loading data.....&#39;) frame_num = 51 train_data1 = [] train_data2 = [] train_lab = [] count = 0 while count &amp;lt; data_number:</description>
+    </item>
+    
+    <item>
+      <title>图像相似度之PSNR与SSIM小结</title>
+      <link>/post/psnr/</link>
+      <pubDate>Wed, 03 Oct 2018 16:55:08 +0800</pubDate>
+      
+      <guid>/post/psnr/</guid>
+      <description>PSNR（Peak Signal to Noise Ratio）：峰值信噪比 使用局部均值误差来判断差异，对于两个H*W*C的图像，I1,I2 其中n为采样值的比特数，比如</description>
+    </item>
+    
+    <item>
+      <title>图像联通区域标记</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</link>
+      <pubDate>Fri, 21 Sep 2018 17:01:55 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E6%A0%87%E8%AE%B0/</guid>
+      <description>由于最近做实验用到二值图像连通区域（八连通）标记，刚开始的时候为了验证算法有效性，用了递归的方法（太慢了，而且图像一大就容易栈溢出），最后查</description>
+    </item>
+    
+  </channel>
+</rss>

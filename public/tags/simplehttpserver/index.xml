@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SimpleHttpServer on fly away, chase dream</title>
+    <link>/tags/simplehttpserver/</link>
+    <description>Recent content in SimpleHttpServer on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Jul 2019 10:43:23 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/simplehttpserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用SimpleHttpServer传输文件</title>
+      <link>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
+      
+      <guid>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认800</description>
+    </item>
+    
+  </channel>
+</rss>

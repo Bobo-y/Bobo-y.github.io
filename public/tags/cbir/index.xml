@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CBIR on fly away, chase dream</title>
+    <link>/tags/cbir/</link>
+    <description>Recent content in CBIR on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Apr 2020 16:33:21 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/cbir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于内容的图像检索: pytorch</title>
+      <link>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</link>
+      <pubDate>Fri, 17 Apr 2020 16:33:21 +0800</pubDate>
+      
+      <guid>/post/%E5%9F%BA%E4%BA%8Epytorch%E7%9A%84cbir_demo/</guid>
+      <description>看了Jason Brownlee博士的Keras CBIR demo, 自己也动手用pytorch写一个. CBIR CBIR 为基于内容的图像检索. 用于在图像数据数据库上检索具有</description>
+    </item>
+    
+  </channel>
+</rss>

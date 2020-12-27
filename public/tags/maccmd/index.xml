@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac——CMD on fly away, chase dream</title>
+    <link>/tags/maccmd/</link>
+    <description>Recent content in Mac——CMD on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Jul 2019 10:38:06 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/maccmd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux进程、端口占用查看</title>
+      <link>/wiki/maccmd/</link>
+      <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
+      
+      <guid>/wiki/maccmd/</guid>
+      <description>查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号</description>
+    </item>
+    
+  </channel>
+</rss>

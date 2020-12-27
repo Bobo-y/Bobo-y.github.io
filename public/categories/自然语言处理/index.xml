@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自然语言处理 on fly away, chase dream</title>
+    <link>/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
+    <description>Recent content in 自然语言处理 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 03 May 2020 16:23:18 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Image Caption模型</title>
+      <link>/post/image_caption_1/</link>
+      <pubDate>Sun, 03 May 2020 16:23:18 +0800</pubDate>
+      
+      <guid>/post/image_caption_1/</guid>
+      <description>图像描述生成作为结合CV与NLP的跨模态学习任务, 在人工智能领域也是热门的研究点. 模型 Image caption 是在给定照片的情况下生成人类可读的文字描述的具有挑</description>
+    </item>
+    
+    <item>
+      <title>Seq2Seq模型: 从理论到实践(二)</title>
+      <link>/post/seq2seq%E6%A8%A1%E5%9E%8B_%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E5%AE%9E%E8%B7%B5_%E4%BA%8C/</link>
+      <pubDate>Sat, 02 May 2020 17:03:16 +0800</pubDate>
+      
+      <guid>/post/seq2seq%E6%A8%A1%E5%9E%8B_%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E5%AE%9E%E8%B7%B5_%E4%BA%8C/</guid>
+      <description>本文图片、代码来源于pytorch-se12seq, 加深个人理解 在上文中使用的编码器-解码器结构如下: （一）信息压缩问题 对于上诉的解码器而言</description>
+    </item>
+    
+    <item>
+      <title>Seq2Seq模型: 从理论到实践(一)</title>
+      <link>/post/seq2seq%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Fri, 01 May 2020 17:31:29 +0800</pubDate>
+      
+      <guid>/post/seq2seq%E6%A8%A1%E5%9E%8B/</guid>
+      <description>理论结合实践是学习的最佳方式, 本文图片、代码来源于pytorch-seq2seq Seq2Seq 模型 对于序列预测, RNN及其变种LSTM、GRU等无疑是最</description>
+    </item>
+    
+  </channel>
+</rss>

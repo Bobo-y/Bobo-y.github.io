@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OHEM on fly away, chase dream</title>
+    <link>/tags/ohem/</link>
+    <description>Recent content in OHEM on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Feb 2020 18:46:23 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/ohem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</title>
+      <link>/post/ohem/</link>
+      <pubDate>Sun, 16 Feb 2020 18:46:23 +0800</pubDate>
+      
+      <guid>/post/ohem/</guid>
+      <description>在目标检测中, 存在正负样本类别不平衡的现象, 特别是对于单阶段的目标检测算法. 如果每张训练图片中目标个数还很少的话, 背景区域就占了绝大部分, 分</description>
+    </item>
+    
+  </channel>
+</rss>

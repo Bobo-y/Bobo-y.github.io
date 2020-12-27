@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keras on fly away, chase dream</title>
+    <link>/categories/keras/</link>
+    <description>Recent content in Keras on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 29 Mar 2019 15:16:16 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/keras/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keras数据增强并保存到本地</title>
+      <link>/post/keras_data_aug/</link>
+      <pubDate>Fri, 29 Mar 2019 15:16:16 +0800</pubDate>
+      
+      <guid>/post/keras_data_aug/</guid>
+      <description>当需要对指定文件夹下的图片进行数据增广时，使用keras的ImageDataGenerator类的flow_from_directory（）</description>
+    </item>
+    
+    <item>
+      <title>Keras多标签分类网络实现</title>
+      <link>/post/keras_duofenlei/</link>
+      <pubDate>Fri, 29 Mar 2019 15:07:11 +0800</pubDate>
+      
+      <guid>/post/keras_duofenlei/</guid>
+      <description>简谈多分类与多标签分类 简单的说，输入一张图片进行分类： * 这张图片里面的物体（通常认为只有一个物体）属于某一个类，各个类别之间的概率是竞争关系</description>
+    </item>
+    
+    <item>
+      <title>Keras数据集加载小结</title>
+      <link>/post/keras_dataload/</link>
+      <pubDate>Tue, 26 Mar 2019 15:20:23 +0800</pubDate>
+      
+      <guid>/post/keras_dataload/</guid>
+      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera</description>
+    </item>
+    
+  </channel>
+</rss>

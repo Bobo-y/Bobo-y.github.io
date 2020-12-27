@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CRNN笔记以及数字检测识别实践 - fly away, chase dream</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.57.2" />
+	<meta property="og:title" content="CRNN笔记以及数字检测识别实践" />
+<meta property="og:description" content="主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN及其变体。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/" />
+<meta property="article:published_time" content="2019-09-08T16:07:07+08:00" />
+<meta property="article:modified_time" content="2019-09-08T16:07:07+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+    
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3547912397637948",
+      enable_page_level_ads: true
+    });
+  </script>
+
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
+			<div class="logo__title">fly away, chase dream</div>			
+				<div class="logo__tagline">ML、CV、Image process, NLP beginning</div> 
+			</a>
+			
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">about</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">blog</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/leetcode/">leetcode</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/life/">life📚</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">links</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/wiki/">wiki</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="container">
+      <a href="https://www.vultr.com/?ref=8356511-4F"><img src="https://www.vultr.com/media/banners/banner_728x90.png" width="800" height="90"></a>
+		</div>
+		<hr/>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">CRNN笔记以及数字检测识别实践</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-09-08T16:07:07">2019-09-08</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a>, <a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a></span>
+</div>
+</div>
+		</header>
+<div class="content post__content clearfix">
+			
+
+<h2 id="主流的ocr识别分为两个部分-先检测出文字区域再识别文字-检测可采用通用的目标检测方法以及针对于文本检测的网络-识别主要是crnn及其变体-在上文中针对east做场景文字检测定位-现在针对ocr的第二部分-识别-以最早的crnn为例子-然后整合了aavancedeast以及crnn-实现场景数字号码检测与识别"><em>主流的OCR识别分为两个部分:先检测出文字区域再识别文字。检测可采用通用的目标检测方法以及针对于文本检测的网络,识别主要是CRNN及其变体。在上文中针对EAST做场景文字检测定位,现在针对OCR的第二部分&ndash;识别,以最早的CRNN为例子。然后整合了AavancedEAST以及CRNN，实现场景数字号码检测与识别。</em></h2>
+
+<h2 id="crnn论文笔记">CRNN论文笔记</h2>
+
+<h3 id="论文主要创新点">论文主要创新点</h3>
+
+<ul>
+<li>提出卷积循环神经网络（CRNN），组合DCNN和RNN，其网络架构设计专门用于识别图像中的类序列对象。</li>
+<li>CRNN与传统神经网络模型相比具有一些独特的优点：1）可以直接从序列标签（例如单词）学习，不需要详细的标注（例如字符）；2）直接从图像数据学习信息表示时具有与DCNN相同的性质，既不需要手工特征也不需要预处理步骤，包括二值化/分割，组件定位等；3）具有与RNN相同的性质，能够产生一系列标签；4）对类序列对象的长度无约束，只需要在训练阶段和测试阶段对高度进行归一化。</li>
+</ul>
+
+<h3 id="网络结构">网络结构</h3>
+
+<div align="cetner"><img src="/img/数字识别与检测/1.jpg"  height="400" width="600" ></div>
+
+<p>网络架构。架构包括三部分：</p>
+
+<ul>
+<li>卷积层: 从输入图像中提取特征序列；</li>
+<li>循环层: 预测每一帧的标签分布；</li>
+<li>转录层: 将每一帧的预测变为最终的标签序列。</li>
+</ul>
+
+<p>在CRNN的底部，卷积层自动从每个输入图像中提取特征序列。在卷积网络之上，构建了一个循环网络，用于对卷积层输出的特征序列的每一帧进行预测。采用CRNN顶部的转录层将循环层的每帧预测转化为标签序列。虽然CRNN由不同类型的网络架构（如CNN和RNN）组成，但可以通过一个损失函数进行联合训练。</p>
+
+<h3 id="特征序列提取">特征序列提取</h3>
+
+<div><img src="/img/数字识别与检测/2.jpg"  height="400" width="600" ></div>
+
+<p>在CRNN模型中，通过采用标准CNN模型（去除全连接层）中的卷积层和最大池化层来构造卷积层的组件。这样的组件用于从输入图像中提取序列特征表示。所有的图像需要缩放到相同的高度。然后从卷积层组件产生的特征图中提取特征向量序列，这些特征向量序列作为循环层的输入。具体地，特征序列的每一个特征向量在特征图上按列从左到右生成。这意味着第i个特征向量是所有特征图第i列的连接。在我们的设置中每列的宽度固定为单个像素。</p>
+
+<p>由于卷积层，最大池化层和元素激活函数在局部区域上执行，因此它们是平移不变的。因此，特征图的每列对应于原始图像的一个矩形区域（称为感受野），并且这些矩形区域与特征图上从左到右的相应列具有相同的顺序。如图2所示，特征序列中的每个向量关联一个感受野，并且可以被认为是该区域的图像描述符。</p>
+
+<h3 id="序列标注">序列标注</h3>
+
+<p>一个深度双向循环神经网络是建立在卷积层的顶部，作为循环层。循环层预测特征序列x=x1,…,xTx=x1,…,xT中每一帧xtxt的标签分布ytyt。循环层的优点是三重的。首先，RNN具有很强的捕获序列内上下文信息的能力。对于基于图像的序列识别使用上下文提示比独立处理每个符号更稳定且更有帮助。以场景文本识别为例，宽字符可能需要一些连续的帧来完全描述（参见图2）。此外，一些模糊的字符在观察其上下文时更容易区分，例如，通过对比字符高度更容易识别“il”而不是分别识别它们中的每一个。其次，RNN可以将误差差值反向传播到其输入，即卷积层，从而允许我们在统一的网络中共同训练循环层和卷积层。第三，RNN能够从头到尾对任意长度的序列进行操作。</p>
+
+<div align="center"><img src="/img/数字识别与检测/3.jpg"  height="400" width="600" ></div>
+
+<p>LSTM是定向的，它只使用过去的上下文。然而，在基于图像的序列中，两个方向的上下文是相互有用且互补的。因此，文中采用双向LSTM。此外，可以堆叠多个双向LSTM，得到如图3.b所示的深双向LSTM。深层结构允许比浅层抽象更高层次的抽象，并且在语音识别任务中取得了显著的性能改进[17]。</p>
+
+<p>在循环层中，误差在图3.b所示箭头的相反方向传播，即反向传播时间（BPTT）。在循环层的底部，传播差异的序列被连接成映射，将特征映射转换为特征序列的操作进行反转并反馈到卷积层。实际上，我们创建一个称为“Map-to-Sequence”的自定义网络层，作为卷积层和循环层之间的桥梁。</p>
+
+<h3 id="转录">转录</h3>
+
+<p>转录是将RNN所做的每帧预测转换成标签序列的过程。数学上，转录是根据每帧预测找到具有最高概率的标签序列。在实践中，存在两种转录模式，即无词典转录和基于词典的转录。词典是一组标签序列，预测受拼写检查字典约束。在无词典模式中，预测时没有任何词典。在基于词典的模式中，通过选择具有最高概率的标签序列进行预测。<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.75.6306&amp;rep=rep1&amp;type=pdf">CTC论文</a></p>
+
+<h2 id="场景数字号码检测与识别">场景数字号码检测与识别</h2>
+
+<h3 id="数字检测-使用advancedeast作为检测器">数字检测,使用AdvancedEAST作为检测器</h3>
+
+<p>检测与裁剪结果：</p>
+
+<div align="center"><img src="/img/数字识别与检测/4.jpg"  height="600" width="800" ></div>
+
+<h3 id="识别-双向lstm-cnn-ctc">识别,双向LSTM+CNN+CTC</h3>
+
+<p>测试图像与结果：</p>
+
+<div align="center"><img src="/img/数字识别与检测/5.jpg"  height="600" width="800" ></div>
+
+<div align="cetner"><img src="/img/数字识别与检测/6.jpg"  height="200" width="300"></div>
+
+<h3 id="问题分析">问题分析</h3>
+
+<p>检测器与识别器分开测试的时候（用各自的测试集），acc均能达到90%以上。但是将两个模型连接测试时（即输入一张图片，由检测器得到数字区域，然后进行裁剪，送入识别器），识别性能下降。个人觉得主要原因在于检测器得到的结果裁剪后引入了干扰，主要还是识别器的训练集制作的太简单（个人也没有太多时间花在制作数据集上）。将检测器得到的检测结果裁剪下来作为识别器的训练集，对于两个模型的连接使用的性能影响比较大，只是得人工筛选，耗费时间。</p>
+
+<h2 id="完整项目代码-https-github-com-yl305237731-number-detection-recognition"><a href="https://github.com/yl305237731/number_detection_recognition">完整项目代码</a></h2>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/ocr/" rel="tag">ocr</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+
+
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yl305237731/yl305237731.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		ML, DL, CV....
+	</div>
+</div>
+
+
+
+<aside class="sidebar">
+<h4>See Also</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	
+	<li><a href="/post/pytorch_crnn%E5%AE%9E%E8%B7%B5/">Pytorch: CRNN 实践</a></li>
+	
+	<li><a href="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/">文本检测中的nms</a></li>
+	
+	<li><a href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
+	
+</ul>
+</div>
+<br/>
+</aside>
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">East:An Efficient and Accurate Scene Text Detector阅读及应用</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/nms/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">目标检测非极大值抑制: NMS</p></a>
+	</div>
+</nav>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/cspnet/">CSPNet</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">使用nginx实现服务反向代理实现负载均衡</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/">CBAM注意力模块: Convolutional Block Attention Module</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/image_caption_1/">Image Caption模型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/seq2seq%E6%A8%A1%E5%9E%8B_%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E5%AE%9E%E8%B7%B5_%E4%BA%8C/">Seq2Seq模型: 从理论到实践(二)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/nginx">Nginx</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a2%9e%e5%bc%ba">图像增强</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86">自然语言处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor-free" title="Anchor free">Anchor free</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbam" title="Cbam">Cbam</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbir" title="Cbir">Cbir</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cspnet" title="Cspnet">Cspnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deeplab" title="Deeplab">Deeplab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dlib" title="Dlib">Dlib</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/facenet" title="Facenet">Facenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fast-rcnn" title="Fast rcnn">Fast rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/faster_rcnn" title="Faster rcnn">Faster rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fpn" title="Fpn">Fpn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gan" title="Gan">Gan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hive" title="Hive">Hive</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/image-caption" title="Image caption">Image caption</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inception" title="Inception">Inception</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lstm" title="Lstm">Lstm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown%e8%af%ad%e6%b3%95" title="Markdown语法">Markdown语法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" title="深度学习">深度学习</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:16120438@bjtu.edu.cn">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>16120438@bjtu.edu.cn</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div>
+<a href="https://www.vultr.com/?ref=8356490"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 fly away, chase dream.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二分类 on fly away, chase dream</title>
+    <link>/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/</link>
+    <description>Recent content in 二分类 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 11 Nov 2018 16:36:27 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E4%BA%8C%E5%88%86%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keras 猫狗二分类</title>
+      <link>/post/kdog_cat/</link>
+      <pubDate>Sun, 11 Nov 2018 16:36:27 +0800</pubDate>
+      
+      <guid>/post/kdog_cat/</guid>
+      <description>import keras from keras.models import Sequential from keras.layers import Dense,MaxPooling2D,Input,Flatten,Convolution2D,Dropout,GlobalAveragePooling2D from keras.optimizers import SGD from keras.callbacks import TensorBoard,ModelCheckpoint from PIL import Image import os import numpy as np from scipy import misc root_path = os.getcwd() def load_data(): tran_imags = [] labels = [] seq_names = [&#39;cat&#39;,&#39;dog&#39;] for seq_name in seq_names: frames = sorted(os.listdir(os.path.join(root_path,&#39;data&#39;,&#39;train_data&#39;, seq_name))) for frame in frames: imgs = [os.path.join(root_path, &#39;data&#39;, &#39;train_data&#39;, seq_name, frame)] imgs = np.array(Image.open(imgs[0])) tran_imags.append(imgs) if</description>
+    </item>
+    
+  </channel>
+</rss>

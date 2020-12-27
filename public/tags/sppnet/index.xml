@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPPnet on fly away, chase dream</title>
+    <link>/tags/sppnet/</link>
+    <description>Recent content in SPPnet on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 Oct 2019 19:40:34 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/sppnet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Object detection(2): SPPnet</title>
+      <link>/post/spp_net/</link>
+      <pubDate>Sat, 05 Oct 2019 19:40:34 +0800</pubDate>
+      
+      <guid>/post/spp_net/</guid>
+      <description>在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连接的CNN</description>
+    </item>
+    
+  </channel>
+</rss>

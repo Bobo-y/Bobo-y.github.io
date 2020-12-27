@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>progan on fly away, chase dream</title>
+    <link>/tags/progan/</link>
+    <description>Recent content in progan on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jan 2020 22:09:52 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/progan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
+      <link>/post/progan%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
+      
+      <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
+      <description>主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练的进行网络</description>
+    </item>
+    
+  </channel>
+</rss>

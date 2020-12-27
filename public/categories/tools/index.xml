@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on fly away, chase dream</title>
+    <link>/categories/tools/</link>
+    <description>Recent content in tools on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 01 Jun 2020 21:01:10 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tensorflow pb模型可视化</title>
+      <link>/wiki/tensorflow_pb_%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <pubDate>Mon, 01 Jun 2020 21:01:10 +0800</pubDate>
+      
+      <guid>/wiki/tensorflow_pb_%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <description>新建 log 文件夹 执行以下代码 import tensorflow as tf from tensorflow.python.platform import gfile model = &#39;model.pb&#39; graph = tf.get_default_graph() graph_def = graph.as_graph_def() graph_def.ParseFromString(gfile.FastGFile(model, &#39;rb&#39;).read()) tf.import_graph_def(graph_def, name=&#39;graph&#39;) summaryWriter = tf.summary.FileWriter(&#39;log/&#39;, graph) 在log文件夹上一层执行 tensorboard &amp;ndash;logdir log，浏览器访问即可</description>
+    </item>
+    
+    <item>
+      <title>Three-sum</title>
+      <link>/leetcode/three_sum/</link>
+      <pubDate>Wed, 01 Apr 2020 17:04:12 +0800</pubDate>
+      
+      <guid>/leetcode/three_sum/</guid>
+      <description>Three sum 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。 注意：</description>
+    </item>
+    
+    <item>
+      <title>Siege 对web 接口进行 post 压力测试</title>
+      <link>/wiki/siege%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 05 Mar 2020 16:31:43 +0800</pubDate>
+      
+      <guid>/wiki/siege%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <description>在服务器开发中, 需要对接口进行压力测试, 以便根据性能确定服务的机器数, 做个笔记. siege 安装 MacOS 下直接安装: brew install siege centos 下: wget http://download.joedog.org/siege/siege-3.1.3.tar.gz tar -xvf siege-3.1.3.tar.gz cd siege-3.1.3 ./configure &amp;ndash;prefix=/usr/local/siege &amp;ndash;mandir=/usr/local/man make make install siege</description>
+    </item>
+    
+    <item>
+      <title>Centos7将默认Python升级到Python3以及安装pip</title>
+      <link>/wiki/centos7%E5%AE%89%E8%A3%85pip/</link>
+      <pubDate>Wed, 26 Feb 2020 11:14:30 +0800</pubDate>
+      
+      <guid>/wiki/centos7%E5%AE%89%E8%A3%85pip/</guid>
+      <description>鲁迅说过: 当同一个问题, 你连续几次去查博客找方法时, 那么就自己记下来. 鲁迅: 我没说过. 由于Python2 已经废弃, 但centos 系统默认Py</description>
+    </item>
+    
+    <item>
+      <title>Python Orator 查询构造器速查手记</title>
+      <link>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Fri, 21 Feb 2020 14:00:55 +0800</pubDate>
+      
+      <guid>/wiki/orator%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</guid>
+      <description>orator 是轻量级的数据库查询构造器, 提供便利的接口可以创建和执行查询操作，可以在大多数数据库中使用. 安装 pip install orator 配置, 获取数据库管理器实例 from orator import DatabaseManager config</description>
+    </item>
+    
+    <item>
+      <title>Vim支持中文</title>
+      <link>/wiki/vim%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Mon, 27 Jan 2020 09:21:45 +0800</pubDate>
+      
+      <guid>/wiki/vim%E6%94%AF%E6%8C%81%E4%B8%AD%E6%96%87/</guid>
+      <description>全局支持: 编辑 /etc/vimrc, 文件未添加 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 set termencoding=utf-8 set encoding=utf-8 只修改个人: 将 /etc/vimrc 复制到个人根目录, 修改为 .vimrc, 添加上面三句话到文件未</description>
+    </item>
+    
+    <item>
+      <title>在服务器中使用jupyter以及在本地pycharm编辑代码并同步到服务器并运行</title>
+      <link>/wiki/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8jupyter/</link>
+      <pubDate>Fri, 27 Dec 2019 22:26:59 +0800</pubDate>
+      
+      <guid>/wiki/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8jupyter/</guid>
+      <description>在服务器中使用 jupyter 在使用服务器开发时, 服务器无法浏览器打开，因此在服务器上配置端口以运行jupyter 一: 安装 jupyter 二: 运行 jupyter notebook &amp;ndash;generate-config ，生成配置文件 三</description>
+    </item>
+    
+    <item>
+      <title>libtorch c&#43;&#43; 使用例子</title>
+      <link>/post/pytorch%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 25 Dec 2019 12:37:07 +0800</pubDate>
+      
+      <guid>/post/pytorch%E9%83%A8%E7%BD%B2/</guid>
+      <description>pytorch可使用flask作为服务器部署，但是由于Python的可移植性和速度比不上c++, pytorch还提供将模型转化到c++端运行</description>
+    </item>
+    
+    <item>
+      <title>Docker小记</title>
+      <link>/wiki/docker%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Thu, 19 Dec 2019 20:38:40 +0800</pubDate>
+      
+      <guid>/wiki/docker%E5%B0%8F%E8%AE%B0/</guid>
+      <description>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，</description>
+    </item>
+    
+    <item>
+      <title>Python 从图像URL获取图像数据的几种方式</title>
+      <link>/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Mon, 21 Oct 2019 15:12:24 +0800</pubDate>
+      
+      <guid>/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/</guid>
+      <description>线上服务器获取图像大都是从URL获取, 总结 Python 环境下, 以下几种从图像 URL 获取图像数据 PIL.Image + requests import requests as req from PIL import Image from io import BytesIO response = req.get(img_url) image = Image.open(BytesIO(response.content)) skimage from skimage import io image = io.imread(img_url) OpenCV</description>
+    </item>
+    
+    <item>
+      <title>目标检测map计算</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Tue, 17 Sep 2019 20:23:17 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bmap%E8%AE%A1%E7%AE%97/</guid>
+      <description>目标检测评价指标MAP计算流程小结 目标检测由于包含分类以及box回归, 对其进行评价相对于单独的分类问题更复杂，直接使用精度、召回作为评估准则</description>
+    </item>
+    
+    <item>
+      <title>MacOS下Clion 使用OpenCV</title>
+      <link>/wiki/mac_clion_opencv/</link>
+      <pubDate>Fri, 16 Aug 2019 19:46:35 +0800</pubDate>
+      
+      <guid>/wiki/mac_clion_opencv/</guid>
+      <description>MAC 下使用Clion 配置OpenCV brew install opencv 在Clion中新建项目, 假设项目名为demo, 在 CMAKELists.txt中编辑 cmake_minimum_required(VERSION 3.9) project(demo) set(CMAKE_CXX_STANDARD 11) find_package(OpenCV) include_directories(${OpenCV_INCLUDE_DIRS}) add_executable(demo main.cpp)</description>
+    </item>
+    
+    <item>
+      <title>Hive命令记录</title>
+      <link>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 09 Aug 2019 15:43:07 +0800</pubDate>
+      
+      <guid>/wiki/hive%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>1.从CSV文件读取数据写入表中,指定分割符 # 建表 CREATE TABLE `my_table`( `city_id` string COMMENT &#39;city_id&#39;, `area_code` string COMMENT &#39;area ID&#39;, `prediction` int COMMENT &#39;date prediction&#39;, `vdate` string COMMENT &#39;date&#39;) row format delimited fields terminated by &#39;,&#39;; # 将本地数据写入数据库 LOAD DATA LOCAL INPATH &#39;/home/yourcsvfile.csv&#39; OVERWRITE</description>
+    </item>
+    
+    <item>
+      <title>（译）你的神经网络不工作的37个可能原因</title>
+      <link>/post/37reasonsforyournetnotwork/</link>
+      <pubDate>Wed, 07 Aug 2019 11:29:13 +0800</pubDate>
+      
+      <guid>/post/37reasonsforyournetnotwork/</guid>
+      <description>神经网络的训练是一个复杂的问题，很多时候会遇见即使拿到了别人的代码也训练不出来，无法复现。 以下是37个训练网络的建议英文原文： 1.最基本的措</description>
+    </item>
+    
+    <item>
+      <title>Pandas常用操作以及常见tips、tricks</title>
+      <link>/wiki/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sun, 28 Jul 2019 21:58:03 +0800</pubDate>
+      
+      <guid>/wiki/pandas%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>常用操作 读数据 1.读csv df = pd.read_csv(&amp;quot;data.csv&amp;quot;) 2.读数据库 import MySQLdb from pandas import DataFrame from pandas.io.sql import read_sql db = MySQLdb.connect(host=&amp;quot;localhost&amp;quot;, # your host, usually localhost user=&amp;quot;root&amp;quot;, # your username passwd=&amp;quot;password&amp;quot;, # your password db=&amp;quot;dbname&amp;quot;) # name of the data base query = &amp;quot;SELECT * FROM tablename&amp;quot; df = read_sql(query, db) 数据快照 1</description>
+    </item>
+    
+    <item>
+      <title>使用SimpleHttpServer传输文件</title>
+      <link>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 24 Jul 2019 10:43:23 +0800</pubDate>
+      
+      <guid>/wiki/%E4%BD%BF%E7%94%A8simplehttpserver%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</guid>
+      <description>此命令需要python支持，mac, linux默认自带，windows需要自己安装python 命令行进入文件夹，输入 python -m SimpleHttpServer 端口号（默认800</description>
+    </item>
+    
+    <item>
+      <title>linux进程、端口占用查看</title>
+      <link>/wiki/maccmd/</link>
+      <pubDate>Wed, 24 Jul 2019 10:38:06 +0800</pubDate>
+      
+      <guid>/wiki/maccmd/</guid>
+      <description>查看端口占用 sudo lsof -i:端口号 netstat -anlp | grep 端口号</description>
+    </item>
+    
+    <item>
+      <title>mac通过跳板机对服务器上传下载文件</title>
+      <link>/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 10 Jul 2019 13:27:58 +0800</pubDate>
+      
+      <guid>/wiki/%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%BD%BF%E7%94%A8/</guid>
+      <description>使用windows时，可以使用xshell通过rz,sz命令通过跳板机方便的上传、下载文件。而使用macos的scp命令比较麻烦，使用ite</description>
+    </item>
+    
+    <item>
+      <title>conda pip源</title>
+      <link>/wiki/conda_pip%E6%BA%90/</link>
+      <pubDate>Sun, 02 Jun 2019 19:52:40 +0800</pubDate>
+      
+      <guid>/wiki/conda_pip%E6%BA%90/</guid>
+      <description>conda 添加清华源 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes conda附加库 # Conda Forge conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ # msys2 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ # bioconda conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ #menpo conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ # pytorch conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ pip 指定清华源</description>
+    </item>
+    
+    <item>
+      <title>gitLab项目拉取及提交使用记录</title>
+      <link>/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sat, 30 Mar 2019 14:59:05 +0800</pubDate>
+      
+      <guid>/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+      <description>实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Branches</description>
+    </item>
+    
+    <item>
+      <title>Keras数据集加载小结</title>
+      <link>/post/keras_dataload/</link>
+      <pubDate>Tue, 26 Mar 2019 15:20:23 +0800</pubDate>
+      
+      <guid>/post/keras_dataload/</guid>
+      <description>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera</description>
+    </item>
+    
+    <item>
+      <title>Markdown语法</title>
+      <link>/wiki/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 20 Feb 2019 17:23:49 +0800</pubDate>
+      
+      <guid>/wiki/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>标题 1.使用=和_标记一级和二级标题 一级标题 ======= 二级标题 ——————— 2.使用#号 # 一级标题 ## 二级标题 ### 三级标题 段落 换行：两个以上的空格加回车</description>
+    </item>
+    
+    <item>
+      <title>python下mnist数据集转化为图片</title>
+      <link>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Sat, 22 Dec 2018 15:37:02 +0800</pubDate>
+      
+      <guid>/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
+      <description>环境：tensorflow 代码如下 from tensorflow.examples.tutorials.mnist import input_data from scipy import misc import numpy as np import os mnist = input_data.read_data_sets(&#39;MNIST_data/&#39;,one_hot=True) result_path =&#39;mnist_data\\train&#39; def onehot2id(labels): return list(labels).index(1) if not os.path.exists(result_path): os.mkdir(result_path) labels_txt = open(&#39;train_labs.txt&#39;,&#39;w&#39;) for i in range(len(mnist.train.images)): img_vec = mnist.train.images[i,:] img_arr = np.reshape(img_vec,[28,28]) img_lab = mnist.train.labels[i,:] img_id = onehot2id(img_lab) labels_txt.write(str(i)+&#39; &#39;+str(img_id)+&#39;\n&#39;) img_path = os.path.join(result_path,str(i)+&#39;.png&#39;) misc.imsave(img_path,img_arr) 以</description>
+    </item>
+    
+    <item>
+      <title>Pyplot tutorial翻译文档</title>
+      <link>/wiki/pyplot%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Fri, 21 Dec 2018 15:39:00 +0800</pubDate>
+      
+      <guid>/wiki/pyplot%E6%96%87%E6%A1%A3/</guid>
+      <description>pyplot简介 matplotlib.pyplot是一个类似于MATLAB风格的的命令行式函数的集合。每一个pyplot函数都是在一个Fig</description>
+    </item>
+    
+    <item>
+      <title>Numpy使用GPU加速</title>
+      <link>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
+      
+      <guid>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
+      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），</description>
+    </item>
+    
+    <item>
+      <title>深度学习数据利器，批量图片下载,github项目google_images_download</title>
+      <link>/wiki/google_image_download%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 10 Oct 2018 16:43:55 +0800</pubDate>
+      
+      <guid>/wiki/google_image_download%E4%BD%BF%E7%94%A8/</guid>
+      <description>google_images_download是GitHub上拥有3000+ star的项目，最近自己在跑一些网络，需要一些数据，网络上也有一些</description>
+    </item>
+    
+    <item>
+      <title>Imagenet数据集类别标签和对应的英文中文对照表</title>
+      <link>/wiki/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Mon, 08 Oct 2018 16:50:36 +0800</pubDate>
+      
+      <guid>/wiki/imagenet%E6%95%B0%E6%8D%AE%E9%9B%86label%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E6%AF%94/</guid>
+      <description>预测结果输出one-hot类型，最大概率的下标即为对于类别号 0: &#39;tench, Tinca tinca&#39;, 丁鲷(鱼) 1: &#39;goldfish, Carassius auratus&#39;, 金鱼，鲫鱼 2: &#39;great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias&#39;, 大白鲨 3: &#39;tiger shark, Galeocerdo cuvieri&#39;, 虎鲨 4:</description>
+    </item>
+    
+    <item>
+      <title>Hadoop命令记录</title>
+      <link>/wiki/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wiki/hadoop%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>1.列出指定目录下文件 -ls haddop fs -ls /dir haddop fs -ls -R /dir 2.将本地文件放到hdfs文件系统中 -put hadoop fs -put &amp;lt;local file&amp;gt; &amp;lt;hdfs file&amp;gt; hadoop fs -put &amp;lt;local file or dir&amp;gt; &amp;lt;hdfs dir&amp;gt; #将键盘输入录入到hdfs文</description>
+    </item>
+    
+  </channel>
+</rss>
