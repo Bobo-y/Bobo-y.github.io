@@ -6,17 +6,17 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Oct 2020 22:46:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Dec 2020 15:27:39 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CSPNet</title>
-      <link>/tags/cspnet/</link>
-      <pubDate>Mon, 26 Oct 2020 22:46:55 +0800</pubDate>
+      <title>yolo_v5</title>
+      <link>/tags/yolo_v5/</link>
+      <pubDate>Fri, 25 Dec 2020 15:27:39 +0800</pubDate>
       
-      <guid>/tags/cspnet/</guid>
+      <guid>/tags/yolo_v5/</guid>
       <description></description>
     </item>
     
@@ -26,6 +26,15 @@
       <pubDate>Tue, 06 Oct 2020 14:10:30 +0800</pubDate>
       
       <guid>/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E6%9C%8D%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSPNet</title>
+      <link>/tags/cspnet/</link>
+      <pubDate>Sun, 26 Jul 2020 22:46:55 +0800</pubDate>
+      
+      <guid>/tags/cspnet/</guid>
       <description></description>
     </item>
     
