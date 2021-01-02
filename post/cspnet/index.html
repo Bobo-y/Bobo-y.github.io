@@ -14,8 +14,8 @@
 <meta property="og:description" content="CSPNet出至论文：CSPNet: A New Backbone that can Enhance Learning Capability of CNN, 近来yolo-v4,yolo-v5都使用其作为主干网络的结构，其主要用于降低计算量的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/cspnet/" />
-<meta property="article:published_time" content="2020-10-26T22:46:55+08:00" />
-<meta property="article:modified_time" content="2020-10-26T22:46:55+08:00" />
+<meta property="article:published_time" content="2020-07-26T22:46:55+08:00" />
+<meta property="article:modified_time" content="2020-07-26T22:46:55+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -101,7 +101,7 @@
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2020-10-26T22:46:55">2020-10-26</time>
+	<time class="meta__text" datetime="2020-07-26T22:46:55">2020-07-26</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -143,7 +143,7 @@ Fusion Last的方式是对Dense Block所在分支先进性transition操作，然
 
 <p>上图是DenseNet的示意图以及CSPDenseNet的改进，改进点在于CSPNet将浅层特征映射为两个部分，一部分经过Dense模块（图中的Partial Dense Block）,另一部分直接与Partial Dense Block输出进行concate。</p>
 
-<p>在实际实现中，如u版的yolo-v5中，没有对特征进行划分, 且shortcut以add方式非concat：</p>
+<p>论文中的CSP是将特征图分为两部分，一部分进行进一步的操作，另一部分最后concat, 通道变少，计算量变少。 在实际实现中，如u版的yolo-v5中，没有对特征进行划分, 但shortcut以add方式非concat，也能降低通道数，降低计算量：</p>
 
 <pre><code class="language-python">class Bottleneck(nn.Module):
     # Standard bottleneck
@@ -185,7 +185,7 @@ class BottleneckCSP(nn.Module):
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/cspnet/" rel="tag">CSPNet</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/cspnet/" rel="tag">cspnet</a></li>
 	</ul>
 </div>
 	</article>
@@ -223,7 +223,10 @@ class BottleneckCSP(nn.Module):
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">使用nginx实现服务反向代理实现负载均衡</p></a>
+		<a class="post-nav__link" href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">CBAM注意力模块: Convolutional Block Attention Module</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">使用nginx实现服务反向代理实现负载均衡</p></a>
 	</div>
 </nav>
 
@@ -241,11 +244,11 @@ class BottleneckCSP(nn.Module):
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/cspnet/">CSPNet</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/yolo_v5%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/">Yolo-v5从代码到服务部署实践</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">使用nginx实现服务反向代理实现负载均衡</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/cspnet/">CSPNet</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/">CBAM注意力模块: Convolutional Block Attention Module</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/image_caption_1/">Image Caption模型</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/seq2seq%E6%A8%A1%E5%9E%8B_%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E5%AE%9E%E8%B7%B5_%E4%BA%8C/">Seq2Seq模型: 从理论到实践(二)</a></li>
 		</ul>
 	</div>
 </div>
@@ -256,7 +259,6 @@ class BottleneckCSP(nn.Module):
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/nginx">Nginx</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
@@ -327,6 +329,7 @@ class BottleneckCSP(nn.Module):
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
@@ -375,7 +378,7 @@ class BottleneckCSP(nn.Module):
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 fly away, chase dream.
+			&copy; 2021 fly away, chase dream.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>
