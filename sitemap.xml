@@ -53,6 +53,16 @@
   </url>
   
   <url>
+    <loc>/post/dbnet/</loc>
+    <lastmod>2020-08-03T21:35:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ocr/</loc>
+    <lastmod>2020-08-03T21:35:33+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/cspnet/</loc>
     <lastmod>2020-07-26T22:46:55+08:00</lastmod>
   </url>
@@ -120,11 +130,6 @@
   <url>
     <loc>/post/seq2seq%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2020-05-01T17:31:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ocr/</loc>
-    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>

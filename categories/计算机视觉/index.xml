@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Dbnet</title>
+      <link>/post/dbnet/</link>
+      <pubDate>Mon, 03 Aug 2020 21:35:33 +0800</pubDate>
+      
+      <guid>/post/dbnet/</guid>
+      <description>DBNet：Real-time Scene Text Detection with Differentiable Binarization，是一个基于分割的文本检测器，PPOCR中使用其作为检测器，取得了可观的效果</description>
+    </item>
+    
+    <item>
       <title>CSPNet</title>
       <link>/post/cspnet/</link>
       <pubDate>Sun, 26 Jul 2020 22:46:55 +0800</pubDate>
