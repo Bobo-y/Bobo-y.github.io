@@ -6,10 +6,19 @@
     <description>Recent content in OCR on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Aug 2020 21:35:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2020 22:14:40 +0800</lastBuildDate>
     
 	<atom:link href="/tags/ocr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PP-Ocr阅读小结</title>
+      <link>/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 11 Nov 2020 22:14:40 +0800</pubDate>
+      
+      <guid>/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/</guid>
+      <description>PP-OCR 是百度基于paddlePaddle 框架开源的国产高质量的OCR系统，PP-OCR 论文主要对其中使用的技术作了介绍。本文对PP-OCR 作阅读</description>
+    </item>
     
     <item>
       <title>Dbnet</title>
