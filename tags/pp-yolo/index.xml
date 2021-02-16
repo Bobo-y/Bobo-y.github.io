@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pp-yolo on fly away, chase dream</title>
+    <link>/tags/pp-yolo/</link>
+    <description>Recent content in pp-yolo on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 15 Feb 2021 23:15:21 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/pp-yolo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PP-Yolo阅读笔记</title>
+      <link>/post/pp-yolo/</link>
+      <pubDate>Mon, 15 Feb 2021 23:15:21 +0800</pubDate>
+      
+      <guid>/post/pp-yolo/</guid>
+      <description>PP-YOLO 是百度在paddle-paddle框架下基于YOLOv3,结合各种trick得到的一个在性能与效率平衡的检测网络。与yolov4、effi</description>
+    </item>
+    
+  </channel>
+</rss>

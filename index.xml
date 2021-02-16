@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Dec 2020 15:27:39 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Feb 2021 23:15:21 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PP-Yolo阅读笔记</title>
+      <link>/post/pp-yolo/</link>
+      <pubDate>Mon, 15 Feb 2021 23:15:21 +0800</pubDate>
+      
+      <guid>/post/pp-yolo/</guid>
+      <description>PP-YOLO 是百度在paddle-paddle框架下基于YOLOv3,结合各种trick得到的一个在性能与效率平衡的检测网络。与yolov4、effi</description>
+    </item>
     
     <item>
       <title>Yolo-v5从代码到服务部署实践</title>
@@ -1610,11 +1619,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org pytorch cmake 使用指南 arxiv中科院镜像 scikit-learn 牛津大学视觉组 网络可视化netron triton server doc 数据集 pascal voc
- open images
- ADE 20k
- DAVIS
-  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
+      <description> 工具网站  Keras Model Zoo opencv 谷歌colab平台 paper with code 机器之心 SOTA模型收集 CVPR, ICCV 论文集 tensorflow org pytorch cmake 使用指南 arxiv中科院镜像 scikit-learn 牛津大学视觉组 网络可视化netron triton server doc  数据集  pascal voc open images ADE 20k DAVIS OCR 数据集网站  博客、论坛  machinelearningmastery pyimagesearch medium google AI blog  Art  gallerix 世界油画集  </description>
     </item>
     
     <item>

@@ -4,22 +4,37 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pp-yolo/</loc>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/pp-yolo/</loc>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +44,6 @@
   
   <url>
     <loc>/tags/yolo_v5/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2020-12-25T15:27:39+08:00</lastmod>
   </url>
   
