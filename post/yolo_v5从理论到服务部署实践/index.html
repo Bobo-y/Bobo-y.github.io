@@ -227,6 +227,79 @@ y[..., 2:4] = (y[..., 2:4] * 2) ** 2 * self.anchor_grid[i]  # wh
 <li>以及各种常用的仿射变换数据增强，比如：颜色空间、degrees、translate、scale、shear等</li>
 </ul>
 
+<p>根据代码梳理数据加载过程：</p>
+
+<pre><code class="language-python">def __getitem__(self, index):
+        index = self.indices[index]
+        hyp = self.hyp
+        mosaic = self.mosaic and random.random() &lt; hyp['mosaic']
+
+        # 马赛克增强和letterbox增强互斥
+        if mosaic:
+            # Load mosaic
+            img, labels = load_mosaic(self, index)
+            shapes = None
+            # MixUp https://arxiv.org/pdf/1710.09412.pdf
+            # 如果需要mixup 则再生成一张马赛克数据进行mixup
+            if random.random() &lt; hyp['mixup']:
+                img2, labels2 = load_mosaic(self, random.randint(0, self.n - 1))
+                r = np.random.beta(8.0, 8.0)  # mixup ratio, alpha=beta=8.0
+                img = (img * r + img2 * (1 - r)).astype(np.uint8)
+                labels = np.concatenate((labels, labels2), 0)
+        else:
+            # letterbox 只图片resize与填充
+            # Load image
+            img, (h0, w0), (h, w) = load_image(self, index)
+            # Letterbox
+            shape = self.batch_shapes[self.batch[index]] if self.rect else self.img_size  # final letterboxed shape
+            img, ratio, pad = letterbox(img, shape, auto=False, scaleup=self.augment)
+            shapes = (h0, w0), ((h / h0, w / w0), pad)  # for COCO mAP rescaling
+            labels = self.labels[index].copy()
+            if labels.size:  # normalized xywh to pixel xyxy format
+                labels[:, 1:] = xywhn2xyxy(labels[:, 1:], ratio[0] * w, ratio[1] * h, padw=pad[0], padh=pad[1])
+        if self.augment:
+            # Augment imagespace
+            # 图像增强
+            if not mosaic:
+                # 马赛克操作后已经进行了 random_perspective 
+                img, labels = random_perspective(img, labels,
+                                                 degrees=hyp['degrees'],
+                                                 translate=hyp['translate'],
+                                                 scale=hyp['scale'],
+                                                 shear=hyp['shear'],
+                                                 perspective=hyp['perspective'])
+            # Augment colorspace
+            # hsv 颜色空间增强
+            augment_hsv(img, hgain=hyp['hsv_h'], sgain=hyp['hsv_s'], vgain=hyp['hsv_v'])
+            # Apply cutouts
+            # if random.random() &lt; 0.9:
+            #     labels = cutout(img, labels)
+        nL = len(labels)  # number of labels
+        if nL:
+            # 坐标转换以及归一化
+            labels[:, 1:5] = xyxy2xywh(labels[:, 1:5])  # convert xyxy to xywh
+            labels[:, [2, 4]] /= img.shape[0]  # normalized height 0-1
+            labels[:, [1, 3]] /= img.shape[1]  # normalized width 0-1
+        if self.augment:
+            # flip up-down， 上下翻转
+            if random.random() &lt; hyp['flipud']:
+                img = np.flipud(img)
+                if nL:
+                    labels[:, 2] = 1 - labels[:, 2]
+            # flip left-right，左右翻转
+            if random.random() &lt; hyp['fliplr']:
+                img = np.fliplr(img)
+                if nL:
+                    labels[:, 1] = 1 - labels[:, 1]
+        labels_out = torch.zeros((nL, 6))
+        if nL:
+            labels_out[:, 1:] = torch.from_numpy(labels)
+        # Convert
+        img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
+        img = np.ascontiguousarray(img)
+        return torch.from_numpy(img), labels_out, self.img_files[index], shapes
+</code></pre>
+
 <h3 id="letter-box">letter box</h3>
 
 <p>对于目标检测，训练时输入一般都是正方形，所以需要对图片进行resize, 暴力的resize 会丢失目标长宽比，如果保持长宽比那么训练时一般先保持长宽比缩放，然后进行填充成方形。虽然测试时也能这么做，但是如果填充区域很大的话，在填充区域上花费的推理时间是不必要的，如果能够减少这些时间消耗，那么就能降低推理时间，letter box 即从推理阶段降低时间。（目前以Torch加载模型可以使用该策略加速，但是当导出为 onnx （以及onnx 转 tf_saved_model）时，不能使用，因为导出时模型输入大小已固定, 导出torch script 本人未测试，但应该也不行）</p>
@@ -337,6 +410,20 @@ def make_txt_labels(data_dir, classes=None):
 
 data_dir = ''
 make_txt_labels(data_dir)
+</code></pre>
+
+<h3 id="超参含义">超参含义</h3>
+
+<p>几个主要超参</p>
+
+<pre><code class="language-python">box: 0.05  # bbox回归损失系数
+cls: 0.5  # 分类损失系数
+cls_pw: 1.0  # 分类 BCELoss 正样本权重
+obj: 1.0  # 前景物体损失系数
+obj_pw: 1.0  # 前景物体 BCELoss 正样本权重
+iou_t: 0.20  # 分配anchor时IOU阈值，当任一物体与任一anchor的IOU大于阈值时，均将此物体分配给该anchor，代码中已弃用
+anchor_t: 4.0  # 分类anchor时，物体和anchor的宽高比小于此系数，将物体分给该anchor检测，一个物体可以同时分配给多个anchor
+anchors: 3  # 每个输出层的anchor个数
 </code></pre>
 
 <h2 id="模型导出以及生产部署">模型导出以及生产部署</h2>
