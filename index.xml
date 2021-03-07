@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 Mar 2021 22:11:57 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Mar 2021 15:56:46 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Detr:End-to-End Object Detection with Transformers笔记</title>
+      <link>/post/detr%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Mar 2021 15:56:46 +0800</pubDate>
+      
+      <guid>/post/detr%E7%AC%94%E8%AE%B0/</guid>
+      <description>目前transformer在CV领域打的火热，前文记录了transformer用于图像分类的实现，本文主要记录transformer用于目标</description>
+    </item>
     
     <item>
       <title>Vision Transformer 笔记</title>
