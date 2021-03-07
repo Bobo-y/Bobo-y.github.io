@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Feb 2021 22:33:31 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Mar 2021 22:11:57 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vision Transformer 笔记</title>
+      <link>/post/vit%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 06 Mar 2021 22:11:57 +0800</pubDate>
+      
+      <guid>/post/vit%E7%AC%94%E8%AE%B0/</guid>
+      <description>本文主要从代码角度记录使用transformer实现图像分类的流程. 代码vit-pytorch/ 总体结构 结合上图与代码展开: 前向传播过程代码</description>
+    </item>
     
     <item>
       <title>Yolov4.Pytorch 代码学习笔记</title>

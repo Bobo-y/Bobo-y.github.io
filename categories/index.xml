@@ -6,10 +6,28 @@
     <description>Recent content in Categories on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Feb 2021 21:47:37 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Mar 2021 22:11:57 +0800</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>计算机视觉</title>
+      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
+      <pubDate>Sat, 06 Mar 2021 22:11:57 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>论文阅读</title>
+      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sat, 06 Mar 2021 22:11:57 +0800</pubDate>
+      
+      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>自然语言处理</title>
@@ -21,29 +39,11 @@
     </item>
     
     <item>
-      <title>计算机视觉</title>
-      <link>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
-      <pubDate>Tue, 16 Feb 2021 22:33:31 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tools</title>
       <link>/categories/tools/</link>
       <pubDate>Tue, 06 Oct 2020 14:10:30 +0800</pubDate>
       
       <guid>/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>论文阅读</title>
-      <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Mon, 11 May 2020 11:27:35 +0800</pubDate>
-      
-      <guid>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
     
@@ -66,7 +66,7 @@
     </item>
     
     <item>
-      <title>LeetCode</title>
+      <title>Leetcode</title>
       <link>/categories/leetcode/</link>
       <pubDate>Tue, 07 Apr 2020 21:02:42 +0800</pubDate>
       
