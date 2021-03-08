@@ -117,7 +117,7 @@
 
 <h3 id="总体结构">总体结构</h3>
 
-<div align="center"><img src="/img/vit/1.jpg" width="700"></div>
+<div align="center"><img src="/img/vit/1.jpg" width="800"></div>
 
 <p>结合上图与代码展开:</p>
 
@@ -189,12 +189,17 @@ self.to_patch_embedding = nn.Sequential( range('b c (h p1) (w p2) -&gt; b (h w
 <pre><code class="language-python">x = x.mean(dim=1) if self.pool == 'mean' else x[:, 0]
 </code></pre>
 
+<h2 id="vs-sota">vs sota</h2>
+
+<p><div align="center"><img src="/img/vit/2.png" width="600"></div></p>
+
 <h2 id="ref">REF</h2>
 
-<p>*<a href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-</a></p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a></p></li>
 
-<p>*<a href="https://github.com/lucidrains/vit-pytorch/">vit.pytorch</a></p>
+<li><p><a href="https://github.com/lucidrains/vit-pytorch/">vit.pytorch</a></p></li>
+</ul>
 
 		</div>
 		
