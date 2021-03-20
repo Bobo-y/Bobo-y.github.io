@@ -6,13 +6,22 @@
     <description>Recent content in reid on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Mar 2021 23:30:57 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Mar 2021 22:41:32 +0800</lastBuildDate>
     
 	<atom:link href="/tags/reid/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Reid成长之路（一）:初识 reid: Deep Learning for Person Re-identification:A Survey and Outlook</title>
+      <title>Reid之路(二): 度量学习的几种主要loss</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF%E4%BA%8C-loss/</link>
+      <pubDate>Wed, 17 Mar 2021 22:41:32 +0800</pubDate>
+      
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF%E4%BA%8C-loss/</guid>
+      <description>度量学习旨在学习两张图片的相似性，那么久需要设计合适的损失函数能让网络提取到更具有判别能力的特征. contrasitive loss 网络优化目标是最小化损失函数 $L _c$, 输入正</description>
+    </item>
+    
+    <item>
+      <title>Reid之路（一）:初识 reid: Deep Learning for Person Re-identification:A Survey and Outlook</title>
       <link>/post/reid%E4%B9%8B%E8%B7%AF%E4%B8%80/</link>
       <pubDate>Mon, 01 Mar 2021 23:30:57 +0800</pubDate>
       
