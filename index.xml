@@ -6,10 +6,28 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Apr 2021 07:50:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 14:17:05 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>京东人脸识别FaceX Zoo</title>
+      <link>/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/</link>
+      <pubDate>Thu, 20 May 2021 14:17:05 +0800</pubDate>
+      
+      <guid>/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/</guid>
+      <description>FaceX-Zoo 是京东最近开源的人脸识别pytorch版工具箱, 抽空读了一下技术报告，做个记录. 工程总体结构 总体可分为训练模块、评估模块、附加模块和人脸S</description>
+    </item>
+    
+    <item>
+      <title>经典无监督聚类算法理论温习与Python代码实践</title>
+      <link>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Wed, 28 Apr 2021 10:39:39 +0800</pubDate>
+      
+      <guid>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
+      <description>在不知道样本类别时，无监督聚类算法可以将具有相似属性或特征的样本归为相同的类别，常用语数据处理. 本文主要记录几种常见的聚类算法以及Pytho</description>
+    </item>
     
     <item>
       <title>Python优先级队列</title>
@@ -30,11 +48,11 @@
     </item>
     
     <item>
-      <title>Reid之路(二): 度量学习的几种主要loss</title>
-      <link>/post/reid%E4%B9%8B%E8%B7%AF%E4%BA%8C-loss/</link>
+      <title>Reid之路: 度量学习的几种主要loss</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-loss/</link>
       <pubDate>Wed, 17 Mar 2021 22:41:32 +0800</pubDate>
       
-      <guid>/post/reid%E4%B9%8B%E8%B7%AF%E4%BA%8C-loss/</guid>
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-loss/</guid>
       <description>度量学习旨在学习两张图片的相似性，那么久需要设计合适的损失函数能让网络提取到更具有判别能力的特征. contrasitive loss 网络优化目标是最小化损失函数 $L _c$, 输入正</description>
     </item>
     
@@ -66,11 +84,11 @@
     </item>
     
     <item>
-      <title>Reid之路（一）:初识 reid: Deep Learning for Person Re-identification:A Survey and Outlook</title>
-      <link>/post/reid%E4%B9%8B%E8%B7%AF%E4%B8%80/</link>
+      <title>Reid之路:Deep Learning for Person Re-identification:A Survey and Outlook</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-survey/</link>
       <pubDate>Mon, 01 Mar 2021 23:30:57 +0800</pubDate>
       
-      <guid>/post/reid%E4%B9%8B%E8%B7%AF%E4%B8%80/</guid>
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-survey/</guid>
       <description>目前团队项目逐渐偏向识别，自己的工作重心逐渐由检测、分类转向reid相关，自己之前对reid也没有深入，因此准备记录自己在reid工作上的成</description>
     </item>
     
@@ -1700,7 +1718,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>  &amp;nbsp &amp;nbsp Personal info  Master/Computer Science, Beijing Jiaotong University Github：🔗 Job：Algorithm engineer  </description>
+      <description>  &amp;nbsp &amp;nbsp Personal info  Master/Computer Science, Beijing Jiaotong University Github：🔗 Job：Algorithm engineer Company: BaiDu  </description>
     </item>
     
     <item>
