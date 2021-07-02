@@ -6,10 +6,19 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 May 2021 14:17:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jun 2021 19:33:06 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swin Transformer：层次化视觉Transformer 笔记</title>
+      <link>/post/swin_transoformer/</link>
+      <pubDate>Tue, 01 Jun 2021 19:33:06 +0800</pubDate>
+      
+      <guid>/post/swin_transoformer/</guid>
+      <description>cver 不读swin transformer,遍读transformer也枉然. 个人读完论文感觉最大贡献在于: 将多尺度引入到了transformer</description>
+    </item>
     
     <item>
       <title>京东人脸识别FaceX Zoo</title>
