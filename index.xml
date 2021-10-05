@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 01 Jun 2021 19:33:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Sep 2021 21:29:40 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos7安装nvidia Dcoker</title>
+      <link>/wiki/centos7%E5%AE%89%E8%A3%85nvidia-dcoker/</link>
+      <pubDate>Wed, 29 Sep 2021 21:29:40 +0800</pubDate>
+      
+      <guid>/wiki/centos7%E5%AE%89%E8%A3%85nvidia-dcoker/</guid>
+      <description>安装NVIDIA-docker前最好先将已有的docker卸载掉 # 查看已经安装的 yum list installed |grep docker # 删除掉对应的docker yum -y remove *** 安装 NVIDIA-docker 2 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) curl</description>
+    </item>
     
     <item>
       <title>Swin Transformer：层次化视觉Transformer 笔记</title>

@@ -15,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/wiki/" />
 
-<meta property="og:updated_time" content="2021-04-02T07:50:04+08:00" />
+<meta property="og:updated_time" content="2021-09-29T21:29:40+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -96,6 +96,31 @@
 			<div class="primary">
 			
 <main class="main list" role="main"><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/" rel="bookmark">
+			Python 从图像URL获取图像数据的几种方式
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-10-21T15:12:24">2019-10-21</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		线上服务器获取图像大都是从URL获取, 总结 Python 环境下, 以下几种从图像 URL 获取图像数据 PIL.Image + requests import requests as req from PIL import Image from io import BytesIO response = req.get(img_url) image = Image.open(BytesIO(response.content)) skimage from skimage import io image = io.imread(img_url) OpenCV
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/wiki/python_%E4%BB%8E%E5%9B%BE%E5%83%8Furl%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/wiki/mac_clion_opencv/" rel="bookmark">
@@ -327,31 +352,6 @@
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/wiki/linux_%E5%91%BD%E4%BB%A4%E9%9A%8F%E8%AE%B0/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/" rel="bookmark">
-			gitLab项目拉取及提交使用记录
-			</a>
-		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-03-30T14:59:05">2019-03-30</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		实习接触了gitlab，遂记录项目拉取及提交的过程，方便自己查看。 一.创建分支 首先登陆gitlab，进入你要拉取的项目. 点击Branches
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/wiki/gitlab%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -475,6 +475,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
