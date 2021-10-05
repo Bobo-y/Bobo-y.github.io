@@ -6,10 +6,19 @@
     <description>Recent content in 机器学习 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 12 Nov 2019 12:58:31 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Apr 2021 10:39:39 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>经典无监督聚类算法理论温习与Python代码实践</title>
+      <link>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Wed, 28 Apr 2021 10:39:39 +0800</pubDate>
+      
+      <guid>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
+      <description>在不知道样本类别时，无监督聚类算法可以将具有相似属性或特征的样本归为相同的类别，常用语数据处理. 本文主要记录几种常见的聚类算法以及Pytho</description>
+    </item>
     
     <item>
       <title>Dlib 人脸相关实践</title>

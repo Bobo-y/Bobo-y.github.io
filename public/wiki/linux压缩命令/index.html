@@ -51,7 +51,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
 			<div class="logo__title">fly away, chase dream</div>			
-				<div class="logo__tagline">ML、CV、Image process, NLP beginning</div> 
+				<div class="logo__tagline">ML、CV、Image process</div> 
 			</a>
 			
 			<div class="float_right"><div class="social-share"></div>
@@ -226,11 +226,11 @@ unzip -O cp936  file.zip   // 当压缩文件中含中文时，解压若出现�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/yolo_v5%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/">Yolo-v5从代码到服务部署实践</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">使用nginx实现服务反向代理实现负载均衡</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cspnet/">CSPNet</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/">CBAM注意力模块: Convolutional Block Attention Module</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/image_caption_1/">Image Caption模型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/swin_transoformer/">Swin Transformer：层次化视觉Transformer 笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/">京东人脸识别FaceX Zoo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">经典无监督聚类算法理论温习与Python代码实践</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/reid%E4%B9%8B%E8%B7%AF-loss/">Reid之路: 度量学习的几种主要loss</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80/">分布式训练基础</a></li>
 		</ul>
 	</div>
 </div>
@@ -241,6 +241,7 @@ unzip -O cp936  file.zip   // 当压缩文件中含中文时，解压若出现�
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
@@ -291,9 +292,11 @@ unzip -O cp936  file.zip   // 当压缩文件中含中文时，解压若出现�
 		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pp-yolo" title="Pp yolo">Pp yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
@@ -301,21 +304,28 @@ unzip -O cp936  file.zip   // 当压缩文件中含中文时，解压若出现�
 		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/register" title="Register">Register</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reid" title="Reid">Reid</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/transformer" title="Transformer">Transformer</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vit" title="Vit">Vit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab" title="人脸识别">人脸识别</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" title="分布式训练">分布式训练</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
@@ -329,6 +339,7 @@ unzip -O cp936  file.zip   // 当压缩文件中含中文时，解压若出现�
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%81%9a%e7%b1%bb" title="聚类">聚类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>

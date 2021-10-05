@@ -6,10 +6,91 @@
     <description>Recent content in 计算机视觉 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Dec 2020 15:27:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jun 2021 19:33:06 +0800</lastBuildDate>
     
 	<atom:link href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swin Transformer：层次化视觉Transformer 笔记</title>
+      <link>/post/swin_transoformer/</link>
+      <pubDate>Tue, 01 Jun 2021 19:33:06 +0800</pubDate>
+      
+      <guid>/post/swin_transoformer/</guid>
+      <description>cver 不读swin transformer,遍读transformer也枉然. 个人读完论文感觉最大贡献在于: 将多尺度引入到了transformer</description>
+    </item>
+    
+    <item>
+      <title>京东人脸识别FaceX Zoo</title>
+      <link>/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/</link>
+      <pubDate>Thu, 20 May 2021 14:17:05 +0800</pubDate>
+      
+      <guid>/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/</guid>
+      <description>FaceX-Zoo 是京东最近开源的人脸识别pytorch版工具箱, 抽空读了一下技术报告，做个记录. 工程总体结构 总体可分为训练模块、评估模块、附加模块和人脸S</description>
+    </item>
+    
+    <item>
+      <title>Reid之路: 度量学习的几种主要loss</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-loss/</link>
+      <pubDate>Wed, 17 Mar 2021 22:41:32 +0800</pubDate>
+      
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-loss/</guid>
+      <description>度量学习旨在学习两张图片的相似性，那么久需要设计合适的损失函数能让网络提取到更具有判别能力的特征. contrasitive loss 网络优化目标是最小化损失函数 $L _c$, 输入正</description>
+    </item>
+    
+    <item>
+      <title>Detr:End-to-End Object Detection with Transformers笔记</title>
+      <link>/post/detr%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Mar 2021 15:56:46 +0800</pubDate>
+      
+      <guid>/post/detr%E7%AC%94%E8%AE%B0/</guid>
+      <description>目前transformer在CV领域打的火热，前文记录了transformer用于图像分类的实现，本文主要记录transformer用于目标</description>
+    </item>
+    
+    <item>
+      <title>Vision Transformer 笔记</title>
+      <link>/post/vit%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 06 Mar 2021 22:11:57 +0800</pubDate>
+      
+      <guid>/post/vit%E7%AC%94%E8%AE%B0/</guid>
+      <description>本文主要从代码角度记录使用transformer实现图像分类的流程. 代码vit-pytorch/ 总体结构 结合上图与代码展开: 前向传播过程代码</description>
+    </item>
+    
+    <item>
+      <title>Reid之路:Deep Learning for Person Re-identification:A Survey and Outlook</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-survey/</link>
+      <pubDate>Mon, 01 Mar 2021 23:30:57 +0800</pubDate>
+      
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-survey/</guid>
+      <description>目前团队项目逐渐偏向识别，自己的工作重心逐渐由检测、分类转向reid相关，自己之前对reid也没有深入，因此准备记录自己在reid工作上的成</description>
+    </item>
+    
+    <item>
+      <title>Yolov4.Pytorch 代码学习笔记</title>
+      <link>/post/yolov4-pytorch/</link>
+      <pubDate>Tue, 16 Feb 2021 22:33:31 +0800</pubDate>
+      
+      <guid>/post/yolov4-pytorch/</guid>
+      <description>最近对yolov5进行了较为深入的理解，顺便将yolov4给啃一啃，之前只粗略读过论文，这边文章主要从代码进行学习，代码参照 pytorch版</description>
+    </item>
+    
+    <item>
+      <title>PP-Yolo阅读笔记</title>
+      <link>/post/pp-yolo/</link>
+      <pubDate>Mon, 15 Feb 2021 23:15:21 +0800</pubDate>
+      
+      <guid>/post/pp-yolo/</guid>
+      <description>PP-YOLO 是百度在paddle-paddle框架下基于YOLOv3,结合各种trick得到的一个在性能与效率平衡的检测网络。与yolov4、effi</description>
+    </item>
+    
+    <item>
+      <title>Yolov5收敛快的理解</title>
+      <link>/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 27 Dec 2020 22:02:02 +0800</pubDate>
+      
+      <guid>/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>训练过很多目标检测网络，个人觉得yolov5是使用过的收敛最快的网络，训练10多个epoch就能达到很高的P、R. 收敛快的原因也不是网络本身</description>
+    </item>
     
     <item>
       <title>Yolo-v5从代码到服务部署实践</title>
@@ -18,6 +99,24 @@
       
       <guid>/post/yolo_v5%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/</guid>
       <description>yolo-v5 非论文，仅工程实现。本文主要记录自己对yolo-v5代码的学习、理解，以及实际服务部署。 网络结构 yolo-v5 包含4种模型结构，分别是yolov5s、</description>
+    </item>
+    
+    <item>
+      <title>PP-Ocr阅读小结</title>
+      <link>/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 11 Nov 2020 22:14:40 +0800</pubDate>
+      
+      <guid>/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/</guid>
+      <description>PP-OCR 是百度基于paddlePaddle 框架开源的国产高质量的OCR系统，PP-OCR 论文主要对其中使用的技术作了介绍。本文对PP-OCR 作阅读</description>
+    </item>
+    
+    <item>
+      <title>Dbnet</title>
+      <link>/post/dbnet/</link>
+      <pubDate>Mon, 03 Aug 2020 21:35:33 +0800</pubDate>
+      
+      <guid>/post/dbnet/</guid>
+      <description>DBNet：Real-time Scene Text Detection with Differentiable Binarization，是一个基于分割的文本检测器，PPOCR中使用其作为检测器，取得了可观的效果</description>
     </item>
     
     <item>

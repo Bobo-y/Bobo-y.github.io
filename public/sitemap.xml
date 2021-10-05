@@ -4,22 +4,192 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wiki/centos7%E5%AE%89%E8%A3%85nvidia-dcoker/</loc>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <loc>/tags/nvidia-docker/</loc>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/tools/</loc>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wiki/</loc>
+    <lastmod>2021-09-29T21:29:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-06-01T19:33:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/swin_transoformer/</loc>
+    <lastmod>2021-06-01T19:33:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/transformer/</loc>
+    <lastmod>2021-06-01T19:33:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2021-06-01T19:33:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/</loc>
+    <lastmod>2021-05-20T14:17:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</loc>
+    <lastmod>2021-05-20T14:17:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-04-28T10:39:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2021-04-28T10:39:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E8%81%9A%E7%B1%BB/</loc>
+    <lastmod>2021-04-28T10:39:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2021-04-02T07:50:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wiki/python%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/</loc>
+    <lastmod>2021-04-02T07:50:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wiki/python%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7%E4%B9%8Bregister/</loc>
+    <lastmod>2021-03-28T23:04:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/register/</loc>
+    <lastmod>2021-03-28T23:04:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/reid/</loc>
+    <lastmod>2021-03-17T22:41:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/reid%E4%B9%8B%E8%B7%AF-loss/</loc>
+    <lastmod>2021-03-17T22:41:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-03-17T22:41:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83/</loc>
+    <lastmod>2021-03-17T22:28:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-03-17T22:28:09+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/detr%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-03-07T15:56:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
+    <lastmod>2021-03-07T15:56:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/vit%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-03-06T22:11:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vit/</loc>
+    <lastmod>2021-03-06T22:11:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2021-03-06T22:11:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/reid%E4%B9%8B%E8%B7%AF-survey/</loc>
+    <lastmod>2021-03-01T23:30:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/transformer%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2021-02-25T21:47:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2021-02-25T21:47:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/yolov4/</loc>
+    <lastmod>2021-02-16T22:33:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/yolov4-pytorch/</loc>
+    <lastmod>2021-02-16T22:33:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pp-yolo/</loc>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/pp-yolo/</loc>
+    <lastmod>2021-02-15T23:15:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2020-12-27T22:02:02+08:00</lastmod>
   </url>
   
   <url>
@@ -33,13 +203,13 @@
   </url>
   
   <url>
-    <loc>/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2020-12-25T15:27:39+08:00</lastmod>
+    <loc>/tags/ocr/</loc>
+    <lastmod>2020-11-11T22:14:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/tools/</loc>
-    <lastmod>2020-10-06T14:10:30+08:00</lastmod>
+    <loc>/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2020-11-11T22:14:40+08:00</lastmod>
   </url>
   
   <url>
@@ -50,6 +220,11 @@
   <url>
     <loc>/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2020-10-06T14:10:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/dbnet/</loc>
+    <lastmod>2020-08-03T21:35:33+08:00</lastmod>
   </url>
   
   <url>
@@ -68,11 +243,6 @@
   </url>
   
   <url>
-    <loc>/wiki/</loc>
-    <lastmod>2020-06-01T21:01:10+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/cbam/</loc>
     <lastmod>2020-05-11T11:27:35+08:00</lastmod>
   </url>
@@ -83,27 +253,12 @@
   </url>
   
   <url>
-    <loc>/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2020-05-11T11:27:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2020-05-11T11:27:35+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/image-caption/</loc>
     <lastmod>2020-05-03T16:23:18+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/image_caption_1/</loc>
-    <lastmod>2020-05-03T16:23:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</loc>
     <lastmod>2020-05-03T16:23:18+08:00</lastmod>
   </url>
   
@@ -120,11 +275,6 @@
   <url>
     <loc>/post/seq2seq%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2020-05-01T17:31:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ocr/</loc>
-    <lastmod>2020-04-30T16:49:49+08:00</lastmod>
   </url>
   
   <url>
@@ -438,11 +588,6 @@
   </url>
   
   <url>
-    <loc>/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-02-04T19:15:55+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/life/%E6%9C%A8%E5%85%B0%E8%AF%8D%E6%8B%9F%E5%8F%A4%E5%86%B3%E7%BB%9D%E8%AF%8D%E6%9F%AC%E5%8F%8B/</loc>
     <lastmod>2020-01-28T22:39:21+08:00</lastmod>
   </url>
@@ -664,11 +809,6 @@
   
   <url>
     <loc>/post/dlib%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2019-11-12T12:58:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2019-11-12T12:58:31+08:00</lastmod>
   </url>
   

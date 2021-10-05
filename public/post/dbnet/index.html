@@ -11,11 +11,11 @@
 	<meta name="description" content="">
 	<meta name="generator" content="Hugo 0.57.2" />
 	<meta property="og:title" content="Dbnet" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="DBNet：Real-time Scene Text Detection with Differentiable Binarization，是一个基于分割的文本检测器，PPOCR中使用其作为检测器，取得了可观的效果" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/dbnet/" />
-<meta property="article:published_time" content="2020-12-03T21:35:33+08:00" />
-<meta property="article:modified_time" content="2020-12-03T21:35:33+08:00" />
+<meta property="article:published_time" content="2020-08-03T21:35:33+08:00" />
+<meta property="article:modified_time" content="2020-08-03T21:35:33+08:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -51,7 +51,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
 			<div class="logo__title">fly away, chase dream</div>			
-				<div class="logo__tagline">ML、CV、Image process, NLP beginning</div> 
+				<div class="logo__tagline">ML、CV、Image process</div> 
 			</a>
 			
 			<div class="float_right"><div class="social-share"></div>
@@ -101,23 +101,73 @@
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2020-12-03T21:35:33">2020-12-03</time>
+	<time class="meta__text" datetime="2020-08-03T21:35:33">2020-08-03</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a></span>
 </div>
 </div>
 		</header>
 <div class="content post__content clearfix">
 			
+
+<p><strong>DBNet：Real-time Scene Text Detection with Differentiable Binarization，是一个基于分割的文本检测器，PPOCR中使用其作为检测器，取得了可观的效果，结合DBNet开源代码和论文对其学习小结</strong>
+  
+<div align="center"><img src="/img/dbnet/1.jpg" width="800"></div></p>
+
+<h2 id="网络结构">网络结构</h2>
+
+<p>DBNet 网络结构如上图所示，标准的基于分割的FPN结构。</p>
+
+<h2 id="dbnet-为了解决什么">DBNet 为了解决什么？</h2>
+
+<p>对于普通的分割网络，得到网络输出后需要阈值化，但是阈值化的值是人工指定，而且一般只使用一个全局阈值，DBNet 的最大贡献点在于使用自适应二值化，对输出的不同的位置有不同的二值化阈值，二值化是可学习的。彻底将二值化这一步骤加入到网络里一起训练，这样最终的输出图对于阈值就会非常鲁棒。
+二值化即DB模块公式如下：</p>
+
+<div align="center"><img src="/img/dbnet/2.jpg" width="250"></div>
+
+<p>P 是网络输出的概率图，T 是网络学习到的自适应阈值图. DB 二值化公式本质上是带系数的sigmoid函数，加大了对误分类的梯度，使其学习的更好。</p>
+
+<h2 id="loss-计算">loss 计算</h2>
+
+<p>网络输出三部分:</p>
+
+<ul>
+<li>probability map， ，代表像素点是文本的概率</li>
+<li>threshold map， ，每个像素点的阈值</li>
+<li>binary map，由概率图和阈值图通过 DB二值化公式计算得到.</li>
+</ul>
+
+<div align="center"><img src="/img/dbnet/3.jpg" width="250"></div>
+
+<p>$L_s$ 是收缩之后文本实例的loss， $L_b$ 是二值化之后的收缩文本实例loss， $L_t$是二值化阈值map的loss. 且使用加权、以及难例挖掘的BCE.</p>
+
+<h2 id="label-制作">label 制作</h2>
+
+<div align="center"><img src="/img/dbnet/4.jpg" width="600"></div>
+
+<p>1 对于概率图的制作，参考自 <strong>PSENet</strong>，主要是将文本区域表示为一组线段的闭合集合</p>
+
+<p>2 threshold map, 将文本框分别向内向外收缩和扩张d(根据第一步收缩时计算得到)个像素，然后计算收缩框和扩张框之间差集部分里每个像素点到原始图像边界的归一化距离</p>
+
+<h2 id="其它">其它</h2>
+
+<p>在训练结束后，可以使用二值图也可以使用概率图，作者表示由于加上了阈值图的联合学习，网络学到的概率图效果已经很好了，可以直接使用。</p>
+
+<p>代码 <a href="https://github.com/MhLiao/DB">https://github.com/MhLiao/DB</a></p>
+
+<h2 id="ref">ref</h2>
+
+<p><a href="chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Farxiv.org%2Fpdf%2F1911.08947v2.pdf">dbnet</a></p>
+
 		</div>
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link btn" href="/tags/taga/" rel="tag">taga</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/ocr/" rel="tag">ocr</a></li>
 	</ul>
 </div>
 	</article>
@@ -157,7 +207,15 @@
 <div class="widget__content">
 		<ul class="widget__list">
 	
-	<li><a href="/post/transformer/">Transformer</a></li>
+	<li><a href="/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/">PP-Ocr阅读小结</a></li>
+	
+	<li><a href="/post/pytorch_crnn%E5%AE%9E%E8%B7%B5/">Pytorch: CRNN 实践</a></li>
+	
+	<li><a href="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/">文本检测中的nms</a></li>
+	
+	<li><a href="/post/crnn%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E4%BB%A5%E5%8F%8A%E6%95%B0%E5%AD%97%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%AE%9E%E7%8E%B0/">CRNN笔记以及数字检测识别实践</a></li>
+	
+	<li><a href="/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/">East:An Efficient and Accurate Scene Text Detector阅读及应用</a></li>
 	
 </ul>
 </div>
@@ -167,10 +225,10 @@
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">使用nginx将tf_serving反向代理实现负载均衡</p></a>
+		<a class="post-nav__link" href="/post/cspnet/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">CSPNet</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Darkent使用小记</p></a>
+		<a class="post-nav__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">使用nginx实现服务反向代理实现负载均衡</p></a>
 	</div>
 </nav>
 
@@ -188,11 +246,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/darkent%E8%AE%AD%E7%BB%83%E5%B0%8F%E8%AE%B0/">Darkent使用小记</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/dbnet/">Dbnet</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%B0%86tf_serving%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">使用nginx将tf_serving反向代理实现负载均衡</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/transformer/">Transformer</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/attention_is_all_you_need/">Attention is all you need</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/swin_transoformer/">Swin Transformer：层次化视觉Transformer 笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/">京东人脸识别FaceX Zoo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">经典无监督聚类算法理论温习与Python代码实践</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/reid%E4%B9%8B%E8%B7%AF-loss/">Reid之路: 度量学习的几种主要loss</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80/">分布式训练基础</a></li>
 		</ul>
 	</div>
 </div>
@@ -203,7 +261,7 @@
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/categories/nginx">Nginx</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
@@ -222,10 +280,9 @@
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/anchor-free" title="Anchor free">Anchor free</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/attention" title="Attention">Attention</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cbam" title="Cbam">Cbam</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cbir" title="Cbir">Cbir</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/darknet" title="Darknet">Darknet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cspnet" title="Cspnet">Cspnet</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/deeplab" title="Deeplab">Deeplab</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dlib" title="Dlib">Dlib</a>
@@ -255,9 +312,11 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pp-yolo" title="Pp yolo">Pp yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
@@ -265,23 +324,28 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/register" title="Register">Register</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reid" title="Reid">Reid</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/stylegan" title="Stylegan">Stylegan</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/taga" title="Taga">Taga</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/transformer" title="Transformer">Transformer</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vit" title="Vit">Vit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/yolov3" title="Yolov3">Yolov3</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab" title="人脸识别">人脸识别</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" title="分布式训练">分布式训练</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
@@ -295,6 +359,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%81%9a%e7%b1%bb" title="聚类">聚类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>
@@ -326,7 +391,7 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2020 fly away, chase dream.
+			&copy; 2021 fly away, chase dream.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

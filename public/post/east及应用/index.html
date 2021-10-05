@@ -51,7 +51,7 @@
 		<div class="logo">
 			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
 			<div class="logo__title">fly away, chase dream</div>			
-				<div class="logo__tagline">ML、CV、Image process, NLP beginning</div> 
+				<div class="logo__tagline">ML、CV、Image process</div> 
 			</a>
 			
 			<div class="float_right"><div class="social-share"></div>
@@ -178,101 +178,100 @@ import cfg
 
 
 def should_merge(region, i, j):
-# 判断两个激活点坐标是否邻接
-neighbor = {(i, j - 1)}
-return not region.isdisjoint(neighbor)
+    # 判断两个激活点坐标是否邻接
+    neighbor = {(i, j - 1)}
+    return not region.isdisjoint(neighbor)
 
 
 def region_neighbor(region_set):
-# 根据当前region list 的坐标生成下一行的region list应该包含的的坐标点, 且左右边界分别列减一与加一
-# 例：当前region list 的region_set{(50, 24),(50, 25)}
-# 那么下一行的它的下一行的neighbor 为 {(51, 23), (51, 24), (51, 25), (51, 26)}
-region_pixels = np.array(list(region_set))
-j_min = np.amin(region_pixels, axis=0)[1] - 1
-j_max = np.amax(region_pixels, axis=0)[1] + 1
-i_m = np.amin(region_pixels, axis=0)[0] + 1
-region_pixels[:, 0] += 1
-neighbor = {(region_pixels[n, 0], region_pixels[n, 1]) for n in
+    # 根据当前region list 的坐标生成下一行的region list应该包含的的坐标点, 且左右边界分别列减一与加一
+    # 例：当前region list 的region_set{(50, 24),(50, 25)}
+    # 那么下一行的它的下一行的neighbor 为 {(51, 23), (51, 24), (51, 25), (51, 26)}
+    region_pixels = np.array(list(region_set))
+    j_min = np.amin(region_pixels, axis=0)[1] - 1
+    j_max = np.amax(region_pixels, axis=0)[1] + 1
+    i_m = np.amin(region_pixels, axis=0)[0] + 1
+    region_pixels[:, 0] += 1
+    neighbor = {(region_pixels[n, 0], region_pixels[n, 1]) for n in
             range(len(region_pixels))}
-neighbor.add((i_m, j_min))
-neighbor.add((i_m, j_max))
-return neighbor
+    neighbor.add((i_m, j_min))
+    neighbor.add((i_m, j_max))
+    return neighbor
 
 
 def region_group(region_list):
-# region list 按上下行是否邻接合并
-S = [i for i in range(len(region_list))]
-D = []
-while len(S) &gt; 0:
-    m = S.pop(0)
-    if len(S) == 0:
-        # S has only one element, put it to D
-        D.append([m])
-    else:
-        D.append(rec_region_merge(region_list, m, S))
-return D
+    # region list 按上下行是否邻接合并
+    S = [i for i in range(len(region_list))]
+    D = []
+    while len(S) &gt; 0:
+        m = S.pop(0)
+        if len(S) == 0:
+            # S has only one element, put it to D
+            D.append([m])
+        else:
+            D.append(rec_region_merge(region_list, m, S))
+    return D
 
 
 def rec_region_merge(region_list, m, S):
-rows = [m]
-tmp = []
-for n in S:
-    # 判断region list 是否邻接,邻接就合并, 以下分别判断region list[m]的行坐标小于n 或 n的行坐标小于m
-    if not region_neighbor(region_list[m]).isdisjoint(region_list[n]) or \
+    rows = [m]
+    tmp = []
+    for n in S:
+        # 判断region list 是否邻接,邻接就合并, 以下分别判断region list[m]的行坐标小于n 或 n的行坐标小于m
+        if not region_neighbor(region_list[m]).isdisjoint(region_list[n]) or \
             not region_neighbor(region_list[n]).isdisjoint(region_list[m]):
-        # 第m与n相交
-        tmp.append(n)
-for d in tmp:
-    S.remove(d)
-for e in tmp:
-    rows.extend(rec_region_merge(region_list, e, S))
-return rows
+            # 第m与n相交
+            tmp.append(n)
+    for d in tmp:
+        S.remove(d)
+    for e in tmp:
+        rows.extend(rec_region_merge(region_list, e, S))
+    return rows
 
 
 def nms(predict, activation_pixels, threshold=cfg.side_vertex_pixel_threshold):
-# 区域list
-region_list = []
-for i, j in zip(activation_pixels[0], activation_pixels[1]):
-    merge = False
-    for k in range(len(region_list)):
-        # 对于每一对激活像素坐标，与region list 中的每一个region比较，行相邻就合并
-        if should_merge(region_list[k], i, j):
-            region_list[k].add((i, j))
-            merge = True
-            # Fixme 重叠文本区域处理，存在和多个区域邻接的pixels，先都merge试试
-            # break
-    if not merge:
-        region_list.append({(i, j)})
+    # 区域list
+    region_list = []
+    for i, j in zip(activation_pixels[0], activation_pixels[1]):
+        merge = False
+        for k in range(len(region_list)):
+            # 对于每一对激活像素坐标，与region list 中的每一个region比较，行相邻就合并
+            if should_merge(region_list[k], i, j):
+                region_list[k].add((i, j))
+                merge = True
+                # Fixme 重叠文本区域处理，存在和多个区域邻接的pixels，先都merge试试
+                # break
+        if not merge:
+            region_list.append({(i, j)})
 
-D = region_group(region_list)
-# 记录四边形坐标, shape(四边形个数, 4个顶点, 每个顶点2个坐标)
-quad_list = np.zeros((len(D), 4, 2))
-score_list = np.zeros((len(D), 4))
-for group, g_th in zip(D, range(len(D))):
-    total_score = np.zeros((4, 2))
-    for row in group:
-        for ij in region_list[row]:
-            # 边界像素?
-            score = predict[ij[0], ij[1], 1]
-            if score &gt;= threshold:
-                # 头or尾?
-                ith_score = predict[ij[0], ij[1], 2:3]
-                # 制作GT时头为0, 尾部为1. 小于trunc_threshold 为头, 大于 1- trunc_threshold 为尾
-                if not (cfg.trunc_threshold &lt;= ith_score &lt; 1 - cfg.trunc_threshold):
-                    ith = int(np.around(ith_score))
-                    total_score[ith * 2:(ith + 1) * 2] += score
-                    # 激活图上坐标*感受野大小得到对应到原图的坐标
-                    px = (ij[1] + 0.5) * cfg.pixel_size
-                    py = (ij[0] + 0.5) * cfg.pixel_size
-                    # 当前点坐标加上 距离左上、左下 or 右上、右下的坐标差即得到左上、左下 or 右上、右下坐标
-                    p_v = [px, py] + np.reshape(predict[ij[0], ij[1], 3:7], (2, 2))
-                    # 更新对应四边形的左上、左下 or 右上、右下坐标, 值为累计的加权和
-                    quad_list[g_th, ith * 2:(ith + 1) * 2] += score * p_v
-    # 四边形的最终坐标为所有预测坐标的加权求和 / 权值和
-    score_list[g_th] = total_score[:, 0]
-    quad_list[g_th] /= (total_score + cfg.epsilon)
-return score_list, quad_list
-
+    D = region_group(region_list)
+    # 记录四边形坐标, shape(四边形个数, 4个顶点, 每个顶点2个坐标)
+    quad_list = np.zeros((len(D), 4, 2))
+    score_list = np.zeros((len(D), 4))
+    for group, g_th in zip(D, range(len(D))):
+        total_score = np.zeros((4, 2))
+        for row in group:
+            for ij in region_list[row]:
+                # 边界像素?
+                score = predict[ij[0], ij[1], 1]
+                if score &gt;= threshold:
+                    # 头or尾?
+                    ith_score = predict[ij[0], ij[1], 2:3]
+                    # 制作GT时头为0, 尾部为1. 小于trunc_threshold 为头, 大于 1- trunc_threshold 为尾
+                    if not (cfg.trunc_threshold &lt;= ith_score &lt; 1 - cfg.trunc_threshold):
+                        ith = int(np.around(ith_score))
+                        total_score[ith * 2:(ith + 1) * 2] += score
+                        # 激活图上坐标*感受野大小得到对应到原图的坐标
+                        px = (ij[1] + 0.5) * cfg.pixel_size
+                        py = (ij[0] + 0.5) * cfg.pixel_size
+                        # 当前点坐标加上 距离左上、左下 or 右上、右下的坐标差即得到左上、左下 or 右上、右下坐标
+                        p_v = [px, py] + np.reshape(predict[ij[0], ij[1], 3:7], (2, 2))
+                        #  更新对应四边形的左上、左下 or 右上、右下坐标, 值为累计的加权和
+                        quad_list[g_th, ith * 2:(ith + 1) * 2] += score * p_v
+        #四边形的最终坐标为所有预测坐标的加权求和 / 权值和
+        score_list[g_th] = total_score[:, 0]
+        quad_list[g_th] /= (total_score + cfg.epsilon)
+    return score_list, quad_list
 </code></pre></li>
 </ul>
 
@@ -341,6 +340,10 @@ return score_list, quad_list
 <div class="widget__content">
 		<ul class="widget__list">
 	
+	<li><a href="/post/pp-ocr%E9%98%85%E8%AF%BB%E5%B0%8F%E7%BB%93/">PP-Ocr阅读小结</a></li>
+	
+	<li><a href="/post/dbnet/">Dbnet</a></li>
+	
 	<li><a href="/post/pytorch_crnn%E5%AE%9E%E8%B7%B5/">Pytorch: CRNN 实践</a></li>
 	
 	<li><a href="/post/%E6%96%87%E6%9C%AC%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84nms/">文本检测中的nms</a></li>
@@ -376,11 +379,11 @@ return score_list, quad_list
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/yolo_v5%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/">Yolo-v5从代码到服务部署实践</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">使用nginx实现服务反向代理实现负载均衡</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cspnet/">CSPNet</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/">CBAM注意力模块: Convolutional Block Attention Module</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/image_caption_1/">Image Caption模型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/swin_transoformer/">Swin Transformer：层次化视觉Transformer 笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/">京东人脸识别FaceX Zoo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">经典无监督聚类算法理论温习与Python代码实践</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/reid%E4%B9%8B%E8%B7%AF-loss/">Reid之路: 度量学习的几种主要loss</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%A1%80/">分布式训练基础</a></li>
 		</ul>
 	</div>
 </div>
@@ -391,6 +394,7 @@ return score_list, quad_list
 			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
@@ -441,9 +445,11 @@ return score_list, quad_list
 		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pp-yolo" title="Pp yolo">Pp yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
@@ -451,21 +457,28 @@ return score_list, quad_list
 		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/register" title="Register">Register</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reid" title="Reid">Reid</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/transformer" title="Transformer">Transformer</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vit" title="Vit">Vit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab" title="人脸识别">人脸识别</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" title="分布式训练">分布式训练</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
@@ -479,6 +492,7 @@ return score_list, quad_list
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%81%9a%e7%b1%bb" title="聚类">聚类</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>

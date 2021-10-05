@@ -6,10 +6,28 @@
     <description>Recent content in 目标检测 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 May 2020 11:27:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Mar 2021 15:56:46 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Detr:End-to-End Object Detection with Transformers笔记</title>
+      <link>/post/detr%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Mar 2021 15:56:46 +0800</pubDate>
+      
+      <guid>/post/detr%E7%AC%94%E8%AE%B0/</guid>
+      <description>目前transformer在CV领域打的火热，前文记录了transformer用于图像分类的实现，本文主要记录transformer用于目标</description>
+    </item>
+    
+    <item>
+      <title>Yolov5收敛快的理解</title>
+      <link>/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 27 Dec 2020 22:02:02 +0800</pubDate>
+      
+      <guid>/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>训练过很多目标检测网络，个人觉得yolov5是使用过的收敛最快的网络，训练10多个epoch就能达到很高的P、R. 收敛快的原因也不是网络本身</description>
+    </item>
     
     <item>
       <title>CBAM注意力模块: Convolutional Block Attention Module</title>
