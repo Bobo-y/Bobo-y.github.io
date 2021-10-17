@@ -39,15 +39,6 @@
     </item>
     
     <item>
-      <title>Three-sum</title>
-      <link>/leetcode/three_sum/</link>
-      <pubDate>Wed, 01 Apr 2020 17:04:12 +0800</pubDate>
-      
-      <guid>/leetcode/three_sum/</guid>
-      <description>Three sum 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。 注意：</description>
-    </item>
-    
-    <item>
       <title>Siege 对web 接口进行 post 压力测试</title>
       <link>/wiki/siege%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 05 Mar 2020 16:31:43 +0800</pubDate>

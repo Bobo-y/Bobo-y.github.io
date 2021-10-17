@@ -6,10 +6,19 @@
     <description>Recent content in 目标检测 on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Mar 2021 15:56:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Oct 2021 21:27:22 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pix2seq阅读笔记</title>
+      <link>/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 08 Oct 2021 21:27:22 +0800</pubDate>
+      
+      <guid>/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <description>灵魂三问 论文做了什么? 该论文是谷歌最近的新作,以语言建模的形式实现目标检测。 论文怎么做的？ 将bounding box 和 类别标签离散化为token。</description>
+    </item>
     
     <item>
       <title>Detr:End-to-End Object Detection with Transformers笔记</title>

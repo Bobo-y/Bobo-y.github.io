@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Three-sum</title>
+      <link>/leetcode/three_sum/</link>
+      <pubDate>Wed, 01 Apr 2020 17:04:12 +0800</pubDate>
+      
+      <guid>/leetcode/three_sum/</guid>
+      <description>Three sum 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。 注意：</description>
+    </item>
+    
+    <item>
       <title>最长公共前缀</title>
       <link>/leetcode/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/</link>
       <pubDate>Wed, 01 Apr 2020 13:53:38 +0800</pubDate>
