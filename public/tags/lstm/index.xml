@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LSTM on fly away, chase dream</title>
+    <link>/tags/lstm/</link>
+    <description>Recent content in LSTM on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 13 Sep 2019 19:51:54 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/lstm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从RNN到LSTM小记</title>
+      <link>/post/lstm/</link>
+      <pubDate>Fri, 13 Sep 2019 19:51:54 +0800</pubDate>
+      
+      <guid>/post/lstm/</guid>
+      <description>记录自己对LSTM结构的理解，以及结合keras在实现LSTM模型时数据的输入数据等的处理。 1.SimpleRNN 对于多层感知机网络而言，是假设每个输入数据具有</description>
+    </item>
+    
+  </channel>
+</rss>

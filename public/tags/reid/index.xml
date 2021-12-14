@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reid on fly away, chase dream</title>
+    <link>/tags/reid/</link>
+    <description>Recent content in reid on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 17 Mar 2021 22:41:32 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/reid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reid之路: 度量学习的几种主要loss</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-loss/</link>
+      <pubDate>Wed, 17 Mar 2021 22:41:32 +0800</pubDate>
+      
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-loss/</guid>
+      <description>度量学习旨在学习两张图片的相似性，那么久需要设计合适的损失函数能让网络提取到更具有判别能力的特征. contrasitive loss 网络优化目标是最小化损失函数 $L _c$, 输入正</description>
+    </item>
+    
+    <item>
+      <title>Reid之路:Deep Learning for Person Re-identification:A Survey and Outlook</title>
+      <link>/post/reid%E4%B9%8B%E8%B7%AF-survey/</link>
+      <pubDate>Mon, 01 Mar 2021 23:30:57 +0800</pubDate>
+      
+      <guid>/post/reid%E4%B9%8B%E8%B7%AF-survey/</guid>
+      <description>目前团队项目逐渐偏向识别，自己的工作重心逐渐由检测、分类转向reid相关，自己之前对reid也没有深入，因此准备记录自己在reid工作上的成</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numpy GPU加速 on fly away, chase dream</title>
+    <link>/tags/numpy-gpu%E5%8A%A0%E9%80%9F/</link>
+    <description>Recent content in Numpy GPU加速 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 21 Dec 2018 15:32:04 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/numpy-gpu%E5%8A%A0%E9%80%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Numpy使用GPU加速</title>
+      <link>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Fri, 21 Dec 2018 15:32:04 +0800</pubDate>
+      
+      <guid>/wiki/numpy&#43;gpu%E5%8A%A0%E9%80%9F/</guid>
+      <description>在跑完mnist的KNN分类后，跑的挺慢，突然想有没有GPU的numpy的呢，上网查了查，才知道原生的numpy没有实现（不应该啊。。。），</description>
+    </item>
+    
+  </channel>
+</rss>

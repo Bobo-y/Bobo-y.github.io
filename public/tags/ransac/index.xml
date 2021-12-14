@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ransac on fly away, chase dream</title>
+    <link>/tags/ransac/</link>
+    <description>Recent content in Ransac on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Dec 2018 15:52:22 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/ransac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>线性拟合笔记之：Ransac算法</title>
+      <link>/post/ransac/</link>
+      <pubDate>Wed, 19 Dec 2018 15:52:22 +0800</pubDate>
+      
+      <guid>/post/ransac/</guid>
+      <description>关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数</description>
+    </item>
+    
+  </channel>
+</rss>

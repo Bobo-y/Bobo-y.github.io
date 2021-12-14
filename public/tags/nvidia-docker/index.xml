@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nvidia-docker on fly away, chase dream</title>
+    <link>/tags/nvidia-docker/</link>
+    <description>Recent content in nvidia-docker on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 29 Sep 2021 21:29:40 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/nvidia-docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos7安装nvidia Dcoker</title>
+      <link>/wiki/centos7%E5%AE%89%E8%A3%85nvidia-dcoker/</link>
+      <pubDate>Wed, 29 Sep 2021 21:29:40 +0800</pubDate>
+      
+      <guid>/wiki/centos7%E5%AE%89%E8%A3%85nvidia-dcoker/</guid>
+      <description>安装NVIDIA-docker前最好先将已有的docker卸载掉 # 查看已经安装的 yum list installed |grep docker # 删除掉对应的docker yum -y remove *** 安装 NVIDIA-docker 2 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) curl</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Keras数据集加载小结 - fly away, chase dream</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.57.2" />
+	<meta property="og:title" content="Keras数据集加载小结" />
+<meta property="og:description" content="对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。 总的来说kera" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/keras_dataload/" />
+<meta property="article:published_time" content="2019-03-26T15:20:23+08:00" />
+<meta property="article:modified_time" content="2019-03-26T15:20:23+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+    
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3547912397637948",
+      enable_page_level_ads: true
+    });
+  </script>
+
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
+			<div class="logo__title">fly away, chase dream</div>			
+				<div class="logo__tagline">ML、CV、Image process</div> 
+			</a>
+			
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">about</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">blog</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/leetcode/">leetcode</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/life/">life📚</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">links</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/wiki/">wiki</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="container">
+      <a href="https://www.vultr.com/?ref=8356511-4F"><img src="https://www.vultr.com/media/banners/banner_728x90.png" width="800" height="90"></a>
+		</div>
+		<hr/>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Keras数据集加载小结</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-03-26T15:20:23">2019-03-26</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/keras" rel="category">Keras</a>, <a class="meta__link" href="/categories/tools" rel="category">tools</a></span>
+</div>
+</div>
+		</header>
+<div class="content post__content clearfix">
+			
+
+<p>对于keras加载训练数据，官方上没有详说。然而网上查各种资料，写法太多，通过自己跑代码测试总结以下几条，方便自己以后使用。</p>
+
+<h3 id="总的来说keras模型加载数据主要有三种方式-fit-fit-generator-和-train-on-batch">总的来说keras模型加载数据主要有三种方式：.fit(),  .fit_generator()和.train_on_batch()。</h3>
+
+<h2 id="1-fit">1.fit():</h2>
+
+<p>上函数，各个参数的意义就不解释了</p>
+
+<pre><code class="language-python">fit(x=None, y=None, batch_size=None, epochs=1, verbose=1, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None)
+</code></pre>
+
+<p>从官方文档中可以看出，fit()是需要先把整个数据集加载进来，然后喂入网络，因为minist数据集比较小，这么做是可行的，但对于实际开发而言，这么做是不可行的，需要大量的内存资源，同时不能对数据进行在线提升。</p>
+
+<h5 id="一次性加载整个数据集的示例代码">一次性加载整个数据集的示例代码：</h5>
+
+<p>任务为猫和狗的二分类，train_data下包含cat和dog两个文件夹，代码将两个文件夹下图片和标签存入numpy数组，返回为训练数据和训练标签。</p>
+
+<pre><code class="language-python">def load_data():
+    tran_imags = []
+    labels = []
+    seq_names = ['cat','dog']
+    for seq_name in seq_names:
+        frames = sorted(os.listdir(os.path.join(root_path,'data','train_data', seq_name)))
+        for frame in frames:
+            imgs = [os.path.join(root_path, 'data', 'train_data', seq_name, frame)]
+            imgs = np.array(Image.open(imgs[0]))
+            tran_imags.append(imgs)
+            if seq_name=='cat':
+                labels.append(0)
+            else:
+                labels.append(1)
+    return np.array(tran_imags), np.array(labels)
+##
+train_data,train_labs = load_data()
+model.fit(train_data,keras.utils.to_categorical(train_labs),batch_size=32,epochs=50,verbose=1)
+
+</code></pre>
+
+<h2 id="2-fit-generator">2.fit_generator()</h2>
+
+<p>fit_generator()需要将数据集和标签写成生成器格式</p>
+
+<pre><code class="language-python">fit_generator(generator, steps_per_epoch=None, epochs=1, verbose=1, callbacks=None, validation_data=None, validation_steps=None, class_weight=None, max_queue_size=10, workers=1, use_multiprocessing=False, shuffle=True, initial_epoch=0)
+</code></pre>
+
+<h4 id="1-从txt文件读取图片路径的生成器-不进行数据增强">1).从txt文件读取图片路径的生成器，不进行数据增强</h4>
+
+<p>以下代码从给定路径的txt文本中循环读取图片路径，每次读取一个batch_size的图片，并存入numpy数组返回。其中，当读到文本末尾时，将指针指向文件第一行。</p>
+
+<pre><code class="language-python">def generate_array_from_txt(path, batch_size,num_class):
+    with open(path) as f:
+        while True:
+            imgs = []
+            labs = np.zeros(shape=(batch_size,num_class))
+            i = 0
+            while len(imgs) &lt; batch_size:
+                line = f.readline()
+                if not line:
+                    f.seek(0)
+                    line = f.readline()
+                img_path = line.split(' ')[0]
+                lab = line.split(' ')[1]
+                img = np.array(Image.open(os.path.join('./',img_path)))
+                lab = keras.utils.to_categorical(int(lab)-1,num_classes=num_class)
+                imgs.append(img)
+                labs[i] = lab
+                i = i +1
+            yield (np.array(imgs),labs)
+ ##使用如下
+ gen = generate_arrays_from_txt(txt_path,batch_size,num_class)
+ model.fit_generator(gen,steps_per_epoch=N, epochs=EPOCN)
+ ## 因为生成器是无限生成数据，所以它不知道一轮要训练多少图片，所以steps_per_epoch为数据集的总数除以batch_size。
+</code></pre>
+
+<p>我的txt文本格式如下：前面是图片路径，后面是类别标签，因为从1开始的，所以to_categorical 里面减了1.</p>
+
+<p><img src="/img/keras_loaddata/1.png" alt="" /></p>
+
+<h4 id="2-使用-flow-from-directory-directory">2).使用.flow_from_directory(directory)</h4>
+
+<p>使用ImageDataGenerator类，ImageDataGenerator类有.flow()与.flow_from_directory(directory)两个加载数据的方法，个人认为第一个偏向于先将数据全部加载（看过的示例代码都是这样的），第二个从图片目录利用生成器返回数据。</p>
+
+<h5 id="2-1-用于分类网络-返回图像以及标签">2.1 用于分类网络，返回图像以及标签</h5>
+
+<pre><code class="language-python">## 声明一个ImageDataGenerator类对象，并给出你需要进行的数据增强选项
+train_datagen = ImageDataGenerator(
+        rescale=1./255,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True)
+##调用.flow_from_director()方法，第一个为数据集路径。生成数据集及标签
+train_generator = train_datagen.flow_from_directory(
+        './data/train_data',
+        target_size=(224, 224),
+        batch_size=32,
+        class_mode='categorical')
+##
+model.fit_generator(train_generator,steps_per_epoch=N, epochs=EPOCH)
+</code></pre>
+
+<p>我的数据集目录结构如下：</p>
+
+<p><img src="/img/keras_loaddata/2.png" alt="" /></p>
+
+<h5 id="2-2-用于pix2pix">2.2 用于pix2pix</h5>
+
+<p>当用于图像分割、超分辨率重建等需要像素对应像素的任务时，标签也为图片（单通道或多通道）。
+示例：加载用于图像分割的图像与mask,mask为单通道灰度图像，目标为白色，其余背景为黑色。</p>
+
+<pre><code class="language-python"># 分别定义两个ImageDataGenerator对象
+image_datagen = ImageDataGenerator(featurewise_center=True,
+                                   featurewise_std_normalization=True,
+                                   rescale= 1./255)
+mask_datagen = ImageDataGenerator(rescale= 1./255)
+
+seed = 1
+#训练图片路径
+image_generator = image_datagen.flow_from_directory(
+    'data/data_seg/davis_train',
+    class_mode=None,
+    seed=seed)
+# 指定mask
+mask_generator = mask_datagen.flow_from_directory(
+    'data/data_seg/davis_label',
+    class_mode=None,
+    color_mode = 'grayscale'
+    seed=seed)
+# 将以上两个生成器合为一个
+train_generator = zip(image_generator, mask_generator)
+#
+model.fit_generator(
+    train_generator,
+    steps_per_epoch=STEPS_NUM,
+    epochs=EPOCHS)
+</code></pre>
+
+<p>对于标签为图像的数据，当用这种方式加载的时候，需将class_mode指定为None,表示不返回标签。对于训练图片和标签要保证顺序不变，一一对应，名字可不同</p>
+
+<p><img src="/img/keras_loaddata/3.png" alt="" /><img src="/img/keras_loaddata/4.png" alt="" /></p>
+
+<p>需要将两个生成器的seed指定为相同的数字，此时两个生成器返回的图片对就一一对应</p>
+
+<h4 id="3-使用flow-x-y-none">3) 使用flow(x, y=None)</h4>
+
+<p>使用.flow()时，需要将训练数据加载到内存中，每次填充一个Batch_size的数据进网络</p>
+
+<pre><code class="language-python">train_data, train_labs = load_data()
+dataGenerator = ImageDataGenerator(
+        preprocessing_function=normalize)
+gen = dataGenerator.flow(train_data, train_labs, batch_size=8)
+model.fit_generator(gen)
+</code></pre>
+
+<h4 id="4-使用-flow-from-dataframe">4) 使用.flow_from_dataframe()</h4>
+
+<p>dataframe中保存的是图片名字和label</p>
+
+<pre><code class="language-python">import pandas as pd
+df=pd.read_csv(r&quot;.\train.csv&quot;)
+datagen=ImageDataGenerator(rescale=1./255)
+train_generator=datagen.flow_from_dataframe(dataframe=df, directory=&quot;.\train_imgs&quot;, x_col=&quot;id&quot;, y_col=&quot;label&quot;, class_mode=&quot;categorical&quot;, target_size=(32,32), batch_size=32)
+</code></pre>
+
+<h2 id="3-train-on-batch">3.train_on_batch()</h2>
+
+<p>类似于TensorFlow的数据填充了，一次喂一个batch_size的数据。</p>
+
+<pre><code class="language-python">train_on_batch(x, y, sample_weight=None, class_weight=None)
+</code></pre>
+
+<p>采用2.2中的生成器例子</p>
+
+<pre><code class="language-python">train_generator = zip(image_generator, mask_generator)
+steps = len(train_generator)/ batch_size * EPOCH
+step = 0
+for train_batch, label_batch in train_generator:
+    if step == steps:
+       break
+    step += 1
+    train_on_batch(train_batch, label_batch, sample_weight=None, class_weight=None)
+</code></pre>
+
+<h2 id="4-对生成器返回数据进行处理">4.对生成器返回数据进行处理</h2>
+
+<p>使用生成器时，如果需要对图片进行一定的处理，可以在ImageDataGenerator中定义预处理函数，但是要求返回的shape不能改变。
+如果要对图片的shape进行改变，可将生成器返回结果再次包装为生成器，如下例：</p>
+
+<pre><code class="language-python"># 实例化ImageDataGenerator，同时指定预处理函数
+datagen = ImageDataGenerator(
+        preprocessing_function=normalize)
+
+# 定义生成器，每次从datagen中取出一个Batch，然后对数据进行自己的操作
+def image_a_b_gen(data_path):
+    for batch in datagen.flow_from_directory(data_path,
+                                             target_size=(768, 1024),
+                                             color_mode='rgb',
+                                             class_mode=None,
+                                             batch_size=batch_size,
+                                             shuffle=True):
+        lab_batch = rgb2lab(batch)
+        X_batch = lab_batch[:, :, :, 0]
+        Y_batch = lab_batch[:, :, :, 1:] / 128
+        yield (np.expand_dims(X_batch, axis=3), Y_batch)
+</code></pre>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/keras/" rel="tag">keras</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/" rel="tag">数据加载</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+
+
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yl305237731/yl305237731.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		ML, DL, CV....
+	</div>
+</div>
+
+
+
+<aside class="sidebar">
+<h4>See Also</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	
+	<li><a href="/post/cyclegan/">CycleGAN论文阅读总结及实现</a></li>
+	
+	<li><a href="/post/%E5%9F%BA%E4%BA%8Evgg%E7%9A%84%E8%A7%86%E9%A2%91%E7%9B%AE%E6%A0%87%E5%88%86%E5%89%B2/">基于vgg16的半监督视频单目标分割网络&#43; Dense-crf</a></li>
+	
+	<li><a href="/post/yolo%E6%B0%B4%E5%8D%B0%E6%A3%80%E6%B5%8B/">基于yolo_v3的水印检测</a></li>
+	
+	<li><a href="/post/keras_data_aug/">Keras数据增强并保存到本地</a></li>
+	
+	<li><a href="/post/keras_duofenlei/">Keras多标签分类网络实现</a></li>
+	
+	<li><a href="/post/keras_simi/">基于Keras图像相似度计算孪生网络</a></li>
+	
+	<li><a href="/post/kdog_cat/">Keras 猫狗二分类</a></li>
+	
+</ul>
+</div>
+<br/>
+</aside>
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/mnist%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%AC%E5%9B%BE%E7%89%87/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">python下mnist数据集转化为图片</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/keras_duofenlei/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Keras多标签分类网络实现</p></a>
+	</div>
+</nav>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ffc/">FFC: Fast Fourier Convolution 阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">Pix2seq阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/swin_transoformer/">Swin Transformer：层次化视觉Transformer 笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/">京东人脸识别FaceX Zoo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">经典无监督聚类算法理论温习与Python代码实践</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a2%9e%e5%bc%ba">图像增强</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86">自然语言处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor-free" title="Anchor free">Anchor free</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbam" title="Cbam">Cbam</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbir" title="Cbir">Cbir</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cspnet" title="Cspnet">Cspnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deeplab" title="Deeplab">Deeplab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dlib" title="Dlib">Dlib</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/facenet" title="Facenet">Facenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fast-rcnn" title="Fast rcnn">Fast rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/faster_rcnn" title="Faster rcnn">Faster rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fpn" title="Fpn">Fpn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gan" title="Gan">Gan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hive" title="Hive">Hive</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/image-caption" title="Image caption">Image caption</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inception" title="Inception">Inception</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lstm" title="Lstm">Lstm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown%e8%af%ad%e6%b3%95" title="Markdown语法">Markdown语法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pp-yolo" title="Pp yolo">Pp yolo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/register" title="Register">Register</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reid" title="Reid">Reid</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/transformer" title="Transformer">Transformer</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vit" title="Vit">Vit</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab" title="人脸识别">人脸识别</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" title="分布式训练">分布式训练</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" title="深度学习">深度学习</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%81%9a%e7%b1%bb" title="聚类">聚类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" title="计算机视觉">计算机视觉</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:16120438@bjtu.edu.cn">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>16120438@bjtu.edu.cn</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div>
+<a href="https://www.vultr.com/?ref=8356490"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 fly away, chase dream.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+</body>
+</html>

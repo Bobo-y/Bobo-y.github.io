@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文阅读 on fly away, chase dream</title>
+    <link>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 论文阅读 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Oct 2021 22:34:47 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FFC: Fast Fourier Convolution 阅读笔记</title>
+      <link>/post/ffc/</link>
+      <pubDate>Thu, 28 Oct 2021 22:34:47 +0800</pubDate>
+      
+      <guid>/post/ffc/</guid>
+      <description>论文做了什么？ 广泛采用的卷积操作属于局部操作，无法编码长距离的依赖关系。论文提出了一种新的用于获取更大感受野的卷积模块，为捕捉全局特征，用傅</description>
+    </item>
+    
+    <item>
+      <title>Vision Transformer 笔记</title>
+      <link>/post/vit%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 06 Mar 2021 22:11:57 +0800</pubDate>
+      
+      <guid>/post/vit%E7%AC%94%E8%AE%B0/</guid>
+      <description>本文主要从代码角度记录使用transformer实现图像分类的流程. 代码vit-pytorch/ 总体结构 结合上图与代码展开: 前向传播过程代码</description>
+    </item>
+    
+    <item>
+      <title>CBAM注意力模块: Convolutional Block Attention Module</title>
+      <link>/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 11 May 2020 11:27:35 +0800</pubDate>
+      
+      <guid>/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/</guid>
+      <description>之前谈过SE-net, 对于目标检测或检测用于特征通道的attention, 今天记录一下CBAM模块, 对分类或检测中用来获取通道、空间位置的a</description>
+    </item>
+    
+    <item>
+      <title>Image Caption模型</title>
+      <link>/post/image_caption_1/</link>
+      <pubDate>Sun, 03 May 2020 16:23:18 +0800</pubDate>
+      
+      <guid>/post/image_caption_1/</guid>
+      <description>图像描述生成作为结合CV与NLP的跨模态学习任务, 在人工智能领域也是热门的研究点. 模型 Image caption 是在给定照片的情况下生成人类可读的文字描述的具有挑</description>
+    </item>
+    
+    <item>
+      <title>YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</title>
+      <link>/post/yolov4/</link>
+      <pubDate>Tue, 28 Apr 2020 23:37:42 +0800</pubDate>
+      
+      <guid>/post/yolov4/</guid>
+      <description>最近目标检测又出了yolo-v4，作为一个做目标检测的不可不膜拜膜拜。首先由于约瑟夫大神已经退出CV，yolo-v4 的一作是DarkNet的</description>
+    </item>
+    
+    <item>
+      <title>谷歌最新目标检测论文: EfficientDet</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/</link>
+      <pubDate>Sat, 18 Apr 2020 11:55:48 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/</guid>
+      <description>最近谷歌放出了 EfficientDet 论文与代码, 在COCO上取得了最好的MAP, 本文对 efficientDet 做个简要的总结, 同时对efficientNet也做个回顾. Efficie</description>
+    </item>
+    
+    <item>
+      <title>超分辨率重建: SRGAN</title>
+      <link>/post/srgan/</link>
+      <pubDate>Sun, 12 Apr 2020 19:41:57 +0800</pubDate>
+      
+      <guid>/post/srgan/</guid>
+      <description>对于图像超分辨率重建, 第一个使用CNN实现的是SRCNN, 类似于编码器解码器结构. SRGAN是第一个使用GAN网络解决超分辨率重构的网络 创新</description>
+    </item>
+    
+    <item>
+      <title>语义分割: UNET</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2unet/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:46 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2unet/</guid>
+      <description>说到语义分割, 不得不说一下U-net, U-net首先针对于医学图像分割提出, 由于其卓越的性能, 目前大部分医学图像分割都是基于U-net或者U</description>
+    </item>
+    
+    <item>
+      <title>语义分割: deeplab V1到deeplab V3</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2deeplab-v1%E5%88%B0deeplab-v3/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:32 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2deeplab-v1%E5%88%B0deeplab-v3/</guid>
+      <description>deeplab 为一个系列, 因此将其放在一起进行个回顾 Deeplab-v1 与deeplab-v2 将deeplab-v1与deeplab-v2放在一起, 主要是因为二者总体结构</description>
+    </item>
+    
+    <item>
+      <title>语义分割之: FCN</title>
+      <link>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2fcn/</link>
+      <pubDate>Fri, 10 Apr 2020 23:11:05 +0800</pubDate>
+      
+      <guid>/post/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2fcn/</guid>
+      <description>研究生阶段自己对分割这边还是很熟悉的, 工作后发现很多网络只能说出原理和整体框架, 面试时问的很细节, 再次将经典分割网络仔细review一遍. 主</description>
+    </item>
+    
+    <item>
+      <title>人脸检测网络: MTCNN</title>
+      <link>/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/</link>
+      <pubDate>Sat, 04 Apr 2020 18:03:03 +0800</pubDate>
+      
+      <guid>/post/%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9Cmtcnn/</guid>
+      <description>之前做人脸检测使用的是retinaface做的, 刚好最近被问到MTCNN, 以前没有细看, 正好做个笔记. MTCNN是2015年提出的用于人脸检</description>
+    </item>
+    
+    <item>
+      <title>Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</title>
+      <link>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</link>
+      <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
+      
+      <guid>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/</guid>
+      <description>主流的目标检测算法大多数是基于anchor box的, one-stage 的yolo-v2, yolo-v3, ssd&amp;hellip;以及two-stage 的faster rcnn</description>
+    </item>
+    
+    <item>
+      <title>图像修复3: Free-Form Image Inpainting with Gated Convolution</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</link>
+      <pubDate>Thu, 20 Feb 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D3gated_cobv/</guid>
+      <description>此文与图像修复2中review过的论文一样, 出至Adobe同一人之手. 主要创新点 提出门控卷积解决普通卷积将所有输入像素都视为有效像素的问题,</description>
+    </item>
+    
+    <item>
+      <title>OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</title>
+      <link>/post/ohem/</link>
+      <pubDate>Sun, 16 Feb 2020 18:46:23 +0800</pubDate>
+      
+      <guid>/post/ohem/</guid>
+      <description>在目标检测中, 存在正负样本类别不平衡的现象, 特别是对于单阶段的目标检测算法. 如果每张训练图片中目标个数还很少的话, 背景区域就占了绝大部分, 分</description>
+    </item>
+    
+    <item>
+      <title>Accelerating Object Detection by Erasing Background Activations 阅读</title>
+      <link>/post/omg_net/</link>
+      <pubDate>Mon, 10 Feb 2020 13:10:54 +0800</pubDate>
+      
+      <guid>/post/omg_net/</guid>
+      <description>该篇论文来源于Intel, 如其名用来加速目标检测. 主要针对于 one-stage 的目标检测算法. 主要创新点 对于 one-stage 的目标检测算法而言, 由于其设置了大量的 default box, 然后</description>
+    </item>
+    
+    <item>
+      <title>Focal loss </title>
+      <link>/post/focal_loss/</link>
+      <pubDate>Sun, 09 Feb 2020 18:54:07 +0800</pubDate>
+      
+      <guid>/post/focal_loss/</guid>
+      <description>intro 主流的目标检测网络主要包含两种架构,一种是先进行region proposal再分别对得到的region 进行分类与边框回归的 two-stage 网络, RCNN 及其衍</description>
+    </item>
+    
+    <item>
+      <title>FPN: Feature Pyramid Networks for Object Detection </title>
+      <link>/post/fpn/</link>
+      <pubDate>Sun, 09 Feb 2020 14:42:44 +0800</pubDate>
+      
+      <guid>/post/fpn/</guid>
+      <description>常见的检测网络结构 (a) 中使用图像金字塔构建特征金字塔, 在每一个图像尺度下单独提取特征, 耗时 (b) 使用单尺度特征图用来快速的目标检测 (c) 使用单方向多个</description>
+    </item>
+    
+    <item>
+      <title>目标检测与实例分割: Mask rcnn</title>
+      <link>/post/mask_rcnn/</link>
+      <pubDate>Fri, 07 Feb 2020 00:12:19 +0800</pubDate>
+      
+      <guid>/post/mask_rcnn/</guid>
+      <description>mask rcnn 是何凯明团队在faster rcnn的基础上, 将目标检测与实例分割整合到一起的又一力作, 同时改进了faster RCNN 中 ROI pooling存在的 misalignment</description>
+    </item>
+    
+    <item>
+      <title>Progan: PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION</title>
+      <link>/post/progan%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Mon, 20 Jan 2020 22:09:52 +0800</pubDate>
+      
+      <guid>/post/progan%E9%98%85%E8%AF%BB/</guid>
+      <description>主要贡献 GAN 高清图像生成难的问题 方法 提出新的 GAN 训练方法: 逐渐增加生成器和鉴别器&amp;ndash;从低分辨率开始, 逐渐添加新层，以随着训练的进行网络</description>
+    </item>
+    
+    <item>
+      <title>图像修复2: Generative Image Inpainting with Contextual Attention</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</link>
+      <pubDate>Thu, 02 Jan 2020 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D2%E4%B8%8A%E4%B8%8B%E6%96%87attention/</guid>
+      <description>之前介绍过NVIDIA的图像修复方法, 使用的img-img的方法. 由于GAN网络在图像生成方向的大放异彩, 今天review一下, Adobe的</description>
+    </item>
+    
+    <item>
+      <title>图像修复1: Image Inpainting for Irregular Holes Using Partial Convolutions</title>
+      <link>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</link>
+      <pubDate>Sat, 28 Dec 2019 01:00:09 +0800</pubDate>
+      
+      <guid>/post/%E5%9B%BE%E5%83%8F%E4%BF%AE%E5%A4%8D1partial_conv/</guid>
+      <description>图像修复一直是CV领域的重点与难点, 基于深度学习的图像修复因为其可以学习到丰富的语义信息和潜在丰富的表达能力, 受到研究者们的热捧. 这篇文章主</description>
+    </item>
+    
+    <item>
+      <title>人脸检测网络: SSH: Single Stage Headless Face Detector</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bssh%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Wed, 18 Dec 2019 22:54:51 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Bssh%E7%BD%91%E7%BB%9C/</guid>
+      <description>最近看了一下人脸检测的论文, 除了通用的目标检测方法, 看见了这篇论文, 整体上而言和yolo-v3结构是类似的, SSH 设计了不同的检测头. SSH 网络 SSH 网</description>
+    </item>
+    
+    <item>
+      <title>Squeeze-and-Excitation Networks</title>
+      <link>/post/se-net/</link>
+      <pubDate>Wed, 18 Dec 2019 11:59:07 +0800</pubDate>
+      
+      <guid>/post/se-net/</guid>
+      <description>Squeeze-and-Excitation Networks（SENet)是CVPR2018公布的一种全新的图像识别结构，它通过对特征通道间的相关性进行建模，把重要的特征进行强化来提</description>
+    </item>
+    
+    <item>
+      <title>Facenet: A Unified Embedding for Face Recognition and Clustering</title>
+      <link>/post/facenet/</link>
+      <pubDate>Thu, 28 Nov 2019 22:31:58 +0800</pubDate>
+      
+      <guid>/post/facenet/</guid>
+      <description>主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相似人脸) 任</description>
+    </item>
+    
+    <item>
+      <title>Dcgan: 深度卷积生成对抗网络</title>
+      <link>/post/dcgan/</link>
+      <pubDate>Tue, 26 Nov 2019 19:58:17 +0800</pubDate>
+      
+      <guid>/post/dcgan/</guid>
+      <description>DCGAN 在 Ian Goodfellow 提出GAN 以来, 在图像领域GAN 可谓被玩的声名大噪. DCAGN 主要是针对卷积实现GAN时, 提出一系列架构设计规则, 使其训练更稳定. 主要有以下</description>
+    </item>
+    
+    <item>
+      <title>目标检测之RFB模块: Receptive Field Block Net for Accurate and Fast Object Detection</title>
+      <link>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B9%8Brfb%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Mon, 18 Nov 2019 22:02:39 +0800</pubDate>
+      
+      <guid>/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B9%8Brfb%E6%A8%A1%E5%9D%97/</guid>
+      <description>RFB 模块主要是针对在保持轻量级网络的速度快、计算量小的情况下, 提升检测的精度, 模块如其名, 从感受野角度入手, 增强轻量级网络的特征表示, 主要用来</description>
+    </item>
+    
+    <item>
+      <title>Anchor free 目标检测修炼之路: DenseBox : Unifying Landmark Localization with End to End Object Detection</title>
+      <link>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFdense_box/</link>
+      <pubDate>Wed, 13 Nov 2019 22:16:21 +0800</pubDate>
+      
+      <guid>/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFdense_box/</guid>
+      <description>DenseBox 是与yolo, faster rcnn同期的目标检测网络, 与yolo v1一样采用 anchor-free的思想, 网络结构采用FCN来实现目标检测 主要创新点</description>
+    </item>
+    
+    <item>
+      <title>Yolo: v1-v3</title>
+      <link>/post/yolo/</link>
+      <pubDate>Sat, 09 Nov 2019 17:16:26 +0800</pubDate>
+      
+      <guid>/post/yolo/</guid>
+      <description>目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网络. 主要区</description>
+    </item>
+    
+    <item>
+      <title>Inception系列</title>
+      <link>/post/inception_v1_to_v4/</link>
+      <pubDate>Thu, 24 Oct 2019 16:51:27 +0800</pubDate>
+      
+      <guid>/post/inception_v1_to_v4/</guid>
+      <description>对卷积神经网络而言，提升网络的深度与宽度能够显著提升网络的性能，但是网络越大意味着参数量的增加，会使网络更加容易过拟合。同时，增加网络的大小</description>
+    </item>
+    
+    <item>
+      <title>Object detection(4): Faster R-CNN</title>
+      <link>/post/faster_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 20 Oct 2019 22:10:11 +0800</pubDate>
+      
+      <guid>/post/faster_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>主要贡献 提出 RPN 网络, 将region proposal 和目标检测统一到一个卷积网络中 anchor 的使用 网络结构 faster rcnn 检测流程如上图所示: 图像经过卷积层提取 feature maps 然后在RPN</description>
+    </item>
+    
+    <item>
+      <title>SSD: Single Shot MultiBox Detector</title>
+      <link>/post/ssd/</link>
+      <pubDate>Fri, 18 Oct 2019 12:19:25 +0800</pubDate>
+      
+      <guid>/post/ssd/</guid>
+      <description>SSD发表在2016ECCV, 是one-stage目标检测算法中经典的框架之一. 其精度优于yolo-v1, 在yolo-v2之后被超越. SSD 具有</description>
+    </item>
+    
+    <item>
+      <title>object detection(3): Fast rcnn</title>
+      <link>/post/fast_rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Wed, 09 Oct 2019 21:24:19 +0800</pubDate>
+      
+      <guid>/post/fast_rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>主要贡献 RCNN, SPPnet的训练是 multi-stage的, 需要每一步训练一个模型. faste rcnn 通过 multi-task loss 将分类与边框回归融合到网络中, 前两者为训练SVM</description>
+    </item>
+    
+    <item>
+      <title>Object detection(2): SPPnet</title>
+      <link>/post/spp_net/</link>
+      <pubDate>Sat, 05 Oct 2019 19:40:34 +0800</pubDate>
+      
+      <guid>/post/spp_net/</guid>
+      <description>在 RCNN 中说到, RCNN存在的一个问题是需要将region proposal进行warp到固定尺寸,这会带来失真等影响. 这是由于具有全连接的CNN</description>
+    </item>
+    
+    <item>
+      <title>object detection(1): Rcnn</title>
+      <link>/post/rcnn%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 03 Oct 2019 21:24:12 +0800</pubDate>
+      
+      <guid>/post/rcnn%E9%98%85%E8%AF%BB/</guid>
+      <description>Rcnn 作为使用CNN进行目标检测的开山之作, 之后，在其基础上延展出了fast rcnn, faster rcnn, mask rcnn, 等等, 都是在针对前人的问题不断改进, 本文对rcnn 进行小结</description>
+    </item>
+    
+    <item>
+      <title>East:An Efficient and Accurate Scene Text Detector阅读及应用</title>
+      <link>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 28 Aug 2019 00:03:07 +0800</pubDate>
+      
+      <guid>/post/east%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <description>East是旷视科技2017年发表的论文,针对于场景文本检测。East网络也可以轻易的扩展到其他目标检测任务上。我主要在改进版的East基础上</description>
+    </item>
+    
+    <item>
+      <title>视频对象分割小记</title>
+      <link>/post/videoseg_summary/</link>
+      <pubDate>Thu, 06 Jun 2019 15:25:02 +0800</pubDate>
+      
+      <guid>/post/videoseg_summary/</guid>
+      <description>写在前面的话，硕士研究生阶段从接触VOS到深入研究，差不多一共有两年时间。因为自己刚接触这个研究领域的时候，用深度学习做视频分割的还相对较少</description>
+    </item>
+    
+    <item>
+      <title>Hr_net阅读笔记</title>
+      <link>/post/hr_net/</link>
+      <pubDate>Sat, 13 Apr 2019 14:52:14 +0800</pubDate>
+      
+      <guid>/post/hr_net/</guid>
+      <description>HRNet 是中科大与微软亚洲研究院今年发表的关于人体姿态估计的论文中提出的网络结构。 我不是做姿态估计的，主要是HRNet的结构对于需要跨层特征融合以</description>
+    </item>
+    
+  </channel>
+</rss>

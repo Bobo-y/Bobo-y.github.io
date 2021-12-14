@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>facenet on fly away, chase dream</title>
+    <link>/tags/facenet/</link>
+    <description>Recent content in facenet on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Nov 2019 22:31:58 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/facenet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Facenet: A Unified Embedding for Face Recognition and Clustering</title>
+      <link>/post/facenet/</link>
+      <pubDate>Thu, 28 Nov 2019 22:31:58 +0800</pubDate>
+      
+      <guid>/post/facenet/</guid>
+      <description>主要创新点 FaceNet 将 face verification(判断是否是同一个人)，recognition(判断是何人)和clustering(寻找相似人脸) 任</description>
+    </item>
+    
+  </channel>
+</rss>

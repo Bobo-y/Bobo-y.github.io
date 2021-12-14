@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器学习 on fly away, chase dream</title>
+    <link>/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 机器学习 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Apr 2021 10:39:39 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>经典无监督聚类算法理论温习与Python代码实践</title>
+      <link>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Wed, 28 Apr 2021 10:39:39 +0800</pubDate>
+      
+      <guid>/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/</guid>
+      <description>在不知道样本类别时，无监督聚类算法可以将具有相似属性或特征的样本归为相同的类别，常用语数据处理. 本文主要记录几种常见的聚类算法以及Pytho</description>
+    </item>
+    
+    <item>
+      <title>Dlib 人脸相关实践</title>
+      <link>/post/dlib%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 12 Nov 2019 12:58:31 +0800</pubDate>
+      
+      <guid>/post/dlib%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dlib由C++编写，提供了和机器学习、数值计算、图模型算法、图像处理等领域相关的一系列功能, 对Python 也提供了便利的接口, 但C++ 版功</description>
+    </item>
+    
+    <item>
+      <title>监督分类之：KNN算法</title>
+      <link>/post/knn/</link>
+      <pubDate>Sat, 22 Dec 2018 15:34:07 +0800</pubDate>
+      
+      <guid>/post/knn/</guid>
+      <description>KNN简介 K近邻（K-Nearest Neighbor）学习是一种简单的监督学习方法。方法流程主要是：对于给定的测试样本，基于某种距离度量找出</description>
+    </item>
+    
+    <item>
+      <title>线性拟合笔记之：Ransac算法</title>
+      <link>/post/ransac/</link>
+      <pubDate>Wed, 19 Dec 2018 15:52:22 +0800</pubDate>
+      
+      <guid>/post/ransac/</guid>
+      <description>关于Ransac算法 RANSAC为Random Sample Consensus，即随机采样一致性算法，是根据一组包含异常数据的样本数据集，计算出数据的数</description>
+    </item>
+    
+    <item>
+      <title>线性拟合笔记之：最小二乘法</title>
+      <link>/post/linersqur/</link>
+      <pubDate>Tue, 18 Dec 2018 15:57:45 +0800</pubDate>
+      
+      <guid>/post/linersqur/</guid>
+      <description>关于最小二乘法 以下是百度百科的解释：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu &#43; Python下libsvm使用小结</title>
+      <link>/post/libsvm%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 28 Nov 2018 16:24:49 +0800</pubDate>
+      
+      <guid>/post/libsvm%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+      <description>关于libsvm libsvm是台湾大学林智仁(Chih-Jen Lin)教授等开发，它主要用于分类(支持二分类和多分类)和回归，主页主页，下载</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Yolo: v1-v3 - fly away, chase dream</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.57.2" />
+	<meta property="og:title" content="Yolo: v1-v3" />
+<meta property="og:description" content="目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网络. 主要区" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/yolo/" />
+<meta property="article:published_time" content="2019-11-09T17:16:26+08:00" />
+<meta property="article:modified_time" content="2019-11-09T17:16:26+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+    
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3547912397637948",
+      enable_page_level_ads: true
+    });
+  </script>
+
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="fly away, chase dream" rel="home">
+			<div class="logo__title">fly away, chase dream</div>			
+				<div class="logo__tagline">ML、CV、Image process</div> 
+			</a>
+			
+			<div class="float_right"><div class="social-share"></div>
+  <br/></div>
+			
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">about</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/">blog</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/leetcode/">leetcode</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/life/">life📚</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/links/">links</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/wiki/">wiki</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="container">
+      <a href="https://www.vultr.com/?ref=8356511-4F"><img src="https://www.vultr.com/media/banners/banner_728x90.png" width="800" height="90"></a>
+		</div>
+		<hr/>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Yolo: v1-v3</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-11-09T17:16:26">2019-11-09</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="category">深度学习</a>, <a class="meta__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" rel="category">计算机视觉</a>, <a class="meta__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb" rel="category">论文阅读</a></span>
+</div>
+</div>
+		</header>
+<div class="content post__content clearfix">
+			
+
+<p><strong>目标检测主要有两种实现，一是faster-rcnn为代表的proposal two-stage 系列，二是以YOLO为代表的one-stage 的回归网络. 主要区别在于proposal系列的方法精度相对更高，但速度较慢. one-stage 的方法相对的速度快，精度总体来说低一些. 本文对yolo-v1到yolo-v3作个小结. 包含自己的理解与参考别人的理解</strong></p>
+
+<div align="center"> <img src="/img/yolo系列/1.gif"></div>
+
+<h1 id="yolo-v1">YOLO-v1</h1>
+
+<div align="center"><img src="/img/yolo系列/2.jpg" width="600" height="400"></div>
+
+<p>YOLO-v1算法流程如上图所示：输入图片，resize到固定 448 * 448, 经过卷积网络得到网络输出，最后进行非极大值抑制得到最终结果. 整个流程相对RCNN系列更简洁.</p>
+
+<h2 id="unified-detection">Unified Detection</h2>
+
+<div align="center"><img src="/img/yolo系列/3.png" width="600" height="400"></div>
+
+<p>上图为RCNN的目标检测流程图，它将目标检测拆分为几个部分. 虽然最新的faster rcnn等已将全部由CNN 实现，但仍然不是一个统一的网络. 因此，检测速度较慢.</p>
+
+<div align="center"> <img src="/img/yolo系列/4.jpg" width="600" height="400"></div>
+
+<p>YOLO 将目标检测的各个部分统一为一个网络. 使用整张图像的特征来预测所有的bounding box. 它同时预测类别与bounding box. 如上图所示.</p>
+
+<h2 id="network">network</h2>
+
+<div align="center"><img src="/img/yolo系列/5.jpg" width="800" height="550"></div>
+
+<p>yolo-v1 网络结构如上图所示. 它包含了24个卷积层和两个全连接层. 1 * 1 卷积用来降维. 在PASCAL VOC detection dataset背景下，网络最后输出为 7 * 7 * 30 的向量.</p>
+
+<h2 id="流程">流程</h2>
+
+<p>输入图像被划分为 $S * S$ 个网格. 如果一个物体的中心落在一个格子中，该网格负责检测此物体.</p>
+
+<div align="center"><img src="/img/yolo系列/6.jpg" width="400" width="400"></div> 
+
+<p>如上图，狗的 bounding-box 中心落在红色格子内，那么训练时只有红色格子负责检测狗（虽然狗的其它部分也落在了别的格子内，但它们都不会检测狗），自行车同理，只有绿色格子负责检测自行车.</p>
+
+<p>每一个格子都会预测 $B$ 个bounding-box (yolo-v1中 $B=2$) 以及 $C$ 个类别概率(voc 12 下 $C=20$). 每个 box 包含物体的可信度分数 $confidence$. 反应了模型认为此 box 是否包含 <strong>任意</strong> 物体的概率, 对应论文中的 $Pr(Object)$ .</p>
+
+<p>其中, 每一个 bounding-box 预测5 个数据项: $x, y, w, h, confidence$.</p>
+
+<ul>
+<li>$x, y$ 坐标表示预测bounding-box的中心点. 实际训练过程中, $x, y$ 是 bounding-box 中心位置相对于当前 grid 的偏移量.</li>
+<li>$w, h$ 是bounding-box 的宽度和高度. 实际训练过程中, 除以图像高度或宽度以归一化.</li>
+<li>$confidence$ 代表预测的bounding-box与 gt 之间的 IOU. $confidence$ 为 $Pr(Object) * IOU _{pred} ^{truth}$. 当框内有物体时, $Pr(Object)$ 为 1, 否则为 0.</li>
+</ul>
+
+<div align="center"><img src="/img/yolo系列/7.jpg" height="400" width="500"></div>
+
+<p>$x, y, w, h$ 归一化说明如上图.  记 bounding-box 在原图的中心坐标位置为 $x_b, y_b$, 图像高度、宽度分别为 $h_i, w_i$, bounding-box 的高度和宽度分别为 $h_b, w_b$. 将原图分为 $S * S$ 个grid, 编号为 (0 &hellip; 6). 如当前预测狗的grid 为 (row=4, col=1). 转换公式如下：</p>
+
+<p>$$x = \frac{x_b} { w_i} * S - col$$
+$$y = \frac{y_b }{ h_i} * S - row$$
+$$w = \frac{w_b}{w_i}$$
+$$h = \frac{h_b}{h_i}$$</p>
+
+<p>因为网络的输出 $7 * 7 * 30$ 向量单通道仅仅只是7个点, 相对于grid 的偏移即相对于此点的偏移. 此点映射到原图即原图每个 grid cell 的左上角. (测试时，上式反推得到的是映射回 448 * 488 尺寸图像上的坐标, 需要根据实际比例进行修正.)</p>
+
+<p>每一个 grid 预测 $C$ 类的条件概率, $Pr(Class_i | Objct)$ ,表示该单元格存在物体且属于某一类的概率. 测试时，对于每一个预测box:
+$$Pr(Class_i | Objct) * Pr(Object) * IOU _{pred} ^{truth} = Pr(Class_i) * IOU _{pred} ^{truth}$$</p>
+
+<p>yolo-v1 输出如下图所示:</p>
+
+<div align="center"><img src="/img/yolo系列/8.png" width="600" height="400"></div>
+
+<h2 id="loss-function">Loss Function</h2>
+
+<div align="center"><img src="/img/yolo系列/9.png" width="700" height="500"></div>
+
+<ul>
+<li>$(x,y)$ : 预测bounding-box 的 $x, y$坐标被参数化为特定网格单元位置的偏移，因此它们也被限定在0和1之间。只有当存在目标时，计算平方误差和. $\lambda _{coord}$ 提升bounding-box损失.</li>
+<li>$(w, h)$: bounding-box的宽和高, 归一化到 0-1 . 只有存在目标时才计算.</li>
+<li>$C_i$ : 在每个图像中，许多 grid 不包含任何对象. 这会将这些单元格的 $confidence$ 推向零，通常会超过包含对象的 grid 的梯度，从而使模型不稳定. 引入 $\lambda _{noobj}$ 系数控制比例.</li>
+<li>$p_i ( c)$ : 类别概率. 平方误差和.</li>
+</ul>
+
+<h2 id="other-details">Other details</h2>
+
+<ul>
+<li>Pascal voc下, 每张图片可以预测7 * 7 * 2 = 98 个bounding-box.</li>
+<li>yolo-v1 每个grid 只能预测两个box, 且属于同一类. 故对靠的近的不同类物体检测能力不足. 同时, 由于一个 grid cell 内的两个检测器都针对于同一个目标, 在训练时谁预测的结果与 GT 的IOU 最大谁就负责检测.</li>
+<li>泛化能力较差. 倾向于检测长宽比类似于训练集长宽比的物体.</li>
+</ul>
+
+<hr />
+
+<h1 id="yolo-v2">YOLO-v2</h1>
+
+<p>yolo-v2 在yolo-v1 的基础上作了改进, 在保持处理速度的基础上， 分别从预测精度(Better)、检测速度(Faster)和识别更多目标(Stronger)上进行了优化. 本文只挑重点介绍.</p>
+
+<h3 id="1-batch-normalization">1: Batch Normalization</h3>
+
+<p>在所有的卷积层增加了BN, 去掉dropout.</p>
+
+<h3 id="2-high-resolution-classifier">2: High Resolution Classifier</h3>
+
+<p>由于历史原因, 大部分识别网络在 Imagenet 上预训练时使用的是 224 * 224 的图像. yolo-v1 也是在此基础上先训练识别, 再在 448 * 448 图像上训练检测网络. 分辨率的切换会带来性能的影响. 因此， yolo-v2 现在 224 * 224 图像上训练完分类模型后，再在 448 * 448 分辨率下对分类网络微调, 让网络适应更高的分辨率.</p>
+
+<h3 id="3-convolutional-with-anchor-boxes">3: Convolutional With Anchor Boxes</h3>
+
+<p>在yolo-v1 中说过, yolo-v1 在输出 7 * 7 尺寸下只能检测 98 个 box, 其中每个 grid 的输出的两个box 还属于同一个类(共享一套类别概率). yolo-v2 引入了faster-rcnn 中的先验框（anchor box）机制.</p>
+
+<p>yolo-v2 移除了全连接层. 输入resize 到 416 * 416 , 输出特征图大小为 13 * 13. 每个 grid 预测 $N$(5) 个 anchor box. 且每个box 独享一套类别概率. 如下图:</p>
+
+<div align="center"><img src="/img/yolo系列/10.jpg" width="500" height="150"></div>
+
+<p>使用 anchor-box 时精度降低了, 但提升了召回率.</p>
+
+<h3 id="4-dimension-clusters">4: Dimension Clusters</h3>
+
+<p>在Faster rcnn和 SSD 中, anchor-box的长宽比是人工设计的. yolo-v2中, 作者使用 k-means 聚类生成 anchor-box, 得到的anchor-box 的长宽比更好.</p>
+
+<h3 id="5-direct-location-prediction">5: Direct location prediction</h3>
+
+<p>Faster R-CNN 中anchor-box 回归公式如下:
+$$t_x = (x -x_a)/ w_a, t_x = (y -y_a)/ h_a,$$
+$$t_w =  log(w/w_a), t_h = log(h / h_a),$$
+$$t _x ^* = (x^* -x_a)/ w_a, t _y ^* = (y^* -y_a)/ h_a$$
+$$t _w ^* = log(w^* / w_a), t _w ^* = log(w^* / w_a)$$</p>
+
+<p>$x, y, w, h$ 分别为 box 的中心坐标与宽高. $x, x_a, x^*$ 分别为预测的box, anchor-box 以及 ground-truth box.  loss 计算为预测值与anchor-box的偏移与ground-truth与anchor-box偏移的差值.</p>
+
+<p>上式计算宽高的缩放系数时,映射到了对数空间, 是为了避免带来不稳定的梯度. 不加变换时要求 $t_w, t_h$ 大于 0. 因为物体的高和宽不会是负数. 相当于带不等式约束. 取对数后将其不等式约束去掉.</p>
+
+<div align="center"><img src="/img/yolo系列/11.jpg" width="400" height="400"></div>
+
+<p>yolo作者直接预测anchor-box 的位置, 而不再是与ground-truth之间的差值. 如上图所示, 网络最后输出的为 $13 * 13$ 的特征图, 图中的每一个 grid cell 仅仅是一个像素点而已. 对应到上图中每个 grid cell 的索引是其左上角像素的索引. 每个 grid cell 的尺度为1. 上图中grid cell 索引为$[0:12] * [0:12]$ .</p>
+
+<p>回归公式如下：
+$$b_x = \sigma(t_x) + c_x$$
+$$b_y = \sigma(t_y) + c_y$$
+$$b_w = p_w e ^{t_w} $$
+$$b_h = p_h e ^{t_h}$$</p>
+
+<p>$c_x, c_y$ 为当前grid cell的索引, $t_x, t_y$ 被约束到(0, 1)之间. 一是加快收敛, 其二保证中心约束在当前 grid cell内, 保证 box 中心落在哪个 grid cell 内,哪个负责检测.</p>
+
+<p>YOLO-v2 每个 grid cell 设置了 5 个 anchor box, 在训练时 ground-truth 与哪一个 anchor box 的IOU 最大, 谁就负责检测该目标.</p>
+
+<h3 id="6-darkent-19">6: Darkent-19</h3>
+
+<p>提出了darknet, 网络结构如下:</p>
+
+<div align="center"><img src="/img/yolo系列/12.jpg" width="400" height="500"></div>
+
+<hr />
+
+<h1 id="yolo-v3">YOLO-v3</h1>
+
+<p>YOLO-v3 主要在 yolo-v2 上增加了多尺度, 提升了对小目标的检测能力. yolo-v3 主要从以下几方面做了改进.</p>
+
+<h2 id="1-bounding-box-prediction">1: Bounding box prediction</h2>
+
+<p>yolo-v3 对每个bounding-box 使用逻辑斯特回归预测是否包含物体.将与gt IOU 最大的先验框此项设为1. 如果先验框和 gt 的IOU 不是最佳的但是超过一定的阈值(文中设为0.5)则忽略此预测. 即不计入 loss. 对每一个 gt 只分配一个先验框, 如果一个先验框没有被分配任何 GT, 那么不计算此框不计算坐标预测和分类损失, 只计算 objectness 的损失.</p>
+
+<h2 id="2-class-prediction">2: Class Prediction</h2>
+
+<p>对于分类, 作者改用了逻辑斯特回归, 不再使用 softmax. 一是 softmax 对于获得好的性能并不是必要的, 其二: 对于有些数据集, 各个 label 并不是互斥的(比如 woman 和 Person).</p>
+
+<h2 id="3-predictions-across-scales">3: Predictions Across Scales</h2>
+
+<p><strong>为了提升小目标的召回, 作者采用了类似特征金字塔网络的思想, 在三个尺度下分别进行预测.</strong></p>
+
+<p>yolo-v3 分别通过将输入图像的尺寸分别下采样32、16和8 倍, 输出各个尺度的检测结果. 每个尺度下分别分配三个长宽比的 anchor box, 其最小尺度分配最大的三个anchor box, 以此类推.</p>
+
+<p>1: 第一次检测是由第82层进行的, 输出特征图大小为 13 x 13: 对应到原图, 如下图</p>
+
+<div align="center"><img src="/img/yolo系列/13.jpg" width="400" height="400"></div>
+
+<p>此层输出 13 * 13 的特征图, 每个像素点对应到原图区域更大, 分配最大的anchor box, 主要检查大目标. 一共可输出 13 * 13 * 3 = 507 个bounding box.</p>
+
+<p>2: 第二次检测由第94层进行, 输出特征图大小为 26* 26. 负责检测中等大小的目标, 一共可输出 26 * 26 * 3 = 2028 个 box. 如下图:</p>
+
+<div align="center"><img src="/img/yolo系列/14.jpg" width="400" height="400"></div>
+
+<p>3: 第三次检测由第 106 层进行, 输出特征图为 52 * 52. 主要负责检测小目标, 因此分配最小的anchor-box. 一共可输出 52 * 52 * 3 = 8112 个box.</p>
+
+<div align="center"><img src="/img/yolo系列/15.jpg" width="400" height="400"></div>
+
+<p><strong>yolo-v3 在三个尺度下共输出bounding box 10647个, 预测的 box 数量超过 yolo v2的10X, 当然速度会慢一些.</strong></p>
+
+<h2 id="4-darknet-53">4: Darknet 53</h2>
+
+<p>yolo-v2 使用的是darknet-19, v3中提出了 darknet-53 作为特征提取网络. 结构如下:</p>
+
+<div align="center"><img src="/img/yolo系列/16.jpg" width="400" height="600"></div>
+
+<h2 id="5-yolo-v3-网络图">5: yolo-v3 网络图</h2>
+
+<div align="center"><img src="/img/yolo系列/17.png" width="800" height="600"></div>
+
+<p><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b">上图来源于此🔗</a></p>
+
+<h1 id="yolo-系列到此就完结了-ヽ-ノ">yolo 系列到此就完结了, ✿✿ヽ(°▽°)ノ✿</h1>
+
+<h1 id="referrence">referrence</h1>
+
+<ul>
+<li><a href="https://towardsdatascience.com/yolov1-you-only-look-once-object-detection-e1f3ffec8a89">Review: YOLOv1</a></li>
+<li><a href="https://pjreddie.com/darknet/yolov1/">yolo-v1</a></li>
+<li><a href="https://pjreddie.com/darknet/yolov2/">yolo-v2</a></li>
+<li><a href="https://pjreddie.com/darknet/yolov3/">yolo-v3</a></li>
+<li><a href="https://arxiv.org/pdf/1506.01497.pdf">faster r-cnn</a></li>
+<li><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b">What’s new in YOLO v3?</a></li>
+</ul>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/yolo/" rel="tag">yolo</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" rel="tag">目标检测</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+
+
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yl305237731/yl305237731.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Lin Yang avatar" src="/img/timg.gif" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Lin Yang</span>
+	</div>
+	<div class="authorbox__description">
+		ML, DL, CV....
+	</div>
+</div>
+
+
+
+<aside class="sidebar">
+<h4>See Also</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	
+	<li><a href="/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">Pix2seq阅读笔记</a></li>
+	
+	<li><a href="/post/detr%E7%AC%94%E8%AE%B0/">Detr:End-to-End Object Detection with Transformers笔记</a></li>
+	
+	<li><a href="/post/yolov5%E6%94%B6%E6%95%9B%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3/">Yolov5收敛快的理解</a></li>
+	
+	<li><a href="/post/cbam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9D%97/">CBAM注意力模块: Convolutional Block Attention Module</a></li>
+	
+	<li><a href="/post/yolov4/">YOLOv4: Optimal Speed and Accuracy of Object Detection论文解读</a></li>
+	
+	<li><a href="/post/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8Beffcientdet/">谷歌最新目标检测论文: EfficientDet</a></li>
+	
+	<li><a href="/post/anchor_free%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AFfcos/">Anchor free目标检测修炼之路:fcos -Fully Convolutional One-Stage Object Detection</a></li>
+	
+	<li><a href="/post/ohem/">OHEM: 在线困难样本挖掘: Training Region-based Object Detectors with Online Hard Example Mining</a></li>
+	
+	<li><a href="/post/%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E5%BB%BAyolo-v2%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E7%BD%91%E7%BB%9C/">目标检测网络: yolo-v2 损失函数实现讲解</a></li>
+	
+	<li><a href="/post/omg_net/">Accelerating Object Detection by Erasing Background Activations 阅读</a></li>
+	
+</ul>
+</div>
+<br/>
+</aside>
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/how_to_built_a_simple_maskrcnn/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">动手搭建神经网络之:简单联合分割、检测网络</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/dlib%E5%AE%9E%E8%B7%B5/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Dlib 人脸相关实践</p></a>
+	</div>
+</nav>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q" aria-label="SEARCH...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/ffc/">FFC: Fast Fourier Convolution 阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">Pix2seq阅读笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/swin_transoformer/">Swin Transformer：层次化视觉Transformer 笔记</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BA%AC%E4%B8%9C%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%ABfacex-zoo/">京东人脸识别FaceX Zoo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%BB%8F%E5%85%B8%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E6%B8%A9%E4%B9%A0%E4%B8%8Epython%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">经典无监督聚类算法理论温习与Python代码实践</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/keras">Keras</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/leetcode">Leetcode</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/linux">Linux</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/python">Python</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tools">Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%89%91%e6%8c%87offer">剑指offer</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e4%bf%ae%e5%a4%8d">图像修复</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a2%9e%e5%bc%ba">图像增强</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86">图像处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0">机器学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86">自然语言处理</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89">计算机视觉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e8%ae%ba%e6%96%87%e9%98%85%e8%af%bb">论文阅读</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor" title="Anchor">Anchor</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/anchor-free" title="Anchor free">Anchor free</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbam" title="Cbam">Cbam</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cbir" title="Cbir">Cbir</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cspnet" title="Cspnet">Cspnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deeplab" title="Deeplab">Deeplab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/densecrf" title="Densecrf">Densecrf</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dlib" title="Dlib">Dlib</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/docker" title="Docker">Docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/facenet" title="Facenet">Facenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fast-rcnn" title="Fast rcnn">Fast rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/faster_rcnn" title="Faster rcnn">Faster rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fpn" title="Fpn">Fpn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gan" title="Gan">Gan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gitlab" title="Gitlab">Gitlab</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/google_images_download" title="Google images download">Google images download</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hadoop%e5%91%bd%e4%bb%a4" title="Hadoop命令">Hadoop命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hive" title="Hive">Hive</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hrnet" title="Hrnet">Hrnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/image-caption" title="Image caption">Image caption</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/imagenet" title="Imagenet">Imagenet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inception" title="Inception">Inception</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iterm2" title="Iterm2">Iterm2</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keras" title="Keras">Keras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/knn" title="Knn">Knn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/leetcode" title="Leetcode">Leetcode</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/libsvm" title="Libsvm">Libsvm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux" title="Linux">Linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/lstm" title="Lstm">Lstm</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/maccmd" title="Maccmd">Maccmd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markdown%e8%af%ad%e6%b3%95" title="Markdown语法">Markdown语法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mnist%e8%bd%ac%e5%9b%be%e7%89%87" title="Mnist转图片">Mnist转图片</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nlp" title="Nlp">Nlp</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/numpy-gpu%e5%8a%a0%e9%80%9f" title="Numpy gpu加速">Numpy gpu加速</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nvidia-docker" title="Nvidia docker">Nvidia docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ocr" title="Ocr">Ocr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ohem" title="Ohem">Ohem</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pandas" title="Pandas">Pandas</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pp-yolo" title="Pp yolo">Pp yolo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/progan" title="Progan">Progan</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/psnr" title="Psnr">Psnr</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pyplot%e6%96%87%e6%a1%a3" title="Pyplot文档">Pyplot文档</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pytorch" title="Pytorch">Pytorch</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ransac" title="Ransac">Ransac</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/rcnn" title="Rcnn">Rcnn</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/register" title="Register">Register</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/reid" title="Reid">Reid</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/roialign" title="Roialign">Roialign</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/se-net" title="Se net">Se net</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/separable-convolutions" title="Separable convolutions">Separable convolutions</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/simplehttpserver" title="Simplehttpserver">Simplehttpserver</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sppnet" title="Sppnet">Sppnet</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssd" title="Ssd">Ssd</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/transformer" title="Transformer">Transformer</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu" title="Ubuntu">Ubuntu</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/video-object-segementation" title="Video object segementation">Video object segementation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vit" title="Vit">Vit</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo" title="Yolo">Yolo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e6%a3%80%e6%b5%8b" title="人脸检测">人脸检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab" title="人脸识别">人脸识别</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%89%b2" title="分割">分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e7%ae%97%e6%b3%95%e6%9c%8d%e5%8a%a1" title="分布式算法服务">分布式算法服务</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" title="分布式训练">分布式训练</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%8e%8b%e7%bc%a9%e5%91%bd%e4%bb%a4" title="压缩命令">压缩命令</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%9b%e9%a2%86%e5%9f%9f%e8%bf%9e%e9%80%9a%e6%a0%87%e8%ae%b0" title="四领域连通标记">四领域连通标记</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%9b%be%e5%83%8f%e5%8e%bb%e9%9b%be" title="图像去雾">图像去雾</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%a4%9a%e6%a0%87%e7%ad%be%e5%88%86%e7%b1%bb" title="多标签分类">多标签分类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e5%ad%aa%e7%94%9f%e7%bd%91%e7%bb%9c" title="孪生网络">孪生网络</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd" title="数据加载">数据加载</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%bc%ba" title="数据增强">数据增强</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e6%b3%95" title="最小二乘法">最小二乘法</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%a8%a1%e7%89%88%e5%8c%b9%e9%85%8d" title="模版匹配">模版匹配</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" title="深度学习">深度学习</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e5%88%86%e5%89%b2" title="目标分割">目标分割</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%ae%e6%a0%87%e6%a3%80%e6%b5%8b" title="目标检测">目标检测</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e7%9b%b8%e5%85%b3" title="相关">相关</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%81%9a%e7%b1%bb" title="聚类">聚类</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89" title="计算机视觉">计算机视觉</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b6%85%e5%88%86%e8%be%a8%e7%8e%87%e9%87%8d%e5%bb%ba" title="超分辨率重建">超分辨率重建</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%b7%b3%e6%9d%bf%e6%9c%ba" title="跳板机">跳板机</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b" title="边缘检测">边缘检测</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/yl305237731" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:16120438@bjtu.edu.cn">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>16120438@bjtu.edu.cn</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div>
+<a href="https://www.vultr.com/?ref=8356490"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 fly away, chase dream.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+</body>
+</html>

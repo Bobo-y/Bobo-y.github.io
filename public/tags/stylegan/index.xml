@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stylegan on fly away, chase dream</title>
+    <link>/tags/stylegan/</link>
+    <description>Recent content in Stylegan on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 31 Jan 2020 22:10:02 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/stylegan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stylegan: A Style-Based Generator Architecture for Generative Adversarial Networks</title>
+      <link>/post/stylegan1%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Fri, 31 Jan 2020 22:10:02 +0800</pubDate>
+      
+      <guid>/post/stylegan1%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
