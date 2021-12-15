@@ -4,26 +4,41 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-10-08T21:27:22+08:00</lastmod>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/ffc/</loc>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-10-08T21:27:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-10-08T21:27:22+08:00</lastmod>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2021-10-08T21:27:22+08:00</lastmod>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2021-10-28T22:34:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-10-08T21:27:22+08:00</lastmod>
   </url>
   
@@ -93,6 +108,21 @@
   </url>
   
   <url>
+    <loc>/life/</loc>
+    <lastmod>2021-04-20T22:17:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/life/%E5%A4%9C%E9%9B%A8/</loc>
+    <lastmod>2021-04-20T22:17:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/life/%E5%AE%9A%E9%A3%8E%E6%B3%A2_%E5%8D%97%E6%B5%B7%E5%BD%92%E8%B5%A0%E7%8E%8B%E5%AE%9A%E5%9B%BD%E4%BE%8D%E4%BA%BA%E5%AF%93%E5%A8%98/</loc>
+    <lastmod>2021-04-14T22:04:34+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/python/</loc>
     <lastmod>2021-04-02T07:50:04+08:00</lastmod>
   </url>
@@ -100,6 +130,11 @@
   <url>
     <loc>/wiki/python%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/</loc>
     <lastmod>2021-04-02T07:50:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/life/%E6%98%A5%E6%9C%89%E7%99%BE%E8%8A%B1%E7%A7%8B%E6%9C%89%E6%9C%88/</loc>
+    <lastmod>2021-04-01T21:07:53+08:00</lastmod>
   </url>
   
   <url>
@@ -149,11 +184,6 @@
   
   <url>
     <loc>/tags/vit/</loc>
-    <lastmod>2021-03-06T22:11:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2021-03-06T22:11:57+08:00</lastmod>
   </url>
   
@@ -475,11 +505,6 @@
   <url>
     <loc>/leetcode/%E5%A0%86%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2020-03-25T15:10:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/life/</loc>
-    <lastmod>2020-03-18T09:03:55+08:00</lastmod>
   </url>
   
   <url>
