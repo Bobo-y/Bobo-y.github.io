@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Ppyolov2 笔记</title>
+      <link>/post/ppyolov2/</link>
+      <pubDate>Wed, 19 May 2021 11:08:19 +0800</pubDate>
+      
+      <guid>/post/ppyolov2/</guid>
+      <description>PP-YOLOv2 是百度对于ppyolo-v1 的升级版，主要是引入了各种插件来提升性能。如下图，ppyolov2 在相同的map下能达到更高的FPS. PPyolo-v2 的改进</description>
+    </item>
+    
+    <item>
       <title>Reid之路: 度量学习的几种主要loss</title>
       <link>/post/reid%E4%B9%8B%E8%B7%AF-loss/</link>
       <pubDate>Wed, 17 Mar 2021 22:41:32 +0800</pubDate>

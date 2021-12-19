@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>Ppyolov2 笔记</title>
+      <link>/post/ppyolov2/</link>
+      <pubDate>Wed, 19 May 2021 11:08:19 +0800</pubDate>
+      
+      <guid>/post/ppyolov2/</guid>
+      <description>PP-YOLOv2 是百度对于ppyolo-v1 的升级版，主要是引入了各种插件来提升性能。如下图，ppyolov2 在相同的map下能达到更高的FPS. PPyolo-v2 的改进</description>
+    </item>
+    
+    <item>
       <title>玉楼春-尊前拟把归期说</title>
       <link>/life/%E5%B0%8A%E5%89%8D%E6%8B%9F%E6%8A%8A%E5%BD%92%E6%9C%9F%E8%AF%B4/</link>
       <pubDate>Thu, 13 May 2021 22:29:26 +0800</pubDate>
