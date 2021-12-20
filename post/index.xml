@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Yolox阅读笔记</title>
+      <link>/post/yolox%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 08 Oct 2021 21:27:28 +0800</pubDate>
+      
+      <guid>/post/yolox%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <description>yolox 是旷世今年推出的一个新的YOLO检测器技术报告，核心是将YOLO与anchor free方式实现，性能超过了之前的YOLO系列。此笔记记录Y</description>
+    </item>
+    
+    <item>
       <title>Pix2seq阅读笔记</title>
       <link>/post/pix2seq%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 08 Oct 2021 21:27:22 +0800</pubDate>
