@@ -6,19 +6,10 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 28 Oct 2021 22:34:47 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Oct 2021 21:27:28 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>FFC: Fast Fourier Convolution 阅读笔记</title>
-      <link>/post/ffc/</link>
-      <pubDate>Thu, 28 Oct 2021 22:34:47 +0800</pubDate>
-      
-      <guid>/post/ffc/</guid>
-      <description>论文做了什么？ 广泛采用的卷积操作属于局部操作，无法编码长距离的依赖关系。论文提出了一种新的用于获取更大感受野的卷积模块，为捕捉全局特征，用傅</description>
-    </item>
     
     <item>
       <title>Yolox阅读笔记</title>
