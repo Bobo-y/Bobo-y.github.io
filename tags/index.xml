@@ -6,10 +6,28 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Jan 2022 22:13:10 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jan 2022 18:04:11 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moco</title>
+      <link>/tags/moco/</link>
+      <pubDate>Tue, 11 Jan 2022 18:04:11 +0800</pubDate>
+      
+      <guid>/tags/moco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SimCLR</title>
+      <link>/tags/simclr/</link>
+      <pubDate>Tue, 11 Jan 2022 18:04:11 +0800</pubDate>
+      
+      <guid>/tags/simclr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MAE</title>

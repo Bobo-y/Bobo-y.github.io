@@ -6,10 +6,19 @@
     <description>Recent content on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Jan 2022 22:13:10 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jan 2022 18:04:11 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>对比学习之SimCLR与MoCo小记</title>
+      <link>/post/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%E4%B9%8Bsimclr%E4%B8%8Emoco%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Tue, 11 Jan 2022 18:04:11 +0800</pubDate>
+      
+      <guid>/post/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%E4%B9%8Bsimclr%E4%B8%8Emoco%E5%B0%8F%E8%AE%B0/</guid>
+      <description>SimCLR 与 MOCO 都是采用自监督、对比学习的形式来训练视觉模型。因为对于主流的CNN网络，模型训练都依赖于人工标注，但是人工标注成本太大，我们能使用的标</description>
+    </item>
     
     <item>
       <title>Masked Autoencoders Are Scalable Vision Learners小记</title>
@@ -1862,7 +1871,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description> Personal info  Master/Computer Science, Beijing Jiaotong University Github：🔗 Job：Algorithm engineer Company: BaiDu  </description>
+      <description> Personal info  Master/Computer Science, Beijing Jiaotong University Github：🔗 Job：Algorithm engineer Company:  </description>
     </item>
     
     <item>
