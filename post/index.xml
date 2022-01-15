@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Oct 2021 21:27:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jan 2022 22:13:10 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Masked Autoencoders Are Scalable Vision Learners小记</title>
+      <link>/post/mae/</link>
+      <pubDate>Mon, 03 Jan 2022 22:13:10 +0800</pubDate>
+      
+      <guid>/post/mae/</guid>
+      <description>读前三问 论文做了什么：论文以自监督的形式来训练自动编码器用来提取特征，实现无标注的预训练 怎么做的：对输入图片进行mask，采用编码器-解码器</description>
+    </item>
     
     <item>
       <title>Yolox阅读笔记</title>

@@ -6,10 +6,19 @@
     <description>Recent content in Tags on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Oct 2021 21:27:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jan 2022 22:13:10 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MAE</title>
+      <link>/tags/mae/</link>
+      <pubDate>Mon, 03 Jan 2022 22:13:10 +0800</pubDate>
+      
+      <guid>/tags/mae/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>yolox</title>
@@ -246,7 +255,7 @@
     </item>
     
     <item>
-      <title>Anchor free</title>
+      <title>Anchor Free</title>
       <link>/tags/anchor-free/</link>
       <pubDate>Tue, 10 Mar 2020 23:35:58 +0800</pubDate>
       
