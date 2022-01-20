@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>多模态 on fly away, chase dream</title>
+    <link>/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</link>
+    <description>Recent content in 多模态 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 18 Jan 2022 14:15:11 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CLIP: Learning Transferable Visual Models From Natural Language Supervision理解与使用小记</title>
+      <link>/post/clip%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Tue, 18 Jan 2022 14:15:11 +0800</pubDate>
+      
+      <guid>/post/clip%E5%B0%8F%E8%AE%B0/</guid>
+      <description>CLIP 是 openAI 提出的用以将图像映射到文本描述空间中，连接图片和文本，可以用来提取图像 embedding, 用作zero-shot 迁移。 CLIP 结构 CLIP 总体结构如上图： 通过对比学</description>
+    </item>
+    
+  </channel>
+</rss>
