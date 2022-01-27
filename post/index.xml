@@ -6,10 +6,19 @@
     <description>Recent content in Posts on fly away, chase dream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Jan 2022 23:30:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jan 2022 17:22:37 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ViLD(Vision and Language knowledge Distillation): 基于视觉和语言模型的zero shot 目标检测</title>
+      <link>/post/vild/</link>
+      <pubDate>Tue, 25 Jan 2022 17:22:37 +0800</pubDate>
+      
+      <guid>/post/vild/</guid>
+      <description>对于常用的目标检测而言，测试集和训练集的类别时保持一致的，即我们想要检测什么，那么训练集就有该类别的数据. 对于zero-shot 即测试集的出</description>
+    </item>
     
     <item>
       <title>识别损失函数汇总</title>
