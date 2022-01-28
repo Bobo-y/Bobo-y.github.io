@@ -20,5 +20,14 @@
       <description>对于常用的目标检测而言，测试集和训练集的类别时保持一致的，即我们想要检测什么，那么训练集就有该类别的数据. 对于zero-shot 即测试集的出</description>
     </item>
     
+    <item>
+      <title>谷歌Detic: 结合分类数据集进行目标检测模型训练</title>
+      <link>/post/zero-shotdetic/</link>
+      <pubDate>Sat, 22 Jan 2022 21:58:46 +0800</pubDate>
+      
+      <guid>/post/zero-shotdetic/</guid>
+      <description>论文三连问 论文做了什么：使用分类数据集来训练检测模型的分类器，使检测器可以识别出上万的类别 论文怎么做的：对于检测标注格式的数据和分类标注格式</description>
+    </item>
+    
   </channel>
 </rss>

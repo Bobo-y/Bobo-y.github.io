@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>谷歌Detic: 结合分类数据集进行目标检测模型训练</title>
+      <link>/post/zero-shotdetic/</link>
+      <pubDate>Sat, 22 Jan 2022 21:58:46 +0800</pubDate>
+      
+      <guid>/post/zero-shotdetic/</guid>
+      <description>论文三连问 论文做了什么：使用分类数据集来训练检测模型的分类器，使检测器可以识别出上万的类别 论文怎么做的：对于检测标注格式的数据和分类标注格式</description>
+    </item>
+    
+    <item>
       <title>对比学习之SimCLR与MoCo小记</title>
       <link>/post/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%E4%B9%8Bsimclr%E4%B8%8Emoco%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Tue, 11 Jan 2022 18:04:11 +0800</pubDate>

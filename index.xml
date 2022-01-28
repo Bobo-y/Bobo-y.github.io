@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>谷歌Detic: 结合分类数据集进行目标检测模型训练</title>
+      <link>/post/zero-shotdetic/</link>
+      <pubDate>Sat, 22 Jan 2022 21:58:46 +0800</pubDate>
+      
+      <guid>/post/zero-shotdetic/</guid>
+      <description>论文三连问 论文做了什么：使用分类数据集来训练检测模型的分类器，使检测器可以识别出上万的类别 论文怎么做的：对于检测标注格式的数据和分类标注格式</description>
+    </item>
+    
+    <item>
       <title>识别损失函数汇总</title>
       <link>/post/%E8%AF%86%E5%88%AB%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 20 Jan 2022 23:30:02 +0800</pubDate>
