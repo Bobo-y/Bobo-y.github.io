@@ -154,6 +154,15 @@
 <li>SimOTA: 该样本分配方式基于旷世的OTA论文的改进，具体这儿不抠细节了，AP能提升到 47.3</li>
 </ul>
 
+<h2 id="simota">simOTA</h2>
+
+<ol>
+<li>先验框 和 GT 初步过滤，得到哪些先验框可能有正样本</li>
+<li>筛选出的框与GT 计算cost, 包括分类 + IOU cost</li>
+<li>指定 k 个框，每个gt 选出IOU 前 K 大的框，然后 k 个IOU 求和向下取整，即当前GT 应该分配的框个数，取cost 里面最小的k个与当前gt 匹配</li>
+<li>如果某个框匹配多个GT，选择cost 最小的GT 与之匹配</li>
+</ol>
+
 <h2 id="vs-sota">vs sota</h2>
 
 <p>对比YOLOv5</p>
@@ -228,11 +237,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/yolov6/">Yolov6 笔记</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/vild/">ViLD(Vision and Language knowledge Distillation): 基于视觉和语言模型的zero shot 目标检测</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/zero-shotdetic/">谷歌Detic: 结合分类数据集进行目标检测模型训练</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E8%AF%86%E5%88%AB%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%B1%87%E6%80%BB/">识别损失函数汇总</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/clip%E5%B0%8F%E8%AE%B0/">CLIP: Learning Transferable Visual Models From Natural Language Supervision理解与使用小记</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%E4%B9%8Bsimclr%E4%B8%8Emoco%E5%B0%8F%E8%AE%B0/">对比学习之SimCLR与MoCo小记</a></li>
 		</ul>
 	</div>
 </div>
@@ -326,6 +335,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v3" title="Yolo v3">Yolo v3</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolo_v5" title="Yolo v5">Yolo v5</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolov4" title="Yolov4">Yolov4</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yolov6" title="Yolov6">Yolov6</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/yolox" title="Yolox">Yolox</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/zero-shot" title="Zero shot">Zero shot</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%e4%ba%8c%e5%88%86%e7%b1%bb" title="二分类">二分类</a>
@@ -381,7 +391,7 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 fly away, chase dream.
+			&copy; 2023 fly away, chase dream.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

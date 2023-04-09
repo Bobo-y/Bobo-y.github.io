@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yolov6 on fly away, chase dream</title>
+    <link>/tags/yolov6/</link>
+    <description>Recent content in Yolov6 on fly away, chase dream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 09 Apr 2023 20:58:33 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/yolov6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yolov6 笔记</title>
+      <link>/post/yolov6/</link>
+      <pubDate>Sun, 09 Apr 2023 20:58:33 +0800</pubDate>
+      
+      <guid>/post/yolov6/</guid>
+      <description>yolov6 是美团开源的模型，主要是工业应用，官方说速度精度都比v5 和 x 高, 最近也用到了efficientRep 作为backbone, 记录一下 论文做了</description>
+    </item>
+    
+  </channel>
+</rss>
